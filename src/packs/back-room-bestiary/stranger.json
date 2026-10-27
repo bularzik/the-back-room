@@ -1,0 +1,231 @@
+{
+ "_id": "LgUhIfhgg9F7Vdll",
+ "name": "The Hooded Stranger",
+ "type": "npc",
+ "img": "icons/svg/mystery-man.svg",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 10,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 11,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 13,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 14,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {},
+  "attributes": {
+   "ac": {
+    "calc": "flat",
+    "flat": 11
+   },
+   "hp": {
+    "value": 13,
+    "max": 13,
+    "temp": null,
+    "tempmax": null,
+    "formula": "3d8"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 30,
+    "units": "ft",
+    "hover": false
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {}
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>A hooded stranger in the corner booth with a job. Play it completely straight: the job is real, the pay is fair, the directions are good.</p><p><strong>Room 2.</strong> There is a hooded stranger in every booth, and every one of them is a role, repeating the hook word for word. None of them is the Remnant.</p><p><strong>Room 5.</strong> The stranger's voice rises from the common room below, asking the barkeep whether the party is up yet. The job is still there.</p>",
+    "public": ""
+   },
+   "alignment": "Neutral",
+   "type": {
+    "value": "humanoid",
+    "subtype": "human",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 0,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "med",
+   "di": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "common"
+    ],
+    "custom": "Common"
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "The Hooded Stranger",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": 0,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 1,
+  "height": 1,
+  "texture": {
+   "src": "icons/svg/mystery-man.svg",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "k45gYmFyLOuTn1ul",
+   "name": "The Hook",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The stranger offers a plain, ordinary job: an escort, a delivery, a missing person, whatever this table's campaign would open with. The GM writes it on the handout <em>The Job</em> before session one. It is never a trick.</p>",
+     "chat": ""
+    },
+    "identifier": "the-hook",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!LgUhIfhgg9F7Vdll.k45gYmFyLOuTn1ul"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!LgUhIfhgg9F7Vdll"
+}

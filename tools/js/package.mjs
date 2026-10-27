@@ -13,5 +13,5 @@ if (repo && tag) {
 rmSync("dist", { recursive: true, force: true }); mkdirSync("dist");
 writeFileSync("module.json", JSON.stringify(m, null, 2) + "\n");
 writeFileSync("dist/module.json", JSON.stringify(m, null, 2) + "\n");
-execSync("zip -rq dist/module.zip module.json README.md packs maps audio tokens tiles", { stdio: "inherit" });
+execSync("zip -rq dist/module.zip module.json README.md packs maps audio tiles", { stdio: "inherit" });
 console.log(`Packaged ${m.id} ${m.version} -> dist/module.zip`);

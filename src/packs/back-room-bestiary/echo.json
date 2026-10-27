@@ -1,0 +1,460 @@
+{
+ "_id": "I2kDQYpzKQGgJWAP",
+ "name": "The Echo",
+ "type": "npc",
+ "img": "icons/svg/mystery-man.svg",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 8,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 10,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 6,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {},
+  "attributes": {
+   "ac": {
+    "calc": "natural",
+    "flat": 13
+   },
+   "hp": {
+    "value": 40,
+    "max": 40,
+    "temp": null,
+    "tempmax": null,
+    "formula": "9d8"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 30,
+    "units": "ft",
+    "hover": false
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {
+     "darkvision": 60
+    }
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.</p><p><strong>Running it.</strong> Replace this placeholder with the real sheet: copy the character's actor, halve every number, blank the name. The two traits below are the rules that matter. It stops the moment the loop breaks.</p>",
+    "public": ""
+   },
+   "alignment": "Unaligned",
+   "type": {
+    "value": "undead",
+    "subtype": "",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 3,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "med",
+   "di": {
+    "value": [
+     "poison"
+    ],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [
+     "charmed",
+     "frightened",
+     "poisoned"
+    ],
+    "custom": ""
+   },
+   "languages": {
+    "value": [],
+    "custom": ""
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "The Echo",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": -1,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 1,
+  "height": 1,
+  "texture": {
+   "src": "icons/svg/mystery-man.svg",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "8zCMwlwSLALAWpxz",
+   "name": "Halved",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The Echo's statistics are the mirrored character's with every number halved (Hit Points, Armor Class bonus from Dexterity, attack bonuses, damage, save DCs). The block above is a placeholder for a 5th-level character.</p>",
+     "chat": ""
+    },
+    "identifier": "halved",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!I2kDQYpzKQGgJWAP.8zCMwlwSLALAWpxz"
+  },
+  {
+   "_id": "uxyZy7wR9YaJtStS",
+   "name": "Fight Your Own Last Turn",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>In this fight every attack a character makes repeats itself one round later in the same squares, made by the Echo with the same numbers. Note each character's attack and the squares it covered; on the Echo's next turn it makes those attacks from where that character was standing. Moving is how you dodge yourself.</p>",
+     "chat": ""
+    },
+    "identifier": "fight-your-own-last-turn",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!I2kDQYpzKQGgJWAP.uxyZy7wR9YaJtStS"
+  },
+  {
+   "_id": "qG8FJKzTokVY1HpI",
+   "name": "Unfinished",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The Echo cannot be reduced below 1 Hit Point while the Corridor Between is looping. When the loop breaks it stops where it stands, and is not there a moment later.</p>",
+     "chat": ""
+    },
+    "identifier": "unfinished",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!I2kDQYpzKQGgJWAP.qG8FJKzTokVY1HpI"
+  },
+  {
+   "_id": "y6QTML9orS6ReCjA",
+   "name": "Repeated Strike",
+   "type": "weapon",
+   "img": "icons/weapons/swords/sword-guard-steel.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "bXMReAJkQXbSeT89": {
+      "_id": "bXMReAJkQXbSeT89",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]]. Uses the mirrored character's main weapon damage, halved.</p>",
+     "chat": ""
+    },
+    "identifier": "repeated-strike",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 8,
+      "types": [
+       "str"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!I2kDQYpzKQGgJWAP.y6QTML9orS6ReCjA"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!I2kDQYpzKQGgJWAP"
+}

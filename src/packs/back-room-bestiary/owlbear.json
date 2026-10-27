@@ -1,0 +1,479 @@
+{
+ "_id": "deJ0klDBXZ1te7qW",
+ "name": "Owlbear (The Cover)",
+ "type": "npc",
+ "img": "icons/creatures/mammals/bear-paw-print-brown.webp",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 20,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 17,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 3,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 7,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {
+   "prc": {
+    "value": 1
+   }
+  },
+  "attributes": {
+   "ac": {
+    "calc": "natural",
+    "flat": 13
+   },
+   "hp": {
+    "value": 59,
+    "max": 59,
+    "temp": null,
+    "tempmax": null,
+    "formula": "7d10 + 21"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 40,
+    "units": "ft",
+    "hover": false,
+    "climb": 40
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {
+     "darkvision": 60
+    }
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>Just an owlbear. Something in here has to be.</p><p><strong>Tableau.</strong> Rearing at the back of the cavern over the gap where the cleric stood, mace raised.</p>",
+    "public": ""
+   },
+   "alignment": "Unaligned",
+   "type": {
+    "value": "monstrosity",
+    "subtype": "",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 3,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "lg",
+   "di": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [],
+    "custom": ""
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "Owlbear (The Cover)",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": -1,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 2,
+  "height": 2,
+  "texture": {
+   "src": "icons/creatures/mammals/bear-paw-print-brown.webp",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "QM0GntKe7CU8k60g",
+   "name": "Still Fighting 1977",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} is frozen mid-battle and has the Incapacitated condition until a creature enters the gap it is fighting.</p>",
+     "chat": ""
+    },
+    "identifier": "still-fighting-1977",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!deJ0klDBXZ1te7qW.QM0GntKe7CU8k60g"
+  },
+  {
+   "_id": "1XSkjV9NRDWqAER1",
+   "name": "Multiattack",
+   "type": "feat",
+   "img": "icons/skills/melee/strike-weapons-orange.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "jG2MkWbOfHfm4uRj": {
+      "_id": "jG2MkWbOfHfm4uRj",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} makes two Rend attacks.</p>",
+     "chat": ""
+    },
+    "identifier": "multiattack",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!deJ0klDBXZ1te7qW.1XSkjV9NRDWqAER1"
+  },
+  {
+   "_id": "qSi8aODOZPYGGt8P",
+   "name": "Rend",
+   "type": "weapon",
+   "img": "icons/creatures/claws/claw-curved-jagged-gray.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "vqbpB3EkRGVdwD9o": {
+      "_id": "vqbpB3EkRGVdwD9o",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "rend",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 2,
+      "denomination": 8,
+      "types": [
+       "slashing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!deJ0klDBXZ1te7qW.qSi8aODOZPYGGt8P"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!deJ0klDBXZ1te7qW"
+}

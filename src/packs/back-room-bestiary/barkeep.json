@@ -1,0 +1,272 @@
+{
+ "_id": "KrWS2wJliiVViOUo",
+ "name": "The Barkeep",
+ "type": "npc",
+ "img": "icons/svg/mystery-man.svg",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 10,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 11,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 10,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 14,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 15,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {},
+  "attributes": {
+   "ac": {
+    "calc": "flat",
+    "flat": 10
+   },
+   "hp": {
+    "value": 9,
+    "max": 9,
+    "temp": null,
+    "tempmax": null,
+    "formula": "2d8"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 30,
+    "units": "ft",
+    "hover": false
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {}
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>Kind. Tired in a way that is not unhappy. He led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.</p><p><strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.</p><p><strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning.</p>",
+    "public": ""
+   },
+   "alignment": "Neutral",
+   "type": {
+    "value": "humanoid",
+    "subtype": "human",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 0,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "med",
+   "di": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "common"
+    ],
+    "custom": "Common"
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "The Barkeep",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": 1,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 1,
+  "height": 1,
+  "texture": {
+   "src": "icons/svg/mystery-man.svg",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "iVV67JrBa0uwdeOv",
+   "name": "Not a Fight",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The Barkeep never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning.</p>",
+     "chat": ""
+    },
+    "identifier": "not-a-fight",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!KrWS2wJliiVViOUo.iVV67JrBa0uwdeOv"
+  },
+  {
+   "_id": "y3AraKWQLEXpEGCq",
+   "name": "He Knows",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table. The GM picks it from the character sheet before the session.</p>",
+     "chat": ""
+    },
+    "identifier": "he-knows",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!KrWS2wJliiVViOUo.y3AraKWQLEXpEGCq"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!KrWS2wJliiVViOUo"
+}

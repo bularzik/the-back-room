@@ -1,0 +1,497 @@
+{
+ "_id": "qkuFipSznjnC6QOA",
+ "name": "The Rogue With a Tragic Past",
+ "type": "npc",
+ "img": "icons/svg/mystery-man.svg",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 10,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 18,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 10,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 14,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {},
+  "attributes": {
+   "ac": {
+    "calc": "flat",
+    "flat": 15
+   },
+   "hp": {
+    "value": 44,
+    "max": 44,
+    "temp": null,
+    "tempmax": null,
+    "formula": "8d8 + 8"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 30,
+    "units": "ft",
+    "hover": false
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {}
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>A hooded figure in dark leathers who says 'it's complicated' a great deal. Everyone at the table has played this character, or sat next to someone who did.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
+    "public": ""
+   },
+   "alignment": "Unaligned",
+   "type": {
+    "value": "humanoid",
+    "subtype": "rogue",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 5,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "med",
+   "di": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "common"
+    ],
+    "custom": "Common"
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "The Rogue With a Tragic Past",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": 0,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 1,
+  "height": 1,
+  "texture": {
+   "src": "icons/svg/mystery-man.svg",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "KJ7ilr5rP9hPd9bR",
+   "name": "Signature: Sneak Attack, Always",
+   "type": "feat",
+   "img": "icons/magic/symbols/runes-star-orange-purple.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>Once per round the Remnant's Sneak Attack applies, no roll and no conditions: its weapon attack hits and deals [[/damage 1d6+4 piercing]] plus [[/damage 3d6 piercing]], even in plain sight, even if the target is watching it.</p>",
+     "chat": ""
+    },
+    "identifier": "signature-sneak-attack-always",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!qkuFipSznjnC6QOA.KJ7ilr5rP9hPd9bR"
+  },
+  {
+   "_id": "oF8rXtLYV0jo2PXM",
+   "name": "The Blank",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>Cannot say what the tragedy was. Gets upset when asked. If pressed three times it goes quiet and looks at the player whose first character it is not.</p>",
+     "chat": ""
+    },
+    "identifier": "the-blank",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!qkuFipSznjnC6QOA.oF8rXtLYV0jo2PXM"
+  },
+  {
+   "_id": "w4R3r52N5L4nbaEO",
+   "name": "Stands Back Up",
+   "type": "feat",
+   "img": "icons/magic/life/heart-cross-green.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p><strong>The Remnant Rule.</strong> When this creature drops to 0 Hit Points it does not die. At the start of its next turn it stands up in the pose it fell in, with all its Hit Points, and continues mid-sentence. The only way to be rid of it is to leave the room by a door it did not come through; it cannot follow.</p>",
+     "chat": ""
+    },
+    "identifier": "stands-back-up",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!qkuFipSznjnC6QOA.w4R3r52N5L4nbaEO"
+  },
+  {
+   "_id": "MjLTHyybEYUBnfVj",
+   "name": "Cannot Follow",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>It cannot leave a room through a door the party came through. That is the only hard limit on it, and it is the exit mechanic for Room 4.</p>",
+     "chat": ""
+    },
+    "identifier": "cannot-follow",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!qkuFipSznjnC6QOA.MjLTHyybEYUBnfVj"
+  },
+  {
+   "_id": "LjEqmh2TW6DkhW68",
+   "name": "Dagger",
+   "type": "weapon",
+   "img": "icons/weapons/daggers/dagger-simple-gray.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "zAHTugqC3vm7Z6EJ": {
+      "_id": "zAHTugqC3vm7Z6EJ",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "dex",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "dagger",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 4,
+      "types": [
+       "piercing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [
+     "fin"
+    ],
+    "proficient": null,
+    "range": {
+     "value": 20,
+     "long": 60,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 500000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!qkuFipSznjnC6QOA.LjEqmh2TW6DkhW68"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!qkuFipSznjnC6QOA"
+}

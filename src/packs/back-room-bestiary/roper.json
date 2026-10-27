@@ -1,0 +1,809 @@
+{
+ "_id": "7EzXl7YPx0DF1KeZ",
+ "name": "Roper (The Cover)",
+ "type": "npc",
+ "img": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 18,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 8,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 17,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 7,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 16,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 6,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {
+   "prc": {
+    "value": 3
+   },
+   "ste": {
+    "value": 2
+   }
+  },
+  "attributes": {
+   "ac": {
+    "calc": "natural",
+    "flat": 20
+   },
+   "hp": {
+    "value": 93,
+    "max": 93,
+    "temp": null,
+    "tempmax": null,
+    "formula": "11d10 + 33"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 10,
+    "units": "ft",
+    "hover": false,
+    "climb": 20
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {
+     "darkvision": 60
+    }
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>The one nobody could draw properly. It looks like three different things from three angles: a stalagmite, a rotted stump, a face. Describe it differently each round and never correct yourself.</p><p><strong>Tableau.</strong> Tendrils out toward the gap at the cave mouth, where the thief was sneaking in.</p>",
+    "public": ""
+   },
+   "alignment": "Neutral Evil",
+   "type": {
+    "value": "aberration",
+    "subtype": "",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 5,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "lg",
+   "di": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "deep"
+    ],
+    "custom": "Deep Speech"
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "Roper (The Cover)",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": -1,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 2,
+  "height": 2,
+  "texture": {
+   "src": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "kVpxZ9yi77gL2WnU",
+   "name": "Still Fighting 1977",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} is frozen mid-battle and has the Incapacitated condition until a creature enters the gap it is fighting.</p>",
+     "chat": ""
+    },
+    "identifier": "still-fighting-1977",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!7EzXl7YPx0DF1KeZ.kVpxZ9yi77gL2WnU"
+  },
+  {
+   "_id": "OSXPXc7hf3CtjpdZ",
+   "name": "False Appearance",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>If the [[lookup @name lowercase]]{monster} is motionless at the start of combat, it has Advantage on its Initiative roll. Moreover, if a creature hasn't observed it move or act, that creature must succeed on a DC 20 Intelligence (Investigation) check to discern that it is animate.</p>",
+     "chat": ""
+    },
+    "identifier": "false-appearance",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!7EzXl7YPx0DF1KeZ.OSXPXc7hf3CtjpdZ"
+  },
+  {
+   "_id": "91TcqkzenimhCV73",
+   "name": "Spider Climb",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} can climb difficult surfaces, including along ceilings, without needing to make an ability check.</p>",
+     "chat": ""
+    },
+    "identifier": "spider-climb",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!7EzXl7YPx0DF1KeZ.91TcqkzenimhCV73"
+  },
+  {
+   "_id": "ZbZLOk4SJrhfUdjM",
+   "name": "Multiattack",
+   "type": "feat",
+   "img": "icons/skills/melee/strike-weapons-orange.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "LUy48508yQXdjVQA": {
+      "_id": "LUy48508yQXdjVQA",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} makes two Tendril attacks, uses Reel, and makes one Bite attack.</p>",
+     "chat": ""
+    },
+    "identifier": "multiattack",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!7EzXl7YPx0DF1KeZ.ZbZLOk4SJrhfUdjM"
+  },
+  {
+   "_id": "PK9WL9xrUndwIvsU",
+   "name": "Bite",
+   "type": "weapon",
+   "img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "JiSHLGmfNlGAEjLq": {
+      "_id": "JiSHLGmfNlGAEjLq",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "bite",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 4,
+      "denomination": 8,
+      "types": [
+       "piercing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 500000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!7EzXl7YPx0DF1KeZ.PK9WL9xrUndwIvsU"
+  },
+  {
+   "_id": "shy8H5p7GCBllPQu",
+   "name": "Tendril",
+   "type": "weapon",
+   "img": "icons/creatures/tentacles/tentacle-earth-green.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "V8WJHs668XtSbEnp": {
+      "_id": "V8WJHs668XtSbEnp",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]]. If the target is Large or smaller, it has the Grappled condition (escape DC 14) and the Poisoned condition until the grapple ends. The roper has six tendrils; each can grapple one creature.</p>",
+     "chat": ""
+    },
+    "identifier": "tendril",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 4,
+      "types": [
+       "bludgeoning"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 60,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 600000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!7EzXl7YPx0DF1KeZ.shy8H5p7GCBllPQu"
+  },
+  {
+   "_id": "qsmAYA0r3VpopBjl",
+   "name": "Reel",
+   "type": "feat",
+   "img": "icons/skills/movement/arrow-upward-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "LrFT4Z5ER0tpLegg": {
+      "_id": "LrFT4Z5ER0tpLegg",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "bonus",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} pulls each creature Grappled by it up to 30 feet straight toward it.</p>",
+     "chat": ""
+    },
+    "identifier": "reel",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 700000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!7EzXl7YPx0DF1KeZ.qsmAYA0r3VpopBjl"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!7EzXl7YPx0DF1KeZ"
+}

@@ -1,0 +1,640 @@
+{
+ "_id": "dzOCj45n3twcxQJN",
+ "name": "Red Dragon (The Cover)",
+ "type": "npc",
+ "img": "icons/creatures/reptiles/dragon-winged-red.webp",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 19,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 10,
+    "proficient": 1,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 17,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 11,
+    "proficient": 1,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 15,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {
+   "prc": {
+    "value": 2
+   },
+   "ste": {
+    "value": 1
+   }
+  },
+  "attributes": {
+   "ac": {
+    "calc": "natural",
+    "flat": 17
+   },
+   "hp": {
+    "value": 75,
+    "max": 75,
+    "temp": null,
+    "tempmax": null,
+    "formula": "10d8 + 30"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 30,
+    "units": "ft",
+    "hover": false,
+    "climb": 30,
+    "fly": 60
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {
+     "blindsight": 10,
+     "darkvision": 60
+    }
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>The size it was on the cover: about the owlbear's size. Everybody's first party beat a red dragon at level 3, somehow. It never got to grow, so it is a wyrmling. Its breath, however, is the breath the table remembers.</p><p><strong>Tableau.</strong> Rearing over the hoard, wings half open, jaw wide at nothing. It wakes only if a character steps into the gap in front of it, where the fighter with the shield stood.</p>",
+    "public": ""
+   },
+   "alignment": "Chaotic Evil",
+   "type": {
+    "value": "dragon",
+    "subtype": "chromatic",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 6,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "med",
+   "di": {
+    "value": [
+     "fire"
+    ],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "draconic"
+    ],
+    "custom": "Draconic"
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "Red Dragon (The Cover)",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": -1,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 1,
+  "height": 1,
+  "texture": {
+   "src": "icons/creatures/reptiles/dragon-winged-red.webp",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "4IGV2sa09k4IXJIv",
+   "name": "Still Fighting 1977",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} is frozen mid-battle and has the Incapacitated condition until a creature enters the person-shaped gap it is fighting. When it wakes, roll its Initiative; it acts immediately after the creature that woke it.</p>",
+     "chat": ""
+    },
+    "identifier": "still-fighting-1977",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!dzOCj45n3twcxQJN.4IGV2sa09k4IXJIv"
+  },
+  {
+   "_id": "V7IinfYvXWPJvDYg",
+   "name": "Multiattack",
+   "type": "feat",
+   "img": "icons/skills/melee/strike-weapons-orange.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "CfXHsp3NcdXk0sGK": {
+      "_id": "CfXHsp3NcdXk0sGK",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} makes two Rend attacks.</p>",
+     "chat": ""
+    },
+    "identifier": "multiattack",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!dzOCj45n3twcxQJN.V7IinfYvXWPJvDYg"
+  },
+  {
+   "_id": "0Lk38KWXvUm5oHhq",
+   "name": "Rend",
+   "type": "weapon",
+   "img": "icons/creatures/claws/claw-curved-jagged-gray.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "89WM2iwWl4Y514Mi": {
+      "_id": "89WM2iwWl4Y514Mi",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": [
+        {
+         "custom": {
+          "enabled": false,
+          "formula": ""
+         },
+         "number": 1,
+         "denomination": 6,
+         "bonus": "",
+         "types": [
+          "fire"
+         ],
+         "scaling": {
+          "number": 1
+         }
+        }
+       ]
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "rend",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 10,
+      "types": [
+       "slashing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!dzOCj45n3twcxQJN.0Lk38KWXvUm5oHhq"
+  },
+  {
+   "_id": "J3jJnabD46K9vi2S",
+   "name": "Fire Breath (Young)",
+   "type": "feat",
+   "img": "icons/magic/fire/beam-jet-stream-embers.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "pFoA8KC1rWdmGhRe": {
+      "_id": "pFoA8KC1rWdmGhRe",
+      "type": "save",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": "cone",
+        "size": "30"
+       },
+       "affects": {
+        "choice": false,
+        "type": "creature",
+        "count": "",
+        "special": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "damage": {
+       "parts": [
+        {
+         "custom": {
+          "enabled": false,
+          "formula": ""
+         },
+         "number": 16,
+         "denomination": 6,
+         "bonus": "",
+         "types": [
+          "fire"
+         ],
+         "scaling": {
+          "number": 1
+         }
+        }
+       ],
+       "onSave": "half"
+      },
+      "save": {
+       "ability": [
+        "dex"
+       ],
+       "dc": {
+        "calculation": "con",
+        "formula": ""
+       }
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "max": "1",
+     "recovery": [
+      {
+       "period": "recharge",
+       "formula": "5",
+       "type": "recoverAll"
+      }
+     ]
+    },
+    "description": {
+     "value": "<p><em>Dexterity Saving Throw:</em> each creature in a 30-foot Cone. <em>Failure:</em> [[/damage average]] damage. <em>Success:</em> Half damage.</p><p>The breath of a young dragon in a wyrmling's body. The first time it is used, every player at the table should recognise the number.</p>",
+     "chat": ""
+    },
+    "identifier": "fire-breath-young",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!dzOCj45n3twcxQJN.J3jJnabD46K9vi2S"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!dzOCj45n3twcxQJN"
+}

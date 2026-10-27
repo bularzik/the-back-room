@@ -1,0 +1,998 @@
+{
+ "_id": "o8uyxSXpkyQIfpGc",
+ "name": "Unicorn (The Cover)",
+ "type": "npc",
+ "img": "icons/creatures/mammals/horse-unicorn-white.webp",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 18,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 14,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 15,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 11,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 17,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 16,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {},
+  "attributes": {
+   "ac": {
+    "calc": "natural",
+    "flat": 12
+   },
+   "hp": {
+    "value": 97,
+    "max": 97,
+    "temp": null,
+    "tempmax": null,
+    "formula": "13d10 + 26"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 50,
+    "units": "ft",
+    "hover": false
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {
+     "darkvision": 60
+    }
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>On the monsters' side. It was in the Monster Manual, so it is a monster. It is confused about this, and its confusion does not slow it down.</p><p><strong>Tableau.</strong> Rearing beside the troll, horn lowered at the gap where the elf stood.</p>",
+    "public": ""
+   },
+   "alignment": "Lawful Good",
+   "type": {
+    "value": "celestial",
+    "subtype": "",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 5,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "lg",
+   "di": {
+    "value": [
+     "poison"
+    ],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [
+     "charmed",
+     "paralyzed",
+     "poisoned"
+    ],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "celestial",
+     "elvish",
+     "sylvan"
+    ],
+    "custom": "Celestial, Elvish, Sylvan; telepathy 60 ft."
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "Unicorn (The Cover)",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": -1,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 2,
+  "height": 2,
+  "texture": {
+   "src": "icons/creatures/mammals/horse-unicorn-white.webp",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "TIydqE9EE3uPmBu1",
+   "name": "Still Fighting 1977",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} is frozen mid-battle and has the Incapacitated condition until a creature enters the gap it is fighting.</p>",
+     "chat": ""
+    },
+    "identifier": "still-fighting-1977",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.TIydqE9EE3uPmBu1"
+  },
+  {
+   "_id": "eiUlhVhHhDdHKdbZ",
+   "name": "Wrong Side",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster}'s Healing Touch and Shimmering Shield can target only the other five monsters of the Cover. It will not heal a character under any circumstances, and does not understand why anyone would ask.</p>",
+     "chat": ""
+    },
+    "identifier": "wrong-side",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.eiUlhVhHhDdHKdbZ"
+  },
+  {
+   "_id": "bO4fjPeZy5mdSDoT",
+   "name": "Multiattack",
+   "type": "feat",
+   "img": "icons/skills/melee/strike-weapons-orange.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "ffloBY0D081Rd7A5": {
+      "_id": "ffloBY0D081Rd7A5",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} makes one Hooves attack and one Radiant Horn attack.</p>",
+     "chat": ""
+    },
+    "identifier": "multiattack",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.bO4fjPeZy5mdSDoT"
+  },
+  {
+   "_id": "X6Q7ju6DcfmyLvWI",
+   "name": "Hooves",
+   "type": "weapon",
+   "img": "icons/creatures/mammals/horse-hooves-blue.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "IXw1Q5Oc2TDh10d5": {
+      "_id": "IXw1Q5Oc2TDh10d5",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "hooves",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 2,
+      "denomination": 6,
+      "types": [
+       "bludgeoning"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.X6Q7ju6DcfmyLvWI"
+  },
+  {
+   "_id": "3cUCRmadPMxNpt7s",
+   "name": "Radiant Horn",
+   "type": "weapon",
+   "img": "icons/magic/light/beam-rays-yellow.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "SIDHs4HQHqR1SULN": {
+      "_id": "SIDHs4HQHqR1SULN",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": [
+        {
+         "custom": {
+          "enabled": false,
+          "formula": ""
+         },
+         "number": 2,
+         "denomination": 8,
+         "bonus": "",
+         "types": [
+          "radiant"
+         ],
+         "scaling": {
+          "number": 1
+         }
+        }
+       ]
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "radiant-horn",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 8,
+      "types": [
+       "piercing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 500000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.3cUCRmadPMxNpt7s"
+  },
+  {
+   "_id": "KfTF8ruDzil8BGtB",
+   "name": "Healing Touch",
+   "type": "feat",
+   "img": "icons/magic/life/heart-cross-green.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "SsnKPi00dzOWqUxJ": {
+      "_id": "SsnKPi00dzOWqUxJ",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "max": "3",
+     "recovery": [
+      {
+       "period": "day",
+       "type": "recoverAll"
+      }
+     ]
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} touches one other monster of the Cover, which regains [[/heal 2d8+2]] Hit Points.</p>",
+     "chat": ""
+    },
+    "identifier": "healing-touch",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 600000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.KfTF8ruDzil8BGtB"
+  },
+  {
+   "_id": "9GjBfDB6ljfkqEFN",
+   "name": "Shimmering Shield",
+   "type": "feat",
+   "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "wPC2tNdPv7ravh9b": {
+      "_id": "wPC2tNdPv7ravh9b",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "bonus",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "max": "3",
+     "recovery": [
+      {
+       "period": "day",
+       "type": "recoverAll"
+      }
+     ]
+    },
+    "description": {
+     "value": "<p>The [[lookup @name lowercase]]{monster} grants one other monster of the Cover within 60 feet a +2 bonus to Armor Class until the start of the unicorn's next turn.</p>",
+     "chat": ""
+    },
+    "identifier": "shimmering-shield",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 700000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.9GjBfDB6ljfkqEFN"
+  },
+  {
+   "_id": "BhSSzJ6VAD18lTFL",
+   "name": "Charge",
+   "type": "feat",
+   "img": "icons/skills/movement/arrow-upward-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {
+     "tP3sIpsOT6WsLomL": {
+      "_id": "tP3sIpsOT6WsLomL",
+      "type": "utility",
+      "name": "Use",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "roll": {
+       "prompt": false,
+       "visible": false
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>If the [[lookup @name lowercase]]{monster} moves at least 20 feet straight toward a target and then hits it with Radiant Horn, the target takes an extra [[/damage 2d8 piercing]] and must succeed on a DC 15 Strength saving throw or have the Prone condition.</p>",
+     "chat": ""
+    },
+    "identifier": "charge",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 800000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!o8uyxSXpkyQIfpGc.BhSSzJ6VAD18lTFL"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!o8uyxSXpkyQIfpGc"
+}
