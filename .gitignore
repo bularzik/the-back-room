@@ -4,3 +4,7 @@ dist/
 .validate/
 __pycache__/
 .DS_Store
+
+# Dungeondraft exports (source for tools/import_dd2vtt.py)
+dd2vtt/
+validate-tmp/

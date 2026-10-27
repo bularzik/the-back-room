@@ -1,12 +1,15 @@
 {
-  "id": "the-interstice",
-  "title": "The Interstice: A Liminal Descent",
-  "description": "<p>A Backrooms-inspired liminal-horror adventure for D&amp;D 5e (2024 rules), levels 5\u20138. Includes four scenes, ten actors, journals, handouts, roll tables and original ambient audio.</p>",
-  "version": "1.1.0",
-  "url": "https://github.com/bularzik/the-interstice",
-  "manifest": "https://github.com/bularzik/the-interstice/releases/latest/download/module.json",
-  "download": "https://github.com/bularzik/the-interstice/releases/download/v1.1.0/module.zip",
+  "id": "the-back-room",
+  "title": "The Back Room",
+  "description": "<p>A Backrooms-inspired liminal-horror adventure for D&amp;D 5e (2024 rules), levels 5\u20138: the party beds down in a tavern back room and never leaves it. Scenes, actors, journals, handouts, roll tables and ambient audio, with Monk's Active Tile Triggers automation.</p>",
+  "version": "2.0.0",
+  "url": "https://github.com/bularzik/the-back-room",
+  "manifest": "https://github.com/bularzik/the-back-room/releases/latest/download/module.json",
+  "download": "https://github.com/bularzik/the-back-room/releases/download/v2.0.0/module.zip",
   "authors": [
+    {
+      "name": "Dan Bularzik"
+    },
     {
       "name": "Generated with Claude"
     }
@@ -33,15 +36,15 @@
         "compatibility": {
           "minimum": "14.01"
         },
-        "reason": "Scene automation: teleports, looping rooms, lights-out events, scene transitions and the Guest Pass check."
+        "reason": "Scene automation: random Corridor doors, fog resets, the X door, the Corridor Between loop, the Room 4 exit and GM controls."
       }
     ]
   },
   "packs": [
     {
-      "name": "the-interstice",
-      "label": "The Interstice (Adventure)",
-      "path": "packs/the-interstice",
+      "name": "the-back-room",
+      "label": "The Back Room (Adventure)",
+      "path": "packs/the-back-room",
       "type": "Adventure",
       "system": "dnd5e",
       "ownership": {
@@ -50,9 +53,9 @@
       }
     },
     {
-      "name": "interstice-bestiary",
-      "label": "The Interstice: Bestiary",
-      "path": "packs/interstice-bestiary",
+      "name": "back-room-bestiary",
+      "label": "The Back Room: Bestiary",
+      "path": "packs/back-room-bestiary",
       "type": "Actor",
       "system": "dnd5e",
       "ownership": {
@@ -63,12 +66,12 @@
   ],
   "packFolders": [
     {
-      "name": "The Interstice",
+      "name": "The Back Room",
       "sorting": "m",
-      "color": "#7a6a2a",
+      "color": "#27413b",
       "packs": [
-        "the-interstice",
-        "interstice-bestiary"
+        "the-back-room",
+        "back-room-bestiary"
       ]
     }
   ],
