@@ -130,15 +130,27 @@ GM-only **Reveal** tile that restores fog and real scene names for Room 5.
       repo; delete v1 leftovers (`tools/maps.py`, `tile_art.py`, `tokens.py`, `audio.py`, v1 `maps/`, `tiles/`,
       `tokens/`, `audio/`); draw v2 token art (actors use core icons for now); render v2 audio (playlists reference
       `ambience-tavern/corridor/reading-room` and `sting-door/x-door/footsteps`, which don't exist yet); GM tile
-      images `tiles/gm-*.webp`, `x-door.webp`. `npm run validate` will fail on those missing assets until then.
+      images `tiles/gm-*.webp`, `x-door.webp`. `npm run validate` now passes.
 - [ ] Verify the six Cover stat blocks against the 2024 Monster Manual (numbers were written from memory)
-- [ ] Check in Foundry that MATT's teleport picks randomly among comma-joined destinations (the pool doors rely on it)
-      and that the `resetfog` action name is right; the visit counter is a GM whisper, not a variable
-- [ ] Maps: backroom · common-room · corridor-between · hoard · c1–c8
+- [x] MATT behaviour verified in Foundry (see above); the visit counter is a GM whisper, not a variable
+- [x] Maps: all 13 built in Dungeondraft campaign `BackRoom` (2026-10-27), exported to `dd2vtt/`, imported to
+      `maps/` + `tools/maps.json` with rects/notes/start. Build = 29 scenes, 360 tiles; `validate` passes.
+      Validate must run from a copy OUTSIDE the mounted folder (`~/vrun`): node's cpSync fails with EACCES on
+      the mount. Dungeondraft needs a restart if screenshots/exports come back blank white.
 - [ ] Journals: overview, Corridor rules, Remnant rules + template, Rooms 1–5, Corridor pool, handouts (the X map, the toothless key)
 - [ ] Actors: 3 fallback Remnants, The Cover's six (Rogue With a Tragic Past, Barbarian Who Is Just Strong, Wizard Who Misread the Spell), the barkeep, the hooded stranger, the echo
-- [ ] MATT tiles: Corridor door → random pool scene (never the one left), visit counter, Room 3 loop, Room 4 exit
-- [ ] Audio: swap v1 ambience for tavern/corridor loops
+- [x] MATT tiles generated and TESTED in Foundry World B (2026-10-27): back-room night door → random pool copy,
+      arrival whisper + fog reset, pool door → another copy, GM X-door control, X door → Common Room, Room 3 segment
+      doors. Lessons baked into `matt.py`: multi-destination teleport = `location` as a LIST of {id,name}; a
+      cross-scene teleport CREATES the token, so arrival tiles need trigger `["create","enter"]`; same-scene
+      teleports don't fire tiles (segment arrivals are markers only).
+- Deploy to the test world: shut the world down (`game.shutDown()`), THEN copy `packs/` into
+  `~/FoundryVTT-14.369/Data/Data/modules/the-back-room/`, relaunch, delete the old import, re-import. Copying
+  packs while the world is running corrupts the copy. Monk's Active Tile Triggers 14.01 is installed there now.
+- Untested in Foundry: Loop Break, Room 4 exit, Cover gaps, the Cellar/Cover GM controls (same primitives).
+- [x] Audio: synthesised placeholders `ambience-tavern/corridor/reading-room.ogg`, `sting-door.ogg`,
+      `sting-x-door.ogg` (numpy + ffmpeg; replace with real loops when there are some)
+- [x] GM tile images `tiles/gm-*.webp` + `tiles/x-door.webp` (Pillow)
 - [ ] Smoke test rewritten; v2.0.0 released
 
 ## Vistas (roleplay scene images), pipeline settled 2026-10-26

@@ -21,6 +21,7 @@ TOKEN = {"id": "token", "name": "Triggering Token"}
 PLAYERS = {"id": "players", "name": "Players"}
 POOL = ["c1-stairwell", "c2-stable", "c3-inn-hallway", "c4-campfire", "c5-market", "c6-ferry", "c7-crossroads", "c8-cellar"]
 COPIES = ("a", "b", "c")
+ARRIVE = ["create", "enter"]   # a cross-scene teleport CREATES the token on the destination scene; "enter" alone never fires
 BAND_MSG = ("<strong>Corridor entry.</strong> Tick the visit counter. Cue bands: 1–2 nothing · 3–4 sound · 5–6 glimpse "
             "(The Cover from a pool door in 3–6) · 7+ a Remnant. Apply the library step for this copy.")
 
@@ -57,10 +58,13 @@ def chat(text, to="gm", flavor="", speaker=None):
 def sound(file, to="everyone", vol="0.8"):
     return ("playsound", {"audiofile": f"{AUD}/{file}.ogg", "audiofor": to, "volume": vol, "loop": False, "fade": 0.25, "scenerestrict": False, "prevent": False, "delay": False, "playlist": True})
 def teleport(dest_uuids, entity=TOKEN, position="random", cross=True):
-    """MATT picks one destination at random when several are listed (comma-joined)."""
-    ids = ",".join(dest_uuids) if isinstance(dest_uuids, (list, tuple)) else dest_uuids
-    return ("teleport", {"entity": entity, "location": {"id": ids, "name": "Destination"}, "position": position,
-                         "remotesnap": True, "animatepan": cross, "triggerremote": False, "deletesource": cross,
+    """MATT takes one location {id, name} or a LIST of them, and picks one at random from a list."""
+    if isinstance(dest_uuids, (list, tuple)):
+        loc = [{"id": u, "name": "Destination"} for u in dest_uuids] if len(dest_uuids) != 1 else {"id": dest_uuids[0], "name": "Destination"}
+    else:
+        loc = {"id": dest_uuids, "name": "Destination"}
+    return ("teleport", {"entity": entity, "location": loc, "position": position,
+                         "remotesnap": True, "animatepan": cross, "triggerremote": cross, "deletesource": cross,
                          "preservesettings": True, "avoidtokens": True, "colour": ""})
 def activate(uuids, state, collection="tiles"):
     return ("activate", {"entity": {"id": ",".join(uuids) if isinstance(uuids, list) else uuids, "name": "Targets"}, "collection": collection, "activate": state})
@@ -105,7 +109,7 @@ def build_tiles(ctx):
         for i in (1, 2, 3):
             r = rect(key, f"arrive{i}") if i < 3 else R.get(key, {}).get("arrive3")  # arrive3 is optional
             if r:
-                tb.tile(f"arrive{i}", r, [resetfog(), chat(BAND_MSG), scroll("You don't remember this door.")], active=True, pertoken=False, name=f"Arrival {i} (fog reset + visit whisper)")
+                tb.tile(f"arrive{i}", r, [resetfog(), chat(BAND_MSG), scroll("You don't remember this door.")], trigger=ARRIVE, active=True, pertoken=False, name=f"Arrival {i} (fog reset + visit whisper)")
         xd = R.get(key, {}).get("xdoor")
         for i in (1, 2, 3):
             r = rect(key, f"door{i}") if i < 3 else R.get(key, {}).get("door3")  # door3 is optional
@@ -134,7 +138,7 @@ def build_tiles(ctx):
     # ======================= ROOM 1 / ROOM 5: THE BACK ROOM =======================
     if present("backroom"):
         tb = builders["backroom"]; key = "backroom"
-        if (r := rect(key, "landing")): tb.tile("landing", r, active=False, name="Arrival (Room 5)")
+        if (r := rect(key, "landing")): tb.tile("landing", r, [scroll("Dawn under the door.")], trigger=ARRIVE, active=True, name="Arrival (Room 5)")
         for name, text in (("stairwell", "Too many steps."), ("loft", "Hay, and under it, the sound of horses.")):
             if (r := rect(key, name)):
                 tb.tile(name, r, [scroll(text), teleport(pool_destinations(None))] if pool_keys else [chat("Pool not built yet.")], name=f"Night door: {name} → Corridor pool")
@@ -147,7 +151,7 @@ def build_tiles(ctx):
     # ======================= ROOM 2: THE COMMON ROOM =======================
     if present("common-room"):
         tb = builders["common-room"]; key = "common-room"
-        if (r := rect(key, "stairs")): tb.tile("stairs", r, [scroll("Nobody is looking at you.")], active=True, pertoken=True, name="Arrival")
+        if (r := rect(key, "stairs")): tb.tile("stairs", r, [scroll("Nobody is looking at you.")], trigger=ARRIVE, active=True, pertoken=True, name="Arrival")
         if "Handout: The X Map" in H and (r := rect(key, "remnant")):
             tb.tile("remnant", r, [journal(H["Handout: The X Map"]), chat("The Remnant has handed over the map. The X door may now appear in the Corridors (GM: Reveal the X door, in any pool scene).", to="gm"), deactivate_self()],
                     trigger="click", name="The Remnant's table (click when the Signature is said)")
@@ -159,7 +163,7 @@ def build_tiles(ctx):
     if present("corridor-between"):
         tb = builders["corridor-between"]; key = "corridor-between"
         for i in range(1, 7):
-            if (r := rect(key, f"arrive{i}")): tb.tile(f"arrive{i}", r, active=False, name=f"Segment {i} arrival")
+            if (r := rect(key, f"arrive{i}")): tb.tile(f"arrive{i}", r, [scroll("The same corridor.")] if i > 1 else [], trigger=ARRIVE, active=i > 1, name=f"Segment {i} arrival")
         for i in range(1, 7):
             if (r := rect(key, f"seg{i}")):
                 nxt = tb.tuuid(f"arrive{min(i + 1, 6)}") if i < 6 else tb.tuuid("arrive1")
@@ -178,7 +182,7 @@ def build_tiles(ctx):
     # ======================= ROOM 4: THE HOARD =======================
     if present("hoard"):
         tb = builders["hoard"]; key = "hoard"
-        if (r := rect(key, "arrive")): tb.tile("arrive", r, [scroll("Dice on the table. Warm.")], pertoken=True, name="Arrival through the glass doors")
+        if (r := rect(key, "arrive")): tb.tile("arrive", r, [scroll("Dice on the table. Warm.")], trigger=ARRIVE, pertoken=True, name="Arrival through the glass doors")
         if (r := rect(key, "doors")):
             back = builders["backroom"].tuuid("landing") if present("backroom") and rect("backroom", "landing") else None
             tb.tile("doors", r, [sound("sting-door"), teleport(back)] if back else [chat("Room 1/5 not built yet.")], active=False, name="Exit → The Back Room, Again (armed by GM)")
@@ -189,7 +193,7 @@ def build_tiles(ctx):
     # ======================= THE COVER =======================
     if present("cover-cavern"):
         tb = builders["cover-cavern"]; key = "cover-cavern"
-        if (r := rect(key, "mouth")): tb.tile("mouth", r, [resetfog(), scroll("They are fighting nobody.")], name="Arrival (cave mouth)")
+        if (r := rect(key, "mouth")): tb.tile("mouth", r, [resetfog(), scroll("They are fighting nobody.")], trigger=ARRIVE, name="Arrival (cave mouth)")
         for mon in ("dragon", "unicorn", "centaur", "troll", "roper", "owlbear"):
             if (r := rect(key, f"gap-{mon}")):
                 tb.tile(f"gap-{mon}", r, [chat(f"<strong>A gap was stepped into.</strong> The {mon} wakes — and only the {mon}. Roll its initiative; it acts right after the character that woke it.", to="gm"),
