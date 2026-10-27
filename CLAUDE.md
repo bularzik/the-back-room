@@ -109,8 +109,23 @@ GM-only **Reveal** tile that restores fog and real scene names for Room 5.
 ## Conventions
 
 - Python 3, Pillow/numpy for tools; `pip install pillow numpy scipy`, `ffmpeg` for audio.
-- Keep v1's doc style for journals: GM text in `<p>`, read-aloud in `<blockquote>`,
-  keyed areas as `A1.`-style headings; handouts in their own folder.
+- Journals are **Monk's Enhanced Journal** entries, and the journal folder is a **Campaign Companion**
+  campaign (both are required dependencies in module.json). `journal.py` still writes plain (name, pages)
+  content; `build.py` turns it into MEJ entries: one `text` page per entry with
+  `flags["monks-enhanced-journal"] = {type, ...defaults, ...data}` and the entry flag `{pagetype, img}`.
+  Types used: Rooms 1–5 and the eight Corridor places = `place` (attributes size/inhabitants, relationships
+  to the people in them); NPCs = `person` (attributes profession/voice/faction, `actor` link {id,uuid,name,img});
+  The Cover = `encounter` (`actors` keyed by actor id); The Remnants = `organization`; Follow the X = `quest`
+  (`objectives` keyed by id: content/available/status/done/required); guides, rules, Cast and handouts =
+  `journalentry`. Relationships are `{id, uuid:"JournalEntry.<id>", relationship, hidden, role?}` keyed by the
+  other entry's id. Sessions 1–3 are the companion's native page type `mej-campaign-companion.session`
+  (`system.recap`, `system.gmNotes`, `flags[CC].session`). The campaign = folder flag
+  `{campaign:{ownershipDefault:"none", defaultTimelineId}}` plus a shipped portal entry (page type
+  `mej-campaign-companion.campaign`, flag `campaignPortal:true`, NO MEJ pagetype flag on the entry or the
+  companion's guard refuses it) and a `— Timeline` journal (no pages, `flags[CC].timeline.timepoints`,
+  `core.sheetClass`). Verified in World B 2026-10-27: Place/Person/Encounter/Organization/Quest/Session sheets
+  open, Hub scopes to the campaign, portal and timeline import. The companion auto-links entry names on import.
+- GM text in `<p>`, read-aloud in `<blockquote>`, keyed areas as `A1.`-style headings; handouts in their own folder.
 - Never stat the Remnants as monsters; they are NPCs (see design doc).
 - One misremembered trope per Corridor scene. Two is a joke.
 

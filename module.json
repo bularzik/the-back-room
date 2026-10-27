@@ -30,6 +30,24 @@
     ],
     "requires": [
       {
+        "id": "monks-enhanced-journal",
+        "type": "module",
+        "manifest": "https://github.com/ironmonk108/monks-enhanced-journal/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "14.01"
+        },
+        "reason": "Every journal entry is an Enhanced Journal Place, Person, Encounter, Organization or Quest."
+      },
+      {
+        "id": "mej-campaign-companion",
+        "type": "module",
+        "manifest": "https://github.com/bularzik/mej-campaign-companion/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "0.26.0"
+        },
+        "reason": "The adventure's journal folder is a campaign with three Session pages."
+      },
+      {
         "id": "monks-active-tiles",
         "type": "module",
         "manifest": "https://github.com/ironmonk108/monks-active-tiles/releases/latest/download/module.json",
