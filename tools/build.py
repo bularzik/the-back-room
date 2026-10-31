@@ -179,9 +179,9 @@ journals.append({"_id": PORTAL_ID, "name": TITLE, "folder": F["JournalEntry"], "
 journals.append({"_id": TIMELINE_ID, "name": f"{TITLE} — Timeline", "folder": F["JournalEntry"], "sort": 50000, "ownership": {"default": 0}, "categories": [], "pages": [],
                  "flags": {CC: {"timeline": {"timepoints": []}}, "core": {"sheetClass": f"{CC}.TimelineJournalSheet"}}})
 # Sessions (Campaign Companion): recap is the players' shared text, GM notes carry the plan
-SESSIONS = [("Session 1", "Rooms 1–2 and two Corridors (visits 1–2). Ask each player, privately and before play, for their first character's name, class and the one thing everyone remembers. Play the tavern straight. End on the X map."),
+SESSIONS = [("Session 1", "Rooms 1–2 and two Corridors (visits 1–2). Play the Stickit Inn straight. One player will arrive late: their character is the last guest of the night and meets the party in the back room (Room 1, The Latecomer); if they arrive after the night event starts, they are the one who wakes. Fred the Fighter is the Remnant in Room 2. End on the X map."),
             ("Session 2", "Three or four Corridors (visits 3–6, including The Cover and the glimpse), then Room 3. Track every Misremembering change: who, what it was, what it is now."),
-            ("Session 3", "A Corridor at visit 7+ with a Remnant in it, Room 4, Room 5. Spell the stakes out at the top of round 3. Make staying a real temptation.")]
+            ("Session 3", "A Corridor at visit 7+ with Strider in it, Room 4, Room 5. In the Hoard, Rorvik arrives at the top of round 2: 'Sorry I'm late. What did I miss?' Spell the stakes out at the top of round 3. Make staying a real temptation. Close with The Last Word (Room 5), out of character.")]
 for i, (name, plan) in enumerate(SESSIONS):
     mej_entry(name, "session", "<p></p>", F["JournalEntry"], sort=nxt(), ownership=0, session={"number": i + 1, "gmNotes": f"<p>{plan}</p>"})
 

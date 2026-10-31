@@ -1,7 +1,7 @@
 """Adventure text for The Back Room. Each entry: (name, [(page_name, html, level)]). `L` resolves links at build time.
 Source of truth: docs/the-back-room.md and docs/corridor-pool.md. GM text in <p>, read-aloud in <blockquote>."""
 
-def box(t): return f'<blockquote class="read-aloud"><p><em>{t}</em></p></blockquote>'
+def box(*ts): return '<blockquote class="read-aloud">' + "".join(f"<p><em>{t}</em></p>" for t in ts) + "</blockquote>"
 def aside(title, body): return f'<aside class="notable"><h4>{title}</h4>{body}</aside>'
 def ul(*items): return "<ul>" + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
 def ol(*items): return "<ol>" + "".join(f"<li>{i}</li>" for i in items) + "</ol>"
@@ -100,6 +100,10 @@ def build(L):
                                    "<strong>A3. The shelves.</strong> Provisions, with the party's receipts tucked under the crocks. Behind the far unit, a door nobody has noticed yet.",
                                    "<strong>A4. The window.</strong> Small, four panes. One of them is coloured.",
                                    "<strong>A5. The stone.</strong> In the corner by the chest: a stone with a hilt in it."))),
+        ("The Latecomer", "<h2>The Latecomer</h2>" + P(
+            f"At this table one player usually arrives late (the player whose first character is {A('remnant-rorvik')}), and session one will be no different. Plan for it rather than around it: their character is the last guest of the night at the Stickit Inn, and the rest of the party meets them in the back room.")
+         + box("Footsteps on the stairs, and a second light. Barnaby comes up with a candle and someone behind him, travel-stained, apologising. 'One more for the road, if you'll have them. Came in on the last of the light.' The last cot, you notice, was already made up.")
+         + P("Run the introductions by lantern light, in character, as the others are bedding down; the newcomer has heard about the job from the stranger downstairs and is in. If the player arrives after the night event has begun, they are the one who wakes: they arrive in the dark, Barnaby is not with them, and the lantern is already lit. A late arrival is the best possible way into this adventure."), 2),
         ("The Night Event", "<h2>The Night Event (the Insomnia Rule)</h2>" + P("Someone wakes. Pick the character whose player is most likely to get up and look.")
          + box("The lantern is lit. Nobody lit it. The door to the landing is open a hand's width and the stairs beyond it are stone, going down — the stairs you came up, but too many of them, and no light at the bottom where the common room should be.")
          + P("Behind the shelves (A3), a second door nobody noticed: it opens into the <strong>hayloft</strong> over the stable, with a ladder down. This is how the storeroom connects to the yard; it also seeds the Stable in the Corridor pool, and it is the <em>riddle door</em> (see the Corridor Pool, Stable).",
@@ -151,12 +155,15 @@ def build(L):
          + aside("Keyed areas", ul("<strong>D1. The glass doors.</strong> The party enters through them. They are the exit, later.",
                                    "<strong>D2. The armchairs.</strong> The hoard. Dice on the table, warm.",
                                    "<strong>D3. The portrait.</strong> The tower, between the arches.",
-                                   "<strong>D4. The inner room.</strong> Bookshelves of half-page books. The Remnants.",
+                                   "<strong>D4. The inner room.</strong> Bookshelves of half-page books. The Remnants, and one empty chair.",
                                    "<strong>D5. The windows.</strong> Dawn. The same dawn as Room 5."))),
         ("The Antagonist", "<h2>The Antagonist's Motive</h2>" + P(
-            "The Remnants are all here, the full first party. They have been waiting for the boss. They think the party <em>is</em> the boss, or the rescue, or the sequel — it changes mid-sentence. What they want is simple and sympathetic: for the session to not end. They were never given an ending; they are offering the party the same.")
+            "The Remnants are here, the full first party, all but one: Rorvik's chair is empty. They have been waiting for the boss. They think the party <em>is</em> the boss, or the rescue, or the sequel — it changes mid-sentence. What they want is simple and sympathetic: for the session to not end. They were never given an ending; they are offering the party the same.")
          + "<h2>The Fight That Can't Be Won</h2>" + P(
-            "Remnants have max HP and their Signature always works. Dropped to 0, a Remnant stands up at the start of its next turn in the same pose it fell in. Beating them rebuilds the room (the load-bearing boss, in reverse). Spell the stakes out at the top of round 3: the players should <em>understand</em> that winning is the loop.")
+            "Remnants have max HP and their Signature always works. Dropped to 0, a Remnant stands up at the start of its next turn in the same pose it fell in. Beating them rebuilds the room (the load-bearing boss, in reverse). Spell the stakes out at the top of round 3: the players should <em>understand</em> that winning is the loop.",
+            f"<strong>Rorvik is late.</strong> {A('remnant-rorvik')} is not in the room when the fight begins. At the top of round 2 the inner room's double doors bang open and he strides in, longsword already out:")
+         + box("'Sorry I'm late. What did I miss?'")
+         + P("From that round on he acts first, every round, as if he had been there all along. (His player will know exactly why.)")
          + "<h2>How It Actually Ends</h2>" + P(
             "The glass double doors the party came in by (D1) now lead back the way they came — the first time in the adventure that's been true. Combat ends the moment a character walks through them without looking back. Remnants will not follow. They will call after the party by the players' real character names from Room 1, and then by the <em>first</em> characters' names, and then stop. The Room 4 Exit tile sends the party to Room 5."), 2),
     ]))
@@ -171,6 +178,12 @@ def build(L):
          + ul("<strong>Leave.</strong> The job the stranger offered is real and ordinary. Each character permanently loses one misremembered thing (the detail that changed in Room 3 stays changed) and gains the level-up and a boon of the GM's choice tied to what they left behind in Room 3. The Remnants are gone; the players may say their first characters' names one last time if they want to.",
               "<strong>Stay.</strong> The campaign ends here, and it is allowed to be a good ending. Every session is session one. Tell the players that in those words.")
          + aside("The twist, for the GM only", P("The back room is still there, under every tavern the party ever starts in. Any future campaign at this table can open with the barkeep setting out a tray.")), 2),
+        ("The Last Word", "<h2>The Last Word</h2>" + P("Whichever way the party chose, close the campaign out of character: put the dice down, look up from the screen, and say this to the players, not their characters. If the party stayed, it lands harder: the characters stay in the back room; the players go home.")
+         + box("Over the years, this game has been our interstice: our liminal space. We pause our busy lives, the ones where we hurtle from one thing to the next, and make room around a table to weave stories about things that don't exist.",
+               "After tonight it's back to the real world, and whatever the next destination is, good or bad.",
+               "There have been times when being in the back room, playing this game, was better than real life. There have been times, I think, when all of us thought it might be better just to stay in that back room.",
+               "But our time here is done now. Time to go back.")
+         + P("Then stop. Don't recap, and don't explain the ending. Let the table sit with it, and let whoever wants to say their first character's name one last time say it."), 2),
     ]))
 
     # ------------------------------------------------------------------ 07 CORRIDOR POOL

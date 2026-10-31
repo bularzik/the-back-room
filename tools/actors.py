@@ -307,6 +307,7 @@ def build_npcs():
                 "Hothead", "Rorvik always acts first, in every round, before anyone rolls initiative. Once per round his first Longsword attack hits without a roll, and a crackle of half-remembered magic runs down the blade: [[/damage 1d8+3 slashing]] plus [[/damage 3d6 force]]. He can then slip away up to his Speed without provoking Opportunity Attacks: a thief's exit from a fight he started.",
                 "Nobody remembers his adventures, and neither does he: his player was usually the one running the game, so Rorvik spent most of his life waiting for a turn. He asks, every few minutes, whether it is his turn yet. He cannot let an insult go: anyone who mocks him has his complete attention, and the Remnant rule that it never attacks first does not survive being called a coward.",
                 "A half-elven magic-user and thief with a longsword he was never strictly allowed to carry, a short fuse, and the restless energy of someone who has been sitting on the side of the table for forty years.", subtype="half-elf")
+    m.trait("Sorry I'm Late", P("In the Hoard, Rorvik is not there when the fight begins. At the top of round 2 the inner room's double doors bang open and he strides in, longsword out: 'Sorry I'm late. What did I miss?' From then on Hothead applies as normal: he acts first, every round, as if he had been there all along."))
     m.attack("Longsword", 1, 8, "slashing", "dex", img="icons/weapons/swords/sword-guard-purple.webp")
     out["remnant-rorvik"] = m
 
