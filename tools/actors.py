@@ -266,41 +266,41 @@ def build_npcs():
         m.trait("Cannot Follow", P("It cannot leave a room through a door the party came through. That is the only hard limit on it, and it is the exit mechanic for Room 4."))
         return m
 
-    m = remnant("remnant-rogue", "The Rogue With a Tragic Past", "rogue", "rogue", 15, 44, "8d8 + 8", (10, 18, 12, 12, 10, 14),
+    m = remnant("remnant-rogue", "Raven Nightshade", "rogue", "rogue", 15, 44, "8d8 + 8", (10, 18, 12, 12, 10, 14),
                 "Sneak Attack, Always", "Once per round the Remnant's Sneak Attack applies, no roll and no conditions: its weapon attack hits and deals [[/damage 1d6+4 piercing]] plus [[/damage 3d6 piercing]], even in plain sight, even if the target is watching it.",
                 "Cannot say what the tragedy was. Gets upset when asked. If pressed three times it goes quiet and looks at the player whose first character it is not.",
-                "A hooded figure in dark leathers who says 'it's complicated' a great deal. Everyone at the table has played this character, or sat next to someone who did.")
+                "The Rogue With a Tragic Past: a hooded figure in dark leathers who says 'it's complicated' a great deal. Everyone at the table has played this character, or sat next to someone who did.")
     m.attack("Dagger", 1, 4, "piercing", "dex", rng=(20, 60), img="icons/weapons/daggers/dagger-simple-gray.webp")
     out["remnant-rogue"] = m
 
-    m = remnant("remnant-barbarian", "The Barbarian Who Is Just Strong", "barbarian", "barbarian", 14, 65, "10d12", (20, 12, 16, 6, 8, 8),
+    m = remnant("remnant-barbarian", "Grukk Skullsplitter", "barbarian", "barbarian", 14, 65, "10d12", (20, 12, 16, 6, 8, 8),
                 "Just Strong", "Every Strength check and Strength saving throw the Remnant makes is an automatic success. Once per round, one Greataxe attack hits without a roll for [[/damage 1d12+5 slashing]].",
-                "Has no name. Answers to any name given, and keeps it. The first name a character uses for it is its name for the rest of the adventure; write it on the token.",
-                "Enormous, cheerful, and holding a greataxe that is bigger than the rules allow. It is not angry. It has never been angry. It was just strong.")
+                "Its name is the only thing it remembers about itself, and it says it often, in the third person. Ask where it is from, who it travelled with or why it fights, and it says its name again, louder.",
+                "The Barbarian Who Is Just Strong: enormous, cheerful, and holding a greataxe that is bigger than the rules allow. It is not angry. It has never been angry. It was just strong.")
     m.attack("Greataxe", 1, 12, "slashing", "str", img="icons/weapons/axes/axe-double-engraved.webp")
     out["remnant-barbarian"] = m
 
-    m = remnant("remnant-wizard", "The Wizard Who Misread the Spell", "wizard", "wizard", 12, 38, "8d6 + 8", (8, 14, 12, 18, 10, 12),
+    m = remnant("remnant-wizard", "Mordecai the Magnificent", "wizard", "wizard", 12, 38, "8d6 + 8", (8, 14, 12, 18, 10, 12),
                 "One Fireball, Forever", "The Remnant can cast <em>fireball</em> at will. It always hits every target in the 20-foot-radius Sphere for [[/damage 8d6 fire]]; there is no saving throw. It has no other spells, and it will tell you otherwise.",
                 "Has no other spells prepared and insists it does. If asked to cast anything else it begins the gestures, frowns, and casts fireball.",
-                "Robes, a staff, a spellbook with one page in it. The page is very well thumbed.")
+                "The Wizard Who Misread the Spell: robes, a staff, a spellbook with one page in it. The page is very well thumbed.")
     m.attack("Staff", 1, 6, "bludgeoning", "str", img="icons/weapons/staves/staff-simple.webp")
     out["remnant-wizard"] = m
 
-    m = Monster("barkeep", "The Barkeep", 0, "med", "humanoid", "Neutral", 10, 9, "2d8", (12, 10, 11, 10, 14, 15), {"walk": 30}, TK["barkeep"],
+    m = Monster("barkeep", "Barnaby Stickit", 0, "med", "humanoid", "Neutral", 10, 9, "2d8", (12, 10, 11, 10, 14, 15), {"walk": 30}, TK["barkeep"],
                 disposition=1, ac_calc="flat", languages="Common", lang_values=("common",), subtype="human",
-                bio=P("Kind. Tired in a way that is not unhappy. He led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.",
+                bio=P("Keeper of the Stickit Inn, as his father was. Kind. Tired in a way that is not unhappy. He pours the house cider with a heavy hand, led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.",
                       "<strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.",
                       "<strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning."))
-    m.trait("Not a Fight", P("The Barkeep never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning."))
+    m.trait("Not a Fight", P("Barnaby never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning."))
     m.trait("He Knows", P("Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table: pick it from the sheet before the session. With nothing on the sheet to use, he asks after the character by the name the player almost gave them."))
     out["barkeep"] = m
 
-    m = Monster("stranger", "The Hooded Stranger", 0, "med", "humanoid", "Neutral", 11, 13, "3d8", (10, 12, 11, 13, 12, 14), {"walk": 30}, TK["stranger"],
+    m = Monster("stranger", "Kael Shadowmere", 0, "med", "humanoid", "Neutral", 11, 13, "3d8", (10, 12, 11, 13, 12, 14), {"walk": 30}, TK["stranger"],
                 disposition=0, ac_calc="flat", languages="Common", lang_values=("common",), subtype="human",
-                bio=P("A hooded stranger in the corner booth with a job. Play it completely straight: the job is real, the pay is fair, the directions are good.",
+                bio=P("A hooded stranger in the corner booth of the Stickit Inn, with a job and an untouched mug of cider. He gives his name as Kael Shadowmere, as if anyone could keep a straight face. Play it completely straight: the job is real, the pay is fair, the directions are good.",
                       "<strong>Room 2.</strong> There is a hooded stranger in every booth, and every one of them is a role, repeating the hook word for word. None of them is the Remnant.",
-                      "<strong>Room 5.</strong> The stranger's voice rises from the common room below, asking the barkeep whether the party is up yet. The job is still there."))
+                      "<strong>Room 5.</strong> The stranger's voice rises from the common room below, asking Barnaby whether the party is up yet. The job is still there."))
     m.trait("The Hook", P("The stranger offers a plain, ordinary job: ride guard on a wagon of lamp oil over the Kettle Pass to Thistlecross, three days, forty gold a head, half tonight, leaving at first light (the handout <em>The Job</em>). It is never a trick, and if the party leaves at the end, it is still there to be done."))
     out["stranger"] = m
     return out

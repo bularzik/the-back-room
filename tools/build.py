@@ -35,10 +35,22 @@ missing = [k for k in SCENE_KEYS if k not in built]
 if missing: print("  scenes not yet mapped (skipped):", ", ".join(sorted(set(m.rsplit('-', 1)[0] if m not in FIXED else m for m in missing))))
 
 table_ids = {"pool": uid("table", "pool"), "cues": uid("table", "cues")}
-F = {t: uid("folder", t) for t in ("JournalEntry", "Handouts", "Actor", "Actor-npc", "Scene", "Scene-pool", "Playlist", "RollTable")}
+F = {t: uid("folder", t) for t in ("JournalEntry", "Handouts", "Actor", "Actor-npc", "Scene", "Scene-pool", "Scene-vista", "Playlist", "RollTable")}
+# Vistas: painted, gridless roleplay scenes (vistas/<key>.webp) shown to the players on arrival; also the Place pages' pictures
+VISTAS = {"backroom": "The Back Room", "common-room": "The Common Room", "corridor-between": "The Corridor Between", "hoard": "The Hoard", "cover-cavern": "The Cover"}
+vista_id = lambda key: uid("scene", "vista-" + key)
+vista_src = lambda key: f"{MOD}/vistas/{key}.webp"
+ROOM_VISTA = {"Room 1: The Back Room": "backroom", "Room 2: The Common Room That Isn't": "common-room", "Room 3: The Corridor Between": "corridor-between",
+              "Room 4: The Hoard": "hoard", "Room 5: The Back Room, Again": "backroom"}
+def vista_box(key): return (f'<aside class="notable"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.{vista_id(key)}]{{the vista}} '
+                            f'(a painted view of the room, no grid), then pull them to the map.</p></aside>')
 
+PERSON_KEYS = ("barkeep", "stranger", "remnant-rogue", "remnant-barbarian", "remnant-wizard", "echo")   # NPCs with a Person page
+npc_name = lambda key: allactors[key].doc["name"]
 def L(kind, key, name=None):
     if kind == "actor":
+        # NPCs link to their Person page (which links the actor); monsters link to the actor
+        if key in PERSON_KEYS: return f"@UUID[JournalEntry.{uid('journal', npc_name(key))}]{{{name or npc_name(key)}}}"
         a = allactors[key]; return f"@UUID[Actor.{a.id}]{{{name or a.doc['name']}}}"
     if kind == "scene":
         return f"@UUID[Scene.{scene_ids[key]}]{{{name or SCENE_KEYS[key]}}}" if key in built else f"<em>{name or SCENE_KEYS[key]}</em>"
@@ -55,7 +67,7 @@ MEJ_DEFAULTS = {"person": {"relationships": {}, "attributes": {}}, "place": {"re
                 "encounter": {"items": {}, "actors": {}, "dcs": {}}, "organization": {"relationships": {}}, "journalentry": {}}
 journals, page_index, handout_ids = [], {}, {}
 jid_of = lambda name: uid("journal", name)
-def mej_entry(name, mtype, html, folder, data=None, ownership=0, sort=0, session=None):
+def mej_entry(name, mtype, html, folder, data=None, ownership=0, sort=0, session=None, src=None):
     jid = jid_of(name); pid = uid(jid, "page")
     if session:
         page = {"_id": pid, "name": name, "type": f"{CC}.session", "title": {"show": False, "level": 1}, "text": {"format": 1, "content": ""},
@@ -66,8 +78,8 @@ def mej_entry(name, mtype, html, folder, data=None, ownership=0, sort=0, session
     else:
         page = {"_id": pid, "name": name, "type": "text", "title": {"show": False, "level": 1}, "text": {"format": 1, "content": html},
                 "sort": 100000, "ownership": {"default": -1}, "flags": {MEJ: {"type": mtype, **MEJ_DEFAULTS.get(mtype, {}), **(data or {})}},
-                "image": {}, "video": {}, "src": None, "system": {}}
-        eflags = {MEJ: {"pagetype": mtype, "img": f"modules/monks-enhanced-journal/assets/{mtype}.png"}}
+                "image": {}, "video": {}, "src": src, "system": {}}
+        eflags = {MEJ: {"pagetype": mtype, "img": src or f"modules/monks-enhanced-journal/assets/{mtype}.png"}}
     page_index[name] = (jid, pid)
     journals.append({"_id": jid, "name": name, "pages": [page], "folder": folder, "sort": sort, "ownership": {"default": ownership}, "flags": eflags, "categories": []})
     return jid
@@ -90,14 +102,16 @@ mej_entry("00. The Back Room: Adventure Overview", "journalentry", join_pages(_e
 mej_entry("01. Rules of the Back Room", "journalentry", join_pages(_entries["01. Rules of the Back Room"]), F["JournalEntry"], sort=nxt())
 mej_entry("02. Automation (Monk's Active Tile Triggers)", "journalentry", matt.GM_GUIDE, F["JournalEntry"], sort=nxt())
 # The five rooms as Places; the people in them as townsfolk
-ROOM_PEOPLE = {"Room 1: The Back Room": ["The Barkeep", "The Hooded Stranger"], "Room 2: The Common Room That Isn't": ["The Hooded Stranger", "The Rogue With a Tragic Past"],
-               "Room 3: The Corridor Between": ["The Echo"], "Room 4: The Hoard": ["The Rogue With a Tragic Past", "The Barbarian Who Is Just Strong", "The Wizard Who Misread the Spell"],
-               "Room 5: The Back Room, Again": ["The Barkeep", "The Hooded Stranger"]}
+ROOM_PEOPLE = {r: [npc_name(k) for k in ks] for r, ks in {
+    "Room 1: The Back Room": ["barkeep", "stranger"], "Room 2: The Common Room That Isn't": ["stranger", "remnant-rogue"],
+    "Room 3: The Corridor Between": ["echo"], "Room 4: The Hoard": ["remnant-rogue", "remnant-barbarian", "remnant-wizard"],
+    "Room 5: The Back Room, Again": ["barkeep", "stranger"]}.items()}
 ROOM_SIZE = {"Room 1: The Back Room": "12×10 squares, upstairs", "Room 2: The Common Room That Isn't": "16×12 squares", "Room 3: The Corridor Between": "6 segments of 8×2 squares",
              "Room 4: The Hoard": "16×14 squares", "Room 5: The Back Room, Again": "12×10 squares, the same room"}
 for old in ["02. Room 1: The Back Room", "03. Room 2: The Common Room That Isn't", "04. Room 3: The Corridor Between", "05. Room 4: The Hoard", "06. Room 5: The Back Room, Again"]:
     name = old[4:]
-    mej_entry(name, "place", join_pages(_entries[old]), F["JournalEntry"], sort=nxt(),
+    vk = ROOM_VISTA[name]
+    mej_entry(name, "place", vista_box(vk) + join_pages(_entries[old]), F["JournalEntry"], sort=nxt(), src=vista_src(vk),
               data={"attributes": {"size": ROOM_SIZE[name], "inhabitants": ", ".join(ROOM_PEOPLE[name])},
                     "relationships": rels(*[rel(pn, role="in this room") for pn in ROOM_PEOPLE[name]])})
 # The Corridor pool: the rules as a journal entry, each place as a Place
@@ -111,24 +125,28 @@ for pname, html, *_ in pool_pages[1:]:
     POOL_PLACE[key] = name
     mej_entry(name, "place", html, F["JournalEntry"], sort=nxt(), data={"attributes": {"size": "one Dungeondraft map, three scene copies", "inhabitants": "nobody, until visit 7"}})
 # The Cover as an Encounter with its six monsters
-mej_entry("The Cover", "encounter", join_pages(_entries["08. The Cover (the Corridor fight)"]), F["JournalEntry"], sort=nxt(),
+mej_entry("The Cover", "encounter", vista_box("cover-cavern") + join_pages(_entries["08. The Cover (the Corridor fight)"]), F["JournalEntry"], sort=nxt(), src=vista_src("cover-cavern"),
           data={"actors": {allactors[k].id: actor_ref(k, quantity="1", hidden=False) for k in ("dragon", "unicorn", "centaur", "troll", "roper", "owlbear")}})
 # People: one Person per NPC, linked to its actor; the Remnants also belong to the organization
-PEOPLE = {"barkeep": ("The Barkeep", {"profession": "Tavern keeper", "voice": "Kind, tired in a way that is not unhappy", "faction": "The tavern"}),
-          "stranger": ("The Hooded Stranger", {"profession": "Quest-giver", "voice": "The hook, word for word", "faction": "Every booth"}),
+PEOPLE = {"barkeep": ("Innkeeper of the Stickit Inn", {"profession": "Innkeeper", "voice": "Kind, tired in a way that is not unhappy", "faction": "The Stickit Inn"}),
+          "stranger": ("The hooded stranger in the corner booth", {"profession": "Quest-giver", "voice": "The hook, word for word", "faction": "Every booth"}),
           "remnant-rogue": ("The Rogue With a Tragic Past", {"profession": "Rogue (someone's first character)", "voice": "'It's complicated.'", "faction": "The Remnants"}),
           "remnant-barbarian": ("The Barbarian Who Is Just Strong", {"profession": "Barbarian (someone's first character)", "voice": "Cheerful. Has never been angry.", "faction": "The Remnants"}),
           "remnant-wizard": ("The Wizard Who Misread the Spell", {"profession": "Wizard (someone's first character)", "voice": "Insists.", "faction": "The Remnants"}),
-          "echo": ("The Echo", {"profession": "A copy", "voice": "None", "faction": "The Corridor Between"})}
-for key, (name, attrs) in PEOPLE.items():
-    a = allactors[key]; rooms = [rn for rn, ppl in ROOM_PEOPLE.items() if name in ppl]
-    data = {"attributes": attrs, "actor": actor_ref(key), "relationships": rels(*[rel(rn, role="appears here") for rn in rooms], *([rel("The Remnants", relationship="member")] if attrs["faction"] == "The Remnants" else []))}
-    mej_entry(name, "person", a.doc["system"]["details"]["biography"]["value"], F["JournalEntry"], sort=nxt(), data=data)
+          "echo": ("A blank-faced copy", {"profession": "A copy", "voice": "None", "faction": "The Corridor Between"})}
+PERSON_LOCATION = {"barkeep": "The Stickit Inn", "stranger": "The Stickit Inn, corner booth", "remnant-rogue": "Room 2, then the Hoard",
+                   "remnant-barbarian": "The Hoard", "remnant-wizard": "The Hoard", "echo": "The Corridor Between"}
+for key, (role, attrs) in PEOPLE.items():
+    a = allactors[key]; name = npc_name(key); rooms = [rn for rn, ppl in ROOM_PEOPLE.items() if name in ppl]
+    # role/location fill the sheet's header; src is the portrait (MEJ sets it to the actor's image when an actor is linked by hand)
+    data = {"attributes": attrs, "actor": actor_ref(key), "role": role, "location": PERSON_LOCATION[key],
+            "relationships": rels(*[rel(rn, role="appears here") for rn in rooms], *([rel("The Remnants", relationship="member")] if attrs["faction"] == "The Remnants" else []))}
+    mej_entry(name, "person", a.doc["system"]["details"]["biography"]["value"], F["JournalEntry"], sort=nxt(), data=data, src=a.doc["img"])
 mej_entry("The Remnants", "organization", journal.P(
     "The first party: each player's first-ever D&D character, as the table misremembers them — overpowered, cooler than they were, one running joke swollen into a whole personality. They are not hostile. They want the game to keep going, forever, with the party in it.",
     "One appears in Room 2. One more surfaces in the Corridors at visit 7+. All of them are in Room 4. The three listed here are the fallbacks; the real ones are built from the players' answers to the one question asked before session one.")
     + "<h3>Rules</h3>" + journal.ul("Max hit points, never rolled.", "The Signature always works, once per round.", "Everything else is blank.", "It never attacks first.", "At 0 HP it stands back up in the pose it fell in.", "It cannot leave a room through a door the party came through."),
-    F["JournalEntry"], sort=nxt(), data={"relationships": rels(*[rel(n, relationship="member") for n in ("The Rogue With a Tragic Past", "The Barbarian Who Is Just Strong", "The Wizard Who Misread the Spell")])})
+    F["JournalEntry"], sort=nxt(), data={"relationships": rels(*[rel(n, relationship="member") for n in (npc_name("remnant-rogue"), npc_name("remnant-barbarian"), npc_name("remnant-wizard"))])})
 # The stated goal as a Quest
 mej_entry("Follow the X", "quest", journal.P("The map the Remnant hands over in Room 2 has an X on it. The X marks the way out. It moves when nobody looks at it. It points at the Hoard.",
     "The real goal, discovered in Rooms 4–5: the way out was the door they came in by. The stated goal was the thing keeping them from it."),
@@ -241,6 +259,17 @@ for i, key in enumerate(built):
                    "playlist": None, "playlistSound": None, "journal": jref, "journalEntryPage": None,
                    "weather": "", "folder": F["Scene-pool"] if is_pool else F["Scene"], "sort": (i + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
 
+for vi, (vk, vname) in enumerate(VISTAS.items()):
+    scenes.append({"_id": vista_id(vk), "name": f"Vista: {vname}", "navigation": False, "navOrder": 0, "navName": NAV_NAME.get(vk, ""), "active": False,
+                   "background": {"src": vista_src(vk)}, "foreground": None, "thumb": vista_src(vk), "width": 1536, "height": 1024, "padding": 0,
+                   "initial": {"x": 768, "y": 512, "scale": 0.6}, "backgroundColor": "#0b0a07",
+                   "grid": {"type": 0, "size": 100, "style": "solidLines", "thickness": 1, "color": "#000000", "alpha": 0, "distance": 5, "units": "ft"},
+                   "tokenVision": False, "fog": {"exploration": False, "reset": None, "overlay": None, "colors": {"explored": None, "unexplored": None}},
+                   "environment": {"darknessLevel": 0, "darknessLock": True, "globalLight": {"enabled": True}, "cycle": False},
+                   "drawings": [], "tokens": [], "lights": [], "notes": [], "sounds": [], "regions": [], "tiles": [], "walls": [],
+                   "playlist": None, "playlistSound": None, "journal": None, "journalEntryPage": None,
+                   "weather": "", "folder": F["Scene-vista"], "sort": (vi + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
+
 ctx = {"scene_ids": {k: scene_ids[k] for k in built}, "rects": {k: mapfor(k).get("rects", {}) for k in built}, "handouts": handout_ids,
        "table_uuid": {k: f"RollTable.{v}" for k, v in table_ids.items()}}
 tiles = matt.build_tiles(ctx)
@@ -254,6 +283,7 @@ folders = [
     {"_id": F["Actor-npc"], "name": "Back Room: People", "type": "Actor", "color": "#27413b", "sorting": "a", "folder": None, "sort": 0, "flags": {}},
     {"_id": F["Scene"], "name": TITLE, "type": "Scene", "color": "#27413b", "sorting": "m", "folder": None, "sort": 0, "flags": {}},
     {"_id": F["Scene-pool"], "name": "Corridors", "type": "Scene", "color": "#3b6a5a", "sorting": "m", "folder": F["Scene"], "sort": 0, "flags": {}},
+    {"_id": F["Scene-vista"], "name": "Vistas", "type": "Scene", "color": "#6a4e2b", "sorting": "m", "folder": F["Scene"], "sort": 0, "flags": {}},
     {"_id": F["Playlist"], "name": TITLE, "type": "Playlist", "color": "#27413b", "sorting": "m", "folder": None, "sort": 0, "flags": {}},
     {"_id": F["RollTable"], "name": TITLE, "type": "RollTable", "color": "#27413b", "sorting": "a", "folder": None, "sort": 0, "flags": {}},
 ]

@@ -22,7 +22,7 @@ def build(L):
     # ------------------------------------------------------------------ 00 OVERVIEW
     entries.append(("00. The Back Room: Adventure Overview", [
         ("Introduction", "<h1>The Back Room</h1>" + P(
-            "<em>The Back Room</em> is a liminal-horror adventure for four to five characters of 5th to 8th level, run over two or three sessions. The party meets in a tavern, played completely straight. They take the hook, buy provisions, and bed down in the storeroom over the kitchen before the dawn road. They never leave that room. The whole dungeon — stairwells, stables, corridors, campsites — is the storeroom, misremembered.",
+            "<em>The Back Room</em> is a liminal-horror adventure for four to five characters of 5th to 8th level, run over two or three sessions. The party meets at the Stickit Inn, a roadside tavern famous for its cider, played completely straight. They take the hook, buy provisions, and bed down in the storeroom over the kitchen before the dawn road. They never leave that room. The whole dungeon — stairwells, stables, corridors, campsites — is the storeroom, misremembered.",
             "The thing in there with them is not a monster. It is the first party: each player's first-ever D&D character, as the table misremembers them — overpowered, cooler than they were, one running joke swollen into a whole personality. These are the <strong>Remnants</strong>. They are not hostile. They want the game to keep going, forever, with the party in it.",
             "The message, in one line: <em>the places you are most comfortable are the ones you never finished leaving.</em>")
          + aside("Theme: Unfinished", P("One word, chosen first. Every room is something that was never finished — a story cut off, a character who never levelled, a campaign that died in the spring. 'Liminal' describes the dressing; 'unfinished' is the point. When you improvise a detail for a room, ask what in it was left undone."))
@@ -85,8 +85,9 @@ def build(L):
     # ------------------------------------------------------------------ 02 ROOM 1
     entries.append(("02. Room 1: The Back Room", [
         ("The Evening", "<h1>Room 1: The Back Room</h1>" + P(
+            "The Stickit Inn sits where the Kettle Pass road leaves the valley, and everyone for three days in any direction knows its cider: pressed in the yard, served cold in clay mugs, stronger than it tastes.",
             f"Play the cliché straight and let the players relax into it. {A('stranger')} in the corner booth has a job: ride guard on a lamp-oil wagon over the Kettle Pass to Thistlecross — three days, forty gold each, half now, leaving at first light (the handout <em>The Job</em> has the terms; swap in your own hook if your campaign already has one). The party takes it, buys provisions, and {A('barkeep')} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.")
-         + box("The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light.")
+         + box("The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light, and a jug of the house cider for the road.")
          + P("Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.")
          + aside("Keyed areas", ul("<strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.",
                                    "<strong>A2. The cots.</strong> One per character, along the left wall, blankets turned down.",
@@ -106,10 +107,10 @@ def build(L):
     # ------------------------------------------------------------------ 03 ROOM 2
     entries.append(("03. Room 2: The Common Room That Isn't", [
         ("The Room", "<h1>Room 2: The Common Room That Isn't</h1>" + box(
-            "A tavern common room. The fire is lit, the tables are full, and nobody is looking at you. In every booth, a hooded stranger. The barmaid is walking a slow circle between the tables with a tray and has not arrived at one. A drunk by the hearth is telling a joke to nobody.")
+            "The Stickit Inn's common room. The fire is lit, the tables are full, and nobody is looking at you. In every booth, a hooded stranger. The barmaid is walking a slow circle between the tables with a tray and has not arrived at one. A drunk by the hearth is telling a joke to nobody.")
          + P("Every patron is a <em>role</em>: a hooded stranger in every booth, a quest-giver who repeats the hook word for word, a barmaid who walks in a circle and never arrives, a drunk who says the same line no matter how many times you talk to him. Guards at the door say there's nothing to see here. There's a lot to see here.")
          + aside("Keyed areas", ul("<strong>B1. The booths.</strong> A hooded stranger in each, offering the job in the same words.",
-                                   "<strong>B2. The bar.</strong> Nobody behind it. Tankards full. One is a different colour.",
+                                   "<strong>B2. The bar.</strong> Nobody behind it. Mugs of the house cider, full, every one the same pale gold. One is a different colour.",
                                    "<strong>B3. The hearth.</strong> The drunk, and his one line.",
                                    "<strong>B4. The door.</strong> Two guards. 'Nothing to see here.'",
                                    "<strong>B5. The stairs.</strong> Up to a landing that is not the landing they came down."))),
@@ -117,7 +118,7 @@ def build(L):
             "One patron is not a role. It is the first <strong>Remnant</strong>: one player's first character, misremembered. It doesn't know it's in a tavern. It thinks it's mid-adventure and the party are old companions. The puzzle is social: figure out which patron is real, and get it to say the thing everyone remembers it for (its Signature). When it does, the room goes quiet and every role turns to look at the party.",
             "<strong>Three clues</strong>, so the table can't miss it:") + ol(
             "The Remnant is the only patron who asks the party a question.",
-            "It is the only one whose drink is a different colour.",
+            "It is the only one whose cider is a different colour: red as wine, where every other mug in the room is pale gold.",
             "The player whose character it is will recognise it from the description before anyone else does — let that player sweat before they say so.")
          + P("<strong>Payoff.</strong> The Remnant gives them a map with an X. The X moves when nobody looks at it. It is pointing at the Corridors. Give the handout <em>The X Map</em>. From this moment the X door can appear in the Corridors (the GM's X-door tile)."), 2),
     ]))
@@ -228,7 +229,7 @@ def build(L):
               "0.",
               [["1–2 onward", "The roads are busy: every traveller is an adventuring party, not one farmer or merchant among them, all heading the way the arms point, and every party has its one member in the genre's impractical armour, whatever their race or number of legs. None of them stop."], ["3–4", "A party passes whose rear guard has a character's walk."], ["5–6", "A party passes going the other way; nobody looks."], ["7+", "A Remnant leaning on the signpost, waiting for its party, which is any party."]],
               "The milestone gives the distance to the town as a number that changes each time it is read, and is never smaller."),
-        place(8, "c8-cellar", "Cellar", "The tavern cellar; the back room again.",
+        place(8, "c8-cellar", "Cellar", "The Stickit Inn's cellar, cider barrels and all; the back room again.",
               "It is the back room — Room 1's storeroom — seen from the wrong angle: below it, the same shelves from underneath, the same cots' outlines in the boards overhead. The provisions chest is breathing. <strong>Appears from visit 5 only.</strong>",
               "A cellar the exact footprint of Room 1, casks, the chest, a trap in the ceiling (the storeroom floor), a coal chute, a stair. Entry doors: the stair, the chute, the ceiling trap (arrival only). 12×10.",
               "2 (the cellar's shelving is already library shelving, every book a half page). B = step 3, C = step 4: by copy C the cellar's ribs meet in a point.",
@@ -268,7 +269,7 @@ def build(L):
 
     # ------------------------------------------------------------------ 10 HANDOUTS (split into one entry per page by build.py)
     entries.append(("10. Handouts", [
-        ("Handout: The Job", "<h2>The Job</h2>" + P("<em>Wanted: four or five capable people to ride guard on a wagon of lamp oil from this house over the Kettle Pass to Thistlecross. Three days by the high road. Forty gold a head, twenty of it tonight, the rest from the chandler at Thistlecross on delivery. We leave at first light. Bring your own bedrolls; the wagon has room for packs. Ask for the one in the corner booth.</em>",
+        ("Handout: The Job", "<h2>The Job</h2>" + P("<em>Wanted: four or five capable people to ride guard on a wagon of lamp oil from the Stickit Inn over the Kettle Pass to Thistlecross. Three days by the high road. Forty gold a head, twenty of it tonight, the rest from the chandler at Thistlecross on delivery. We leave at first light. Bring your own bedrolls; the wagon has room for packs. Ask for the one in the corner booth.</em>",
             "<em>The pass is quiet this time of year. The road is good. Nothing about this is a trick.</em>")),
         ("Handout: The Toothless Key", "<h2>The Toothless Key</h2>" + P("A long iron key, drawn from a stone in the corner of the storeroom. It has a bow, a shank, and no teeth at all. It opens nothing in the room you found it in.", "<em>Keep it.</em>")),
         ("Handout: The X Map", "<h2>The X Map</h2>" + P("A map, drawn in a hand none of you recognise, of a place none of you have been. There is an X on it. The X marks the way out.", "<em>Do not look at the X for a moment. Now look again.</em>")),
