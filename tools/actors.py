@@ -147,7 +147,8 @@ def P(*paras): return "".join(f"<p>{x}</p>" for x in paras)
 
 
 # Token art: tokens/token-<key>.webp, 512px round portraits generated with Draw Things (SD 1.5) and masked by tools/make_tokens.py.
-TK = {k: f"token-{k}" for k in ("dragon", "unicorn", "centaur", "troll", "roper", "owlbear", "echo", "rogue", "barbarian", "wizard", "barkeep", "stranger")}
+TK = {k: f"token-{k}" for k in ("dragon", "unicorn", "centaur", "troll", "roper", "owlbear", "echo", "rogue", "barbarian", "wizard", "barkeep", "stranger",
+                                "fred", "thon", "rorvik", "morlock", "strider")}
 
 REMNANT_RULE = P("<strong>The Remnant Rule.</strong> When this creature drops to 0 Hit Points it does not die. At the start of its next turn it stands up in the pose it fell in, with all its Hit Points, and continues mid-sentence. The only way to be rid of it is to leave the room by a door it did not come through; it cannot follow.")
 
@@ -256,9 +257,9 @@ def build_npcs():
     """Remnants are NPCs, never monsters (design doc). Three fallbacks, the barkeep, the hooded stranger."""
     out = {}
 
-    def remnant(key, name, cls, token, ac, hp, hpf, abil, sig_name, sig_html, blank_html, bio):
-        m = Monster(key, name, 5, "med", "humanoid", "Unaligned", ac, hp, hpf, abil, {"walk": 30}, TK[token],
-                    disposition=0, ac_calc="flat", languages="Common", lang_values=("common",), subtype=cls,
+    def remnant(key, name, cls, token, ac, hp, hpf, abil, sig_name, sig_html, blank_html, bio, size="med", subtype=None, align="Unaligned", senses=None, speed=None):
+        m = Monster(key, name, 5, size, "humanoid", align, ac, hp, hpf, abil, speed or {"walk": 30}, TK[token], senses=senses,
+                    disposition=0, ac_calc="flat", languages="Common", lang_values=("common",), subtype=subtype or cls,
                     bio=P(bio, "<strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through."))
         m.trait("Signature: " + sig_name, P(sig_html), img="icons/magic/symbols/runes-star-orange-purple.webp")
         m.trait("The Blank", P(blank_html), img="icons/magic/symbols/question-stone-yellow.webp")
@@ -286,6 +287,51 @@ def build_npcs():
                 "The Wizard Who Misread the Spell: robes, a staff, a spellbook with one page in it. The page is very well thumbed.")
     m.attack("Staff", 1, 6, "bludgeoning", "str", img="icons/weapons/staves/staff-simple.webp")
     out["remnant-wizard"] = m
+
+    # ---- This table's Remnants: the five players' first characters, as they remember them (or don't) ----
+    m = remnant("remnant-fred", "Fred the Fighter", "fighter", "fred", 17, 58, "9d10 + 9", (17, 12, 13, 9, 10, 13),
+                "POW!", "Once per round, one of Fred's Longsword attacks hits without a roll and deals maximum damage ([[/damage 12 slashing]]), and the hit appears in the air above the target in hand-lettered capitals: <em>POW!</em>, <em>KRAK!</em>, <em>THWACK!</em> Everyone present can read it. It fades by the end of the round.",
+                "He cannot say whether anyone ever played him. What he remembers is being drawn: four panels at a time, one summer, in a camp newspaper, until the strip stopped mid-story. He speaks in short lines, as if he has to fit inside a speech balloon, and every so often he finishes a thought with 'To be continued!' and waits, a little hopefully, for next week.",
+                "A square-jawed fighter in a winged helmet and chain mail, outlined in ink a shade heavier than everything around him, so he always looks slightly in front of the room. He introduces himself the way the strip's title panel did: 'FRED THE FIGHTER!' His player may not remember playing him. That is the point: he may only ever have been a comic strip, and he is here anyway.")
+    m.attack("Longsword", 1, 8, "slashing", "str", img="icons/weapons/swords/sword-guard-steel.webp")
+    out["remnant-fred"] = m
+
+    m = remnant("remnant-thon", "Thon", "wizard", "thon", 14, 49, "9d8 + 9", (10, 14, 12, 18, 13, 11),
+                "The Rod of Lordly Might", "Thon carries a heavy black rod studded with buttons, and once per round he presses one and it is exactly the right tool: a mace, a flaming blade, a battleaxe, a spear that extends to 50 feet, a ladder, a battering ram, a pole that points north. Whatever he uses it for that round succeeds without a roll. As a weapon it hits for [[/damage 1d8+4 bludgeoning]] plus [[/damage 2d6 fire]]; as a ram it opens any door that is not one the party came through; as a ladder or a pole it gets him anywhere he can see.",
+                "He remembers every button on the rod, the order they go in, and the faint click each one makes. He does not remember a single spell. Asked to cast one, he explains button six instead, at length, delighted.",
+                "A half-elf wizard in faded robes who has stopped pretending to be interested in magic. Everything he has to say is about the rod: the gadgetry, the satisfying mechanisms, what it can turn into. He will show it to anyone who stands still.", subtype="half-elf")
+    m.attack("Rod of Lordly Might", 1, 8, "bludgeoning", "int", img="icons/weapons/maces/mace-round-ornate-purple.webp")
+    out["remnant-thon"] = m
+
+    m = remnant("remnant-rorvik", "Rorvik", "magic-user thief", "rorvik", 15, 52, "8d8 + 16", (14, 17, 14, 15, 9, 12),
+                "Hothead", "Rorvik always acts first, in every round, before anyone rolls initiative. Once per round his first Longsword attack hits without a roll, and a crackle of half-remembered magic runs down the blade: [[/damage 1d8+3 slashing]] plus [[/damage 3d6 force]]. He can then slip away up to his Speed without provoking Opportunity Attacks: a thief's exit from a fight he started.",
+                "Nobody remembers his adventures, and neither does he: his player was usually the one running the game, so Rorvik spent most of his life waiting for a turn. He asks, every few minutes, whether it is his turn yet. He cannot let an insult go: anyone who mocks him has his complete attention, and the Remnant rule that it never attacks first does not survive being called a coward.",
+                "A half-elven magic-user and thief with a longsword he was never strictly allowed to carry, a short fuse, and the restless energy of someone who has been sitting on the side of the table for forty years.", subtype="half-elf")
+    m.attack("Longsword", 1, 8, "slashing", "dex", img="icons/weapons/swords/sword-guard-purple.webp")
+    out["remnant-rorvik"] = m
+
+    # Built from the player's original character sheet (AD&D, 7th level, 60,381 XP), converted to 5e: abilities as written,
+    # hit dice d6 at maximum, AC from leather +1, ring of protection +3 and Dex 18.
+    m = remnant("remnant-morlock", "T. Morlock", "thief-acrobat", "morlock", 17, 63, "7d6 + 21", (17, 18, 17, 16, 18, 12),
+                "Thief-Acrobat", "Once per round, one acrobatic move succeeds without a roll (his sheet says tightrope 100%, and he means it): a tumble through an enemy's space, a pole vault of nine and a half feet onto a table or a balcony, a run along a rail or a rope, a fall of up to twenty feet landed on his feet. None of it provokes Opportunity Attacks. The first hit he makes after a move like that in the same round is a backstab: triple damage dice.",
+                "He has his character sheet, and he will show it to you: seventh level, sixty thousand three hundred and eighty-one experience points, every box filled in, the paper soft and scorched in one corner. The name line says only <em>T. Morlock</em>. Nobody knows what the T. stands for, and he gets quieter each time someone asks.",
+                "A halfling thief-acrobat in leather armour, eighty-eight years old, four foot eight, blond, blue-eyed, upper class, and (Comeliness 18) the handsomest halfling anyone has ever seen. Always slightly higher up than everyone else: on the bar, on a rafter, on someone's shoulders. His deity is his dagger, and his holy symbol is a silver dagger. His secondary skill is carpet making; he will tell you about it. On the sheet, next to <em>Jewelry</em>, it says <em>I hope so</em>.",
+                size="sm", subtype="halfling", align="Neutral Evil", senses={"darkvision": 30})
+    m.trait("Elishaf", P("Twice a day he says <em>elishaf</em> and walks through a wall, as the spell <em>passwall</em>, into the space beyond. It never carries him out of a room through a wall the party has left by: the Remnant rule still holds."))
+    m.trait("Rings", P("A ring of invisibility (he turns invisible as an action until he attacks, once per round of his choosing) and a ring of chameleon power (Advantage on Dexterity (Stealth) checks; he blends into any crowd, booth or bookshelf). His ring of protection +3 is already in his AC."))
+    m.trait("The Leather Bag", P("He carries a leather bag with a sapphire in it worth eleven thousand eight hundred gold pieces, and the sapphire has a demon in it. He will not open the bag and does not like it being touched. Nobody at the table remembers what happens if it is opened, so nothing does, unless you want it to."))
+    m.attack("Short Sword +1", 1, 6, "piercing", "dex", img="icons/weapons/swords/shortsword-guard-brass.webp")
+    m.attack("Dagger of Wounding", 1, 4, "piercing", "dex", rng=(20, 60), note="A creature hit loses 1 extra Hit Point at the start of each of its turns until it or an ally uses an action to staunch the wound.", img="icons/weapons/daggers/dagger-curved-steel.webp")
+    m.attack("Shortbow (silver arrows)", 1, 6, "piercing", "dex", kind="ranged", reach=None, rng=(80, 320), img="icons/weapons/bows/shortbow-recurve.webp")
+    out["remnant-morlock"] = m
+
+    m = remnant("remnant-strider", "Strider", "ranger", "strider", 15, 60, "8d10 + 16", (14, 17, 14, 11, 15, 12),
+                "Knows the Way", "Strider is never lost. In the Corridors he knows which door leads where, and if asked the GM tells him the truth (he will offer to lead; where he leads is always toward the Hoard). Once per round one of his Longsword or Longbow attacks hits without a roll for [[/damage 1d8+3 slashing]] plus [[/damage 2d6 slashing]].",
+                "Everything about him past the name and the cloak belongs to somebody else's story. Ask about his lineage and he tells it, earnestly, and it is a story the whole table has read in a book. He does not notice.",
+                "A weathered ranger in a travel-stained cloak who sits with his back to the wall and his hood up, watching the door. His player built him straight out of a beloved novel at the time and named him Strider, and he has been walking ever since.")
+    m.attack("Longsword", 1, 8, "slashing", "dex", img="icons/weapons/swords/sword-guard-brown.webp")
+    m.attack("Longbow", 1, 8, "piercing", "dex", kind="ranged", reach=None, rng=(150, 600), img="icons/weapons/bows/longbow-recurve-leather-brown.webp")
+    out["remnant-strider"] = m
 
     m = Monster("barkeep", "Barnaby Stickit", 0, "med", "humanoid", "Neutral", 10, 9, "2d8", (12, 10, 11, 10, 14, 15), {"walk": 30}, TK["barkeep"],
                 disposition=1, ac_calc="flat", languages="Common", lang_values=("common",), subtype="human",

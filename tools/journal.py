@@ -69,7 +69,7 @@ def build(L):
             ["7+", "A Remnant is in the room. It is glad to see you. It does not attack.", "Timber ribs overhead. The room is half library now."]])
          + P("<strong>3. Rest costs memory, not hit points.</strong> Short rests work normally, but each one taken in a Corridor applies Rule 1 (Misremembering).",
              f"<strong>The pool (d8).</strong> Stairwell, stable, hallway of inn doors, campfire clearing, market row at closing, ferry crossing, crossroads at dusk, cellar (from visit 5 only). Roll on {TB('pool')} if the tiles are not doing it for you. One misremembered trope per place — never two; one is uncanny, two is a joke. The places are written up in <em>06. The Corridor Pool</em>."), 2),
-        ("Remnants", "<h2>Remnants</h2>" + aside("GM prep (the one thing to do before session one)", P("Privately ask each player: <em>What was the first D&D character you ever played? Name, class, and the one thing everyone remembers about them.</em> Don't say why. Players with no answer get a fallback Remnant."))
+        ("Remnants", "<h2>Remnants</h2>" + aside("GM prep (done for this table)", P("Each player was asked privately: <em>What was the first D&D character you ever played? Name, class, and the one thing everyone remembers about them.</em> Their answers are the five Remnants below. For a different table, ask the same question, don't say why, and rebuild the five from the answers; a player with no answer gets a fallback Remnant."))
          + P("<strong>Building a Remnant.</strong>") + ul(
             "Take the first character's class and build it at the party's level using the standard NPC approach, or a sidekick-style block if you'd rather keep it light.",
             "<strong>Max hit points.</strong> No rolling.",
@@ -78,8 +78,14 @@ def build(L):
             "<strong>It never attacks first.</strong> It wants the game to continue; it will fight if that's what the party wants to do.",
             "<strong>It stands back up.</strong> At 0 HP it rises at the start of its next turn, in the pose it fell in, with full HP, and continues mid-sentence.",
             "<strong>It cannot leave a room through a door the party came through.</strong> That is the only hard limit on it, and it is the exit mechanic for Room 4.")
-         + P(f"<strong>Fallback Remnants</strong> for players without an answer: {A('remnant-rogue')}, {A('remnant-barbarian')}, {A('remnant-wizard')}. A five-player table may need a fourth; build it from any trope the table laughs at.",
-             "<strong>Using them.</strong> One Remnant appears in Room 2. One more surfaces in the Corridors at visit 7+. All of them are in Room 4. They are filed under People, never Monsters."), 2),
+         + P("<strong>This table's Remnants.</strong>") + ul(
+            f"{A('remnant-fred')}: his player isn't sure he ever played him; he was certainly a comic strip in a summer-camp newspaper, briefly. <em>Signature:</em> POW! (one hit a round lands, at maximum, lettered in the air). He is the Remnant in <strong>Room 2</strong>: the player who doesn't remember playing him is the one who will recognise him.",
+            f"{A('remnant-thon')}: half-elf wizard with a Rod of Lordly Might. <em>Signature:</em> the rod is always the right tool. He remembers every button and no spells.",
+            f"{A('remnant-rorvik')}: half-elven magic-user and thief, longsword, a hothead. <em>Signature:</em> always acts first. His player usually ran the game, so nobody remembers his adventures, including him.",
+            f"{A('remnant-morlock')}: halfling thief-acrobat, 7th level. <em>Signature:</em> every acrobatic move works. He has his character sheet; nobody knows what the T. stands for.",
+            f"{A('remnant-strider')}: a ranger built out of a beloved novel. <em>Signature:</em> knows the way. He is the Remnant who surfaces in a <strong>Corridor at visit 7+</strong>, and he offers to lead (always toward the Hoard).")
+         + P(f"<strong>Fallback Remnants</strong> for a player who misses a session, or for another table: {A('remnant-rogue')}, {A('remnant-barbarian')}, {A('remnant-wizard')}.",
+             "<strong>Using them.</strong> Fred appears in Room 2. Strider surfaces in the Corridors at visit 7+. All five are in Room 4. They are filed under People, never Monsters."), 2),
     ]))
 
     # ------------------------------------------------------------------ 02 ROOM 1
@@ -115,7 +121,7 @@ def build(L):
                                    "<strong>B4. The door.</strong> Two guards. 'Nothing to see here.'",
                                    "<strong>B5. The stairs.</strong> Up to a landing that is not the landing they came down."))),
         ("The Puzzle", "<h2>The Puzzle</h2>" + P(
-            "One patron is not a role. It is the first <strong>Remnant</strong>: one player's first character, misremembered. It doesn't know it's in a tavern. It thinks it's mid-adventure and the party are old companions. The puzzle is social: figure out which patron is real, and get it to say the thing everyone remembers it for (its Signature). When it does, the room goes quiet and every role turns to look at the party.",
+            f"One patron is not a role. It is the first <strong>Remnant</strong>, {A('remnant-fred')}: one player's first character, misremembered (and possibly never played at all; he was certainly a comic strip). It doesn't know it's in a tavern. It thinks it's mid-adventure and the party are old companions. The puzzle is social: figure out which patron is real, and get it to say the thing everyone remembers it for (its Signature). When it does, the room goes quiet and every role turns to look at the party.",
             "<strong>Three clues</strong>, so the table can't miss it:") + ol(
             "The Remnant is the only patron who asks the party a question.",
             "It is the only one whose cider is a different colour: red as wine, where every other mug in the room is pale gold.",
@@ -262,7 +268,8 @@ def build(L):
         ("People", "<h1>Cast</h1>" + P("Remnants are people, not monsters. File them accordingly and never give a player the stat block.") + ul(
             f"{A('barkeep')} — the gentle gate of Room 1; ordinary morning in Room 5.",
             f"{A('stranger')} — the hook, played straight; a role in every booth of Room 2.",
-            f"{A('remnant-rogue')}, {A('remnant-barbarian')}, {A('remnant-wizard')} — the fallback Remnants.",
+            f"{A('remnant-fred')}, {A('remnant-thon')}, {A('remnant-rorvik')}, {A('remnant-morlock')}, {A('remnant-strider')} — this table's Remnants, the players' first characters.",
+            f"{A('remnant-rogue')}, {A('remnant-barbarian')}, {A('remnant-wizard')} — the fallback Remnants, for an absent player or another table.",
             f"{A('echo')} — Room 3's blank-faced copy, built as a 5th-level character halved; swap in the mirrored character's own sheet if you have time, it plays as written if not.")
          + "<h2>Monsters</h2>" + ul(f"{A('dragon')}, {A('unicorn')}, {A('centaur')}, {A('troll')}, {A('roper')}, {A('owlbear')} — The Cover.")),
     ]))

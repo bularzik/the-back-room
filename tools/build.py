@@ -47,7 +47,9 @@ ROOM_VISTA = {"Room 1: The Back Room": "backroom", "Room 2: The Common Room That
 def vista_box(key): return (f'<aside class="notable"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.{vista_id(key)}]{{the vista}} '
                             f'(a painted view of the room, no grid), then pull them to the map.</p></aside>')
 
-PERSON_KEYS = ("barkeep", "stranger", "remnant-rogue", "remnant-barbarian", "remnant-wizard", "echo")   # NPCs with a Person page
+TABLE_REMNANTS = ("remnant-fred", "remnant-thon", "remnant-rorvik", "remnant-morlock", "remnant-strider")   # this table's five
+FALLBACK_REMNANTS = ("remnant-rogue", "remnant-barbarian", "remnant-wizard")
+PERSON_KEYS = ("barkeep", "stranger", *TABLE_REMNANTS, *FALLBACK_REMNANTS, "echo")   # NPCs with a Person page
 npc_name = lambda key: allactors[key].doc["name"]
 def L(kind, key, name=None):
     if kind == "actor":
@@ -105,8 +107,8 @@ mej_entry("01. Rules of the Back Room", "journalentry", join_pages(_entries["01.
 mej_entry("02. Automation (Monk's Active Tile Triggers)", "journalentry", matt.GM_GUIDE, F["JournalEntry"], sort=nxt())
 # The five rooms as Places; the people in them as townsfolk
 ROOM_PEOPLE = {r: [npc_name(k) for k in ks] for r, ks in {
-    "Room 1: The Back Room": ["barkeep", "stranger"], "Room 2: The Common Room That Isn't": ["stranger", "remnant-rogue"],
-    "Room 3: The Corridor Between": ["echo"], "Room 4: The Hoard": ["remnant-rogue", "remnant-barbarian", "remnant-wizard"],
+    "Room 1: The Back Room": ["barkeep", "stranger"], "Room 2: The Common Room That Isn't": ["stranger", "remnant-fred"],
+    "Room 3: The Corridor Between": ["echo"], "Room 4: The Hoard": list(TABLE_REMNANTS),
     "Room 5: The Back Room, Again": ["barkeep", "stranger"]}.items()}
 ROOM_SIZE = {"Room 1: The Back Room": "12×10 squares, upstairs", "Room 2: The Common Room That Isn't": "16×12 squares", "Room 3: The Corridor Between": "6 segments of 8×2 squares",
              "Room 4: The Hoard": "16×14 squares", "Room 5: The Back Room, Again": "12×10 squares, the same room"}
@@ -133,12 +135,19 @@ mej_entry("The Cover", "encounter", vista_box("cover-cavern") + join_pages(_entr
 # People: one Person per NPC, linked to its actor; the Remnants also belong to the organization
 PEOPLE = {"barkeep": ("Innkeeper of the Stickit Inn", {"profession": "Innkeeper", "voice": "Kind, tired in a way that is not unhappy", "faction": "The Stickit Inn"}),
           "stranger": ("The hooded stranger in the corner booth", {"profession": "Quest-giver", "voice": "The hook, word for word", "faction": "Every booth"}),
-          "remnant-rogue": ("The Rogue With a Tragic Past", {"profession": "Rogue (someone's first character)", "voice": "'It's complicated.'", "faction": "The Remnants"}),
-          "remnant-barbarian": ("The Barbarian Who Is Just Strong", {"profession": "Barbarian (someone's first character)", "voice": "Cheerful. Has never been angry.", "faction": "The Remnants"}),
-          "remnant-wizard": ("The Wizard Who Misread the Spell", {"profession": "Wizard (someone's first character)", "voice": "Insists.", "faction": "The Remnants"}),
+          "remnant-fred": ("Fighter, possibly only ever a comic strip", {"profession": "Fighter (a player's first character)", "voice": "Short lines, as if in a speech balloon. 'To be continued!'", "faction": "The Remnants"}),
+          "remnant-thon": ("Half-elf wizard with a Rod of Lordly Might", {"profession": "Wizard (a player's first character)", "voice": "Delighted, about the rod. Only the rod.", "faction": "The Remnants"}),
+          "remnant-rorvik": ("Half-elven magic-user and thief", {"profession": "Magic-user/thief (a player's first character)", "voice": "Hot-headed. 'Is it my turn yet?'", "faction": "The Remnants"}),
+          "remnant-morlock": ("Halfling thief-acrobat, 7th level", {"profession": "Thief-acrobat (a player's first character)", "voice": "Proud of his sheet. Quiet about the T.", "faction": "The Remnants"}),
+          "remnant-strider": ("Ranger out of a beloved novel", {"profession": "Ranger (a player's first character)", "voice": "Low, earnest, telling a story the table has read.", "faction": "The Remnants"}),
+          "remnant-rogue": ("Fallback: The Rogue With a Tragic Past", {"profession": "Rogue (someone's first character)", "voice": "'It's complicated.'", "faction": "The Remnants"}),
+          "remnant-barbarian": ("Fallback: The Barbarian Who Is Just Strong", {"profession": "Barbarian (someone's first character)", "voice": "Cheerful. Has never been angry.", "faction": "The Remnants"}),
+          "remnant-wizard": ("Fallback: The Wizard Who Misread the Spell", {"profession": "Wizard (someone's first character)", "voice": "Insists.", "faction": "The Remnants"}),
           "echo": ("A blank-faced copy", {"profession": "A copy", "voice": "None", "faction": "The Corridor Between"})}
-PERSON_LOCATION = {"barkeep": "The Stickit Inn", "stranger": "The Stickit Inn, corner booth", "remnant-rogue": "Room 2, then the Hoard",
-                   "remnant-barbarian": "The Hoard", "remnant-wizard": "The Hoard", "echo": "The Corridor Between"}
+PERSON_LOCATION = {"barkeep": "The Stickit Inn", "stranger": "The Stickit Inn, corner booth", "remnant-fred": "Room 2, then the Hoard",
+                   "remnant-thon": "The Hoard", "remnant-rorvik": "The Hoard", "remnant-morlock": "The Hoard", "remnant-strider": "A Corridor at visit 7+, then the Hoard",
+                   "remnant-rogue": "Fallback (stands in for an absent player's Remnant)", "remnant-barbarian": "Fallback", "remnant-wizard": "Fallback",
+                   "echo": "The Corridor Between"}
 for key, (role, attrs) in PEOPLE.items():
     a = allactors[key]; name = npc_name(key); rooms = [rn for rn, ppl in ROOM_PEOPLE.items() if name in ppl]
     # role/location fill the sheet's header; src is the portrait (MEJ sets it to the actor's image when an actor is linked by hand)
@@ -147,9 +156,9 @@ for key, (role, attrs) in PEOPLE.items():
     mej_entry(name, "person", a.doc["system"]["details"]["biography"]["value"], F["JournalEntry"], sort=nxt(), data=data, src=a.doc["img"])
 mej_entry("The Remnants", "organization", journal.P(
     "The first party: each player's first-ever D&D character, as the table misremembers them — overpowered, cooler than they were, one running joke swollen into a whole personality. They are not hostile. They want the game to keep going, forever, with the party in it.",
-    "One appears in Room 2. One more surfaces in the Corridors at visit 7+. All of them are in Room 4. The three listed here are the fallbacks; the real ones are built from the players' answers to the one question asked before session one.")
+    "This table's five, built from the players' own answers: Fred the Fighter (in Room 2), Strider (in a Corridor at visit 7+), and Thon, Rorvik and T. Morlock, who wait with the others in the Hoard. The three fallbacks stand in if a player misses a session, or for another table.")
     + "<h3>Rules</h3>" + journal.ul("Max hit points, never rolled.", "The Signature always works, once per round.", "Everything else is blank.", "It never attacks first.", "At 0 HP it stands back up in the pose it fell in.", "It cannot leave a room through a door the party came through."),
-    F["JournalEntry"], sort=nxt(), data={"relationships": rels(*[rel(n, relationship="member") for n in (npc_name("remnant-rogue"), npc_name("remnant-barbarian"), npc_name("remnant-wizard"))])})
+    F["JournalEntry"], sort=nxt(), data={"relationships": rels(*[rel(n, relationship="member") for n in [npc_name(k) for k in (*TABLE_REMNANTS, *FALLBACK_REMNANTS)]])})
 # The stated goal as a Quest
 mej_entry("Follow the X", "quest", journal.P("The map the Remnant hands over in Room 2 has an X on it. The X marks the way out. It moves when nobody looks at it. It points at the Hoard.",
     "The real goal, discovered in Rooms 4–5: the way out was the door they came in by. The stated goal was the thing keeping them from it."),
