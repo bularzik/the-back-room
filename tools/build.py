@@ -37,7 +37,9 @@ if missing: print("  scenes not yet mapped (skipped):", ", ".join(sorted(set(m.r
 table_ids = {"pool": uid("table", "pool"), "cues": uid("table", "cues")}
 F = {t: uid("folder", t) for t in ("JournalEntry", "Handouts", "Actor", "Actor-npc", "Scene", "Scene-pool", "Scene-vista", "Playlist", "RollTable")}
 # Vistas: painted, gridless roleplay scenes (vistas/<key>.webp) shown to the players on arrival; also the Place pages' pictures
-VISTAS = {"backroom": "The Back Room", "common-room": "The Common Room", "corridor-between": "The Corridor Between", "hoard": "The Hoard", "cover-cavern": "The Cover"}
+VISTAS = {"backroom": "The Back Room", "common-room": "The Common Room", "corridor-between": "The Corridor Between", "hoard": "The Hoard", "cover-cavern": "The Cover",
+          "c1-stairwell": "Corridor: Stairwell", "c2-stable": "Corridor: Stable", "c3-inn-hallway": "Corridor: Hallway of Inn Doors", "c4-campfire": "Corridor: Campfire Clearing",
+          "c5-market": "Corridor: Market Row", "c6-ferry": "Corridor: Ferry Crossing", "c7-crossroads": "Corridor: Crossroads at Dusk", "c8-cellar": "Corridor: Cellar"}
 vista_id = lambda key: uid("scene", "vista-" + key)
 vista_src = lambda key: f"{MOD}/vistas/{key}.webp"
 ROOM_VISTA = {"Room 1: The Back Room": "backroom", "Room 2: The Common Room That Isn't": "common-room", "Room 3: The Corridor Between": "corridor-between",
@@ -123,7 +125,8 @@ for pname, html, *_ in pool_pages[1:]:
     key = {"Stairwell": "c1-stairwell", "Stable": "c2-stable", "Hallway of Inn Doors": "c3-inn-hallway", "Campfire Clearing": "c4-campfire", "Market Row at Closing": "c5-market",
            "Ferry Crossing": "c6-ferry", "Crossroads at Dusk": "c7-crossroads", "Cellar": "c8-cellar"}[pname.split(". ", 1)[1]]
     POOL_PLACE[key] = name
-    mej_entry(name, "place", html, F["JournalEntry"], sort=nxt(), data={"attributes": {"size": "one Dungeondraft map, three scene copies", "inhabitants": "nobody, until visit 7"}})
+    mej_entry(name, "place", vista_box(key) + html, F["JournalEntry"], sort=nxt(), src=vista_src(key),
+              data={"attributes": {"size": "one Dungeondraft map per scene copy (A, B, C: one library step apart)", "inhabitants": "nobody, until visit 7"}})
 # The Cover as an Encounter with its six monsters
 mej_entry("The Cover", "encounter", vista_box("cover-cavern") + join_pages(_entries["08. The Cover (the Corridor fight)"]), F["JournalEntry"], sort=nxt(), src=vista_src("cover-cavern"),
           data={"actors": {allactors[k].id: actor_ref(k, quantity="1", hidden=False) for k in ("dragon", "unicorn", "centaur", "troll", "roper", "owlbear")}})
@@ -247,7 +250,8 @@ for i, key in enumerate(built):
                       "fontSize": 28, "textAnchor": 1, "textColor": "#ffffff", "global": False, "flags": {}})
     sx, sy = m.get("start", [m["w"] // 2, m["h"] // 2])
     jref = page_index[NOTE_PAGES[list(m["notes"])[0]]][0] if m.get("notes") and list(m["notes"])[0] in NOTE_PAGES else (page_index[POOL_PLACE[key.rsplit("-", 1)[0]]][0] if is_pool else None)
-    darkness = m.get("darkness", .7 if is_pool else .5)
+    # the map image already carries its lighting (Dungeondraft ambient + lights), so Foundry darkness is halved: the user asked for brighter maps
+    darkness = round(m.get("darkness", .7 if is_pool else .5) * .5, 2)
     scenes.append({"_id": sid, "name": SCENE_KEYS[key], "navigation": not is_pool, "navOrder": i, "navName": NAV_NAME.get(key, ""), "active": False,
                    "background": {"src": f"{MOD}/maps/{m['file']}"}, "foreground": None,
                    "thumb": f"{MOD}/maps/thumb-{m['file']}", "width": m["w"], "height": m["h"], "padding": 0,
@@ -260,7 +264,7 @@ for i, key in enumerate(built):
                    "weather": "", "folder": F["Scene-pool"] if is_pool else F["Scene"], "sort": (i + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
 
 for vi, (vk, vname) in enumerate(VISTAS.items()):
-    scenes.append({"_id": vista_id(vk), "name": f"Vista: {vname}", "navigation": False, "navOrder": 0, "navName": NAV_NAME.get(vk, ""), "active": False,
+    scenes.append({"_id": vista_id(vk), "name": f"Vista: {vname}", "navigation": False, "navOrder": 0, "navName": NAV_NAME.get(vk, vname.split(": ", 1)[-1]), "active": False,
                    "background": {"src": vista_src(vk)}, "foreground": None, "thumb": vista_src(vk), "width": 1536, "height": 1024, "padding": 0,
                    "initial": {"x": 768, "y": 512, "scale": 0.6}, "backgroundColor": "#0b0a07",
                    "grid": {"type": 0, "size": 100, "style": "solidLines", "thickness": 1, "color": "#000000", "alpha": 0, "distance": 5, "units": "ft"},
