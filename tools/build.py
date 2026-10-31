@@ -272,6 +272,18 @@ for i, key in enumerate(built):
                    "playlist": None, "playlistSound": None, "journal": jref, "journalEntryPage": None,
                    "weather": "", "folder": F["Scene-pool"] if is_pool else F["Scene"], "sort": (i + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
 
+# Landing scene: the title card players see when they connect before the game starts. Gridless, lit, first in the
+# navigation bar, active on import, with the tavern loop as its scene sound.
+scenes.append({"_id": uid("scene", "landing"), "name": "Welcome: The Stickit Inn", "navigation": True, "navOrder": -1, "navName": "The Stickit Inn",
+               "active": True, "background": {"src": f"{MOD}/vistas/landing.webp"}, "foreground": None, "thumb": f"{MOD}/vistas/landing.webp",
+               "width": 1920, "height": 1280, "padding": 0, "initial": {"x": 960, "y": 640, "scale": 0.5}, "backgroundColor": "#0b0a07",
+               "grid": {"type": 0, "size": 100, "style": "solidLines", "thickness": 1, "color": "#000000", "alpha": 0, "distance": 5, "units": "ft"},
+               "tokenVision": False, "fog": {"exploration": False, "reset": None, "overlay": None, "colors": {"explored": None, "unexplored": None}},
+               "environment": {"darknessLevel": 0, "darknessLock": True, "globalLight": {"enabled": True}, "cycle": False},
+               "drawings": [], "tokens": [], "lights": [], "notes": [], "sounds": [], "regions": [], "tiles": [], "walls": [],
+               "playlist": uid("playlist", "amb"), "playlistSound": uid("sound", "ambience-tavern"), "journal": None, "journalEntryPage": None,
+               "weather": "", "folder": F["Scene"], "sort": 0, "ownership": {"default": 0}, "flags": {}})
+
 for vi, (vk, vname) in enumerate(VISTAS.items()):
     scenes.append({"_id": vista_id(vk), "name": f"Vista: {vname}", "navigation": False, "navOrder": 0, "navName": NAV_NAME.get(vk, vname.split(": ", 1)[-1]), "active": False,
                    "background": {"src": vista_src(vk)}, "foreground": None, "thumb": vista_src(vk), "width": 1536, "height": 1024, "padding": 0,
