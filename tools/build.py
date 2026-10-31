@@ -7,10 +7,10 @@ import journal, matt
 
 ID, TITLE, VERSION = "the-back-room", "The Back Room", "2.0.0"
 REPO = f"https://github.com/bularzik/{ID}"
-PACK_ADV, PACK_BEST = ID, "back-room-bestiary"
+PACK_ADV = ID   # one compendium: the Adventure (its actors import with it)
 ROOT, SRC = ".", "src/packs"
 shutil.rmtree(SRC, ignore_errors=True)
-for d in (PACK_ADV, PACK_BEST): os.makedirs(f"{SRC}/{d}", exist_ok=True)
+os.makedirs(f"{SRC}/{PACK_ADV}", exist_ok=True)
 maps = json.load(open("tools/maps.json")) if os.path.exists("tools/maps.json") else {}
 
 monsters, npcs = build_monsters(), build_npcs()
@@ -308,9 +308,6 @@ adventure = {"_id": adv_id, "name": TITLE, "img": f"{MOD}/maps/cover.webp",
              "actors": adv_actors, "combats": [], "items": [], "scenes": scenes, "journal": journals, "tables": tables,
              "macros": [], "cards": [], "playlists": playlists, "folders": folders, "sort": 0, "flags": {}, "_key": f"!adventures!{adv_id}"}
 json.dump(adventure, open(f"{SRC}/{PACK_ADV}/{PACK_ADV}.json", "w"), indent=1)
-for k, a in allactors.items():
-    d = json.loads(json.dumps(a.doc)); d["folder"] = None
-    json.dump(d, open(f"{SRC}/{PACK_BEST}/{k}.json", "w"), indent=1)
 
 # ---------- manifest ----------
 manifest = {
@@ -333,9 +330,8 @@ manifest = {
                       "manifest": "https://github.com/ironmonk108/monks-active-tiles/releases/latest/download/module.json",
                       "compatibility": {"minimum": "14.01"}, "reason": "Scene automation: random Corridor doors, fog resets, the X door, the Corridor Between loop, the Room 4 exit and GM controls."}]},
     "packs": [
-        {"name": PACK_ADV, "label": f"{TITLE} (Adventure)", "path": f"packs/{PACK_ADV}", "type": "Adventure", "system": "dnd5e", "ownership": {"PLAYER": "NONE", "ASSISTANT": "OWNER"}},
-        {"name": PACK_BEST, "label": f"{TITLE}: Bestiary", "path": f"packs/{PACK_BEST}", "type": "Actor", "system": "dnd5e", "ownership": {"PLAYER": "NONE", "ASSISTANT": "OWNER"}}],
-    "packFolders": [{"name": TITLE, "sorting": "m", "color": "#27413b", "packs": [PACK_ADV, PACK_BEST]}],
+        {"name": PACK_ADV, "label": f"{TITLE} (Adventure)", "path": f"packs/{PACK_ADV}", "type": "Adventure", "system": "dnd5e", "ownership": {"PLAYER": "NONE", "ASSISTANT": "OWNER"}}],
+    "packFolders": [{"name": TITLE, "sorting": "m", "color": "#27413b", "packs": [PACK_ADV]}],
     "languages": [], "esmodules": [], "styles": [],
 }
 json.dump(manifest, open(f"{ROOT}/module.json", "w"), indent=2)

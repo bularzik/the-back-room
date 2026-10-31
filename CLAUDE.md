@@ -140,7 +140,7 @@ GM-only **Reveal** tile that restores fog and real scene names for Room 5.
 - [ ] Actors for The Cover: wyrmling-with-young-breath red dragon, hostile unicorn, arrowless centaur, Remnant-rule troll, roper, owlbear (2024 stat blocks, edited as in the design doc table)
 - [x] `tools/import_dd2vtt.py` written and tested on a 31×34 export (450 walls, 19 doors)
 - [x] Rewrote `tools/build.py`, `journal.py`, `actors.py`, `matt.py` for v2 (2026-10-27); id is `the-back-room`,
-      packs `the-back-room` + `back-room-bestiary`; `validate.mjs`, `publish.sh`, `package.json` renamed; `maps.json`
+      pack `the-back-room` (the Bestiary pack was dropped in v2.1.1: actors ship inside the Adventure); `validate.mjs`, `publish.sh`, `package.json` renamed; `maps.json`
       reset to `{}`. Builds with zero maps (14 journals, 36 pages, 12 actors). **Not yet done:** rename the GitHub
       repo; delete v1 leftovers (`tools/maps.py`, `tile_art.py`, `tokens.py`, `audio.py`, v1 `maps/`, `tiles/`,
       `tokens/`, `audio/`); draw v2 token art (actors use core icons for now); render v2 audio (playlists reference

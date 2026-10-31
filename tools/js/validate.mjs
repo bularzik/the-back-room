@@ -40,10 +40,6 @@ for (const s of adv.scenes) for (const t of s.tiles) {
 }
 // Every module-relative asset path must exist
 for (const [, path] of text.matchAll(/modules\/the-back-room\/([^"'\s)]+)/g)) files.add(path);
-for (const p of readdirSync(`${tmp}/back-room-bestiary`)) {
-  const t = readFileSync(`${tmp}/back-room-bestiary/${p}`, "utf8");
-  for (const [, path] of t.matchAll(/modules\/the-back-room\/([^"'\s)]+)/g)) files.add(path);
-}
 for (const f of files) if (!existsSync(f)) warn(`Missing asset ${f}`);
 // IDs must be 16-char alphanumeric and unique
 const allIds = [...text.matchAll(/"_id":"([^"]+)"/g)].map(m => m[1]);
