@@ -2,7 +2,7 @@
  "_id": "dzOCj45n3twcxQJN",
  "name": "Red Dragon (The Cover)",
  "type": "npc",
- "img": "icons/creatures/reptiles/dragon-winged-red.webp",
+ "img": "modules/the-back-room/tokens/token-dragon.webp",
  "system": {
   "abilities": {
    "str": {
@@ -182,7 +182,7 @@
   "width": 1,
   "height": 1,
   "texture": {
-   "src": "icons/creatures/reptiles/dragon-winged-red.webp",
+   "src": "modules/the-back-room/tokens/token-dragon.webp",
    "scaleX": 1,
    "scaleY": 1
   },

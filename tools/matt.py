@@ -14,6 +14,7 @@ Each scene's maps.json entry supplies named rects (x, y, w, h in px). What each 
 Tiles whose rects are missing are skipped with a warning, so the build works before the maps do.
 """
 from actors import uid, MOD
+BLANK = f"{MOD}/tiles/blank.webp"   # fully transparent: trigger tiles must be visible (MATT skips hidden tiles) but show nothing
 
 MATT = "monks-active-tiles"
 AUD = f"{MOD}/audio"
@@ -42,7 +43,7 @@ class TB:
         self.n += 1
         self.tiles.append({
             "_id": self.tid(key), "x": int(x), "y": int(y), "width": int(w), "height": int(h),
-            "texture": {"src": img, "anchorX": .5, "anchorY": .5, "scaleX": 1, "scaleY": 1, "tint": "#ffffff", "alphaThreshold": .75, "fit": "fill"},
+            "texture": {"src": img or BLANK, "anchorX": .5, "anchorY": .5, "scaleX": 1, "scaleY": 1, "tint": "#ffffff", "alphaThreshold": .75, "fit": "fill"},
             "elevation": 0, "sort": self.n, "rotation": 0, "alpha": 1, "hidden": hidden, "locked": False,
             "occlusion": {"mode": 0, "alpha": 0}, "restrictions": {"light": False, "weather": False},
             "flags": {MATT: {"name": name or key, "active": active, "trigger": trigger, "restriction": restriction,

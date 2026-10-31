@@ -28,10 +28,10 @@ Then, in your dnd5e world:
 - 29 scenes from 13 Dungeondraft maps: the five fixed rooms, The Cover's cavern, and eight Corridor places as three hidden scene copies each
 - 360 Monk's Active Tile Triggers tiles: pool doors that never lead back, fog resets, the X door (one hidden twin per destination room), the Corridor Between's identical segments and Loop Break, the Hoard's way back, the Cover's six waking gaps, and GM control buttons
 - 12 actors: the six monsters of The Cover, the Echo, three fallback Remnants, the Barkeep, the Hooded Stranger (as NPCs, never monsters)
-- 36 journal entries as Enhanced Journal types: 13 Places, 6 Persons linked to their actors, 1 Encounter, 1 Organization, 1 Quest, guides, rules, Cast, 4 handouts, 3 Campaign Companion Sessions, the campaign portal and timeline
+- 35 journal entries as Enhanced Journal types: 13 Places, 6 Persons linked to their actors, 1 Encounter, 1 Organization, 1 Quest, guides, rules, Cast, 3 handouts (the job notice, the Toothless Key, the X Map), 3 Campaign Companion Sessions, the campaign portal and timeline
 - 2 roll tables (the Corridor pool, generic cues) and 2 playlists (3 ambient loops, 3 stingers)
 
-Maps are built in Dungeondraft; audio is synthesised; actor tokens use Foundry's core icons for now.
+Maps are built in Dungeondraft; audio is synthesised; token portraits are painted with Stable Diffusion and masked by `tools/make_tokens.py`.
 
 ## Development
 

@@ -19,6 +19,7 @@ allactors = {**monsters, **npcs}
 # ---------- scenes: fixed rooms, The Cover, and the pool copies ----------
 FIXED = {"backroom": "The Back Room", "common-room": "The Common Room", "corridor-between": "The Corridor Between",
          "hoard": "The Hoard", "cover-cavern": "The Cavern"}
+NAV_NAME = {"backroom": "Upstairs", "common-room": "Downstairs", "corridor-between": "A Corridor", "hoard": "A Room", "cover-cavern": "A Cave"}  # what players see in the navigation bar
 POOL_NAMES = {"c1-stairwell": "Stairwell", "c2-stable": "Stable", "c3-inn-hallway": "Hallway", "c4-campfire": "Clearing",
               "c5-market": "Market Row", "c6-ferry": "Crossing", "c7-crossroads": "Crossroads", "c8-cellar": "Cellar"}
 SCENE_KEYS = dict(FIXED)
@@ -148,11 +149,11 @@ journals.append({"_id": PORTAL_ID, "name": TITLE, "folder": F["JournalEntry"], "
 journals.append({"_id": TIMELINE_ID, "name": f"{TITLE} — Timeline", "folder": F["JournalEntry"], "sort": 50000, "ownership": {"default": 0}, "categories": [], "pages": [],
                  "flags": {CC: {"timeline": {"timepoints": []}}, "core": {"sheetClass": f"{CC}.TimelineJournalSheet"}}})
 # Sessions (Campaign Companion): recap is the players' shared text, GM notes carry the plan
-SESSIONS = [("Session 1: The Tavern", "Rooms 1–2 and two Corridors (visits 1–2). Ask each player, privately and before play, for their first character's name, class and the one thing everyone remembers. Play the tavern straight. End on the X map."),
-            ("Session 2: The Corridors", "Three or four Corridors (visits 3–6, including The Cover and the glimpse), then Room 3. Track every Misremembering change: who, what it was, what it is now."),
-            ("Session 3: The Hoard", "A Corridor at visit 7+ with a Remnant in it, Room 4, Room 5. Spell the stakes out at the top of round 3. Make staying a real temptation.")]
+SESSIONS = [("Session 1", "Rooms 1–2 and two Corridors (visits 1–2). Ask each player, privately and before play, for their first character's name, class and the one thing everyone remembers. Play the tavern straight. End on the X map."),
+            ("Session 2", "Three or four Corridors (visits 3–6, including The Cover and the glimpse), then Room 3. Track every Misremembering change: who, what it was, what it is now."),
+            ("Session 3", "A Corridor at visit 7+ with a Remnant in it, Room 4, Room 5. Spell the stakes out at the top of round 3. Make staying a real temptation.")]
 for i, (name, plan) in enumerate(SESSIONS):
-    mej_entry(name, "session", "<p></p>", F["JournalEntry"], sort=nxt(), ownership=2, session={"number": i + 1, "gmNotes": f"<p>{plan}</p>"})
+    mej_entry(name, "session", "<p></p>", F["JournalEntry"], sort=nxt(), ownership=0, session={"number": i + 1, "gmNotes": f"<p>{plan}</p>"})
 
 # ---------- actors ----------
 def actor_doc(a, folder):
@@ -195,7 +196,7 @@ def snd(name, file, repeat, vol, desc=""):
     return {"_id": uid("sound", file), "name": name, "path": f"{MOD}/audio/{file}.ogg", "repeat": repeat, "volume": vol,
             "description": desc, "fade": 1000 if repeat else None, "playing": False, "pausedTime": None, "sort": 0, "flags": {}}
 playlists = [
-    {"_id": uid("playlist", "amb"), "name": "Back Room: Ambience", "description": "Loops. Placeholder audio from v1 until the v2 loops are rendered.",
+    {"_id": uid("playlist", "amb"), "name": "Back Room: Ambience", "description": "Ambient loops: the tavern for Session 1, the hum for the Corridors, dawn in the reading room for the ending.",
      "mode": -1, "fade": 1000, "sounds": [snd("Tavern, late", "ambience-tavern", True, .45), snd("Corridor hum", "ambience-corridor", True, .4),
                                            snd("Reading room, dawn", "ambience-reading-room", True, .4)],
      "folder": F["Playlist"], "sort": 100000, "ownership": {"default": 0}, "flags": {}, "playing": False},
@@ -229,7 +230,7 @@ for i, key in enumerate(built):
     sx, sy = m.get("start", [m["w"] // 2, m["h"] // 2])
     jref = page_index[NOTE_PAGES[list(m["notes"])[0]]][0] if m.get("notes") and list(m["notes"])[0] in NOTE_PAGES else (page_index[POOL_PLACE[key.rsplit("-", 1)[0]]][0] if is_pool else None)
     darkness = m.get("darkness", .7 if is_pool else .5)
-    scenes.append({"_id": sid, "name": SCENE_KEYS[key], "navigation": not is_pool, "navOrder": i, "navName": "", "active": False,
+    scenes.append({"_id": sid, "name": SCENE_KEYS[key], "navigation": not is_pool, "navOrder": i, "navName": NAV_NAME.get(key, ""), "active": False,
                    "background": {"src": f"{MOD}/maps/{m['file']}"}, "foreground": None,
                    "thumb": f"{MOD}/maps/thumb-{m['file']}", "width": m["w"], "height": m["h"], "padding": 0,
                    "initial": {"x": int(sx), "y": int(sy), "scale": .7}, "backgroundColor": "#0b0a07",

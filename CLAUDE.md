@@ -205,3 +205,23 @@ Chrome tab at http://127.0.0.1:7860/ via the Chrome tools.
 - Still to do: The Cover cavern (see above), then the eight Corridor places c1–c8 (one vista each;
   copies share the vista). Scene files: `/home/claude/vista/{reading-room,backroom,common-room,corridor}-ink.html`
   — the container is ephemeral, so copy them into the repo under `tools/vista/` before relying on them.
+
+## v2.1 fixes (2026-10-31, from the user's playtest feedback)
+
+- "Completely prepared adventure, not a toolbox": no GM placeholders anywhere. The Job handout carries the actual
+  notice (lamp-oil wagon over the Kettle Pass to Thistlecross, 40 gp a head); the Echo plays as written (a
+  5th-level adventurer halved); Barkeep and Stranger fallbacks written; no references to the author's own table.
+- Spoiler audit of everything a player can see: the Rules handout is gone (rules are GM-only); player-facing scene
+  names come from `NAV_NAME` in build.py (Upstairs / Downstairs / A Corridor / A Room / A Cave); Session journals
+  are GM-only (ownership 0) and named "Session 1/2/3"; every MATT trigger tile gets `tiles/blank.webp` (fully
+  transparent) instead of no texture, because untextured tiles draw as grey boxes. Trigger tiles must stay
+  visible: MATT does not fire hidden tiles (the hidden X-door twins rely on this).
+- Tokens: 12 portraits from Draw Things (SD 1.5, 512px). Put the SUBJECT FIRST in the prompt: CLIP truncates at 77
+  tokens, and with a long style prefix every subject was cut off (all monsters came out as people). Add
+  "human, person, man, woman" to the negative prompt for monsters. Raw PNGs in `tokens-src/` (not shipped),
+  `python3 tools/make_tokens.py tokens-src tokens` writes round `tokens/token-<key>.webp`; `package.mjs` zips `tokens`.
+- The user's main Foundry (`~/FoundryVTT-14`) still had v1.1.1 `the-interstice` installed. v2 is a different
+  module id, so it cannot update in place: install from the-back-room's manifest URL.
+- A fresh world can be made without the setup UI: write `worlds/<id>/world.json` (copy world-b's system/core
+  fields), POST `/setup {action:'resetPackages'}`, then `{action:'launchWorld', world:'<id>'}`. Test world
+  `backroom-fresh` exists on 14.369 for clean-import checks.

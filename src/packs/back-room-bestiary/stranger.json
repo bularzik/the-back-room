@@ -2,7 +2,7 @@
  "_id": "LgUhIfhgg9F7Vdll",
  "name": "The Hooded Stranger",
  "type": "npc",
- "img": "icons/svg/mystery-man.svg",
+ "img": "modules/the-back-room/tokens/token-stranger.webp",
  "system": {
   "abilities": {
    "str": {
@@ -168,7 +168,7 @@
   "width": 1,
   "height": 1,
   "texture": {
-   "src": "icons/svg/mystery-man.svg",
+   "src": "modules/the-back-room/tokens/token-stranger.webp",
    "scaleX": 1,
    "scaleY": 1
   },
@@ -195,7 +195,7 @@
      "max": ""
     },
     "description": {
-     "value": "<p>The stranger offers a plain, ordinary job: an escort, a delivery, a missing person, whatever this table's campaign would open with. The GM writes it on the handout <em>The Job</em> before session one. It is never a trick.</p>",
+     "value": "<p>The stranger offers a plain, ordinary job: ride guard on a wagon of lamp oil over the Kettle Pass to Thistlecross, three days, forty gold a head, half tonight, leaving at first light (the handout <em>The Job</em>). It is never a trick, and if the party leaves at the end, it is still there to be done.</p>",
      "chat": ""
     },
     "identifier": "the-hook",

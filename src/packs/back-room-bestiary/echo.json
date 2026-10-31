@@ -2,7 +2,7 @@
  "_id": "I2kDQYpzKQGgJWAP",
  "name": "The Echo",
  "type": "npc",
- "img": "icons/svg/mystery-man.svg",
+ "img": "modules/the-back-room/tokens/token-echo.webp",
  "system": {
   "abilities": {
    "str": {
@@ -87,7 +87,7 @@
   },
   "details": {
    "biography": {
-    "value": "<p>A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.</p><p><strong>Running it.</strong> Replace this placeholder with the real sheet: copy the character's actor, halve every number, blank the name. The two traits below are the rules that matter. It stops the moment the loop breaks.</p>",
+    "value": "<p>A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.</p><p><strong>Running it.</strong> This block is a 5th-level adventurer halved and plays as written. If you have ten minutes before the session, copy the mirrored character's actor instead, halve every number and blank the name; the two traits below are the rules that matter either way. It stops the moment the loop breaks.</p>",
     "public": ""
    },
    "alignment": "Unaligned",
@@ -174,7 +174,7 @@
   "width": 1,
   "height": 1,
   "texture": {
-   "src": "icons/svg/mystery-man.svg",
+   "src": "modules/the-back-room/tokens/token-echo.webp",
    "scaleX": 1,
    "scaleY": 1
   },
@@ -201,7 +201,7 @@
      "max": ""
     },
     "description": {
-     "value": "<p>The Echo's statistics are the mirrored character's with every number halved (Hit Points, Armor Class bonus from Dexterity, attack bonuses, damage, save DCs). The block above is a placeholder for a 5th-level character.</p>",
+     "value": "<p>The Echo's statistics are the mirrored character's with every number halved (Hit Points, Armor Class, attack bonuses, damage, save DCs). As written, it is a 5th-level adventurer halved.</p>",
      "chat": ""
     },
     "identifier": "halved",

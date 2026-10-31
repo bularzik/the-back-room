@@ -2,7 +2,7 @@
  "_id": "eFmQnaUef5KirEgg",
  "name": "Troll (The Cover)",
  "type": "npc",
- "img": "icons/creatures/magical/humanoid-giant-ogre-green.webp",
+ "img": "modules/the-back-room/tokens/token-troll.webp",
  "system": {
   "abilities": {
    "str": {
@@ -174,7 +174,7 @@
   "width": 2,
   "height": 2,
   "texture": {
-   "src": "icons/creatures/magical/humanoid-giant-ogre-green.webp",
+   "src": "modules/the-back-room/tokens/token-troll.webp",
    "scaleX": 1,
    "scaleY": 1
   },

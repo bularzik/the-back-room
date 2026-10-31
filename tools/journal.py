@@ -54,7 +54,7 @@ def build(L):
 
     # ------------------------------------------------------------------ 01 RULES (players' journal)
     entries.append(("01. Rules of the Back Room", [
-        ("The Four Rules", "<h1>Rules of the Back Room</h1>" + P("Four rules carry the theme. Read them to the players after Room 1; they go on the sheet, not in GM prose.")
+        ("The Four Rules", "<h1>Rules of the Back Room</h1>" + P("Four rules carry the theme. They are for you, not the players: each one is discovered at the table — the first rewritten detail, the first door that opens on somewhere else, the first thing left behind. Say the rule aloud only after the table has met it.")
          + ol("<strong>Misremembering.</strong> Each short rest taken in a Corridor rewrites one small backstory detail of one character — a sibling's name, the colour of the house, which god. The GM changes it on the sheet and tells only the <em>other</em> players. Track every change (who, what it was, what it is now): Room 5 needs the list.",
               "<strong>The Signature.</strong> A Remnant's one remembered thing auto-succeeds once per round, no roll, no save. Everything else about it is blank. A finished character has a whole sheet; an unfinished one has one line.",
               "<strong>No door leads back.</strong> Every door in the Corridors sends the party somewhere else in the pool, never to the place they left. The one scripted exception is the Room 4 exit. The visit counter escalates what is in there with them.",
@@ -85,7 +85,7 @@ def build(L):
     # ------------------------------------------------------------------ 02 ROOM 1
     entries.append(("02. Room 1: The Back Room", [
         ("The Evening", "<h1>Room 1: The Back Room</h1>" + P(
-            f"Play the cliché straight and let the players relax into it. {A('stranger')} in the corner booth has a job (write it on the handout <em>The Job</em> before the session: an escort, a delivery, a missing person — whatever this table's campaign would open with). The party takes it, buys provisions, and {A('barkeep')} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.")
+            f"Play the cliché straight and let the players relax into it. {A('stranger')} in the corner booth has a job: ride guard on a lamp-oil wagon over the Kettle Pass to Thistlecross — three days, forty gold each, half now, leaving at first light (the handout <em>The Job</em> has the terms; swap in your own hook if your campaign already has one). The party takes it, buys provisions, and {A('barkeep')} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.")
          + box("The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light.")
          + P("Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.")
          + aside("Keyed areas", ul("<strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.",
@@ -208,7 +208,7 @@ def build(L):
               "The fire gives no heat. A bedroll is already slept in, still warm. Anyone who rests here wakes at full hit points, every wound healed overnight — and Misremembering takes its due.",
               "A clearing ringed by trees, fire at the centre, three bedrolls, a log, a stream edge. 'Doors' are gaps in the trees: three paths out. 14×14.",
               "0. (B: the log is a bench with green wainscoting behind it, against a tree; C: a glass double door standing free between two trunks, a shelf behind it.)",
-              [["3–4", "The fire crackles with the rhythm of someone's breathing."], ["5–6", "Figures dancing just outside the firelight who never look over (the dryads this table remembers)."], ["7+", "A Remnant sitting at the fire with its hands out, warming nothing."]],
+              [["3–4", "The fire crackles with the rhythm of someone's breathing."], ["5–6", "Figures dancing just outside the firelight who never look over."], ["7+", "A Remnant sitting at the fire with its hands out, warming nothing."]],
               "The bedroll that is already slept in has a character's initials worked into the lining."),
         place(5, "c5-market", "Market Row at Closing", "The shopping trip; the potion seller.",
               "The stalls are being shuttered by nobody. The potion stall's labels are every one almost a word (HEALNG, MANNA, CURE LIHGT); the potions are all red.",
@@ -242,7 +242,7 @@ def build(L):
             f"The one honest fight, at Corridor visits 3–6. It is monsters, not Remnants — misremembered ones — and it is the payoff of the 'something is in here' escalation before the Remnant appears at visit 7+. Scene: {SC('cover-cavern')}, entered once, by the GM's scripted door at the visit of your choosing.",
             "The table's first Monster Manual had a cover: a red dragon, a unicorn, a centaur, a troll, a roper and an owlbear, all in one fight with adventurers in a dark, treasure-filled cavern. Monsters with no business being together, and the first treasure hoard these players ever saw.")
          + box("A pool door opens onto a cavern. Treasure heaped against the far wall, lit from a crack above. And in the middle of it, six monsters, mid-fight — a red dragon rearing, a unicorn with its horn lowered, a centaur drawing a bow, a troll mid-lunge, something like a stalagmite with its arms out, an owlbear — all perfectly still. They are fighting nobody. There are gaps in the picture the shape of people, and a dropped sword where one of them stood.")
-         + P("The monsters do not acknowledge the party. They keep fighting nobody, as they have since 1977. (The rule is borrowed from a dryad encounter this table remembers: the thing in the room is busy, and the party has to decide whether to interrupt it.)",
+         + P("The monsters do not acknowledge the party. They keep fighting nobody, as they have since 1977. The thing in the room is busy; the party has to decide whether to interrupt it.",
              "<strong>Trigger: stepping into a gap.</strong> Each gap wakes one monster — the one that was fighting whoever stood there — and only that one. The rest keep posing. The party chooses how much of the cover to fight. Two or three is a hard fight for levels 5–8; all six is far beyond deadly, and the GM should let the tableau's stillness say so. Joining the picture is leaving-something-behind in reverse; and the theme, literally: the fight on the cover never ended, and you only have to finish the ones you start.")
          + aside("Keyed areas", ul("<strong>E1. The cave mouth.</strong> Arrival. The roper's gap (the thief).", "<strong>E2. The ledge.</strong> The centaur's gap (the archer).", "<strong>E3. The hoard.</strong> The dragon's gap (the fighter with the shield) and the treasure.", "<strong>E4. The chest.</strong> The troll's gap (the dwarf).", "<strong>E5. The back wall.</strong> The owlbear's gap (the cleric); the unicorn's gap (the elf) beside it."))),
         ("The Six", "<h2>The Six</h2>" + table(["Monster", "Misremembered as", "Build"], [
@@ -262,20 +262,16 @@ def build(L):
             f"{A('barkeep')} — the gentle gate of Room 1; ordinary morning in Room 5.",
             f"{A('stranger')} — the hook, played straight; a role in every booth of Room 2.",
             f"{A('remnant-rogue')}, {A('remnant-barbarian')}, {A('remnant-wizard')} — the fallback Remnants.",
-            f"{A('echo')} — Room 3's blank-faced copy; a placeholder to replace with the real halved sheet.")
+            f"{A('echo')} — Room 3's blank-faced copy, built as a 5th-level character halved; swap in the mirrored character's own sheet if you have time, it plays as written if not.")
          + "<h2>Monsters</h2>" + ul(f"{A('dragon')}, {A('unicorn')}, {A('centaur')}, {A('troll')}, {A('roper')}, {A('owlbear')} — The Cover.")),
     ]))
 
     # ------------------------------------------------------------------ 10 HANDOUTS (split into one entry per page by build.py)
     entries.append(("10. Handouts", [
-        ("Handout: The Job", "<h2>The Job</h2>" + P("<em>GM: write the hook here before session one. An escort, a delivery, a missing person — whatever this table's campaign would open with. It is never a trick. Pay is fair. Directions are good.</em>")),
+        ("Handout: The Job", "<h2>The Job</h2>" + P("<em>Wanted: four or five capable people to ride guard on a wagon of lamp oil from this house over the Kettle Pass to Thistlecross. Three days by the high road. Forty gold a head, twenty of it tonight, the rest from the chandler at Thistlecross on delivery. We leave at first light. Bring your own bedrolls; the wagon has room for packs. Ask for the one in the corner booth.</em>",
+            "<em>The pass is quiet this time of year. The road is good. Nothing about this is a trick.</em>")),
         ("Handout: The Toothless Key", "<h2>The Toothless Key</h2>" + P("A long iron key, drawn from a stone in the corner of the storeroom. It has a bow, a shank, and no teeth at all. It opens nothing in the room you found it in.", "<em>Keep it.</em>")),
         ("Handout: The X Map", "<h2>The X Map</h2>" + P("A map, drawn in a hand none of you recognise, of a place none of you have been. There is an X on it. The X marks the way out.", "<em>Do not look at the X for a moment. Now look again.</em>")),
-        ("Handout: Rules of the Back Room", "<h2>Rules of the Back Room</h2>" + ol(
-            "<strong>Misremembering.</strong> Each short rest in a Corridor rewrites one small thing about one of you. You will not be told which. The others will.",
-            "<strong>The Signature.</strong> A Remnant's one remembered thing always works. Everything else about it is blank.",
-            "<strong>No door leads back.</strong>",
-            "<strong>Leaving something behind is the only way forward.</strong>")),
     ]))
 
     return entries

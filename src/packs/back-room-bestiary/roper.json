@@ -2,7 +2,7 @@
  "_id": "7EzXl7YPx0DF1KeZ",
  "name": "Roper (The Cover)",
  "type": "npc",
- "img": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
+ "img": "modules/the-back-room/tokens/token-roper.webp",
  "system": {
   "abilities": {
    "str": {
@@ -178,7 +178,7 @@
   "width": 2,
   "height": 2,
   "texture": {
-   "src": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
+   "src": "modules/the-back-room/tokens/token-roper.webp",
    "scaleX": 1,
    "scaleY": 1
   },

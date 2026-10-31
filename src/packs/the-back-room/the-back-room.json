@@ -3,13 +3,13 @@
  "name": "The Back Room",
  "img": "modules/the-back-room/maps/cover.webp",
  "caption": "A liminal-horror adventure for 5th\u20138th level characters",
- "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 29 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 12 actors; 36 journal entries; 2 roll tables; 2 playlists.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
+ "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 29 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 12 actors; 35 journal entries; 2 roll tables; 2 playlists.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
  "actors": [
   {
    "_id": "dzOCj45n3twcxQJN",
    "name": "Red Dragon (The Cover)",
    "type": "npc",
-   "img": "icons/creatures/reptiles/dragon-winged-red.webp",
+   "img": "modules/the-back-room/tokens/token-dragon.webp",
    "system": {
     "abilities": {
      "str": {
@@ -189,7 +189,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-     "src": "icons/creatures/reptiles/dragon-winged-red.webp",
+     "src": "modules/the-back-room/tokens/token-dragon.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -644,7 +644,7 @@
    "_id": "o8uyxSXpkyQIfpGc",
    "name": "Unicorn (The Cover)",
    "type": "npc",
-   "img": "icons/creatures/mammals/horse-unicorn-white.webp",
+   "img": "modules/the-back-room/tokens/token-unicorn.webp",
    "system": {
     "abilities": {
      "str": {
@@ -820,7 +820,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-     "src": "icons/creatures/mammals/horse-unicorn-white.webp",
+     "src": "modules/the-back-room/tokens/token-unicorn.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -1633,7 +1633,7 @@
    "_id": "i1NOV9LQoGhZFkA6",
    "name": "Centaur (The Cover)",
    "type": "npc",
-   "img": "icons/creatures/mammals/horse-brown.webp",
+   "img": "modules/the-back-room/tokens/token-centaur.webp",
    "system": {
     "abilities": {
      "str": {
@@ -1810,7 +1810,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-     "src": "icons/creatures/mammals/horse-brown.webp",
+     "src": "modules/the-back-room/tokens/token-centaur.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -2395,7 +2395,7 @@
    "_id": "eFmQnaUef5KirEgg",
    "name": "Troll (The Cover)",
    "type": "npc",
-   "img": "icons/creatures/magical/humanoid-giant-ogre-green.webp",
+   "img": "modules/the-back-room/tokens/token-troll.webp",
    "system": {
     "abilities": {
      "str": {
@@ -2567,7 +2567,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-     "src": "icons/creatures/magical/humanoid-giant-ogre-green.webp",
+     "src": "modules/the-back-room/tokens/token-troll.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -3051,7 +3051,7 @@
    "_id": "7EzXl7YPx0DF1KeZ",
    "name": "Roper (The Cover)",
    "type": "npc",
-   "img": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
+   "img": "modules/the-back-room/tokens/token-roper.webp",
    "system": {
     "abilities": {
      "str": {
@@ -3227,7 +3227,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-     "src": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
+     "src": "modules/the-back-room/tokens/token-roper.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -3852,7 +3852,7 @@
    "_id": "deJ0klDBXZ1te7qW",
    "name": "Owlbear (The Cover)",
    "type": "npc",
-   "img": "icons/creatures/mammals/bear-paw-print-brown.webp",
+   "img": "modules/the-back-room/tokens/token-owlbear.webp",
    "system": {
     "abilities": {
      "str": {
@@ -4023,7 +4023,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-     "src": "icons/creatures/mammals/bear-paw-print-brown.webp",
+     "src": "modules/the-back-room/tokens/token-owlbear.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -4327,7 +4327,7 @@
    "_id": "I2kDQYpzKQGgJWAP",
    "name": "The Echo",
    "type": "npc",
-   "img": "icons/svg/mystery-man.svg",
+   "img": "modules/the-back-room/tokens/token-echo.webp",
    "system": {
     "abilities": {
      "str": {
@@ -4412,7 +4412,7 @@
     },
     "details": {
      "biography": {
-      "value": "<p>A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.</p><p><strong>Running it.</strong> Replace this placeholder with the real sheet: copy the character's actor, halve every number, blank the name. The two traits below are the rules that matter. It stops the moment the loop breaks.</p>",
+      "value": "<p>A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.</p><p><strong>Running it.</strong> This block is a 5th-level adventurer halved and plays as written. If you have ten minutes before the session, copy the mirrored character's actor instead, halve every number and blank the name; the two traits below are the rules that matter either way. It stops the moment the loop breaks.</p>",
       "public": ""
      },
      "alignment": "Unaligned",
@@ -4499,7 +4499,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-     "src": "icons/svg/mystery-man.svg",
+     "src": "modules/the-back-room/tokens/token-echo.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -4526,7 +4526,7 @@
        "max": ""
       },
       "description": {
-       "value": "<p>The Echo's statistics are the mirrored character's with every number halved (Hit Points, Armor Class bonus from Dexterity, attack bonuses, damage, save DCs). The block above is a placeholder for a 5th-level character.</p>",
+       "value": "<p>The Echo's statistics are the mirrored character's with every number halved (Hit Points, Armor Class, attack bonuses, damage, save DCs). As written, it is a 5th-level adventurer halved.</p>",
        "chat": ""
       },
       "identifier": "halved",
@@ -4782,7 +4782,7 @@
    "_id": "qkuFipSznjnC6QOA",
    "name": "The Rogue With a Tragic Past",
    "type": "npc",
-   "img": "icons/svg/mystery-man.svg",
+   "img": "modules/the-back-room/tokens/token-rogue.webp",
    "system": {
     "abilities": {
      "str": {
@@ -4948,7 +4948,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-     "src": "icons/svg/mystery-man.svg",
+     "src": "modules/the-back-room/tokens/token-rogue.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -5273,7 +5273,7 @@
    "_id": "R0M8x4EHH11TcDUr",
    "name": "The Barbarian Who Is Just Strong",
    "type": "npc",
-   "img": "icons/svg/mystery-man.svg",
+   "img": "modules/the-back-room/tokens/token-barbarian.webp",
    "system": {
     "abilities": {
      "str": {
@@ -5439,7 +5439,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-     "src": "icons/svg/mystery-man.svg",
+     "src": "modules/the-back-room/tokens/token-barbarian.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -5762,7 +5762,7 @@
    "_id": "GMjufd12FvYJ33gn",
    "name": "The Wizard Who Misread the Spell",
    "type": "npc",
-   "img": "icons/svg/mystery-man.svg",
+   "img": "modules/the-back-room/tokens/token-wizard.webp",
    "system": {
     "abilities": {
      "str": {
@@ -5928,7 +5928,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-     "src": "icons/svg/mystery-man.svg",
+     "src": "modules/the-back-room/tokens/token-wizard.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -6251,7 +6251,7 @@
    "_id": "KrWS2wJliiVViOUo",
    "name": "The Barkeep",
    "type": "npc",
-   "img": "icons/svg/mystery-man.svg",
+   "img": "modules/the-back-room/tokens/token-barkeep.webp",
    "system": {
     "abilities": {
      "str": {
@@ -6417,7 +6417,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-     "src": "icons/svg/mystery-man.svg",
+     "src": "modules/the-back-room/tokens/token-barkeep.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -6484,7 +6484,7 @@
        "max": ""
       },
       "description": {
-       "value": "<p>Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table. The GM picks it from the character sheet before the session.</p>",
+       "value": "<p>Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table: pick it from the sheet before the session. With nothing on the sheet to use, he asks after the character by the name the player almost gave them.</p>",
        "chat": ""
       },
       "identifier": "he-knows",
@@ -6520,7 +6520,7 @@
    "_id": "LgUhIfhgg9F7Vdll",
    "name": "The Hooded Stranger",
    "type": "npc",
-   "img": "icons/svg/mystery-man.svg",
+   "img": "modules/the-back-room/tokens/token-stranger.webp",
    "system": {
     "abilities": {
      "str": {
@@ -6686,7 +6686,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-     "src": "icons/svg/mystery-man.svg",
+     "src": "modules/the-back-room/tokens/token-stranger.webp",
      "scaleX": 1,
      "scaleY": 1
     },
@@ -6713,7 +6713,7 @@
        "max": ""
       },
       "description": {
-       "value": "<p>The stranger offers a plain, ordinary job: an escort, a delivery, a missing person, whatever this table's campaign would open with. The GM writes it on the handout <em>The Job</em> before session one. It is never a trick.</p>",
+       "value": "<p>The stranger offers a plain, ordinary job: ride guard on a wagon of lamp oil over the Kettle Pass to Thistlecross, three days, forty gold a head, half tonight, leaving at first light (the handout <em>The Job</em>). It is never a trick, and if the party leaves at the end, it is still there to be done.</p>",
        "chat": ""
       },
       "identifier": "the-hook",
@@ -6754,7 +6754,7 @@
    "name": "The Back Room",
    "navigation": true,
    "navOrder": 0,
-   "navName": "",
+   "navName": "Upstairs",
    "active": false,
    "background": {
     "src": "modules/the-back-room/maps/backroom.webp"
@@ -6937,7 +6937,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -7003,7 +7003,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -7338,7 +7338,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -7673,7 +7673,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -8054,7 +8054,7 @@
    "name": "The Common Room",
    "navigation": true,
    "navOrder": 1,
-   "navName": "",
+   "navName": "Downstairs",
    "active": false,
    "background": {
     "src": "modules/the-back-room/maps/common-room.webp"
@@ -8270,7 +8270,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -8336,7 +8336,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -8425,7 +8425,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -8911,7 +8911,7 @@
    "name": "The Corridor Between",
    "navigation": true,
    "navOrder": 2,
-   "navName": "",
+   "navName": "A Corridor",
    "active": false,
    "background": {
     "src": "modules/the-back-room/maps/corridor-between.webp"
@@ -9277,7 +9277,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9327,7 +9327,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9393,7 +9393,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9459,7 +9459,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9525,7 +9525,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9591,7 +9591,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9657,7 +9657,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9742,7 +9742,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9840,7 +9840,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -9925,7 +9925,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -10010,7 +10010,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -10095,7 +10095,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -10180,7 +10180,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -11135,7 +11135,7 @@
    "name": "The Hoard",
    "navigation": true,
    "navOrder": 3,
-   "navName": "",
+   "navName": "A Room",
    "active": false,
    "background": {
     "src": "modules/the-back-room/maps/hoard.webp"
@@ -11417,7 +11417,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -11483,7 +11483,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -11999,7 +11999,7 @@
    "name": "The Cavern",
    "navigation": true,
    "navOrder": 4,
-   "navName": "",
+   "navName": "A Cave",
    "active": false,
    "background": {
     "src": "modules/the-back-room/maps/cover-cavern.webp"
@@ -12215,7 +12215,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -12292,7 +12292,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -12380,7 +12380,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -12468,7 +12468,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -12556,7 +12556,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -12644,7 +12644,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -12732,7 +12732,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -12820,7 +12820,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -19723,7 +19723,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -19813,7 +19813,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -19903,7 +19903,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -19993,7 +19993,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -20316,7 +20316,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -20639,7 +20639,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -22190,7 +22190,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -22280,7 +22280,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -22370,7 +22370,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -22460,7 +22460,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -22783,7 +22783,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -23106,7 +23106,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -24657,7 +24657,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -24747,7 +24747,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -24837,7 +24837,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -24927,7 +24927,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -25250,7 +25250,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -25573,7 +25573,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -27091,7 +27091,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -27181,7 +27181,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -27271,7 +27271,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -27361,7 +27361,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -27684,7 +27684,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -28007,7 +28007,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -29571,7 +29571,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -29661,7 +29661,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -29751,7 +29751,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -29841,7 +29841,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -30164,7 +30164,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -30487,7 +30487,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -32051,7 +32051,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -32141,7 +32141,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -32231,7 +32231,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -32321,7 +32321,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -32644,7 +32644,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -32967,7 +32967,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -34564,7 +34564,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -34654,7 +34654,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -34744,7 +34744,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -34834,7 +34834,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -35157,7 +35157,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -35480,7 +35480,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -37675,7 +37675,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -37765,7 +37765,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -37855,7 +37855,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -37945,7 +37945,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -38268,7 +38268,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -38591,7 +38591,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -40786,7 +40786,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -40876,7 +40876,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -40966,7 +40966,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -41056,7 +41056,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -41379,7 +41379,7 @@
      "width": 100,
      "height": 200,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -41702,7 +41702,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -43864,7 +43864,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -43954,7 +43954,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -44044,7 +44044,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -44134,7 +44134,7 @@
      "width": 150,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -44457,7 +44457,7 @@
      "width": 100,
      "height": 150,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -44780,7 +44780,7 @@
      "width": 150,
      "height": 150,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -45975,7 +45975,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -46065,7 +46065,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -46155,7 +46155,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -46245,7 +46245,7 @@
      "width": 150,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -46568,7 +46568,7 @@
      "width": 100,
      "height": 150,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -46891,7 +46891,7 @@
      "width": 150,
      "height": 150,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -48086,7 +48086,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -48176,7 +48176,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -48266,7 +48266,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -48356,7 +48356,7 @@
      "width": 150,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -48679,7 +48679,7 @@
      "width": 100,
      "height": 150,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -49002,7 +49002,7 @@
      "width": 150,
      "height": 150,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -50230,7 +50230,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -50320,7 +50320,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -50410,7 +50410,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -50500,7 +50500,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -50823,7 +50823,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -51146,7 +51146,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -52605,7 +52605,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -52695,7 +52695,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -52785,7 +52785,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -52875,7 +52875,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -53198,7 +53198,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -53521,7 +53521,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -54980,7 +54980,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -55070,7 +55070,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -55160,7 +55160,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -55250,7 +55250,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -55573,7 +55573,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -55896,7 +55896,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -57355,7 +57355,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -57445,7 +57445,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -57535,7 +57535,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -57625,7 +57625,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -57948,7 +57948,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -58271,7 +58271,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -59707,7 +59707,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -59797,7 +59797,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -59887,7 +59887,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -59977,7 +59977,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -60300,7 +60300,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -60623,7 +60623,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -62059,7 +62059,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -62149,7 +62149,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -62239,7 +62239,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -62329,7 +62329,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -62652,7 +62652,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -62975,7 +62975,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -64378,7 +64378,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -64468,7 +64468,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -64558,7 +64558,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -64648,7 +64648,7 @@
      "width": 300,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -64971,7 +64971,7 @@
      "width": 300,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -65294,7 +65294,7 @@
      "width": 100,
      "height": 300,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -66489,7 +66489,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -66579,7 +66579,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -66669,7 +66669,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -66759,7 +66759,7 @@
      "width": 300,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -67082,7 +67082,7 @@
      "width": 300,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -67405,7 +67405,7 @@
      "width": 100,
      "height": 300,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -68600,7 +68600,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -68690,7 +68690,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -68780,7 +68780,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -68870,7 +68870,7 @@
      "width": 300,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -69193,7 +69193,7 @@
      "width": 300,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -69516,7 +69516,7 @@
      "width": 100,
      "height": 300,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -70711,7 +70711,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -70801,7 +70801,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -70891,7 +70891,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -70981,7 +70981,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -71316,7 +71316,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -72534,7 +72534,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -72624,7 +72624,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -72714,7 +72714,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -72804,7 +72804,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -73139,7 +73139,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -74357,7 +74357,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -74447,7 +74447,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -74537,7 +74537,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -74627,7 +74627,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -74962,7 +74962,7 @@
      "width": 100,
      "height": 100,
      "texture": {
-      "src": null,
+      "src": "modules/the-back-room/tiles/blank.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "scaleX": 1,
@@ -76143,7 +76143,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>Rules of the Back Room</h1><p>Four rules carry the theme. Read them to the players after Room 1; they go on the sheet, not in GM prose.</p><ol><li><strong>Misremembering.</strong> Each short rest taken in a Corridor rewrites one small backstory detail of one character \u2014 a sibling's name, the colour of the house, which god. The GM changes it on the sheet and tells only the <em>other</em> players. Track every change (who, what it was, what it is now): Room 5 needs the list.</li><li><strong>The Signature.</strong> A Remnant's one remembered thing auto-succeeds once per round, no roll, no save. Everything else about it is blank. A finished character has a whole sheet; an unfinished one has one line.</li><li><strong>No door leads back.</strong> Every door in the Corridors sends the party somewhere else in the pool, never to the place they left. The one scripted exception is the Room 4 exit. The visit counter escalates what is in there with them.</li><li><strong>Leaving something behind is the only way forward.</strong> Each transition out of a fixed room costs something the player chooses \u2014 an item set down, a slot spent on nothing, a story told once and never again. It breaks the Room 3 loop, it is what the Remnants are made of, and it is the choice in Room 5. Never gate it on a keyword; reward the first sincere sacrifice the table invents.</li></ol><h2>The Corridors</h2><p>The Corridors connect the five rooms and are where 'stuck' happens. Three rules run them.</p><p><strong>1. No door leads back.</strong> Every door the party uses sends them to a random Corridor scene from the pool, never the scene they left. In Foundry the door tiles do this; the GM only watches.</p><p><strong>2. Something is in here with you \u2014 by visit count.</strong> Track how many Corridor scenes the party has entered in total (the tiles count for you and whisper the band to the GM on each arrival).</p><table><thead><tr><th>Visits</th><th>Cue</th><th>Library layer</th></tr></thead><tbody><tr><td>1\u20132</td><td>Nothing. Furniture is wrong by one detail.</td><td>A strip of green wainscoting on one wall.</td></tr><tr><td>3\u20134</td><td>Sound: footsteps matching theirs, a half-beat late. A chair creaks in an empty room. (The Cover is reached from a pool door in this band or the next.)</td><td>Doors become double wooden doors with glass panels; through one, bookshelves.</td></tr><tr><td>5\u20136</td><td>Glimpse: a figure at the end of the corridor, gone when looked at directly. It is wearing something one of the players' first characters wore.</td><td>A pointed arch; a stained-glass lantern-window on a landing; carpet on stone.</td></tr><tr><td>7+</td><td>A Remnant is in the room. It is glad to see you. It does not attack.</td><td>Timber ribs overhead. The room is half library now.</td></tr></tbody></table><p><strong>3. Rest costs memory, not hit points.</strong> Short rests work normally, but each one taken in a Corridor applies Rule 1 (Misremembering).</p><p><strong>The pool (d8).</strong> Stairwell, stable, hallway of inn doors, campfire clearing, market row at closing, ferry crossing, crossroads at dusk, cellar (from visit 5 only). Roll on @UUID[RollTable.4NjmmaNof9d3nLv7]{the Corridor Pool table} if the tiles are not doing it for you. One misremembered trope per place \u2014 never two; one is uncanny, two is a joke. The places are written up in <em>06. The Corridor Pool</em>.</p><h2>Remnants</h2><aside class=\"notable\"><h4>GM prep (the one thing to do before session one)</h4><p>Privately ask each player: <em>What was the first D&D character you ever played? Name, class, and the one thing everyone remembers about them.</em> Don't say why. Players with no answer get a fallback Remnant.</p></aside><p><strong>Building a Remnant.</strong></p><ul><li>Take the first character's class and build it at the party's level using the standard NPC approach, or a sidekick-style block if you'd rather keep it light.</li><li><strong>Max hit points.</strong> No rolling.</li><li><strong>The Signature.</strong> The one remembered thing becomes a feature that <em>always works</em>: once per round, it auto-succeeds, no roll, no save. The barbarian who was 'just really strong' always hits. The rogue who always rolled nat 20s on Stealth is simply not there until it chooses to be.</li><li><strong>Everything else is blank.</strong> The Remnant cannot answer any question about its past that isn't the Signature. It doesn't know its hometown. It knows it had a tragic backstory but not what it was.</li><li><strong>It never attacks first.</strong> It wants the game to continue; it will fight if that's what the party wants to do.</li><li><strong>It stands back up.</strong> At 0 HP it rises at the start of its next turn, in the pose it fell in, with full HP, and continues mid-sentence.</li><li><strong>It cannot leave a room through a door the party came through.</strong> That is the only hard limit on it, and it is the exit mechanic for Room 4.</li></ul><p><strong>Fallback Remnants</strong> for players without an answer: @UUID[Actor.qkuFipSznjnC6QOA]{The Rogue With a Tragic Past}, @UUID[Actor.R0M8x4EHH11TcDUr]{The Barbarian Who Is Just Strong}, @UUID[Actor.GMjufd12FvYJ33gn]{The Wizard Who Misread the Spell}. A five-player table may need a fourth; build it from any trope the table laughs at.</p><p><strong>Using them.</strong> One Remnant appears in Room 2. One more surfaces in the Corridors at visit 7+. All of them are in Room 4. They are filed under People, never Monsters.</p>"
+      "content": "<h1>Rules of the Back Room</h1><p>Four rules carry the theme. They are for you, not the players: each one is discovered at the table \u2014 the first rewritten detail, the first door that opens on somewhere else, the first thing left behind. Say the rule aloud only after the table has met it.</p><ol><li><strong>Misremembering.</strong> Each short rest taken in a Corridor rewrites one small backstory detail of one character \u2014 a sibling's name, the colour of the house, which god. The GM changes it on the sheet and tells only the <em>other</em> players. Track every change (who, what it was, what it is now): Room 5 needs the list.</li><li><strong>The Signature.</strong> A Remnant's one remembered thing auto-succeeds once per round, no roll, no save. Everything else about it is blank. A finished character has a whole sheet; an unfinished one has one line.</li><li><strong>No door leads back.</strong> Every door in the Corridors sends the party somewhere else in the pool, never to the place they left. The one scripted exception is the Room 4 exit. The visit counter escalates what is in there with them.</li><li><strong>Leaving something behind is the only way forward.</strong> Each transition out of a fixed room costs something the player chooses \u2014 an item set down, a slot spent on nothing, a story told once and never again. It breaks the Room 3 loop, it is what the Remnants are made of, and it is the choice in Room 5. Never gate it on a keyword; reward the first sincere sacrifice the table invents.</li></ol><h2>The Corridors</h2><p>The Corridors connect the five rooms and are where 'stuck' happens. Three rules run them.</p><p><strong>1. No door leads back.</strong> Every door the party uses sends them to a random Corridor scene from the pool, never the scene they left. In Foundry the door tiles do this; the GM only watches.</p><p><strong>2. Something is in here with you \u2014 by visit count.</strong> Track how many Corridor scenes the party has entered in total (the tiles count for you and whisper the band to the GM on each arrival).</p><table><thead><tr><th>Visits</th><th>Cue</th><th>Library layer</th></tr></thead><tbody><tr><td>1\u20132</td><td>Nothing. Furniture is wrong by one detail.</td><td>A strip of green wainscoting on one wall.</td></tr><tr><td>3\u20134</td><td>Sound: footsteps matching theirs, a half-beat late. A chair creaks in an empty room. (The Cover is reached from a pool door in this band or the next.)</td><td>Doors become double wooden doors with glass panels; through one, bookshelves.</td></tr><tr><td>5\u20136</td><td>Glimpse: a figure at the end of the corridor, gone when looked at directly. It is wearing something one of the players' first characters wore.</td><td>A pointed arch; a stained-glass lantern-window on a landing; carpet on stone.</td></tr><tr><td>7+</td><td>A Remnant is in the room. It is glad to see you. It does not attack.</td><td>Timber ribs overhead. The room is half library now.</td></tr></tbody></table><p><strong>3. Rest costs memory, not hit points.</strong> Short rests work normally, but each one taken in a Corridor applies Rule 1 (Misremembering).</p><p><strong>The pool (d8).</strong> Stairwell, stable, hallway of inn doors, campfire clearing, market row at closing, ferry crossing, crossroads at dusk, cellar (from visit 5 only). Roll on @UUID[RollTable.4NjmmaNof9d3nLv7]{the Corridor Pool table} if the tiles are not doing it for you. One misremembered trope per place \u2014 never two; one is uncanny, two is a joke. The places are written up in <em>06. The Corridor Pool</em>.</p><h2>Remnants</h2><aside class=\"notable\"><h4>GM prep (the one thing to do before session one)</h4><p>Privately ask each player: <em>What was the first D&D character you ever played? Name, class, and the one thing everyone remembers about them.</em> Don't say why. Players with no answer get a fallback Remnant.</p></aside><p><strong>Building a Remnant.</strong></p><ul><li>Take the first character's class and build it at the party's level using the standard NPC approach, or a sidekick-style block if you'd rather keep it light.</li><li><strong>Max hit points.</strong> No rolling.</li><li><strong>The Signature.</strong> The one remembered thing becomes a feature that <em>always works</em>: once per round, it auto-succeeds, no roll, no save. The barbarian who was 'just really strong' always hits. The rogue who always rolled nat 20s on Stealth is simply not there until it chooses to be.</li><li><strong>Everything else is blank.</strong> The Remnant cannot answer any question about its past that isn't the Signature. It doesn't know its hometown. It knows it had a tragic backstory but not what it was.</li><li><strong>It never attacks first.</strong> It wants the game to continue; it will fight if that's what the party wants to do.</li><li><strong>It stands back up.</strong> At 0 HP it rises at the start of its next turn, in the pose it fell in, with full HP, and continues mid-sentence.</li><li><strong>It cannot leave a room through a door the party came through.</strong> That is the only hard limit on it, and it is the exit mechanic for Room 4.</li></ul><p><strong>Fallback Remnants</strong> for players without an answer: @UUID[Actor.qkuFipSznjnC6QOA]{The Rogue With a Tragic Past}, @UUID[Actor.R0M8x4EHH11TcDUr]{The Barbarian Who Is Just Strong}, @UUID[Actor.GMjufd12FvYJ33gn]{The Wizard Who Misread the Spell}. A five-player table may need a fourth; build it from any trope the table laughs at.</p><p><strong>Using them.</strong> One Remnant appears in Room 2. One more surfaces in the Corridors at visit 7+. All of them are in Room 4. They are filed under People, never Monsters.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -76231,7 +76231,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>Room 1: The Back Room</h1><p>Play the clich\u00e9 straight and let the players relax into it. @UUID[Actor.LgUhIfhgg9F7Vdll]{The Hooded Stranger} in the corner booth has a job (write it on the handout <em>The Job</em> before the session: an escort, a delivery, a missing person \u2014 whatever this table's campaign would open with). The party takes it, buys provisions, and @UUID[Actor.KrWS2wJliiVViOUo]{The Barkeep} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.</p><blockquote class=\"read-aloud\"><p><em>The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light.</em></p></blockquote><p>Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.</li><li><strong>A2. The cots.</strong> One per character, along the left wall, blankets turned down.</li><li><strong>A3. The shelves.</strong> Provisions, with the party's receipts tucked under the crocks. Behind the far unit, a door nobody has noticed yet.</li><li><strong>A4. The window.</strong> Small, four panes. One of them is coloured.</li><li><strong>A5. The stone.</strong> In the corner by the chest: a stone with a hilt in it.</li></ul></aside><h2>The Night Event (the Insomnia Rule)</h2><p>Someone wakes. Pick the character whose player is most likely to get up and look.</p><blockquote class=\"read-aloud\"><p><em>The lantern is lit. Nobody lit it. The door to the landing is open a hand's width and the stairs beyond it are stone, going down \u2014 the stairs you came up, but too many of them, and no light at the bottom where the common room should be.</em></p></blockquote><p>Behind the shelves (A3), a second door nobody noticed: it opens into the <strong>hayloft</strong> over the stable, with a ladder down. This is how the storeroom connects to the yard; it also seeds the Stable in the Corridor pool, and it is the <em>riddle door</em> (see the Corridor Pool, Stable).</p><p><strong>The first anchor object.</strong> The stone in the corner (A5) has a hilt in it. Whoever pulls draws out a long iron key with no teeth. It opens nothing in the room. Keep it; it matters in Room 5. Give the handout <em>The Toothless Key</em>.</p><aside class=\"notable\"><h4>Automation</h4><p>Automated: the stairwell and loft doors send tokens into the Corridor pool; clicking the stone opens the key handout.</p></aside><h2>The Guardian Is Not a Fight</h2><p>@UUID[Actor.KrWS2wJliiVViOUo]{The Barkeep} comes down the stone stairwell carrying a tray. He is kind. He tells them it's not morning yet and they should go back to bed; the road will be there tomorrow. He knows a detail about one character that the character has never told anyone \u2014 pick it from a sheet before the session. If pressed, he doesn't understand the question.</p><p>The test here is only whether the party chooses the stairwell (or the loft ladder) over the cot. If they go back to sleep, they wake in Room 1 again, and the barkeep has set a second tray.</p><p><strong>Leaving.</strong> Whichever way they go \u2014 down the stairwell or down the loft ladder \u2014 the first door at the bottom is a Corridor door. Visit 1 begins.</p>"
+      "content": "<h1>Room 1: The Back Room</h1><p>Play the clich\u00e9 straight and let the players relax into it. @UUID[Actor.LgUhIfhgg9F7Vdll]{The Hooded Stranger} in the corner booth has a job: ride guard on a lamp-oil wagon over the Kettle Pass to Thistlecross \u2014 three days, forty gold each, half now, leaving at first light (the handout <em>The Job</em> has the terms; swap in your own hook if your campaign already has one). The party takes it, buys provisions, and @UUID[Actor.KrWS2wJliiVViOUo]{The Barkeep} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.</p><blockquote class=\"read-aloud\"><p><em>The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light.</em></p></blockquote><p>Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.</li><li><strong>A2. The cots.</strong> One per character, along the left wall, blankets turned down.</li><li><strong>A3. The shelves.</strong> Provisions, with the party's receipts tucked under the crocks. Behind the far unit, a door nobody has noticed yet.</li><li><strong>A4. The window.</strong> Small, four panes. One of them is coloured.</li><li><strong>A5. The stone.</strong> In the corner by the chest: a stone with a hilt in it.</li></ul></aside><h2>The Night Event (the Insomnia Rule)</h2><p>Someone wakes. Pick the character whose player is most likely to get up and look.</p><blockquote class=\"read-aloud\"><p><em>The lantern is lit. Nobody lit it. The door to the landing is open a hand's width and the stairs beyond it are stone, going down \u2014 the stairs you came up, but too many of them, and no light at the bottom where the common room should be.</em></p></blockquote><p>Behind the shelves (A3), a second door nobody noticed: it opens into the <strong>hayloft</strong> over the stable, with a ladder down. This is how the storeroom connects to the yard; it also seeds the Stable in the Corridor pool, and it is the <em>riddle door</em> (see the Corridor Pool, Stable).</p><p><strong>The first anchor object.</strong> The stone in the corner (A5) has a hilt in it. Whoever pulls draws out a long iron key with no teeth. It opens nothing in the room. Keep it; it matters in Room 5. Give the handout <em>The Toothless Key</em>.</p><aside class=\"notable\"><h4>Automation</h4><p>Automated: the stairwell and loft doors send tokens into the Corridor pool; clicking the stone opens the key handout.</p></aside><h2>The Guardian Is Not a Fight</h2><p>@UUID[Actor.KrWS2wJliiVViOUo]{The Barkeep} comes down the stone stairwell carrying a tray. He is kind. He tells them it's not morning yet and they should go back to bed; the road will be there tomorrow. He knows a detail about one character that the character has never told anyone \u2014 pick it from a sheet before the session. If pressed, he doesn't understand the question.</p><p>The test here is only whether the party chooses the stairwell (or the loft ladder) over the cot. If they go back to sleep, they wake in Room 1 again, and the barkeep has set a second tray.</p><p><strong>Leaving.</strong> Whichever way they go \u2014 down the stairwell or down the loft ladder \u2014 the first door at the bottom is a Corridor door. Visit 1 begins.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -76742,7 +76742,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h2>4. Campfire Clearing</h2><p>Scene copies: @UUID[Scene.6PE6VTn9GPY7Q1Yl]{Clearing}, @UUID[Scene.pTofvNCdtvWPGEvY]{Clearing}, @UUID[Scene.M2lBiiazOyKOfiix]{Clearing}.</p><p><strong>Trope.</strong> The campsite; the one place every TTRPG assumes is safe.</p><p><strong>Wrongness.</strong> The fire gives no heat. A bedroll is already slept in, still warm. Anyone who rests here wakes at full hit points, every wound healed overnight \u2014 and Misremembering takes its due.</p><p><strong>Map.</strong> A clearing ringed by trees, fire at the centre, three bedrolls, a log, a stream edge. 'Doors' are gaps in the trees: three paths out. 14\u00d714.</p><p><strong>Library base step.</strong> 0. (B: the log is a bench with green wainscoting behind it, against a tree; C: a glass double door standing free between two trunks, a shelf behind it.)</p><table><thead><tr><th>Visits</th><th>Cue</th></tr></thead><tbody><tr><td>3\u20134</td><td>The fire crackles with the rhythm of someone's breathing.</td></tr><tr><td>5\u20136</td><td>Figures dancing just outside the firelight who never look over (the dryads this table remembers).</td></tr><tr><td>7+</td><td>A Remnant sitting at the fire with its hands out, warming nothing.</td></tr></tbody></table><p><strong>Dressing line.</strong> The bedroll that is already slept in has a character's initials worked into the lining.</p>"
+      "content": "<h2>4. Campfire Clearing</h2><p>Scene copies: @UUID[Scene.6PE6VTn9GPY7Q1Yl]{Clearing}, @UUID[Scene.pTofvNCdtvWPGEvY]{Clearing}, @UUID[Scene.M2lBiiazOyKOfiix]{Clearing}.</p><p><strong>Trope.</strong> The campsite; the one place every TTRPG assumes is safe.</p><p><strong>Wrongness.</strong> The fire gives no heat. A bedroll is already slept in, still warm. Anyone who rests here wakes at full hit points, every wound healed overnight \u2014 and Misremembering takes its due.</p><p><strong>Map.</strong> A clearing ringed by trees, fire at the centre, three bedrolls, a log, a stream edge. 'Doors' are gaps in the trees: three paths out. 14\u00d714.</p><p><strong>Library base step.</strong> 0. (B: the log is a bench with green wainscoting behind it, against a tree; C: a glass double door standing free between two trunks, a shelf behind it.)</p><table><thead><tr><th>Visits</th><th>Cue</th></tr></thead><tbody><tr><td>3\u20134</td><td>The fire crackles with the rhythm of someone's breathing.</td></tr><tr><td>5\u20136</td><td>Figures dancing just outside the firelight who never look over.</td></tr><tr><td>7+</td><td>A Remnant sitting at the fire with its hands out, warming nothing.</td></tr></tbody></table><p><strong>Dressing line.</strong> The bedroll that is already slept in has a character's initials worked into the lining.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -76987,7 +76987,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>The Cover</h1><p>The one honest fight, at Corridor visits 3\u20136. It is monsters, not Remnants \u2014 misremembered ones \u2014 and it is the payoff of the 'something is in here' escalation before the Remnant appears at visit 7+. Scene: @UUID[Scene.3VIIh9ZBk64Wr8UV]{The Cavern}, entered once, by the GM's scripted door at the visit of your choosing.</p><p>The table's first Monster Manual had a cover: a red dragon, a unicorn, a centaur, a troll, a roper and an owlbear, all in one fight with adventurers in a dark, treasure-filled cavern. Monsters with no business being together, and the first treasure hoard these players ever saw.</p><blockquote class=\"read-aloud\"><p><em>A pool door opens onto a cavern. Treasure heaped against the far wall, lit from a crack above. And in the middle of it, six monsters, mid-fight \u2014 a red dragon rearing, a unicorn with its horn lowered, a centaur drawing a bow, a troll mid-lunge, something like a stalagmite with its arms out, an owlbear \u2014 all perfectly still. They are fighting nobody. There are gaps in the picture the shape of people, and a dropped sword where one of them stood.</em></p></blockquote><p>The monsters do not acknowledge the party. They keep fighting nobody, as they have since 1977. (The rule is borrowed from a dryad encounter this table remembers: the thing in the room is busy, and the party has to decide whether to interrupt it.)</p><p><strong>Trigger: stepping into a gap.</strong> Each gap wakes one monster \u2014 the one that was fighting whoever stood there \u2014 and only that one. The rest keep posing. The party chooses how much of the cover to fight. Two or three is a hard fight for levels 5\u20138; all six is far beyond deadly, and the GM should let the tableau's stillness say so. Joining the picture is leaving-something-behind in reverse; and the theme, literally: the fight on the cover never ended, and you only have to finish the ones you start.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>E1. The cave mouth.</strong> Arrival. The roper's gap (the thief).</li><li><strong>E2. The ledge.</strong> The centaur's gap (the archer).</li><li><strong>E3. The hoard.</strong> The dragon's gap (the fighter with the shield) and the treasure.</li><li><strong>E4. The chest.</strong> The troll's gap (the dwarf).</li><li><strong>E5. The back wall.</strong> The owlbear's gap (the cleric); the unicorn's gap (the elf) beside it.</li></ul></aside><aside class=\"notable\"><h4>Automation</h4><p>Automated: each person-shaped gap whispers which monster wakes, once.</p></aside><h2>The Six</h2><table><thead><tr><th>Monster</th><th>Misremembered as</th><th>Build</th></tr></thead><tbody><tr><td>@UUID[Actor.dzOCj45n3twcxQJN]{Red Dragon (The Cover)}</td><td>The size it was on the cover, about the owlbear's size. Everybody's first party beat a red dragon at level 3, somehow. It never got to grow.</td><td>Red dragon wyrmling with a young red dragon's breath weapon</td></tr><tr><td>@UUID[Actor.o8uyxSXpkyQIfpGc]{Unicorn (The Cover)}</td><td>On the monsters' side. It was in the Monster Manual, so it is a monster. It is confused about this.</td><td>Unicorn; hostile; its healing goes to the other monsters</td></tr><tr><td>@UUID[Actor.i1NOV9LQoGhZFkA6]{Centaur (The Cover)}</td><td>Has a bow but no arrows, and shoots anyway. They hit.</td><td>Centaur trooper; ranged attacks need no ammunition</td></tr><tr><td>@UUID[Actor.eFmQnaUef5KirEgg]{Troll (The Cover)}</td><td>Regenerates the way the table remembers, not the way the rules say: it stands up at the start of its turn in the pose it fell in.</td><td>Troll; Regeneration replaced by the Remnant rule \u2014 fire or acid ends it</td></tr><tr><td>@UUID[Actor.7EzXl7YPx0DF1KeZ]{Roper (The Cover)}</td><td>The one nobody could draw properly; it looks like three different things from three angles.</td><td>Roper, unchanged; describe it differently each round</td></tr><tr><td>@UUID[Actor.deJ0klDBXZ1te7qW]{Owlbear (The Cover)}</td><td>Just an owlbear. Something in here has to be.</td><td>Owlbear, unchanged</td></tr></tbody></table><p>The treasure pile is real and quietly foreshadows Room 4: the Hoard has no dragon because the dragon is here, still frozen. Nothing taken from this pile survives the next Corridor door.</p><p>The dryads themselves stay a glimpse cue, not a fight: at the campfire clearing, figures dancing just outside the firelight who never look over.</p>"
+      "content": "<h1>The Cover</h1><p>The one honest fight, at Corridor visits 3\u20136. It is monsters, not Remnants \u2014 misremembered ones \u2014 and it is the payoff of the 'something is in here' escalation before the Remnant appears at visit 7+. Scene: @UUID[Scene.3VIIh9ZBk64Wr8UV]{The Cavern}, entered once, by the GM's scripted door at the visit of your choosing.</p><p>The table's first Monster Manual had a cover: a red dragon, a unicorn, a centaur, a troll, a roper and an owlbear, all in one fight with adventurers in a dark, treasure-filled cavern. Monsters with no business being together, and the first treasure hoard these players ever saw.</p><blockquote class=\"read-aloud\"><p><em>A pool door opens onto a cavern. Treasure heaped against the far wall, lit from a crack above. And in the middle of it, six monsters, mid-fight \u2014 a red dragon rearing, a unicorn with its horn lowered, a centaur drawing a bow, a troll mid-lunge, something like a stalagmite with its arms out, an owlbear \u2014 all perfectly still. They are fighting nobody. There are gaps in the picture the shape of people, and a dropped sword where one of them stood.</em></p></blockquote><p>The monsters do not acknowledge the party. They keep fighting nobody, as they have since 1977. The thing in the room is busy; the party has to decide whether to interrupt it.</p><p><strong>Trigger: stepping into a gap.</strong> Each gap wakes one monster \u2014 the one that was fighting whoever stood there \u2014 and only that one. The rest keep posing. The party chooses how much of the cover to fight. Two or three is a hard fight for levels 5\u20138; all six is far beyond deadly, and the GM should let the tableau's stillness say so. Joining the picture is leaving-something-behind in reverse; and the theme, literally: the fight on the cover never ended, and you only have to finish the ones you start.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>E1. The cave mouth.</strong> Arrival. The roper's gap (the thief).</li><li><strong>E2. The ledge.</strong> The centaur's gap (the archer).</li><li><strong>E3. The hoard.</strong> The dragon's gap (the fighter with the shield) and the treasure.</li><li><strong>E4. The chest.</strong> The troll's gap (the dwarf).</li><li><strong>E5. The back wall.</strong> The owlbear's gap (the cleric); the unicorn's gap (the elf) beside it.</li></ul></aside><aside class=\"notable\"><h4>Automation</h4><p>Automated: each person-shaped gap whispers which monster wakes, once.</p></aside><h2>The Six</h2><table><thead><tr><th>Monster</th><th>Misremembered as</th><th>Build</th></tr></thead><tbody><tr><td>@UUID[Actor.dzOCj45n3twcxQJN]{Red Dragon (The Cover)}</td><td>The size it was on the cover, about the owlbear's size. Everybody's first party beat a red dragon at level 3, somehow. It never got to grow.</td><td>Red dragon wyrmling with a young red dragon's breath weapon</td></tr><tr><td>@UUID[Actor.o8uyxSXpkyQIfpGc]{Unicorn (The Cover)}</td><td>On the monsters' side. It was in the Monster Manual, so it is a monster. It is confused about this.</td><td>Unicorn; hostile; its healing goes to the other monsters</td></tr><tr><td>@UUID[Actor.i1NOV9LQoGhZFkA6]{Centaur (The Cover)}</td><td>Has a bow but no arrows, and shoots anyway. They hit.</td><td>Centaur trooper; ranged attacks need no ammunition</td></tr><tr><td>@UUID[Actor.eFmQnaUef5KirEgg]{Troll (The Cover)}</td><td>Regenerates the way the table remembers, not the way the rules say: it stands up at the start of its turn in the pose it fell in.</td><td>Troll; Regeneration replaced by the Remnant rule \u2014 fire or acid ends it</td></tr><tr><td>@UUID[Actor.7EzXl7YPx0DF1KeZ]{Roper (The Cover)}</td><td>The one nobody could draw properly; it looks like three different things from three angles.</td><td>Roper, unchanged; describe it differently each round</td></tr><tr><td>@UUID[Actor.deJ0klDBXZ1te7qW]{Owlbear (The Cover)}</td><td>Just an owlbear. Something in here has to be.</td><td>Owlbear, unchanged</td></tr></tbody></table><p>The treasure pile is real and quietly foreshadows Room 4: the Hoard has no dragon because the dragon is here, still frozen. Nothing taken from this pile survives the next Corridor door.</p><p>The dryads themselves stay a glimpse cue, not a fight: at the campfire clearing, figures dancing just outside the firelight who never look over.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -77002,7 +77002,7 @@
          "id": "dzOCj45n3twcxQJN",
          "uuid": "Actor.dzOCj45n3twcxQJN",
          "name": "Red Dragon (The Cover)",
-         "img": "icons/creatures/reptiles/dragon-winged-red.webp",
+         "img": "modules/the-back-room/tokens/token-dragon.webp",
          "quantity": "1",
          "hidden": false
         },
@@ -77010,7 +77010,7 @@
          "id": "o8uyxSXpkyQIfpGc",
          "uuid": "Actor.o8uyxSXpkyQIfpGc",
          "name": "Unicorn (The Cover)",
-         "img": "icons/creatures/mammals/horse-unicorn-white.webp",
+         "img": "modules/the-back-room/tokens/token-unicorn.webp",
          "quantity": "1",
          "hidden": false
         },
@@ -77018,7 +77018,7 @@
          "id": "i1NOV9LQoGhZFkA6",
          "uuid": "Actor.i1NOV9LQoGhZFkA6",
          "name": "Centaur (The Cover)",
-         "img": "icons/creatures/mammals/horse-brown.webp",
+         "img": "modules/the-back-room/tokens/token-centaur.webp",
          "quantity": "1",
          "hidden": false
         },
@@ -77026,7 +77026,7 @@
          "id": "eFmQnaUef5KirEgg",
          "uuid": "Actor.eFmQnaUef5KirEgg",
          "name": "Troll (The Cover)",
-         "img": "icons/creatures/magical/humanoid-giant-ogre-green.webp",
+         "img": "modules/the-back-room/tokens/token-troll.webp",
          "quantity": "1",
          "hidden": false
         },
@@ -77034,7 +77034,7 @@
          "id": "7EzXl7YPx0DF1KeZ",
          "uuid": "Actor.7EzXl7YPx0DF1KeZ",
          "name": "Roper (The Cover)",
-         "img": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
+         "img": "modules/the-back-room/tokens/token-roper.webp",
          "quantity": "1",
          "hidden": false
         },
@@ -77042,7 +77042,7 @@
          "id": "deJ0klDBXZ1te7qW",
          "uuid": "Actor.deJ0klDBXZ1te7qW",
          "name": "Owlbear (The Cover)",
-         "img": "icons/creatures/mammals/bear-paw-print-brown.webp",
+         "img": "modules/the-back-room/tokens/token-owlbear.webp",
          "quantity": "1",
          "hidden": false
         }
@@ -77117,7 +77117,7 @@
         "id": "KrWS2wJliiVViOUo",
         "uuid": "Actor.KrWS2wJliiVViOUo",
         "name": "The Barkeep",
-        "img": "icons/svg/mystery-man.svg"
+        "img": "modules/the-back-room/tokens/token-barkeep.webp"
        }
       }
      },
@@ -77195,7 +77195,7 @@
         "id": "LgUhIfhgg9F7Vdll",
         "uuid": "Actor.LgUhIfhgg9F7Vdll",
         "name": "The Hooded Stranger",
-        "img": "icons/svg/mystery-man.svg"
+        "img": "modules/the-back-room/tokens/token-stranger.webp"
        }
       }
      },
@@ -77272,7 +77272,7 @@
         "id": "qkuFipSznjnC6QOA",
         "uuid": "Actor.qkuFipSznjnC6QOA",
         "name": "The Rogue With a Tragic Past",
-        "img": "icons/svg/mystery-man.svg"
+        "img": "modules/the-back-room/tokens/token-rogue.webp"
        }
       }
      },
@@ -77342,7 +77342,7 @@
         "id": "R0M8x4EHH11TcDUr",
         "uuid": "Actor.R0M8x4EHH11TcDUr",
         "name": "The Barbarian Who Is Just Strong",
-        "img": "icons/svg/mystery-man.svg"
+        "img": "modules/the-back-room/tokens/token-barbarian.webp"
        }
       }
      },
@@ -77412,7 +77412,7 @@
         "id": "GMjufd12FvYJ33gn",
         "uuid": "Actor.GMjufd12FvYJ33gn",
         "name": "The Wizard Who Misread the Spell",
-        "img": "icons/svg/mystery-man.svg"
+        "img": "modules/the-back-room/tokens/token-wizard.webp"
        }
       }
      },
@@ -77449,7 +77449,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<p>A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.</p><p><strong>Running it.</strong> Replace this placeholder with the real sheet: copy the character's actor, halve every number, blank the name. The two traits below are the rules that matter. It stops the moment the loop breaks.</p>"
+      "content": "<p>A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.</p><p><strong>Running it.</strong> This block is a 5th-level adventurer halved and plays as written. If you have ten minutes before the session, copy the mirrored character's actor instead, halve every number and blank the name; the two traits below are the rules that matter either way. It stops the moment the loop breaks.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -77476,7 +77476,7 @@
         "id": "I2kDQYpzKQGgJWAP",
         "uuid": "Actor.I2kDQYpzKQGgJWAP",
         "name": "The Echo",
-        "img": "icons/svg/mystery-man.svg"
+        "img": "modules/the-back-room/tokens/token-echo.webp"
        }
       }
      },
@@ -77666,7 +77666,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>Cast</h1><p>Remnants are people, not monsters. File them accordingly and never give a player the stat block.</p><ul><li>@UUID[Actor.KrWS2wJliiVViOUo]{The Barkeep} \u2014 the gentle gate of Room 1; ordinary morning in Room 5.</li><li>@UUID[Actor.LgUhIfhgg9F7Vdll]{The Hooded Stranger} \u2014 the hook, played straight; a role in every booth of Room 2.</li><li>@UUID[Actor.qkuFipSznjnC6QOA]{The Rogue With a Tragic Past}, @UUID[Actor.R0M8x4EHH11TcDUr]{The Barbarian Who Is Just Strong}, @UUID[Actor.GMjufd12FvYJ33gn]{The Wizard Who Misread the Spell} \u2014 the fallback Remnants.</li><li>@UUID[Actor.I2kDQYpzKQGgJWAP]{The Echo} \u2014 Room 3's blank-faced copy; a placeholder to replace with the real halved sheet.</li></ul><h2>Monsters</h2><ul><li>@UUID[Actor.dzOCj45n3twcxQJN]{Red Dragon (The Cover)}, @UUID[Actor.o8uyxSXpkyQIfpGc]{Unicorn (The Cover)}, @UUID[Actor.i1NOV9LQoGhZFkA6]{Centaur (The Cover)}, @UUID[Actor.eFmQnaUef5KirEgg]{Troll (The Cover)}, @UUID[Actor.7EzXl7YPx0DF1KeZ]{Roper (The Cover)}, @UUID[Actor.deJ0klDBXZ1te7qW]{Owlbear (The Cover)} \u2014 The Cover.</li></ul>"
+      "content": "<h1>Cast</h1><p>Remnants are people, not monsters. File them accordingly and never give a player the stat block.</p><ul><li>@UUID[Actor.KrWS2wJliiVViOUo]{The Barkeep} \u2014 the gentle gate of Room 1; ordinary morning in Room 5.</li><li>@UUID[Actor.LgUhIfhgg9F7Vdll]{The Hooded Stranger} \u2014 the hook, played straight; a role in every booth of Room 2.</li><li>@UUID[Actor.qkuFipSznjnC6QOA]{The Rogue With a Tragic Past}, @UUID[Actor.R0M8x4EHH11TcDUr]{The Barbarian Who Is Just Strong}, @UUID[Actor.GMjufd12FvYJ33gn]{The Wizard Who Misread the Spell} \u2014 the fallback Remnants.</li><li>@UUID[Actor.I2kDQYpzKQGgJWAP]{The Echo} \u2014 Room 3's blank-faced copy, built as a 5th-level character halved; swap in the mirrored character's own sheet if you have time, it plays as written if not.</li></ul><h2>Monsters</h2><ul><li>@UUID[Actor.dzOCj45n3twcxQJN]{Red Dragon (The Cover)}, @UUID[Actor.o8uyxSXpkyQIfpGc]{Unicorn (The Cover)}, @UUID[Actor.i1NOV9LQoGhZFkA6]{Centaur (The Cover)}, @UUID[Actor.eFmQnaUef5KirEgg]{Troll (The Cover)}, @UUID[Actor.7EzXl7YPx0DF1KeZ]{Roper (The Cover)}, @UUID[Actor.deJ0klDBXZ1te7qW]{Owlbear (The Cover)} \u2014 The Cover.</li></ul>"
      },
      "sort": 100000,
      "ownership": {
@@ -77710,7 +77710,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h2>The Job</h2><p><em>GM: write the hook here before session one. An escort, a delivery, a missing person \u2014 whatever this table's campaign would open with. It is never a trick. Pay is fair. Directions are good.</em></p>"
+      "content": "<h2>The Job</h2><p><em>Wanted: four or five capable people to ride guard on a wagon of lamp oil from this house over the Kettle Pass to Thistlecross. Three days by the high road. Forty gold a head, twenty of it tonight, the rest from the chandler at Thistlecross on delivery. We leave at first light. Bring your own bedrolls; the wagon has room for packs. Ask for the one in the corner booth.</em></p><p><em>The pass is quiet this time of year. The road is good. Nothing about this is a trick.</em></p>"
      },
      "sort": 100000,
      "ownership": {
@@ -77829,50 +77829,6 @@
    "categories": []
   },
   {
-   "_id": "d2lqQNNhR8FLoRUa",
-   "name": "Handout: Rules of the Back Room",
-   "pages": [
-    {
-     "_id": "9HRJuFnIbaJBSl1L",
-     "name": "Handout: Rules of the Back Room",
-     "type": "text",
-     "title": {
-      "show": false,
-      "level": 1
-     },
-     "text": {
-      "format": 1,
-      "content": "<h2>Rules of the Back Room</h2><ol><li><strong>Misremembering.</strong> Each short rest in a Corridor rewrites one small thing about one of you. You will not be told which. The others will.</li><li><strong>The Signature.</strong> A Remnant's one remembered thing always works. Everything else about it is blank.</li><li><strong>No door leads back.</strong></li><li><strong>Leaving something behind is the only way forward.</strong></li></ol>"
-     },
-     "sort": 100000,
-     "ownership": {
-      "default": -1
-     },
-     "flags": {
-      "monks-enhanced-journal": {
-       "type": "journalentry"
-      }
-     },
-     "image": {},
-     "video": {},
-     "src": null,
-     "system": {}
-    }
-   ],
-   "folder": "IRHrGNWIxD83mzHg",
-   "sort": 3100000,
-   "ownership": {
-    "default": 0
-   },
-   "flags": {
-    "monks-enhanced-journal": {
-     "pagetype": "journalentry",
-     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
-    }
-   },
-   "categories": []
-  },
-  {
    "_id": "LnqnzR7yZI7BSfhf",
    "name": "The Back Room",
    "folder": "zuJ82ny8N829RA33",
@@ -77940,12 +77896,12 @@
    }
   },
   {
-   "_id": "9NcFFpOvEeokxByg",
-   "name": "Session 1: The Tavern",
+   "_id": "NqsQEUcWjoNsRVFi",
+   "name": "Session 1",
    "pages": [
     {
-     "_id": "T4JHmOGfzOC7w4s4",
-     "name": "Session 1: The Tavern",
+     "_id": "Y98pBfeDxsRqgWfd",
+     "name": "Session 1",
      "type": "mej-campaign-companion.session",
      "title": {
       "show": false,
@@ -77983,9 +77939,9 @@
     }
    ],
    "folder": "zuJ82ny8N829RA33",
-   "sort": 3200000,
+   "sort": 3100000,
    "ownership": {
-    "default": 2
+    "default": 0
    },
    "flags": {
     "monks-enhanced-journal": {
@@ -77995,12 +77951,12 @@
    "categories": []
   },
   {
-   "_id": "7S85TKAOTRI3Bx1I",
-   "name": "Session 2: The Corridors",
+   "_id": "PkmOYMYpIQtjkrR8",
+   "name": "Session 2",
    "pages": [
     {
-     "_id": "ThGeOxjX8viH8jvV",
-     "name": "Session 2: The Corridors",
+     "_id": "kcvU4ATjrQuQQLYP",
+     "name": "Session 2",
      "type": "mej-campaign-companion.session",
      "title": {
       "show": false,
@@ -78038,9 +77994,9 @@
     }
    ],
    "folder": "zuJ82ny8N829RA33",
-   "sort": 3300000,
+   "sort": 3200000,
    "ownership": {
-    "default": 2
+    "default": 0
    },
    "flags": {
     "monks-enhanced-journal": {
@@ -78050,12 +78006,12 @@
    "categories": []
   },
   {
-   "_id": "VT8sbXhWE3l7Erly",
-   "name": "Session 3: The Hoard",
+   "_id": "FfsGTX5HwcknD56Z",
+   "name": "Session 3",
    "pages": [
     {
-     "_id": "pT3aYytaHcA2ZA9T",
-     "name": "Session 3: The Hoard",
+     "_id": "MyebbN3NDSC4C30F",
+     "name": "Session 3",
      "type": "mej-campaign-companion.session",
      "title": {
       "show": false,
@@ -78093,9 +78049,9 @@
     }
    ],
    "folder": "zuJ82ny8N829RA33",
-   "sort": 3400000,
+   "sort": 3300000,
    "ownership": {
-    "default": 2
+    "default": 0
    },
    "flags": {
     "monks-enhanced-journal": {
@@ -78343,7 +78299,7 @@
   {
    "_id": "kjG5jmFvYVEs1ER3",
    "name": "Back Room: Ambience",
-   "description": "Loops. Placeholder audio from v1 until the v2 loops are rendered.",
+   "description": "Ambient loops: the tavern for Session 1, the hum for the Corridors, dawn in the reading room for the ending.",
    "mode": -1,
    "fade": 1000,
    "sounds": [

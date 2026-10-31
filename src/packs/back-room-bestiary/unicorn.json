@@ -2,7 +2,7 @@
  "_id": "o8uyxSXpkyQIfpGc",
  "name": "Unicorn (The Cover)",
  "type": "npc",
- "img": "icons/creatures/mammals/horse-unicorn-white.webp",
+ "img": "modules/the-back-room/tokens/token-unicorn.webp",
  "system": {
   "abilities": {
    "str": {
@@ -178,7 +178,7 @@
   "width": 2,
   "height": 2,
   "texture": {
-   "src": "icons/creatures/mammals/horse-unicorn-white.webp",
+   "src": "modules/the-back-room/tokens/token-unicorn.webp",
    "scaleX": 1,
    "scaleY": 1
   },

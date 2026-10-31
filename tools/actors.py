@@ -146,12 +146,8 @@ M = "[[lookup @name lowercase]]{monster}"
 def P(*paras): return "".join(f"<p>{x}</p>" for x in paras)
 
 
-# Token art is not drawn yet: every actor uses a Foundry core icon until tools/tokens.py is rewritten for v2.
-TK = {"dragon": "icons/creatures/reptiles/dragon-winged-red.webp", "unicorn": "icons/creatures/mammals/horse-unicorn-white.webp",
-      "centaur": "icons/creatures/mammals/horse-brown.webp", "troll": "icons/creatures/magical/humanoid-giant-ogre-green.webp",
-      "roper": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp", "owlbear": "icons/creatures/mammals/bear-paw-print-brown.webp",
-      "echo": "icons/svg/mystery-man.svg", "rogue": "icons/svg/mystery-man.svg", "barbarian": "icons/svg/mystery-man.svg",
-      "wizard": "icons/svg/mystery-man.svg", "barkeep": "icons/svg/mystery-man.svg", "stranger": "icons/svg/mystery-man.svg"}
+# Token art: tokens/token-<key>.webp, 512px round portraits generated with Draw Things (SD 1.5) and masked by tools/make_tokens.py.
+TK = {k: f"token-{k}" for k in ("dragon", "unicorn", "centaur", "troll", "roper", "owlbear", "echo", "rogue", "barbarian", "wizard", "barkeep", "stranger")}
 
 REMNANT_RULE = P("<strong>The Remnant Rule.</strong> When this creature drops to 0 Hit Points it does not die. At the start of its next turn it stands up in the pose it fell in, with all its Hit Points, and continues mid-sentence. The only way to be rid of it is to leave the room by a door it did not come through; it cannot follow.")
 
@@ -248,8 +244,8 @@ def build_monsters():
     m = Monster("echo", "The Echo", 3, "med", "undead", "Unaligned", 13, 40, "9d8",
                 (12, 12, 12, 8, 10, 6), {"walk": 30}, TK["echo"], senses={"darkvision": 60}, di=("poison",), ci=("charmed", "frightened", "poisoned"),
                 bio=P("A blank-faced copy of one character: the one who has left the least behind, if there is a choice. It steps out of the far door on the second pass through the Corridor Between. It has that character's sheet with every number halved and no name.",
-                      "<strong>Running it.</strong> Replace this placeholder with the real sheet: copy the character's actor, halve every number, blank the name. The two traits below are the rules that matter. It stops the moment the loop breaks."))
-    m.trait("Halved", P("The Echo's statistics are the mirrored character's with every number halved (Hit Points, Armor Class bonus from Dexterity, attack bonuses, damage, save DCs). The block above is a placeholder for a 5th-level character."))
+                      "<strong>Running it.</strong> This block is a 5th-level adventurer halved and plays as written. If you have ten minutes before the session, copy the mirrored character's actor instead, halve every number and blank the name; the two traits below are the rules that matter either way. It stops the moment the loop breaks."))
+    m.trait("Halved", P("The Echo's statistics are the mirrored character's with every number halved (Hit Points, Armor Class, attack bonuses, damage, save DCs). As written, it is a 5th-level adventurer halved."))
     m.trait("Fight Your Own Last Turn", P("In this fight every attack a character makes repeats itself one round later in the same squares, made by the Echo with the same numbers. Note each character's attack and the squares it covered; on the Echo's next turn it makes those attacks from where that character was standing. Moving is how you dodge yourself."))
     m.trait("Unfinished", P("The Echo cannot be reduced below 1 Hit Point while the Corridor Between is looping. When the loop breaks it stops where it stands, and is not there a moment later."))
     m.attack("Repeated Strike", 1, 8, "str", "str", note="Uses the mirrored character's main weapon damage, halved.", img="icons/weapons/swords/sword-guard-steel.webp")
@@ -297,7 +293,7 @@ def build_npcs():
                       "<strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.",
                       "<strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning."))
     m.trait("Not a Fight", P("The Barkeep never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning."))
-    m.trait("He Knows", P("Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table. The GM picks it from the character sheet before the session."))
+    m.trait("He Knows", P("Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table: pick it from the sheet before the session. With nothing on the sheet to use, he asks after the character by the name the player almost gave them."))
     out["barkeep"] = m
 
     m = Monster("stranger", "The Hooded Stranger", 0, "med", "humanoid", "Neutral", 11, 13, "3d8", (10, 12, 11, 13, 12, 14), {"walk": 30}, TK["stranger"],
@@ -305,6 +301,6 @@ def build_npcs():
                 bio=P("A hooded stranger in the corner booth with a job. Play it completely straight: the job is real, the pay is fair, the directions are good.",
                       "<strong>Room 2.</strong> There is a hooded stranger in every booth, and every one of them is a role, repeating the hook word for word. None of them is the Remnant.",
                       "<strong>Room 5.</strong> The stranger's voice rises from the common room below, asking the barkeep whether the party is up yet. The job is still there."))
-    m.trait("The Hook", P("The stranger offers a plain, ordinary job: an escort, a delivery, a missing person, whatever this table's campaign would open with. The GM writes it on the handout <em>The Job</em> before session one. It is never a trick."))
+    m.trait("The Hook", P("The stranger offers a plain, ordinary job: ride guard on a wagon of lamp oil over the Kettle Pass to Thistlecross, three days, forty gold a head, half tonight, leaving at first light (the handout <em>The Job</em>). It is never a trick, and if the party leaves at the end, it is still there to be done."))
     out["stranger"] = m
     return out

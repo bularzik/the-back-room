@@ -2,7 +2,7 @@
  "_id": "deJ0klDBXZ1te7qW",
  "name": "Owlbear (The Cover)",
  "type": "npc",
- "img": "icons/creatures/mammals/bear-paw-print-brown.webp",
+ "img": "modules/the-back-room/tokens/token-owlbear.webp",
  "system": {
   "abilities": {
    "str": {
@@ -173,7 +173,7 @@
   "width": 2,
   "height": 2,
   "texture": {
-   "src": "icons/creatures/mammals/bear-paw-print-brown.webp",
+   "src": "modules/the-back-room/tokens/token-owlbear.webp",
    "scaleX": 1,
    "scaleY": 1
   },

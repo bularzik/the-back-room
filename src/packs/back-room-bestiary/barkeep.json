@@ -2,7 +2,7 @@
  "_id": "KrWS2wJliiVViOUo",
  "name": "The Barkeep",
  "type": "npc",
- "img": "icons/svg/mystery-man.svg",
+ "img": "modules/the-back-room/tokens/token-barkeep.webp",
  "system": {
   "abilities": {
    "str": {
@@ -168,7 +168,7 @@
   "width": 1,
   "height": 1,
   "texture": {
-   "src": "icons/svg/mystery-man.svg",
+   "src": "modules/the-back-room/tokens/token-barkeep.webp",
    "scaleX": 1,
    "scaleY": 1
   },
@@ -236,7 +236,7 @@
      "max": ""
     },
     "description": {
-     "value": "<p>Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table. The GM picks it from the character sheet before the session.</p>",
+     "value": "<p>Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table: pick it from the sheet before the session. With nothing on the sheet to use, he asks after the character by the name the player almost gave them.</p>",
      "chat": ""
     },
     "identifier": "he-knows",

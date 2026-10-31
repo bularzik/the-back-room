@@ -2,7 +2,7 @@
  "_id": "GMjufd12FvYJ33gn",
  "name": "The Wizard Who Misread the Spell",
  "type": "npc",
- "img": "icons/svg/mystery-man.svg",
+ "img": "modules/the-back-room/tokens/token-wizard.webp",
  "system": {
   "abilities": {
    "str": {
@@ -168,7 +168,7 @@
   "width": 1,
   "height": 1,
   "texture": {
-   "src": "icons/svg/mystery-man.svg",
+   "src": "modules/the-back-room/tokens/token-wizard.webp",
    "scaleX": 1,
    "scaleY": 1
   },

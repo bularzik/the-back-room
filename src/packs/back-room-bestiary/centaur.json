@@ -2,7 +2,7 @@
  "_id": "i1NOV9LQoGhZFkA6",
  "name": "Centaur (The Cover)",
  "type": "npc",
- "img": "icons/creatures/mammals/horse-brown.webp",
+ "img": "modules/the-back-room/tokens/token-centaur.webp",
  "system": {
   "abilities": {
    "str": {
@@ -179,7 +179,7 @@
   "width": 2,
   "height": 2,
   "texture": {
-   "src": "icons/creatures/mammals/horse-brown.webp",
+   "src": "modules/the-back-room/tokens/token-centaur.webp",
    "scaleX": 1,
    "scaleY": 1
   },

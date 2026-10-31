@@ -11,3 +11,4 @@ validate-tmp/
 
 # Reference photos: never shipped, not published
 docs/reference/
+/tokens-src/
