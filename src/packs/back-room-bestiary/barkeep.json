@@ -1,6 +1,6 @@
 {
  "_id": "KrWS2wJliiVViOUo",
- "name": "The Barkeep",
+ "name": "Barnaby Stickit",
  "type": "npc",
  "img": "modules/the-back-room/tokens/token-barkeep.webp",
  "system": {
@@ -85,7 +85,7 @@
   },
   "details": {
    "biography": {
-    "value": "<p>Kind. Tired in a way that is not unhappy. He led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.</p><p><strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.</p><p><strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning.</p>",
+    "value": "<p>Keeper of the Stickit Inn, as his father was. Kind. Tired in a way that is not unhappy. He pours the house cider with a heavy hand, led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.</p><p><strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.</p><p><strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning.</p>",
     "public": ""
    },
    "alignment": "Neutral",
@@ -157,7 +157,7 @@
   }
  },
  "prototypeToken": {
-  "name": "The Barkeep",
+  "name": "Barnaby Stickit",
   "displayName": 20,
   "actorLink": false,
   "disposition": 1,
@@ -195,7 +195,7 @@
      "max": ""
     },
     "description": {
-     "value": "<p>The Barkeep never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning.</p>",
+     "value": "<p>Barnaby never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning.</p>",
      "chat": ""
     },
     "identifier": "not-a-fight",

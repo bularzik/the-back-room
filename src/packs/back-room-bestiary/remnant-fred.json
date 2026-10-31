@@ -1,0 +1,495 @@
+{
+ "_id": "tDNJV8smKaZaVqWS",
+ "name": "Fred the Fighter",
+ "type": "npc",
+ "img": "modules/the-back-room/tokens/token-fred.webp",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 17,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 13,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 9,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 10,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 13,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {},
+  "attributes": {
+   "ac": {
+    "calc": "flat",
+    "flat": 17
+   },
+   "hp": {
+    "value": 58,
+    "max": 58,
+    "temp": null,
+    "tempmax": null,
+    "formula": "9d10 + 9"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 30,
+    "units": "ft",
+    "hover": false
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {}
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>A square-jawed fighter in a winged helmet and chain mail, outlined in ink a shade heavier than everything around him, so he always looks slightly in front of the room. He introduces himself the way the strip's title panel did: 'FRED THE FIGHTER!' His player may not remember playing him. That is the point: he may only ever have been a comic strip, and he is here anyway.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
+    "public": ""
+   },
+   "alignment": "Unaligned",
+   "type": {
+    "value": "humanoid",
+    "subtype": "fighter",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 5,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "med",
+   "di": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "common"
+    ],
+    "custom": "Common"
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "Fred the Fighter",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": 0,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 1,
+  "height": 1,
+  "texture": {
+   "src": "modules/the-back-room/tokens/token-fred.webp",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "25HR4r99mckGFWzh",
+   "name": "Signature: POW!",
+   "type": "feat",
+   "img": "icons/magic/symbols/runes-star-orange-purple.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>Once per round, one of Fred's Longsword attacks hits without a roll and deals maximum damage ([[/damage 12 slashing]]), and the hit appears in the air above the target in hand-lettered capitals: <em>POW!</em>, <em>KRAK!</em>, <em>THWACK!</em> Everyone present can read it. It fades by the end of the round.</p>",
+     "chat": ""
+    },
+    "identifier": "signature-pow",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!tDNJV8smKaZaVqWS.25HR4r99mckGFWzh"
+  },
+  {
+   "_id": "aAX5amZRjYPyscUE",
+   "name": "The Blank",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>He cannot say whether anyone ever played him. What he remembers is being drawn: four panels at a time, one summer, in a camp newspaper, until the strip stopped mid-story. He speaks in short lines, as if he has to fit inside a speech balloon, and every so often he finishes a thought with 'To be continued!' and waits, a little hopefully, for next week.</p>",
+     "chat": ""
+    },
+    "identifier": "the-blank",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!tDNJV8smKaZaVqWS.aAX5amZRjYPyscUE"
+  },
+  {
+   "_id": "v5Yo9lxmLqYz2Fkv",
+   "name": "Stands Back Up",
+   "type": "feat",
+   "img": "icons/magic/life/heart-cross-green.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p><strong>The Remnant Rule.</strong> When this creature drops to 0 Hit Points it does not die. At the start of its next turn it stands up in the pose it fell in, with all its Hit Points, and continues mid-sentence. The only way to be rid of it is to leave the room by a door it did not come through; it cannot follow.</p>",
+     "chat": ""
+    },
+    "identifier": "stands-back-up",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!tDNJV8smKaZaVqWS.v5Yo9lxmLqYz2Fkv"
+  },
+  {
+   "_id": "GeznMNf2CBcqFtlG",
+   "name": "Cannot Follow",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>It cannot leave a room through a door the party came through. That is the only hard limit on it, and it is the exit mechanic for Room 4.</p>",
+     "chat": ""
+    },
+    "identifier": "cannot-follow",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!tDNJV8smKaZaVqWS.GeznMNf2CBcqFtlG"
+  },
+  {
+   "_id": "H5Zp7T9zvWCiKSDg",
+   "name": "Longsword",
+   "type": "weapon",
+   "img": "icons/weapons/swords/sword-guard-steel.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "Mk95aAjFuUpFN7Pf": {
+      "_id": "Mk95aAjFuUpFN7Pf",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "str",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "longsword",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 8,
+      "types": [
+       "slashing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 500000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!tDNJV8smKaZaVqWS.H5Zp7T9zvWCiKSDg"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!tDNJV8smKaZaVqWS"
+}

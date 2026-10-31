@@ -225,3 +225,32 @@ Chrome tab at http://127.0.0.1:7860/ via the Chrome tools.
 - A fresh world can be made without the setup UI: write `worlds/<id>/world.json` (copy world-b's system/core
   fields), POST `/setup {action:'resetPackages'}`, then `{action:'launchWorld', world:'<id>'}`. Test world
   `backroom-fresh` exists on 14.369 for clean-import checks.
+
+## Map re-dress in Forgotten Adventures (2026-10-31)
+
+- All 13 maps re-dressed in the FA Starter Pack (pack `FA30DDXY`) with the battlemap skills
+  (github.com/bularzik/battlemap-mcp @392f3a5, `skills/`): one art family, clustered furnishing, wall shadow
+  paths, lighting by role, ambient #a4a6b0 indoors ("brighter", the user's call after the pilot). The only
+  non-FA art: core horses in the stable, a Spelljammer bell at the ferry.
+- Working maps are copies named `<key>-fa` (originals untouched) made with `add_packs_to_map`. The Corridor
+  places now have real copy variants `<key>-b-fa` / `<key>-c-fa` (one library step each, per
+  docs/corridor-pool.md), imported as maps.json keys `<key>-b` / `<key>-c`; create the variant's maps.json entry
+  (rects/notes/start/darkness copied from the base) BEFORE importing, or it has no trigger rects. 29 entries now.
+- The full working brief, with every bridge quirk and FA facing learned, is `docs/map-redress-brief.md`.
+  Headlines: `place_pattern` rotation is radians; patterns can't be deleted (lay a new one over at z -100);
+  never place a pattern above z 0 (a z 700 strip preceded a Dungeondraft crash); FA sconce bracket is on the
+  right at rotation 0 (270 on a north wall); FA armchair/couch face up; FA stairs are paths only; FA lacks
+  glass, coins, arches, stained glass, live horses (stand-ins are listed in the brief).
+- Design content beats tidiness: the Corridor Between's segments climb the library ladder (C1 plain → C6 ribs),
+  the ferry is a DRY riverbed ("no water" is its wrongness). Read the journal's keyed areas before dressing.
+- build.py halves Foundry darkness on map scenes (the images carry their own lighting).
+- Vistas: 13 (5 rooms + 8 Corridor places) in `vistas/`, scenes in folder "Vistas", pictures on Place pages.
+  Exact prompts/settings are embedded in the Draw Things PNGs (XMP `exif:UserComment` JSON: c, uc, seed,
+  strength) and collected in ~/Claude/Projects/map-review/vista-prompts.json; gallery vistas.html there.
+- NPCs: Barnaby Stickit (the Stickit Inn, famous for its cider), Kael Shadowmere; this table's five Remnants
+  (Fred the Fighter, Thon, Rorvik, T. Morlock from the player's real AD&D sheet, Strider) plus three
+  fallbacks. Text links to NPCs go to their MEJ Person page (which carries the actor link, portrait = page
+  `src`, role, location). Rorvik's player is habitually late: Room 1 "The Latecomer", Rorvik enters the Hoard
+  at round 2. Room 5 ends with "The Last Word", the user's own closing.
+- MEJ note: our pages are type "text" + MEJ flag; MEJ converts them to its page types when opened from the
+  sidebar (fixType on click), which is why `page.sheet` from the console shows the plain sheet.

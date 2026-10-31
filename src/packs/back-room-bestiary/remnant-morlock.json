@@ -1,0 +1,906 @@
+{
+ "_id": "xEs0PM9DU2T204Sv",
+ "name": "T. Morlock",
+ "type": "npc",
+ "img": "modules/the-back-room/tokens/token-morlock.webp",
+ "system": {
+  "abilities": {
+   "str": {
+    "value": 17,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "dex": {
+    "value": 18,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "con": {
+    "value": 17,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "int": {
+    "value": 16,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "wis": {
+    "value": 18,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   },
+   "cha": {
+    "value": 12,
+    "proficient": 0,
+    "bonuses": {
+     "check": "",
+     "save": ""
+    }
+   }
+  },
+  "skills": {},
+  "attributes": {
+   "ac": {
+    "calc": "flat",
+    "flat": 17
+   },
+   "hp": {
+    "value": 63,
+    "max": 63,
+    "temp": null,
+    "tempmax": null,
+    "formula": "7d6 + 21"
+   },
+   "init": {
+    "ability": "",
+    "bonus": ""
+   },
+   "movement": {
+    "walk": 30,
+    "units": "ft",
+    "hover": false
+   },
+   "senses": {
+    "units": "ft",
+    "special": "",
+    "ranges": {
+     "darkvision": 30
+    }
+   },
+   "spellcasting": "int"
+  },
+  "details": {
+   "biography": {
+    "value": "<p>A halfling thief-acrobat in leather armour, eighty-eight years old, four foot eight, blond, blue-eyed, upper class, and (Comeliness 18) the handsomest halfling anyone has ever seen. Always slightly higher up than everyone else: on the bar, on a rafter, on someone's shoulders. His deity is his dagger, and his holy symbol is a silver dagger. His secondary skill is carpet making; he will tell you about it. On the sheet, next to <em>Jewelry</em>, it says <em>I hope so</em>.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
+    "public": ""
+   },
+   "alignment": "Neutral Evil",
+   "type": {
+    "value": "humanoid",
+    "subtype": "halfling",
+    "swarm": "",
+    "custom": ""
+   },
+   "cr": 5,
+   "habitat": {
+    "value": [
+     {
+      "type": "planar",
+      "subtype": "The Back Room"
+     }
+    ],
+    "custom": ""
+   }
+  },
+  "resources": {
+   "legact": {
+    "max": 0,
+    "spent": 0
+   },
+   "legres": {
+    "max": 0,
+    "spent": 0
+   },
+   "lair": {
+    "value": false,
+    "initiative": null,
+    "inside": false
+   }
+  },
+  "source": {
+   "revision": 1,
+   "rules": "2024",
+   "book": "The Back Room",
+   "license": ""
+  },
+  "traits": {
+   "size": "sm",
+   "di": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dr": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "dv": {
+    "value": [],
+    "custom": "",
+    "bypasses": []
+   },
+   "ci": {
+    "value": [],
+    "custom": ""
+   },
+   "languages": {
+    "value": [
+     "common"
+    ],
+    "custom": "Common"
+   }
+  }
+ },
+ "prototypeToken": {
+  "name": "T. Morlock",
+  "displayName": 20,
+  "actorLink": false,
+  "disposition": 0,
+  "displayBars": 20,
+  "bar1": {
+   "attribute": "attributes.hp"
+  },
+  "width": 1,
+  "height": 1,
+  "texture": {
+   "src": "modules/the-back-room/tokens/token-morlock.webp",
+   "scaleX": 1,
+   "scaleY": 1
+  },
+  "sight": {
+   "enabled": false
+  },
+  "appendNumber": true
+ },
+ "items": [
+  {
+   "_id": "Il7T9RpszGqCkEsG",
+   "name": "Signature: Thief-Acrobat",
+   "type": "feat",
+   "img": "icons/magic/symbols/runes-star-orange-purple.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>Once per round, one acrobatic move succeeds without a roll (his sheet says tightrope 100%, and he means it): a tumble through an enemy's space, a pole vault of nine and a half feet onto a table or a balcony, a run along a rail or a rope, a fall of up to twenty feet landed on his feet. None of it provokes Opportunity Attacks. The first hit he makes after a move like that in the same round is a backstab: triple damage dice.</p>",
+     "chat": ""
+    },
+    "identifier": "signature-thief-acrobat",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.Il7T9RpszGqCkEsG"
+  },
+  {
+   "_id": "fMHE9HImTqFHxc7r",
+   "name": "The Blank",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>He has his character sheet, and he will show it to you: seventh level, sixty thousand three hundred and eighty-one experience points, every box filled in, the paper soft and scorched in one corner. The name line says only <em>T. Morlock</em>. Nobody knows what the T. stands for, and he gets quieter each time someone asks.</p>",
+     "chat": ""
+    },
+    "identifier": "the-blank",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.fMHE9HImTqFHxc7r"
+  },
+  {
+   "_id": "9y7dhW7mYa43DFIP",
+   "name": "Stands Back Up",
+   "type": "feat",
+   "img": "icons/magic/life/heart-cross-green.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p><strong>The Remnant Rule.</strong> When this creature drops to 0 Hit Points it does not die. At the start of its next turn it stands up in the pose it fell in, with all its Hit Points, and continues mid-sentence. The only way to be rid of it is to leave the room by a door it did not come through; it cannot follow.</p>",
+     "chat": ""
+    },
+    "identifier": "stands-back-up",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.9y7dhW7mYa43DFIP"
+  },
+  {
+   "_id": "9zIqZqBQUok9WCLH",
+   "name": "Cannot Follow",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>It cannot leave a room through a door the party came through. That is the only hard limit on it, and it is the exit mechanic for Room 4.</p>",
+     "chat": ""
+    },
+    "identifier": "cannot-follow",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.9zIqZqBQUok9WCLH"
+  },
+  {
+   "_id": "RrC2HHiEbsr9wawn",
+   "name": "Elishaf",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>Twice a day he says <em>elishaf</em> and walks through a wall, as the spell <em>passwall</em>, into the space beyond. It never carries him out of a room through a wall the party has left by: the Remnant rule still holds.</p>",
+     "chat": ""
+    },
+    "identifier": "elishaf",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 500000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.RrC2HHiEbsr9wawn"
+  },
+  {
+   "_id": "gyolurqtqvjm8R0n",
+   "name": "Rings",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>A ring of invisibility (he turns invisible as an action until he attacks, once per round of his choosing) and a ring of chameleon power (Advantage on Dexterity (Stealth) checks; he blends into any crowd, booth or bookshelf). His ring of protection +3 is already in his AC.</p>",
+     "chat": ""
+    },
+    "identifier": "rings",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 600000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.gyolurqtqvjm8R0n"
+  },
+  {
+   "_id": "omGB2ibZJWOevq0v",
+   "name": "The Leather Bag",
+   "type": "feat",
+   "img": "icons/magic/symbols/question-stone-yellow.webp",
+   "system": {
+    "type": {
+     "value": "monster",
+     "subtype": ""
+    },
+    "activities": {},
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p>He carries a leather bag with a sapphire in it worth eleven thousand eight hundred gold pieces, and the sapphire has a demon in it. He will not open the bag and does not like it being touched. Nobody at the table remembers what happens if it is opened, so nothing does, unless you want it to.</p>",
+     "chat": ""
+    },
+    "identifier": "the-leather-bag",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "properties": [
+     "trait"
+    ],
+    "requirements": ""
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 700000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.omGB2ibZJWOevq0v"
+  },
+  {
+   "_id": "PEGCt7tlDCmBESoH",
+   "name": "Short Sword +1",
+   "type": "weapon",
+   "img": "icons/weapons/swords/shortsword-guard-brass.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "tKZcj9KPTuiwUu6D": {
+      "_id": "tKZcj9KPTuiwUu6D",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "dex",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "short-sword-1",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 6,
+      "types": [
+       "piercing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [
+     "fin"
+    ],
+    "proficient": null,
+    "range": {
+     "value": null,
+     "long": null,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 800000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.PEGCt7tlDCmBESoH"
+  },
+  {
+   "_id": "kEZcnZQ4NTL0tGhc",
+   "name": "Dagger of Wounding",
+   "type": "weapon",
+   "img": "icons/weapons/daggers/dagger-curved-steel.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "OcBv72ghHfoxWW2N": {
+      "_id": "OcBv72ghHfoxWW2N",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "melee",
+        "classification": ""
+       },
+       "ability": "dex",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]]. A creature hit loses 1 extra Hit Point at the start of each of its turns until it or an ally uses an action to staunch the wound.</p>",
+     "chat": ""
+    },
+    "identifier": "dagger-of-wounding",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 4,
+      "types": [
+       "piercing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [
+     "fin"
+    ],
+    "proficient": null,
+    "range": {
+     "value": 20,
+     "long": 60,
+     "reach": 5,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 900000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.kEZcnZQ4NTL0tGhc"
+  },
+  {
+   "_id": "vvze7AtQMGOMHdmj",
+   "name": "Shortbow (silver arrows)",
+   "type": "weapon",
+   "img": "icons/weapons/bows/shortbow-recurve.webp",
+   "system": {
+    "type": {
+     "value": "natural",
+     "baseItem": ""
+    },
+    "activities": {
+     "dSE4nsnKnLKjZqZX": {
+      "_id": "dSE4nsnKnLKjZqZX",
+      "type": "attack",
+      "name": "",
+      "sort": 0,
+      "img": null,
+      "flags": {},
+      "activation": {
+       "type": "action",
+       "value": null,
+       "override": false,
+       "condition": ""
+      },
+      "consumption": {
+       "scaling": {
+        "allowed": false
+       },
+       "spellSlot": true,
+       "targets": []
+      },
+      "description": {
+       "chatFlavor": ""
+      },
+      "duration": {
+       "units": "inst",
+       "concentration": false,
+       "override": false
+      },
+      "effects": [],
+      "range": {
+       "override": false,
+       "units": "self"
+      },
+      "target": {
+       "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+       },
+       "affects": {
+        "choice": false,
+        "type": ""
+       },
+       "override": false,
+       "prompt": true
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "visibility": {
+       "level": {},
+       "requireAttunement": false,
+       "requireIdentification": false,
+       "requireMagic": false
+      },
+      "attack": {
+       "critical": {
+        "threshold": null
+       },
+       "flat": false,
+       "type": {
+        "value": "ranged",
+        "classification": ""
+       },
+       "ability": "dex",
+       "bonus": ""
+      },
+      "damage": {
+       "critical": {
+        "bonus": ""
+       },
+       "includeBase": true,
+       "parts": []
+      }
+     }
+    },
+    "uses": {
+     "spent": 0,
+     "recovery": [],
+     "max": ""
+    },
+    "description": {
+     "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
+     "chat": ""
+    },
+    "identifier": "shortbow-silver-arrows",
+    "source": {
+     "revision": 1,
+     "rules": "2024",
+     "book": "The Back Room",
+     "license": ""
+    },
+    "quantity": 1,
+    "equipped": true,
+    "damage": {
+     "base": {
+      "number": 1,
+      "denomination": 6,
+      "types": [
+       "piercing"
+      ],
+      "custom": {
+       "enabled": false
+      },
+      "scaling": {
+       "number": 1
+      },
+      "bonus": ""
+     }
+    },
+    "properties": [],
+    "proficient": null,
+    "range": {
+     "value": 80,
+     "long": 320,
+     "reach": null,
+     "units": "ft"
+    }
+   },
+   "effects": [],
+   "flags": {},
+   "folder": null,
+   "sort": 1000000,
+   "ownership": {
+    "default": 0
+   },
+   "_key": "!actors.items!xEs0PM9DU2T204Sv.vvze7AtQMGOMHdmj"
+  }
+ ],
+ "effects": [],
+ "folder": null,
+ "sort": 0,
+ "flags": {},
+ "ownership": {
+  "default": 0
+ },
+ "_key": "!actors!xEs0PM9DU2T204Sv"
+}

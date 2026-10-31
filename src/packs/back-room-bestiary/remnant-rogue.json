@@ -1,6 +1,6 @@
 {
  "_id": "qkuFipSznjnC6QOA",
- "name": "The Rogue With a Tragic Past",
+ "name": "Raven Nightshade",
  "type": "npc",
  "img": "modules/the-back-room/tokens/token-rogue.webp",
  "system": {
@@ -85,7 +85,7 @@
   },
   "details": {
    "biography": {
-    "value": "<p>A hooded figure in dark leathers who says 'it's complicated' a great deal. Everyone at the table has played this character, or sat next to someone who did.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
+    "value": "<p>The Rogue With a Tragic Past: a hooded figure in dark leathers who says 'it's complicated' a great deal. Everyone at the table has played this character, or sat next to someone who did.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
     "public": ""
    },
    "alignment": "Unaligned",
@@ -157,7 +157,7 @@
   }
  },
  "prototypeToken": {
-  "name": "The Rogue With a Tragic Past",
+  "name": "Raven Nightshade",
   "displayName": 20,
   "actorLink": false,
   "disposition": 0,

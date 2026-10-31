@@ -1,6 +1,6 @@
 {
  "_id": "LgUhIfhgg9F7Vdll",
- "name": "The Hooded Stranger",
+ "name": "Kael Shadowmere",
  "type": "npc",
  "img": "modules/the-back-room/tokens/token-stranger.webp",
  "system": {
@@ -85,7 +85,7 @@
   },
   "details": {
    "biography": {
-    "value": "<p>A hooded stranger in the corner booth with a job. Play it completely straight: the job is real, the pay is fair, the directions are good.</p><p><strong>Room 2.</strong> There is a hooded stranger in every booth, and every one of them is a role, repeating the hook word for word. None of them is the Remnant.</p><p><strong>Room 5.</strong> The stranger's voice rises from the common room below, asking the barkeep whether the party is up yet. The job is still there.</p>",
+    "value": "<p>A hooded stranger in the corner booth of the Stickit Inn, with a job and an untouched mug of cider. He gives his name as Kael Shadowmere, as if anyone could keep a straight face. Play it completely straight: the job is real, the pay is fair, the directions are good.</p><p><strong>Room 2.</strong> There is a hooded stranger in every booth, and every one of them is a role, repeating the hook word for word. None of them is the Remnant.</p><p><strong>Room 5.</strong> The stranger's voice rises from the common room below, asking Barnaby whether the party is up yet. The job is still there.</p>",
     "public": ""
    },
    "alignment": "Neutral",
@@ -157,7 +157,7 @@
   }
  },
  "prototypeToken": {
-  "name": "The Hooded Stranger",
+  "name": "Kael Shadowmere",
   "displayName": 20,
   "actorLink": false,
   "disposition": 0,

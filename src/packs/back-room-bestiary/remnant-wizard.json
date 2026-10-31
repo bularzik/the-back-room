@@ -1,6 +1,6 @@
 {
  "_id": "GMjufd12FvYJ33gn",
- "name": "The Wizard Who Misread the Spell",
+ "name": "Mordecai the Magnificent",
  "type": "npc",
  "img": "modules/the-back-room/tokens/token-wizard.webp",
  "system": {
@@ -85,7 +85,7 @@
   },
   "details": {
    "biography": {
-    "value": "<p>Robes, a staff, a spellbook with one page in it. The page is very well thumbed.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
+    "value": "<p>The Wizard Who Misread the Spell: robes, a staff, a spellbook with one page in it. The page is very well thumbed.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
     "public": ""
    },
    "alignment": "Unaligned",
@@ -157,7 +157,7 @@
   }
  },
  "prototypeToken": {
-  "name": "The Wizard Who Misread the Spell",
+  "name": "Mordecai the Magnificent",
   "displayName": 20,
   "actorLink": false,
   "disposition": 0,

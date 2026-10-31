@@ -1,6 +1,6 @@
 {
  "_id": "R0M8x4EHH11TcDUr",
- "name": "The Barbarian Who Is Just Strong",
+ "name": "Grukk Skullsplitter",
  "type": "npc",
  "img": "modules/the-back-room/tokens/token-barbarian.webp",
  "system": {
@@ -85,7 +85,7 @@
   },
   "details": {
    "biography": {
-    "value": "<p>Enormous, cheerful, and holding a greataxe that is bigger than the rules allow. It is not angry. It has never been angry. It was just strong.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
+    "value": "<p>The Barbarian Who Is Just Strong: enormous, cheerful, and holding a greataxe that is bigger than the rules allow. It is not angry. It has never been angry. It was just strong.</p><p><strong>Remnant.</strong> Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. It cannot leave a room by a door the party came through.</p>",
     "public": ""
    },
    "alignment": "Unaligned",
@@ -157,7 +157,7 @@
   }
  },
  "prototypeToken": {
-  "name": "The Barbarian Who Is Just Strong",
+  "name": "Grukk Skullsplitter",
   "displayName": 20,
   "actorLink": false,
   "disposition": 0,
@@ -236,7 +236,7 @@
      "max": ""
     },
     "description": {
-     "value": "<p>Has no name. Answers to any name given, and keeps it. The first name a character uses for it is its name for the rest of the adventure; write it on the token.</p>",
+     "value": "<p>Its name is the only thing it remembers about itself, and it says it often, in the third person. Ask where it is from, who it travelled with or why it fights, and it says its name again, louder.</p>",
      "chat": ""
     },
     "identifier": "the-blank",
