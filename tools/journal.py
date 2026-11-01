@@ -222,6 +222,7 @@ def build(L):
             "The whole adventure in the order you run it, with the Foundry pieces each step uses. The room journals have the detail; this is the thread through them. Each session also has a Session page (Campaign Companion) with the same plan in one paragraph.")
          + "<h2>Three habits for the whole adventure</h2>" + ol(
             "<strong>Doors move the party; you activate the scene.</strong> Walking onto a door tile moves the tokens and their players' view to the new scene. Then right-click that scene in the Scenes sidebar and choose <em>Activate</em>, so its ambience starts and it is the scene everyone sees.",
+            "<strong>NPCs and monsters are already on the maps.</strong> People who arrive mid-scene are placed as <em>hidden</em> tokens (GM-only): Bartleby by the landing in The Back Room, the Echo near the third segment's far door, Rorvik in the Hoard's inner room, Strider in every C copy of the Corridors. Right-click a token and toggle its visibility when they appear.",
             "<strong>GM controls are hidden tiles.</strong> They sit in the top-left corner of a scene. Switch to the Tiles layer to see them; double-click one (from the Tokens layer) to fire it. The full list is in " + J("02. Automation (Monk's Active Tile Triggers)", "02. Automation") + ".",
             "<strong>Keep a tally sheet</strong> with three lists: the <em>visit count</em> (every Corridor scene entered, including repeats); <em>Misremembering</em> changes (who, what it was, what it is now); and <em>what each character left behind</em> in Room 3. Rooms 4 and 5 use all three.")
          + "<h2>Before the first session</h2>"
@@ -279,7 +280,7 @@ def build(L):
             use=[SC("corridor-between"), J("Room 3: The Corridor Between") + " (The Trick, Leaving Something Behind, The Setback &amp; the Echo)", J("The Echo"), "Macro: The Back Room: make the Echo of a character", TB("misremember"), "GM control: Loop Break"])
          + "<h2>Session 3: visit 7+, Room 4, Room 5</h2>"
          + step(18, "A Corridor at visit 7+",
-            f"The far door of Room 3 puts them back in the pool, now at visit 7 or more: a Remnant is in the room. Place {A('remnant-strider')}'s token in this scene. He is not hostile; he wants the game to go on.",
+            f"The far door of Room 3 puts them back in the pool, now at visit 7 or more: a Remnant is in the room. Reveal {A('remnant-strider')}'s token: it is already in every C copy, hidden, beside the X-door slot. He is not hostile; he wants the game to go on.",
             use=["The Corridor journal for the place", J("Strider"), J("The Remnants"), "SoundBard: Strider's arrow"])
          + step(19, "The way to Room 4",
             "Double-click <em>GM: Reveal the X door → Room 4</em>. The X door takes them to the Hoard.",
@@ -568,7 +569,7 @@ def build(L):
          + P("Copy A = the place's base step (0 for most). Copy B = base + 1. Copy C = base + 2. The generic cues (footsteps a half-beat late; a figure at the end of the corridor) apply anywhere; each place's own cues are below.")
          + "<h3>Visit 7+: the Remnant in the room</h3>" + P(
             "After Room 3 the party is in C copies, and every place's 7+ cue puts a Remnant in the room. The first is always Strider; after that, use whichever Remnant suits the place (Thon on a stair, Morlock on a rafter, Fred at the fire). Place the token, and play it from its Person page.")
-         + ul("<strong>Strider, the first time.</strong> He is in the room when they arrive, back to the wall, hood up, and he speaks first: \u201cYou're lost. Don't argue. I know these halls.\u201d He knows their names. He offers to lead.",
+         + ul("<strong>Strider, the first time.</strong> His token is already in every C copy, hidden beside the X-door slot: reveal it. He is in the room when they arrive, back to the wall, hood up, and he speaks first: \u201cYou're lost. Don't argue. I know these halls.\u201d He knows their names. He offers to lead.",
               "<strong>If they follow him,</strong> he walks to a door without hesitating. Wait until nobody is looking at the map, fire <em>GM: Reveal the X door \u2192 Room 4</em>, and the X is on the door he is standing beside. He holds it open: \u201cAfter you.\u201d He does not come through. In the Hoard he is already in his chair.",
               "<strong>If they don't,</strong> he doesn't argue. In the next room they enter, he is already there, by a door, waiting: \u201cThis way.\u201d Each refusal costs a visit, nothing else. Reveal the X door when you're ready either way.",
               "<strong>The others, after Strider.</strong> A Remnant in a C copy is glad to see them, does not attack, and is on its way somewhere: \u201cSession's about to start. You coming?\u201d It leaves by a door the party didn't come through, and is in its chair in the Hoard.")

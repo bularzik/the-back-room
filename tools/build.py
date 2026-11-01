@@ -362,6 +362,34 @@ playlists = [
 # ---------- scenes ----------
 NOTE_PAGES = {**{f"A{i}": "Room 1: The Back Room" for i in range(1, 6)}, **{f"B{i}": "Room 2: The Common Room That Isn't" for i in range(1, 6)},
               **{f"C{i}": "Room 3: The Corridor Between" for i in range(1, 7)}, **{f"D{i}": "Room 4: The Hoard" for i in range(1, 6)}, **{f"E{i}": "The Cover" for i in range(1, 6)}}
+
+# ---------- NPC and monster tokens placed in the scenes (positions are the token's top-left, in px; 100 px = 5 ft) ----------
+# (actor key, x, y, hidden, token name or None). Hidden tokens are GM-only until revealed: they are people who arrive
+# mid-scene (Bartleby on the night stairs, Rorvik at round 2, the Echo on the second pass, Strider at visit 7+).
+STRIDER_C = {"c1-stairwell": (1100, 200), "c2-stable": (850, 900), "c3-inn-hallway": (1200, 350), "c4-campfire": (1150, 650),
+             "c5-market": (1200, 450), "c6-ferry": (1200, 550), "c7-crossroads": (800, 100)}   # beside each place's X-door slot
+SCENE_TOKENS = {
+    "backroom": [("barkeep", 600, 700, True, None)],
+    "common-room": [("remnant-fred", 550, 575, False, None),
+                    ("stranger", 300, 200, False, "A hooded stranger"), ("stranger", 300, 900, False, "A hooded stranger"),
+                    ("stranger", 950, 1000, False, "A hooded stranger")],
+    "corridor-between": [("echo", 2300, 350, True, None)],
+    "hoard": [("remnant-fred", 400, 170, False, None), ("remnant-thon", 500, 170, False, None),
+              ("remnant-morlock", 330, 240, False, None), ("remnant-strider", 550, 240, False, None),
+              ("remnant-rorvik", 750, 300, True, None)],
+    "cover-cavern": [("dragon", 1000, 400, False, None), ("troll", 650, 350, False, None), ("owlbear", 1100, 450, False, None),
+                     ("unicorn", 600, 600, False, None), ("centaur", 900, 750, False, None), ("roper", 750, 950, False, None)],
+    **{f"{place}-c": [("remnant-strider", x, y, True, None)] for place, (x, y) in STRIDER_C.items()},
+}
+PROTO_ONLY = ("randomImg", "appendNumber", "prependAdjective")
+def scene_tokens(key, sid):
+    out = []
+    for n, (akey, x, y, hidden, name) in enumerate(SCENE_TOKENS.get(key, [])):
+        a = allactors[akey]; proto = {k: v for k, v in json.loads(json.dumps(a.doc["prototypeToken"])).items() if k not in PROTO_ONLY}
+        out.append({**proto, "_id": uid(sid, "token", str(n)), "name": name or proto.get("name") or a.doc["name"], "actorId": a.id, "actorLink": False,
+                    "x": int(x), "y": int(y), "elevation": 0, "rotation": 0, "hidden": bool(hidden), "locked": False, "alpha": 1, "flags": {}})
+    return out
+
 scenes = []
 for i, key in enumerate(built):
     m = mapfor(key); sid = scene_ids[key]; is_pool = key not in FIXED
@@ -392,7 +420,7 @@ for i, key in enumerate(built):
                    "grid": {"type": 1, "size": 100, "style": "solidLines", "thickness": 1, "color": "#000000", "alpha": .12, "distance": 5, "units": "ft"},
                    "tokenVision": True, "fog": {"exploration": True, "reset": None, "overlay": None, "colors": {"explored": None, "unexplored": None}},
                    "environment": {"darknessLevel": darkness, "darknessLock": False, "globalLight": {"enabled": False}, "cycle": True},
-                   "drawings": [], "tokens": [], "lights": lights, "notes": notes, "sounds": [], "regions": [], "tiles": [], "walls": walls,
+                   "drawings": [], "tokens": scene_tokens(key, sid), "lights": lights, "notes": notes, "sounds": [], "regions": [], "tiles": [], "walls": walls,
                    "playlist": uid("playlist", "amb"), "playlistSound": amb_id(place_of(key)), "journal": jref, "journalEntryPage": None,
                    "weather": "", "folder": F["Scene-pool"] if is_pool else F["Scene"], "sort": (i + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
 

@@ -9874,7 +9874,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Bartleby Stickit",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-barkeep.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "qvNpqWhjfA8En7yu",
+     "actorId": "KrWS2wJliiVViOUo",
+     "x": 600,
+     "y": 700,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "ym6KO7I2dMJNTggV",
@@ -10916,7 +10947,128 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Fred the Fighter",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-fred.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "PyeRDH4QfQ9LH1dG",
+     "actorId": "tDNJV8smKaZaVqWS",
+     "x": 550,
+     "y": 575,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "A hooded stranger",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-stranger.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "0auk2rl13U35RhDc",
+     "actorId": "LgUhIfhgg9F7Vdll",
+     "x": 300,
+     "y": 200,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "A hooded stranger",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-stranger.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "XyhblVzMqkcxKqf2",
+     "actorId": "LgUhIfhgg9F7Vdll",
+     "x": 300,
+     "y": 900,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "A hooded stranger",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-stranger.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "IScuQC6ZxzSayJP3",
+     "actorId": "LgUhIfhgg9F7Vdll",
+     "x": 950,
+     "y": 1000,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "Nt1dh2IM69T0T1ll",
@@ -11869,7 +12021,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "The Echo",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": -1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-echo.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "4dUcgh9PYE3ee5FP",
+     "actorId": "I2kDQYpzKQGgJWAP",
+     "x": 2300,
+     "y": 350,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "o8YLx8mI16aKpcqj",
@@ -14373,7 +14556,158 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Fred the Fighter",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-fred.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "olTT9Bb9kJf2Y2r6",
+     "actorId": "tDNJV8smKaZaVqWS",
+     "x": 400,
+     "y": 170,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Thon",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-thon.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "8TuMIoU7HehaBrnG",
+     "actorId": "TLNX3TLrIGqtwS6C",
+     "x": 500,
+     "y": 170,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "T. Morlock",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-morlock.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "R3GU0P6vfYUqJ8Y9",
+     "actorId": "xEs0PM9DU2T204Sv",
+     "x": 330,
+     "y": 240,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "HTcdhvTe0KqVJIDe",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 550,
+     "y": 240,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Rorvik",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-rorvik.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "9tKEAMKNvgcwoXhl",
+     "actorId": "SpNT0aeIqKQYSzl6",
+     "x": 750,
+     "y": 300,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "RZflLitdjF4CTPNl",
@@ -15323,7 +15657,188 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Red Dragon (The Cover)",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": -1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-dragon.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "zjVpXld9dlbkXibN",
+     "actorId": "dzOCj45n3twcxQJN",
+     "x": 1000,
+     "y": 400,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Troll (The Cover)",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": -1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 2,
+     "height": 2,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-troll.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "AOP7pjphZLczoKUf",
+     "actorId": "eFmQnaUef5KirEgg",
+     "x": 650,
+     "y": 350,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Owlbear (The Cover)",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": -1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 2,
+     "height": 2,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-owlbear.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "DbRCL0MQxEasAww6",
+     "actorId": "deJ0klDBXZ1te7qW",
+     "x": 1100,
+     "y": 450,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Unicorn (The Cover)",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": -1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 2,
+     "height": 2,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-unicorn.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "tYnjzXu5qJjNk5RH",
+     "actorId": "o8uyxSXpkyQIfpGc",
+     "x": 600,
+     "y": 600,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Centaur (The Cover)",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": -1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 2,
+     "height": 2,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-centaur.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "sv9CYxk7HllA3FVy",
+     "actorId": "i1NOV9LQoGhZFkA6",
+     "x": 900,
+     "y": 750,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "name": "Roper (The Cover)",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": -1,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 2,
+     "height": 2,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-roper.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "zPA3VRycZB3FEoRM",
+     "actorId": "7EzXl7YPx0DF1KeZ",
+     "x": 750,
+     "y": 950,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": false,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "uPVgWzfRGrporRSe",
@@ -26863,7 +27378,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "SimUd7lHU9ft616q",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 1100,
+     "y": 200,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "L1Uf51GMy8GErgwf",
@@ -32772,7 +33318,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "1IISdxbba9GfS5SA",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 850,
+     "y": 900,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "mUmwCvn43Epg3Joh",
@@ -39923,7 +40500,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "Pexlpi6QWU9s3Jg6",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 1200,
+     "y": 350,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "iGiR92R3kz6koTzz",
@@ -45705,7 +46313,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "iqInFRhHmKglq4n3",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 1150,
+     "y": 650,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "nD0aiY5jtw6LHGfd",
@@ -50982,7 +51621,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "Sx4d2O9E8NKuo1wW",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 1200,
+     "y": 450,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "YaxZ6N5M77hdKQ7N",
@@ -56477,7 +57147,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "GLKdMgf7SD9HmbQz",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 1200,
+     "y": 550,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "kKghq22qtH6Certp",
@@ -61533,7 +62234,38 @@
     "cycle": true
    },
    "drawings": [],
-   "tokens": [],
+   "tokens": [
+    {
+     "name": "Strider",
+     "displayName": 20,
+     "actorLink": false,
+     "disposition": 0,
+     "displayBars": 20,
+     "bar1": {
+      "attribute": "attributes.hp"
+     },
+     "width": 1,
+     "height": 1,
+     "texture": {
+      "src": "modules/the-back-room/tokens/token-strider.webp",
+      "scaleX": 1,
+      "scaleY": 1
+     },
+     "sight": {
+      "enabled": false
+     },
+     "_id": "cd1NFpj6MhASL3xv",
+     "actorId": "eNLRxuyQl9I7MCIw",
+     "x": 800,
+     "y": 100,
+     "elevation": 0,
+     "rotation": 0,
+     "hidden": true,
+     "locked": false,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
    "lights": [
     {
      "_id": "EDv5cmErslXzvppZ",
@@ -68685,7 +69417,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>How to Run It: Step by Step</h1><p>The whole adventure in the order you run it, with the Foundry pieces each step uses. The room journals have the detail; this is the thread through them. Each session also has a Session page (Campaign Companion) with the same plan in one paragraph.</p><h2>Three habits for the whole adventure</h2><ol><li><strong>Doors move the party; you activate the scene.</strong> Walking onto a door tile moves the tokens and their players' view to the new scene. Then right-click that scene in the Scenes sidebar and choose <em>Activate</em>, so its ambience starts and it is the scene everyone sees.</li><li><strong>GM controls are hidden tiles.</strong> They sit in the top-left corner of a scene. Switch to the Tiles layer to see them; double-click one (from the Tokens layer) to fire it. The full list is in @UUID[JournalEntry.ZIYvT56dW0zzwxND]{02. Automation}.</li><li><strong>Keep a tally sheet</strong> with three lists: the <em>visit count</em> (every Corridor scene entered, including repeats); <em>Misremembering</em> changes (who, what it was, what it is now); and <em>what each character left behind</em> in Room 3. Rooms 4 and 5 use all three.</li></ol><h2>Before the first session</h2><h3>1. Check the modules</h3><p>Required: Monk's Enhanced Journal, Campaign Companion, Monk's Active Tile Triggers. Recommended for sound: Ivan Duch's Music Packs, Michael Ghelfi, SoundFx Library, Adventure Music, and SoundBard. Without the sound packs the adventure runs silent but works.</p><h3>2. Read three journals</h3><p>The overview, the rules (they are the theme: Misremembering, the Signature, no door leads back, leaving something behind), and the automation table.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.uYYbQcluL0y0VHqf]{00. The Back Room: Adventure Overview}</li><li>@UUID[JournalEntry.5T3hjUmGMhmAPUbl]{01. Rules of the Back Room}</li><li>@UUID[JournalEntry.ZIYvT56dW0zzwxND]{02. Automation (Monk's Active Tile Triggers)}</li></ul></aside><h3>3. Prepare the people</h3><p>Read @UUID[JournalEntry.WQLxmK3fXBuHwyxp]{The Remnants} and swap in your own table's first characters if this isn't the original table. For @UUID[JournalEntry.HDjGNHIrowvpCC8M]{Bartleby Stickit}, pick one secret detail from each character's backstory (Room 1, The Guardian). Decide which player is the latecomer, if any.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.WQLxmK3fXBuHwyxp]{The Remnants}</li><li>@UUID[JournalEntry.Bz6oCPNCrHvHDm9i]{Cast}</li><li>Each Remnant's Person page links its actor.</li></ul></aside><h3>4. Set up sound</h3><p>Run the macro <em>The Back Room: set up SoundBard</em> once (Macro Directory: the folder icon at the left end of the hotbar). It fills two SoundBard banks: Corridors and People. The playlists Back Room: Music and Back Room: Stingers are there for anything else.</p><aside class=\"notable\"><h4>Use</h4><ul><li>Macro: The Back Room: set up SoundBard</li><li>Playlists: Back Room: Ambience, Music, Stingers</li></ul></aside><h3>5. Set the opening</h3><p>Make the landing scene active and click <em>Activate</em> on it once so its music starts. Place the player tokens on the cots in The Back Room scene, out of sight until you need them.</p><aside class=\"notable\"><h4>Use</h4><ul><li>Scene: Welcome: The Stickit Inn (navigation: The Stickit Inn)</li><li>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} (navigation: Upstairs)</li></ul></aside><h2>Session 1: Rooms 1\u20132, Corridor visits 1\u20132</h2><h3>6. While players arrive</h3><p>The landing scene is up and the Stickit Inn's music is playing. Nothing to do.</p><aside class=\"notable\"><h4>Use</h4><ul><li>Scene: Welcome: The Stickit Inn</li></ul></aside><h3>7. The evening at the Stickit Inn</h3><p>Narrate the inn and the job, played completely straight: @UUID[JournalEntry.OtOUVhSExtP4SOGO]{Kael Shadowmere} in the corner booth, three days to Thistlecross, forty gold. Show the handout. If you want a picture on screen, activate the vista of the common room for a moment. Start the music track <em>Session 1: A Cozy Tavern</em>.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.mnmkjsUJYJ6rVeHB]{Room 1: The Back Room} (The Evening)</li><li>@UUID[JournalEntry.cAqtiEcEW9UEFGbK]{Handout: The Job}</li><li>Scene: Vista: The Common Room (optional)</li></ul></aside><h3>8. Upstairs to the back room</h3><p>Activate @UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} and read the boxed text. If a player is late, run The Latecomer: their character arrives last, with Bartleby and a candle.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room}</li><li>@UUID[JournalEntry.mnmkjsUJYJ6rVeHB]{Room 1: The Back Room} (The Latecomer)</li><li>@UUID[JournalEntry.HDjGNHIrowvpCC8M]{Bartleby Stickit}</li></ul></aside><h3>9. The night event</h3><p>Someone wakes; the lantern is lit. The stone in the corner has a hilt in it: when a player clicks the stone, that player gets the Toothless Key handout automatically. Bartleby comes down the stone stairs with a tray and asks them to go back to bed (The Guardian is not a fight).</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.mnmkjsUJYJ6rVeHB]{Room 1: The Back Room} (The Night Event, The Guardian)</li><li>@UUID[JournalEntry.CV7to52Qcd6eYan0]{Handout: The Toothless Key} (opens itself from the stone)</li><li>SoundBard: The lantern lights itself</li></ul></aside><h3>10. Into the Corridors (visit 1)</h3><p>When a token steps onto the stairwell or the hayloft door, it is sent to a random Corridor scene. Activate that scene. Open the matching Corridor journal and use its visit-band cue (nothing yet at visits 1\u20132). Tick visit 1.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.UiR8fvzzRUCSQvD6]{The Corridor Pool: rules for every place}</li><li>The Corridor journal for wherever they landed (Stairwell, Stable, Hallway, Clearing, Market Row, Crossing, Crossroads)</li><li>@UUID[RollTable.4NjmmaNof9d3nLv7]{the Corridor Pool table} if you'd rather choose by roll</li></ul></aside><h3>11. Visit 2, and the way to Room 2</h3><p>Any door sends them somewhere else in the pool; tick visit 2. When you are ready for Room 2, double-click <em>GM: Reveal the X door \u2192 Room 2</em> in the scene they are in: the X appears on one door. Walking through it takes them to the Common Room.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Reveal the X door \u2192 Room 2</li></ul></aside><h3>12. Room 2: the Common Room That Isn't</h3><p>Activate @UUID[Scene.uKyO8AvTiuT8ys4Y]{The Common Room}. Every patron is a role. Roll the drunk's joke once and repeat it forever. One patron is real: @UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}. When he says his Signature, click his table: everyone gets the X Map. End the session on the map.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.uKyO8AvTiuT8ys4Y]{The Common Room}</li><li>@UUID[JournalEntry.3AaqWvvfQSAFBMcV]{Room 2: The Common Room That Isn't}</li><li>@UUID[RollTable.EH7rPdsPvHwTYLOu]{the Drunk\u2019s Joke table}</li><li>@UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}</li><li>@UUID[JournalEntry.5XTLcFdNQL0mKlgF]{Handout: The X Map} (opens itself from Fred's table)</li><li>SoundBard: POW! (Fred)</li></ul></aside><h2>Session 2: Corridor visits 3\u20136, Room 3</h2><h3>13. Back into the Corridors</h3><p>The common room's far door leads into the pool. Every arrival resets the fog and whispers you the band. Visits 3\u20134: sound (footsteps a half-beat late). Visits 5\u20136: a glimpse. Use each place's own cue first, then the generic table. Books on a shelf are half-page books. Each short rest in a Corridor costs a Misremembering.</p><aside class=\"notable\"><h4>Use</h4><ul><li>The Corridor journal for each place</li><li>@UUID[RollTable.BdYbfoNVVThS8rtr]{the Cue table}</li><li>@UUID[RollTable.s5y6739k0kQfPWox]{the Half-page Books table}</li><li>@UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table}</li><li>SoundBard: Corridors bank</li><li>Music: Corridors: Eerie Forest / Mystery</li></ul></aside><h3>14. The Cover (once, at visits 3\u20136)</h3><p>When the table needs a real fight, double-click <em>GM: Next door \u2192 The Cover</em> instead of letting them roll a door. The six monsters are frozen; stepping into a person-shaped gap wakes one (the tile whispers which). The cave's exit puts them back in the pool; nothing from the treasure pile survives it.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Next door \u2192 The Cover</li><li>@UUID[Scene.3VIIh9ZBk64Wr8UV]{The Cavern}</li><li>@UUID[JournalEntry.jsh30osSZ7KvNtAs]{The Cover}</li><li>Music: The Cover: Dracona Mortis</li><li>SoundBard: A monster wakes</li></ul></aside><h3>15. The Cellar (optional, visit 5+)</h3><p>The Cellar is never a random destination. From visit 5, use <em>GM: Next door \u2192 the Cellar</em> when you want it.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control: Next door \u2192 the Cellar</li><li>@UUID[JournalEntry.HmaxXULqxLUaScGP]{Corridor: Cellar}</li></ul></aside><h3>16. The way to Room 3</h3><p>Once they have the X Map, double-click <em>GM: Reveal the X door \u2192 Room 3</em> in the scene they are in. The X door takes them to the Corridor Between.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Reveal the X door \u2192 Room 3</li></ul></aside><h3>17. Room 3: the Corridor Between</h3><p>Activate @UUID[Scene.KVQF67B2Q8tZP4pt]{The Corridor Between}. Walking forward loops through six identical segments. Teach the rule with the clue ladder, one clue per pass. On the second pass @UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo} steps out of the far door (the tile reminds you). When someone sincerely leaves something behind, double-click <em>GM: Loop Break</em>, apply the Setback (one Misremembering), and ask whether anyone else wants to leave something too. Write down who left what. End the session here if you like: the next far door leads back into the Corridors.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.KVQF67B2Q8tZP4pt]{The Corridor Between}</li><li>@UUID[JournalEntry.OFxeMZQdzJZQ48I3]{Room 3: The Corridor Between} (The Trick, Leaving Something Behind, The Setback &amp; the Echo)</li><li>@UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo}</li><li>Macro: The Back Room: make the Echo of a character</li><li>@UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table}</li><li>GM control: Loop Break</li></ul></aside><h2>Session 3: visit 7+, Room 4, Room 5</h2><h3>18. A Corridor at visit 7+</h3><p>The far door of Room 3 puts them back in the pool, now at visit 7 or more: a Remnant is in the room. Place @UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}'s token in this scene. He is not hostile; he wants the game to go on.</p><aside class=\"notable\"><h4>Use</h4><ul><li>The Corridor journal for the place</li><li>@UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}</li><li>@UUID[JournalEntry.WQLxmK3fXBuHwyxp]{The Remnants}</li><li>SoundBard: Strider's arrow</li></ul></aside><h3>19. The way to Room 4</h3><p>Double-click <em>GM: Reveal the X door \u2192 Room 4</em>. The X door takes them to the Hoard.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Reveal the X door \u2192 Room 4</li></ul></aside><h3>20. Room 4: the Hoard</h3><p>Activate @UUID[Scene.DhFbGAUmoWaedMdE]{The Hoard}. The reading room, fully arrived; the Remnants are waiting in the inner room. The fight starts when someone makes it start. Rorvik's chair is empty: at the top of round 2 he bursts in (\u201cSorry I'm late. What did I miss?\u201d). The Remnants can't be beaten: they stand back up. At the top of round 3, spell out the stakes and double-click <em>GM: Open the way back</em>: the glass doors they came in by now lead out. Combat ends when a character walks through them without looking back.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.DhFbGAUmoWaedMdE]{The Hoard}</li><li>@UUID[JournalEntry.UeGLeDRxQWkDtWFm]{Room 4: The Hoard}</li><li>@UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}, @UUID[JournalEntry.FnjKc1XDXbKsWpEI]{Thon}, @UUID[JournalEntry.B2W0zbujemjBh92N]{Rorvik}, @UUID[JournalEntry.U6yyMf1DxqYCG5Lc]{T. Morlock}, @UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}</li><li>@UUID[JournalEntry.p5WcZzzwvi1Bn3aT]{Half-page Book 12: (Untitled)} (on the inner room's shelves)</li><li>Music: It's All Led Up to This</li><li>SoundBard: People bank (Rorvik bursts in)</li><li>GM control: Open the way back</li></ul></aside><h3>21. Room 5: the Back Room, again</h3><p>The glass doors bring them back to The Back Room with the fog kept: they never left. The toothless key opens the door at the top of the stairs. Double-click <em>GM: Reveal</em> if you want to un-hide the Corridor scenes' real names. Offer the choice: leave or stay. Use the tally: the Misremembering list and what each of them left behind.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room}</li><li>@UUID[JournalEntry.xeoMFbrUveFZwBiv]{Room 5: The Back Room, Again} (Dawn, The Choice: the landing door leaves, the hayloft door stays)</li><li>GM control: Reveal (Room 5)</li><li>Music: Room 5, dawn: Hope</li><li>SoundBard: Remnants laughing, through the door</li></ul></aside><h3>22. The Last Word</h3><p>Out of character, after the choice: stop the ambience, start <em>The Last Word: Sad Strings</em> (Playlists: Back Room: Music), let it play a few bars, then put the dice down and read the closing to the players. Then stop.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.xeoMFbrUveFZwBiv]{Room 5: The Back Room, Again} (The Last Word)</li><li>Music: The Last Word: Sad Strings</li></ul></aside><h2>Afterwards</h2><p>To clear the adventure out of a world, run the macro <em>The Back Room: remove the adventure from this world</em>. It asks first, then deletes exactly what the adventure imported, itself included, and leaves your own documents alone.</p>"
+      "content": "<h1>How to Run It: Step by Step</h1><p>The whole adventure in the order you run it, with the Foundry pieces each step uses. The room journals have the detail; this is the thread through them. Each session also has a Session page (Campaign Companion) with the same plan in one paragraph.</p><h2>Three habits for the whole adventure</h2><ol><li><strong>Doors move the party; you activate the scene.</strong> Walking onto a door tile moves the tokens and their players' view to the new scene. Then right-click that scene in the Scenes sidebar and choose <em>Activate</em>, so its ambience starts and it is the scene everyone sees.</li><li><strong>NPCs and monsters are already on the maps.</strong> People who arrive mid-scene are placed as <em>hidden</em> tokens (GM-only): Bartleby by the landing in The Back Room, the Echo near the third segment's far door, Rorvik in the Hoard's inner room, Strider in every C copy of the Corridors. Right-click a token and toggle its visibility when they appear.</li><li><strong>GM controls are hidden tiles.</strong> They sit in the top-left corner of a scene. Switch to the Tiles layer to see them; double-click one (from the Tokens layer) to fire it. The full list is in @UUID[JournalEntry.ZIYvT56dW0zzwxND]{02. Automation}.</li><li><strong>Keep a tally sheet</strong> with three lists: the <em>visit count</em> (every Corridor scene entered, including repeats); <em>Misremembering</em> changes (who, what it was, what it is now); and <em>what each character left behind</em> in Room 3. Rooms 4 and 5 use all three.</li></ol><h2>Before the first session</h2><h3>1. Check the modules</h3><p>Required: Monk's Enhanced Journal, Campaign Companion, Monk's Active Tile Triggers. Recommended for sound: Ivan Duch's Music Packs, Michael Ghelfi, SoundFx Library, Adventure Music, and SoundBard. Without the sound packs the adventure runs silent but works.</p><h3>2. Read three journals</h3><p>The overview, the rules (they are the theme: Misremembering, the Signature, no door leads back, leaving something behind), and the automation table.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.uYYbQcluL0y0VHqf]{00. The Back Room: Adventure Overview}</li><li>@UUID[JournalEntry.5T3hjUmGMhmAPUbl]{01. Rules of the Back Room}</li><li>@UUID[JournalEntry.ZIYvT56dW0zzwxND]{02. Automation (Monk's Active Tile Triggers)}</li></ul></aside><h3>3. Prepare the people</h3><p>Read @UUID[JournalEntry.WQLxmK3fXBuHwyxp]{The Remnants} and swap in your own table's first characters if this isn't the original table. For @UUID[JournalEntry.HDjGNHIrowvpCC8M]{Bartleby Stickit}, pick one secret detail from each character's backstory (Room 1, The Guardian). Decide which player is the latecomer, if any.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.WQLxmK3fXBuHwyxp]{The Remnants}</li><li>@UUID[JournalEntry.Bz6oCPNCrHvHDm9i]{Cast}</li><li>Each Remnant's Person page links its actor.</li></ul></aside><h3>4. Set up sound</h3><p>Run the macro <em>The Back Room: set up SoundBard</em> once (Macro Directory: the folder icon at the left end of the hotbar). It fills two SoundBard banks: Corridors and People. The playlists Back Room: Music and Back Room: Stingers are there for anything else.</p><aside class=\"notable\"><h4>Use</h4><ul><li>Macro: The Back Room: set up SoundBard</li><li>Playlists: Back Room: Ambience, Music, Stingers</li></ul></aside><h3>5. Set the opening</h3><p>Make the landing scene active and click <em>Activate</em> on it once so its music starts. Place the player tokens on the cots in The Back Room scene, out of sight until you need them.</p><aside class=\"notable\"><h4>Use</h4><ul><li>Scene: Welcome: The Stickit Inn (navigation: The Stickit Inn)</li><li>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} (navigation: Upstairs)</li></ul></aside><h2>Session 1: Rooms 1\u20132, Corridor visits 1\u20132</h2><h3>6. While players arrive</h3><p>The landing scene is up and the Stickit Inn's music is playing. Nothing to do.</p><aside class=\"notable\"><h4>Use</h4><ul><li>Scene: Welcome: The Stickit Inn</li></ul></aside><h3>7. The evening at the Stickit Inn</h3><p>Narrate the inn and the job, played completely straight: @UUID[JournalEntry.OtOUVhSExtP4SOGO]{Kael Shadowmere} in the corner booth, three days to Thistlecross, forty gold. Show the handout. If you want a picture on screen, activate the vista of the common room for a moment. Start the music track <em>Session 1: A Cozy Tavern</em>.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.mnmkjsUJYJ6rVeHB]{Room 1: The Back Room} (The Evening)</li><li>@UUID[JournalEntry.cAqtiEcEW9UEFGbK]{Handout: The Job}</li><li>Scene: Vista: The Common Room (optional)</li></ul></aside><h3>8. Upstairs to the back room</h3><p>Activate @UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} and read the boxed text. If a player is late, run The Latecomer: their character arrives last, with Bartleby and a candle.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room}</li><li>@UUID[JournalEntry.mnmkjsUJYJ6rVeHB]{Room 1: The Back Room} (The Latecomer)</li><li>@UUID[JournalEntry.HDjGNHIrowvpCC8M]{Bartleby Stickit}</li></ul></aside><h3>9. The night event</h3><p>Someone wakes; the lantern is lit. The stone in the corner has a hilt in it: when a player clicks the stone, that player gets the Toothless Key handout automatically. Bartleby comes down the stone stairs with a tray and asks them to go back to bed (The Guardian is not a fight).</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.mnmkjsUJYJ6rVeHB]{Room 1: The Back Room} (The Night Event, The Guardian)</li><li>@UUID[JournalEntry.CV7to52Qcd6eYan0]{Handout: The Toothless Key} (opens itself from the stone)</li><li>SoundBard: The lantern lights itself</li></ul></aside><h3>10. Into the Corridors (visit 1)</h3><p>When a token steps onto the stairwell or the hayloft door, it is sent to a random Corridor scene. Activate that scene. Open the matching Corridor journal and use its visit-band cue (nothing yet at visits 1\u20132). Tick visit 1.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.UiR8fvzzRUCSQvD6]{The Corridor Pool: rules for every place}</li><li>The Corridor journal for wherever they landed (Stairwell, Stable, Hallway, Clearing, Market Row, Crossing, Crossroads)</li><li>@UUID[RollTable.4NjmmaNof9d3nLv7]{the Corridor Pool table} if you'd rather choose by roll</li></ul></aside><h3>11. Visit 2, and the way to Room 2</h3><p>Any door sends them somewhere else in the pool; tick visit 2. When you are ready for Room 2, double-click <em>GM: Reveal the X door \u2192 Room 2</em> in the scene they are in: the X appears on one door. Walking through it takes them to the Common Room.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Reveal the X door \u2192 Room 2</li></ul></aside><h3>12. Room 2: the Common Room That Isn't</h3><p>Activate @UUID[Scene.uKyO8AvTiuT8ys4Y]{The Common Room}. Every patron is a role. Roll the drunk's joke once and repeat it forever. One patron is real: @UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}. When he says his Signature, click his table: everyone gets the X Map. End the session on the map.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.uKyO8AvTiuT8ys4Y]{The Common Room}</li><li>@UUID[JournalEntry.3AaqWvvfQSAFBMcV]{Room 2: The Common Room That Isn't}</li><li>@UUID[RollTable.EH7rPdsPvHwTYLOu]{the Drunk\u2019s Joke table}</li><li>@UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}</li><li>@UUID[JournalEntry.5XTLcFdNQL0mKlgF]{Handout: The X Map} (opens itself from Fred's table)</li><li>SoundBard: POW! (Fred)</li></ul></aside><h2>Session 2: Corridor visits 3\u20136, Room 3</h2><h3>13. Back into the Corridors</h3><p>The common room's far door leads into the pool. Every arrival resets the fog and whispers you the band. Visits 3\u20134: sound (footsteps a half-beat late). Visits 5\u20136: a glimpse. Use each place's own cue first, then the generic table. Books on a shelf are half-page books. Each short rest in a Corridor costs a Misremembering.</p><aside class=\"notable\"><h4>Use</h4><ul><li>The Corridor journal for each place</li><li>@UUID[RollTable.BdYbfoNVVThS8rtr]{the Cue table}</li><li>@UUID[RollTable.s5y6739k0kQfPWox]{the Half-page Books table}</li><li>@UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table}</li><li>SoundBard: Corridors bank</li><li>Music: Corridors: Eerie Forest / Mystery</li></ul></aside><h3>14. The Cover (once, at visits 3\u20136)</h3><p>When the table needs a real fight, double-click <em>GM: Next door \u2192 The Cover</em> instead of letting them roll a door. The six monsters are frozen; stepping into a person-shaped gap wakes one (the tile whispers which). The cave's exit puts them back in the pool; nothing from the treasure pile survives it.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Next door \u2192 The Cover</li><li>@UUID[Scene.3VIIh9ZBk64Wr8UV]{The Cavern}</li><li>@UUID[JournalEntry.jsh30osSZ7KvNtAs]{The Cover}</li><li>Music: The Cover: Dracona Mortis</li><li>SoundBard: A monster wakes</li></ul></aside><h3>15. The Cellar (optional, visit 5+)</h3><p>The Cellar is never a random destination. From visit 5, use <em>GM: Next door \u2192 the Cellar</em> when you want it.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control: Next door \u2192 the Cellar</li><li>@UUID[JournalEntry.HmaxXULqxLUaScGP]{Corridor: Cellar}</li></ul></aside><h3>16. The way to Room 3</h3><p>Once they have the X Map, double-click <em>GM: Reveal the X door \u2192 Room 3</em> in the scene they are in. The X door takes them to the Corridor Between.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Reveal the X door \u2192 Room 3</li></ul></aside><h3>17. Room 3: the Corridor Between</h3><p>Activate @UUID[Scene.KVQF67B2Q8tZP4pt]{The Corridor Between}. Walking forward loops through six identical segments. Teach the rule with the clue ladder, one clue per pass. On the second pass @UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo} steps out of the far door (the tile reminds you). When someone sincerely leaves something behind, double-click <em>GM: Loop Break</em>, apply the Setback (one Misremembering), and ask whether anyone else wants to leave something too. Write down who left what. End the session here if you like: the next far door leads back into the Corridors.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.KVQF67B2Q8tZP4pt]{The Corridor Between}</li><li>@UUID[JournalEntry.OFxeMZQdzJZQ48I3]{Room 3: The Corridor Between} (The Trick, Leaving Something Behind, The Setback &amp; the Echo)</li><li>@UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo}</li><li>Macro: The Back Room: make the Echo of a character</li><li>@UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table}</li><li>GM control: Loop Break</li></ul></aside><h2>Session 3: visit 7+, Room 4, Room 5</h2><h3>18. A Corridor at visit 7+</h3><p>The far door of Room 3 puts them back in the pool, now at visit 7 or more: a Remnant is in the room. Reveal @UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}'s token: it is already in every C copy, hidden, beside the X-door slot. He is not hostile; he wants the game to go on.</p><aside class=\"notable\"><h4>Use</h4><ul><li>The Corridor journal for the place</li><li>@UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}</li><li>@UUID[JournalEntry.WQLxmK3fXBuHwyxp]{The Remnants}</li><li>SoundBard: Strider's arrow</li></ul></aside><h3>19. The way to Room 4</h3><p>Double-click <em>GM: Reveal the X door \u2192 Room 4</em>. The X door takes them to the Hoard.</p><aside class=\"notable\"><h4>Use</h4><ul><li>GM control (any Corridor scene): Reveal the X door \u2192 Room 4</li></ul></aside><h3>20. Room 4: the Hoard</h3><p>Activate @UUID[Scene.DhFbGAUmoWaedMdE]{The Hoard}. The reading room, fully arrived; the Remnants are waiting in the inner room. The fight starts when someone makes it start. Rorvik's chair is empty: at the top of round 2 he bursts in (\u201cSorry I'm late. What did I miss?\u201d). The Remnants can't be beaten: they stand back up. At the top of round 3, spell out the stakes and double-click <em>GM: Open the way back</em>: the glass doors they came in by now lead out. Combat ends when a character walks through them without looking back.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.DhFbGAUmoWaedMdE]{The Hoard}</li><li>@UUID[JournalEntry.UeGLeDRxQWkDtWFm]{Room 4: The Hoard}</li><li>@UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}, @UUID[JournalEntry.FnjKc1XDXbKsWpEI]{Thon}, @UUID[JournalEntry.B2W0zbujemjBh92N]{Rorvik}, @UUID[JournalEntry.U6yyMf1DxqYCG5Lc]{T. Morlock}, @UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}</li><li>@UUID[JournalEntry.p5WcZzzwvi1Bn3aT]{Half-page Book 12: (Untitled)} (on the inner room's shelves)</li><li>Music: It's All Led Up to This</li><li>SoundBard: People bank (Rorvik bursts in)</li><li>GM control: Open the way back</li></ul></aside><h3>21. Room 5: the Back Room, again</h3><p>The glass doors bring them back to The Back Room with the fog kept: they never left. The toothless key opens the door at the top of the stairs. Double-click <em>GM: Reveal</em> if you want to un-hide the Corridor scenes' real names. Offer the choice: leave or stay. Use the tally: the Misremembering list and what each of them left behind.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room}</li><li>@UUID[JournalEntry.xeoMFbrUveFZwBiv]{Room 5: The Back Room, Again} (Dawn, The Choice: the landing door leaves, the hayloft door stays)</li><li>GM control: Reveal (Room 5)</li><li>Music: Room 5, dawn: Hope</li><li>SoundBard: Remnants laughing, through the door</li></ul></aside><h3>22. The Last Word</h3><p>Out of character, after the choice: stop the ambience, start <em>The Last Word: Sad Strings</em> (Playlists: Back Room: Music), let it play a few bars, then put the dice down and read the closing to the players. Then stop.</p><aside class=\"notable\"><h4>Use</h4><ul><li>@UUID[JournalEntry.xeoMFbrUveFZwBiv]{Room 5: The Back Room, Again} (The Last Word)</li><li>Music: The Last Word: Sad Strings</li></ul></aside><h2>Afterwards</h2><p>To clear the adventure out of a world, run the macro <em>The Back Room: remove the adventure from this world</em>. It asks first, then deletes exactly what the adventure imported, itself included, and leaves your own documents alone.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -69151,7 +69883,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>The Corridor Pool</h1><p>Eight in-between places, one misremembered trope each. This is the spec the maps are built from; where it disagrees with anything else, it wins.</p><ul><li><strong>One trope, one wrongness.</strong> Never two \u2014 one is uncanny, two is a joke.</li><li><strong>Three copies, and the library climbs.</strong> Each place is three Foundry scenes (A, B, C), same map, hidden from the navigation bar, all named with the place's bland name. Copy B is one step more library than A, copy C one more than B; the library steps are the only difference between copies, and the wrongness is in all three. The copy letter is the stage of the adventure and only ever climbs: Room 1's night doors lead to A copies (visits 1\u20132), the Common Room's door and The Cover's exit to B copies (visits 3\u20136), Room 3's exit to C copies (visit 7+). Every Corridor door leads to a <em>different place</em> in the same copy, chosen at random. Nothing to count or switch: the further in they are, the more the rooms look like the library.</li><li><strong>Every book is a half-page book.</strong></li><li><strong>Entry doors.</strong> Each map has two or three doors. The random-door tile uses all of them as exits (never to another copy of the same place); arrivals are placed inside whichever door the tile chose, so a revisit can start from a different door. One door per scene is the X-door slot: a plain pool door until the progression condition is met, then the X appears on it and it leads to the next fixed room.</li><li><strong>Darkness</strong> 0.6\u20130.8 on every Corridor scene; one or two light sources at most. Small vision is part of the concealment.</li><li><strong>Size.</strong> 12\u00d710 to 16\u00d714 squares. Places to pass through, not explore.</li></ul><h3>The library steps</h3><table><thead><tr><th>Step</th><th>Detail</th></tr></thead><tbody><tr><td>1</td><td>A strip of green-painted wainscoting on one wall, chair-rail height.</td></tr><tr><td>2</td><td>A door (or the door) is now a double wooden door with glass panels; through the glass, a bookshelf.</td></tr><tr><td>3</td><td>A pointed arch where a square frame was; a small stained-glass lantern-window high in a wall; carpet over stone or dirt.</td></tr><tr><td>4</td><td>Dark timber ribs overhead, meeting in a point. The room is half library now.</td></tr></tbody></table><p>Copy A = the place's base step (0 for most). Copy B = base + 1. Copy C = base + 2. The generic cues (footsteps a half-beat late; a figure at the end of the corridor) apply anywhere; each place's own cues are below.</p><h3>Visit 7+: the Remnant in the room</h3><p>After Room 3 the party is in C copies, and every place's 7+ cue puts a Remnant in the room. The first is always Strider; after that, use whichever Remnant suits the place (Thon on a stair, Morlock on a rafter, Fred at the fire). Place the token, and play it from its Person page.</p><ul><li><strong>Strider, the first time.</strong> He is in the room when they arrive, back to the wall, hood up, and he speaks first: \u201cYou're lost. Don't argue. I know these halls.\u201d He knows their names. He offers to lead.</li><li><strong>If they follow him,</strong> he walks to a door without hesitating. Wait until nobody is looking at the map, fire <em>GM: Reveal the X door \u2192 Room 4</em>, and the X is on the door he is standing beside. He holds it open: \u201cAfter you.\u201d He does not come through. In the Hoard he is already in his chair.</li><li><strong>If they don't,</strong> he doesn't argue. In the next room they enter, he is already there, by a door, waiting: \u201cThis way.\u201d Each refusal costs a visit, nothing else. Reveal the X door when you're ready either way.</li><li><strong>The others, after Strider.</strong> A Remnant in a C copy is glad to see them, does not attack, and is on its way somewhere: \u201cSession's about to start. You coming?\u201d It leaves by a door the party didn't come through, and is in its chair in the Hoard.</li></ul><h3>Indoors to outdoors: going through</h3><p>A door in the stairwell opens onto a crossroads at dusk; a gap in the trees round a campfire leads into a stable. Don't explain it, and never apologise for it. The Corridors are the storeroom misremembered, and memory joins places the way dreams do: by feeling, not by floor plan. What makes it uncanny instead of silly is that every crossing is described the same way, plainly, as if it were obvious.</p><ul><li><strong>Every way out is a door.</strong> Outdoors, the doors are still doors: the arches at either end of Market Row, the door standing on its own at the end of the ferry jetty, the gaps in the trees round the clearing, the four roads at the crossroads. Going through any of them, describe a threshold: a step over something, a change of air, a latch under the hand, even where there is no latch.</li><li><strong>Say it in three beats.</strong> What they step through; one sense that changes; where they are. <em>\u201cYou duck under the stable's yard door. The smell of hay goes, all at once, and there's woodsmoke. You're standing at the edge of a clearing at night, and the door behind you is a gap between two pines.\u201d</em></li><li><strong>The way back is never there.</strong> When they turn round, what they came through is the right shape for this place: the door they opened is now a gap in the trees, an arch, a road. Fog is reset on every arrival, so Foundry agrees with you.</li><li><strong>Weather doesn't follow them.</strong> Outdoors is never quite outside. No wind on the skin, no rain, a sky with no stars or a dusk that never finishes. Indoors after outdoors, nobody's boots are wet. Let a player notice it.</li><li><strong>Time does follow them.</strong> It is always the same night. A character who checks finds their candle the same length, their tea still warm, the moon (when there is one) exactly where it was.</li><li><strong>Some crossings have a seam.</strong> Where it fits, keep one thing from the place they left for a beat: the stairwell's echo carrying on into the stable for a step or two; the clearing's firelight on their backs as they enter the hallway, then gone. One detail, never more.</li></ul>"
+      "content": "<h1>The Corridor Pool</h1><p>Eight in-between places, one misremembered trope each. This is the spec the maps are built from; where it disagrees with anything else, it wins.</p><ul><li><strong>One trope, one wrongness.</strong> Never two \u2014 one is uncanny, two is a joke.</li><li><strong>Three copies, and the library climbs.</strong> Each place is three Foundry scenes (A, B, C), same map, hidden from the navigation bar, all named with the place's bland name. Copy B is one step more library than A, copy C one more than B; the library steps are the only difference between copies, and the wrongness is in all three. The copy letter is the stage of the adventure and only ever climbs: Room 1's night doors lead to A copies (visits 1\u20132), the Common Room's door and The Cover's exit to B copies (visits 3\u20136), Room 3's exit to C copies (visit 7+). Every Corridor door leads to a <em>different place</em> in the same copy, chosen at random. Nothing to count or switch: the further in they are, the more the rooms look like the library.</li><li><strong>Every book is a half-page book.</strong></li><li><strong>Entry doors.</strong> Each map has two or three doors. The random-door tile uses all of them as exits (never to another copy of the same place); arrivals are placed inside whichever door the tile chose, so a revisit can start from a different door. One door per scene is the X-door slot: a plain pool door until the progression condition is met, then the X appears on it and it leads to the next fixed room.</li><li><strong>Darkness</strong> 0.6\u20130.8 on every Corridor scene; one or two light sources at most. Small vision is part of the concealment.</li><li><strong>Size.</strong> 12\u00d710 to 16\u00d714 squares. Places to pass through, not explore.</li></ul><h3>The library steps</h3><table><thead><tr><th>Step</th><th>Detail</th></tr></thead><tbody><tr><td>1</td><td>A strip of green-painted wainscoting on one wall, chair-rail height.</td></tr><tr><td>2</td><td>A door (or the door) is now a double wooden door with glass panels; through the glass, a bookshelf.</td></tr><tr><td>3</td><td>A pointed arch where a square frame was; a small stained-glass lantern-window high in a wall; carpet over stone or dirt.</td></tr><tr><td>4</td><td>Dark timber ribs overhead, meeting in a point. The room is half library now.</td></tr></tbody></table><p>Copy A = the place's base step (0 for most). Copy B = base + 1. Copy C = base + 2. The generic cues (footsteps a half-beat late; a figure at the end of the corridor) apply anywhere; each place's own cues are below.</p><h3>Visit 7+: the Remnant in the room</h3><p>After Room 3 the party is in C copies, and every place's 7+ cue puts a Remnant in the room. The first is always Strider; after that, use whichever Remnant suits the place (Thon on a stair, Morlock on a rafter, Fred at the fire). Place the token, and play it from its Person page.</p><ul><li><strong>Strider, the first time.</strong> His token is already in every C copy, hidden beside the X-door slot: reveal it. He is in the room when they arrive, back to the wall, hood up, and he speaks first: \u201cYou're lost. Don't argue. I know these halls.\u201d He knows their names. He offers to lead.</li><li><strong>If they follow him,</strong> he walks to a door without hesitating. Wait until nobody is looking at the map, fire <em>GM: Reveal the X door \u2192 Room 4</em>, and the X is on the door he is standing beside. He holds it open: \u201cAfter you.\u201d He does not come through. In the Hoard he is already in his chair.</li><li><strong>If they don't,</strong> he doesn't argue. In the next room they enter, he is already there, by a door, waiting: \u201cThis way.\u201d Each refusal costs a visit, nothing else. Reveal the X door when you're ready either way.</li><li><strong>The others, after Strider.</strong> A Remnant in a C copy is glad to see them, does not attack, and is on its way somewhere: \u201cSession's about to start. You coming?\u201d It leaves by a door the party didn't come through, and is in its chair in the Hoard.</li></ul><h3>Indoors to outdoors: going through</h3><p>A door in the stairwell opens onto a crossroads at dusk; a gap in the trees round a campfire leads into a stable. Don't explain it, and never apologise for it. The Corridors are the storeroom misremembered, and memory joins places the way dreams do: by feeling, not by floor plan. What makes it uncanny instead of silly is that every crossing is described the same way, plainly, as if it were obvious.</p><ul><li><strong>Every way out is a door.</strong> Outdoors, the doors are still doors: the arches at either end of Market Row, the door standing on its own at the end of the ferry jetty, the gaps in the trees round the clearing, the four roads at the crossroads. Going through any of them, describe a threshold: a step over something, a change of air, a latch under the hand, even where there is no latch.</li><li><strong>Say it in three beats.</strong> What they step through; one sense that changes; where they are. <em>\u201cYou duck under the stable's yard door. The smell of hay goes, all at once, and there's woodsmoke. You're standing at the edge of a clearing at night, and the door behind you is a gap between two pines.\u201d</em></li><li><strong>The way back is never there.</strong> When they turn round, what they came through is the right shape for this place: the door they opened is now a gap in the trees, an arch, a road. Fog is reset on every arrival, so Foundry agrees with you.</li><li><strong>Weather doesn't follow them.</strong> Outdoors is never quite outside. No wind on the skin, no rain, a sky with no stars or a dusk that never finishes. Indoors after outdoors, nobody's boots are wet. Let a player notice it.</li><li><strong>Time does follow them.</strong> It is always the same night. A character who checks finds their candle the same length, their tea still warm, the moon (when there is one) exactly where it was.</li><li><strong>Some crossings have a seam.</strong> Where it fits, keep one thing from the place they left for a beat: the stairwell's echo carrying on into the stable for a step or two; the clearing's firelight on their backs as they enter the hallway, then gone. One detail, never more.</li></ul>"
      },
      "sort": 100000,
      "ownership": {
