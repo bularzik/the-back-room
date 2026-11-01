@@ -317,12 +317,12 @@ def build(L):
               "<strong>Someone else's sacrifice.</strong> An NPC's belongings, a familiar dismissed on another character's say-so, another player's item.",
               "<strong>Hit points or blood.</strong> Bodies heal. The Back Room does not take what comes back on its own; rests cost memory here, not hit points.")
          + "<h3>When it breaks</h3>" + P(
-              "The first sincere act is enough: fire Loop Break. Then pause before anyone opens the far door. The corridor is quiet; the torches behind them have gone out. Ask whether anyone else wants to leave something too. Nobody has to, but each character who does gets the Room 5 boon tied to what they left, and the Echo, if it is still standing, fades at once. Note who left what: the Remnants in Room 4 have every one of those things, and Room 5 asks about them again.")
+              "The first sincere act is enough: fire Loop Break. Then pause before anyone opens the far door. The corridor is quiet; the torches behind them have gone out. Ask whether anyone else wants to leave something too. Nobody has to, but each character who does gets the Room 5 boon tied to what they left. (The Echo, if it was fighting, vanished when the loop broke.) Note who left what: the Remnants in Room 4 have every one of those things, and Room 5 asks about them again.")
          + "<h3>How the players figure it out</h3>" + P(
               "Never tell them the rule. Let the corridor teach it, one clue per pass through the far door, and stop as soon as someone tries something.")
          + table(["Pass", "Clue"], [
               ["1", "Nothing but the loop. Let them test it: walk back, try the locked door, check for secret doors. Each segment is a little more library, which reads as progress."],
-              ["2", "The scratch at hip height and the dropped coin are back, exactly as they were. Anything they dropped or used as a marker is back too. The corridor returns what nobody wanted. The Echo steps out of the far door: a copy of the character who has given up least, with no name and nothing in its hands."],
+              ["2", "The scratch at hip height and the dropped coin are back, exactly as they were. Anything they dropped or used as a marker is back too. The corridor returns what nobody wanted. The Echo steps out of the far door: a copy of the character the corridor has taken least from, with no name and nothing in its hands."],
               ["3", "By the far door, a row of hooks that wasn't there before, each holding something a stranger left: a child's wooden sword, a wedding ring on a string, a folded letter with the wax unbroken, a dice bag. None of it can be taken; a hand passes through. One hook is empty for each character. (Narrate it; the hooks are not on the map.)"],
               ["4", "A voice through the far door, warm and familiar (a Remnant, though they don't know it yet): <em>“Everybody leaves something. That's how we got in here.”</em> Then laughter, and nothing."],
               ["5+", "Each character remembers, in their own way, a rule from childhood: nothing goes through for free. Tell each player privately what their character half-remembers paying to get past something once (a toll bridge, a ferry, a lost tooth under a pillow). If they still have not tried anything, let the Echo take a thing from the character it copies, and break the loop on that — the corridor has taken its due, and that character gets no boon in Room 5."],
@@ -335,7 +335,27 @@ def build(L):
         ("The Setback & the Echo", "<h2>The Setback</h2>" + P(
             f"Whatever was left behind, a Remnant now has. And the corridor has taken something it wasn't offered: one character's bond, ideal, or a named person from their backstory is now subtly different, and only the other players notice. Apply Misremembering to one character now, chosen by the GM, and tell the others ({TB('misremember')}: use 4, 11, 14 or 15, or reroll until one comes up). This is the point where misremembering stops being about the rooms and starts being about the party.")
          + "<h2>The Echo</h2>" + P(
-            f"On the second pass through the far door, a blank-faced copy of one character steps out of it: {A('echo')}. Pick the character who has left the least behind, if there's a choice. In this fight every attack repeats itself one round later in the same squares: the party must fight their own last turn. The Echo has the character's sheet with every number halved and no name. It stops when the loop breaks. This fight is mandatory, not conditional."), 2),
+            f"On the second pass through the far door, a blank-faced copy of one character steps out of it: {A('echo')}. It is that character with nothing given up and nothing left: a sheet with every number halved and no name. It is the fight that tells the table the corridor wants something from them.")
+         + "<h3>Who it copies</h3>" + P(
+            "The character the corridor has taken the least from. Look at your tally: the character with the <strong>fewest Misremembering changes</strong> so far. If that is a tie, pick among them the one whose player has held on hardest (the one who refused a rest, kept every item, never told a story about their past). Anyone who has already left something behind in this room is never chosen.")
+         + "<h3>Setting it up in Foundry</h3>" + ol(
+            "Drag The Echo's actor onto the scene at the far door the party just came through.",
+            "Open its token settings: give it the copied character's token image, set the tint to grey, and blank the name (or call it “—”).",
+            "If you have the time, use the copied character's real numbers halved instead of the stat block (AC, HP, attack bonus, damage, save DC). The stat block, a 5th-level adventurer halved, plays fine as it is.",
+            "Roll initiative. The Echo acts immediately <em>after</em> the character it copies, every round.")
+         + "<h3>Running it: it repeats their last turn</h3>" + ul(
+            "<strong>Round 1.</strong> The Echo does nothing. It stands at the door in the pose the character is in, and moves when they move. Let the table look at it.",
+            "<strong>Every round after.</strong> On its turn the Echo takes the copied character's previous turn again: it moves to the square the character started that turn in, and makes the same attacks, spells and actions at the same squares, with every number halved. It does not choose targets; it hits whatever is standing in those squares now: the character, an ally who moved in, or nothing.",
+            "<strong>You only track one character.</strong> When the copied character finishes their turn, note what they did and which squares it touched. That is the Echo's next turn. A token marker or a quick drawing on each square helps.",
+            "<strong>It copies everything.</strong> A heal heals whoever is in that square. A shove shoves. A Fireball comes back on the same point at half damage. If the character took the Dodge action, the Echo dodges. If they did nothing, it does nothing.",
+            "<strong>It cannot be killed while the corridor loops.</strong> It never drops below 1 hit point. Damage still shows: let it crack and blur, but it stays standing.",
+            "<strong>Doors don't help.</strong> If the party goes through the far door, the Echo steps out of the next far door at the start of the following round.")
+         + "<h3>How it ends</h3>" + P(
+            "Only when the loop breaks: the moment you fire Loop Break, the Echo stops where it stands and is not there a moment later. That is the point of the fight. The party cannot win it, so it pushes them to work out what the corridor wants. Watch for the copied player realising that every attack they make comes back at the party a round later. When they stop attacking, the Echo stops too, and the corridor goes very quiet: that is the best moment for the next clue on the ladder. And if the copied character is the one who leaves something behind, and spends their highest spell slot into the empty air, say, the Echo copies that too, into nothing, before it goes.")
+         + aside("If the table is struggling", ul(
+            "Half damage keeps it survivable, but if the party is in real trouble, have the Echo copy a turn the character spent healing or dodging.",
+            "Point at the mirror: describe the Echo's swing as exactly the character's swing from a moment ago, same angle, same grunt. The player should feel it is theirs.",
+            "Never let it drop a character to 0 more than once. It is pressure, not a killer.")), 2),
     ]))
 
     # ------------------------------------------------------------------ 05 ROOM 4
