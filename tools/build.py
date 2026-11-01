@@ -445,7 +445,7 @@ manifest = {
     "packs": [
         {"name": PACK_ADV, "label": f"{TITLE} (Adventure)", "path": f"packs/{PACK_ADV}", "type": "Adventure", "system": "dnd5e", "ownership": {"PLAYER": "NONE", "ASSISTANT": "OWNER"}}],
     "packFolders": [{"name": TITLE, "sorting": "m", "color": "#27413b", "packs": [PACK_ADV]}],
-    "languages": [], "esmodules": [], "styles": [],
+    "languages": [], "esmodules": [], "styles": ["styles/the-back-room.css"],
 }
 json.dump(manifest, open(f"{ROOT}/module.json", "w"), indent=2)
 print("sources written:", len(scenes), "scenes,", len(journals), "journals,", sum(len(j['pages']) for j in journals), "pages,", len(adv_actors), "actors")

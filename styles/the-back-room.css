@@ -1,0 +1,13 @@
+/* The Back Room: readable journal text in Monk's Enhanced Journal under Foundry's dark theme.
+   MEJ draws pages on light parchment, but the dark theme colours headings near-white and gives tables a
+   dark background. Scoped to MEJ windows' page content only. */
+.application.monks-enhanced-journal .editor :is(h1, h2, h3, h4, h5, h6) { color: #3a2412; text-shadow: none; }
+.application.monks-enhanced-journal .editor :is(h1, h2, h3) { border-bottom-color: rgba(58, 36, 18, .35); }
+.application.monks-enhanced-journal .editor a.content-link:not(.broken) { color: #9a3b00; }
+.application.monks-enhanced-journal .editor table { background: rgba(255, 255, 255, .35); color: #222; border: 1px solid rgba(58, 36, 18, .35); }
+.application.monks-enhanced-journal .editor table :is(thead, thead tr, tr:first-child:has(th)) { background: rgba(58, 36, 18, .18); }
+.application.monks-enhanced-journal .editor table :is(th, td) { color: #222; border-color: rgba(58, 36, 18, .25); }
+.application.monks-enhanced-journal .editor table th { color: #3a2412; }
+.application.monks-enhanced-journal .editor table tbody tr:nth-child(odd) { background: transparent; }
+.application.monks-enhanced-journal .editor table tbody tr:nth-child(even) { background: rgba(58, 36, 18, .07); }
+.application.monks-enhanced-journal .editor aside.notable { color: #222; }
