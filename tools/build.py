@@ -168,8 +168,11 @@ mej_entry("Follow the X", "quest", journal.P("The map the Remnant hands over in 
 # Cast index (plain)
 mej_entry("Cast", "journalentry", join_pages(_entries["09. Cast"]), F["JournalEntry"], sort=nxt())
 # Handouts
+HANDOUT_IMG = {"Handout: The Job": "handout-the-job", "Handout: The Toothless Key": "handout-toothless-key", "Handout: The X Map": "handout-x-map"}
 for pname, html, *_ in _entries["10. Handouts"]:
-    jid = mej_entry(pname, "journalentry", html, F["Handouts"], sort=nxt()); handout_ids[pname] = f"JournalEntry.{jid}"
+    img = f"handouts/{HANDOUT_IMG[pname]}.webp" if pname in HANDOUT_IMG else None
+    src = f"modules/{MOD}/{img}" if img and os.path.exists(f"{ROOT}/{img}") else None   # a handout without its picture yet stays text-only
+    jid = mej_entry(pname, "journalentry", html, F["Handouts"], sort=nxt(), src=src); handout_ids[pname] = f"JournalEntry.{jid}"
 # Campaign Companion structure: the campaign's portal entry and its default timeline (what createCampaign() makes)
 PORTAL_ID, TIMELINE_ID = uid("journal", "campaign-portal"), uid("journal", "campaign-timeline")
 journals.append({"_id": PORTAL_ID, "name": TITLE, "folder": F["JournalEntry"], "sort": 0, "ownership": {"default": 0}, "categories": [],

@@ -254,3 +254,4 @@ Chrome tab at http://127.0.0.1:7860/ via the Chrome tools.
   at round 2. Room 5 ends with "The Last Word", the user's own closing.
 - MEJ note: our pages are type "text" + MEJ flag; MEJ converts them to its page types when opened from the
   sidebar (fixType on click), which is why `page.sheet` from the console shows the plain sheet.
+- Handout pictures: `handouts/handout-<name>.webp` (the-job, toothless-key, x-map); build.py sets each as its handout page's image only when the file exists. Packaged by tools/js/package.mjs.
