@@ -255,3 +255,8 @@ Chrome tab at http://127.0.0.1:7860/ via the Chrome tools.
 - MEJ note: our pages are type "text" + MEJ flag; MEJ converts them to its page types when opened from the
   sidebar (fixType on click), which is why `page.sheet` from the console shows the plain sheet.
 - Handout pictures: `handouts/handout-<name>.webp` (the-job, toothless-key, x-map); build.py sets each as its handout page's image only when the file exists. Packaged by tools/js/package.mjs.
+
+
+## Changelog
+
+`CHANGELOG.md` follows [Keep a Changelog](https://keepachangelog.com/) (same shape as Omnipresence). Record every user-facing change under `[Unreleased]` as you make it, grouped Added / Changed / Fixed / Removed, written for a GM, not a developer. `npm run build:packs` ends with `tools/js/changelog.mjs check`, which warns when there are commits since the last tag and `[Unreleased]` is empty. At release, CI (`npm run package` → `changelog.mjs ship <version>`) turns `[Unreleased]` into `[x.y.z] - date` in the shipped copy, strips `[Unreleased]`, writes the GitHub release body, and fails the release if there are no notes. To date the section in the repo as well, run `npm run changelog:release -- x.y.z` and commit before tagging.

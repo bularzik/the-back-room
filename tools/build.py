@@ -453,6 +453,7 @@ manifest = {
     "version": VERSION, "url": REPO,
     "manifest": f"{REPO}/releases/latest/download/module.json",
     "download": f"{REPO}/releases/download/v{VERSION}/module.zip",
+    "changelog": f"{REPO}/releases/latest/download/CHANGELOG.md",
     "authors": [{"name": "Dan Bularzik"}, {"name": "Generated with Claude"}],
     "compatibility": {"minimum": "14", "verified": "14"},
     "relationships": {
