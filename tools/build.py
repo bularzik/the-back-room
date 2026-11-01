@@ -59,6 +59,7 @@ def L(kind, key, name=None):
     if kind == "scene":
         return f"@UUID[Scene.{scene_ids[key]}]{{{name or SCENE_KEYS[key]}}}" if key in built else f"<em>{name or SCENE_KEYS[key]}</em>"
     if kind == "table": return f"@UUID[RollTable.{table_ids[key]}]{{{name or {'pool': 'the Corridor Pool table', 'cues': 'the Cue table', 'books': 'the Half-page Books table', 'misremember': 'the Misremembering table', 'jokes': 'the Drunk’s Joke table'}[key]}}}"
+    if kind == "journal": return f"@UUID[JournalEntry.{uid('journal', key)}]{{{name or key}}}"
     raise KeyError(kind)
 
 # ---------- journal: Monk's Enhanced Journal entries + Campaign Companion sessions ----------
@@ -103,6 +104,7 @@ def nxt():
     global S; S += 100000; return S
 # Guides and rules
 mej_entry("00. The Back Room: Adventure Overview", "journalentry", join_pages(_entries["00. The Back Room: Adventure Overview"]), F["JournalEntry"], sort=nxt())
+mej_entry("How to Run It: Step by Step", "journalentry", join_pages(_entries["00b. How to Run It"]), F["JournalEntry"], sort=nxt())
 mej_entry("01. Rules of the Back Room", "journalentry", join_pages(_entries["01. Rules of the Back Room"]), F["JournalEntry"], sort=nxt())
 mej_entry("02. Automation (Monk's Active Tile Triggers)", "journalentry", matt.GM_GUIDE, F["JournalEntry"], sort=nxt())
 # The five rooms as Places; the people in them as townsfolk
@@ -317,8 +319,27 @@ for (const [name, pads] of Object.entries(BANKS)) {
 await game.settings.set("soundbard", "soundBank", data);
 if (done[0]) await game.settings.set("soundbard", "activeBank", done[0].id);
 ui.notifications.info(`SoundBard: ${done.map(b => `bank ${b.id} "${b.name}"`).join(", ")}.`);"""
+REMOVE_MACRO = """// Deletes exactly the documents this adventure imported (matched by id against the adventure in the compendium).
+// Your own documents are left alone. SoundBard banks the setup macro filled stay in SoundBard.
+const pack = game.packs.get("the-back-room.the-back-room");
+if (!pack) return ui.notifications.error("Enable The Back Room module first.");
+const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: "Remove The Back Room" },
+  content: "<p>Delete every scene, actor, journal, playlist, roll table, macro and folder this adventure imported? Your own documents are left alone.</p>" });
+if (!ok) return;
+const [adv] = await pack.getDocuments();
+const types = { scenes: "Scene", actors: "Actor", journal: "JournalEntry", items: "Item", tables: "RollTable", macros: "Macro", playlists: "Playlist", cards: "Cards", folders: "Folder" };
+const counts = [];
+for (const [field, cls] of Object.entries(types)) {
+  const ids = new Set(adv[field]?.map(d => d.id) ?? []);
+  const found = game.collections.get(cls).filter(d => ids.has(d.id));
+  if (cls === "Playlist") for (const p of found) if (p.playing) await p.stopAll();
+  if (found.length) { await getDocumentClass(cls).deleteDocuments(found.map(d => d.id)); counts.push(`${found.length} ${cls}`); }
+}
+ui.notifications.info(`Removed: ${counts.join(", ") || "nothing (the adventure is not imported here)"}.`);"""
 macros = [{"_id": uid("macro", "soundbard"), "name": "The Back Room: set up SoundBard", "type": "script", "scope": "global", "author": None,
-           "img": "icons/tools/instruments/drum-hand-tan.webp", "command": SOUNDBARD_MACRO, "folder": None, "sort": 0, "ownership": {"default": 0}, "flags": {}}]
+           "img": "icons/tools/instruments/drum-hand-tan.webp", "command": SOUNDBARD_MACRO, "folder": None, "sort": 0, "ownership": {"default": 0}, "flags": {}},
+          {"_id": uid("macro", "remove"), "name": "The Back Room: remove the adventure from this world", "type": "script", "scope": "global", "author": None,
+           "img": "icons/svg/trash.svg", "command": REMOVE_MACRO, "folder": None, "sort": 100, "ownership": {"default": 0}, "flags": {}}]
 playlists = [
     {"_id": uid("playlist", "amb"), "name": "Back Room: Ambience", "description": "One loop per place. Each scene and its vista plays its place's loop automatically as its scene sound; the Corridor copies share their place's loop.",
      "mode": -1, "fade": 1500, "sounds": [amb_sound(k) for k in AMBIENCE],

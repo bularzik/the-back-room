@@ -83,6 +83,7 @@ def build(L):
     """L(kind, key) -> @UUID link string. kinds: actor, scene, table"""
     A = lambda k, n=None: L("actor", k, n)
     SC = lambda k, n=None: L("scene", k, n)
+    J = lambda k, n=None: L("journal", k, n)
     TB = lambda k, n=None: L("table", k, n)
 
     entries = []
@@ -124,6 +125,90 @@ def build(L):
          + P("The Corridors are the pacing valve: add loops when the table is enjoying the dread, cut them when it isn't. Levels 5–8 is the right tier on purpose: past local nobodies, not yet legends. The characters are in a transition whether the players have noticed or not."), 2),
     ]))
 
+
+    # ------------------------------------------------------------------ 00b HOW TO RUN IT
+    def step(n, title, *paras, use=None):
+        body = f"<h3>{n}. {title}</h3>" + P(*paras)
+        return body + (aside("Use", ul(*use)) if use else "")
+    entries.append(("00b. How to Run It", [
+        ("How to Run It", "<h1>How to Run It: Step by Step</h1>" + P(
+            "The whole adventure in the order you run it, with the Foundry pieces each step uses. The room journals have the detail; this is the thread through them. Each session also has a Session page (Campaign Companion) with the same plan in one paragraph.")
+         + "<h2>Three habits for the whole adventure</h2>" + ol(
+            "<strong>Doors move the party; you activate the scene.</strong> Walking onto a door tile moves the tokens and their players' view to the new scene. Then right-click that scene in the Scenes sidebar and choose <em>Activate</em>, so its ambience starts and it is the scene everyone sees.",
+            "<strong>GM controls are hidden tiles.</strong> They sit in the top-left corner of a scene. Switch to the Tiles layer to see them; double-click one (from the Tokens layer) to fire it. The full list is in " + J("02. Automation (Monk's Active Tile Triggers)", "02. Automation") + ".",
+            "<strong>Keep a tally sheet</strong> with three lists: the <em>visit count</em> (every Corridor scene entered, including repeats); <em>Misremembering</em> changes (who, what it was, what it is now); and <em>what each character left behind</em> in Room 3. Rooms 4 and 5 use all three.")
+         + "<h2>Before the first session</h2>"
+         + step(1, "Check the modules",
+            "Required: Monk's Enhanced Journal, Campaign Companion, Monk's Active Tile Triggers. Recommended for sound: Ivan Duch's Music Packs, Michael Ghelfi, SoundFx Library, Adventure Music, and SoundBard. Without the sound packs the adventure runs silent but works.")
+         + step(2, "Read three journals",
+            "The overview, the rules (they are the theme: Misremembering, the Signature, no door leads back, leaving something behind), and the automation table.",
+            use=[J("00. The Back Room: Adventure Overview"), J("01. Rules of the Back Room"), J("02. Automation (Monk's Active Tile Triggers)")])
+         + step(3, "Prepare the people",
+            f"Read {J('The Remnants')} and swap in your own table's first characters if this isn't the original table. For {A('barkeep')}, pick one secret detail from each character's backstory (Room 1, The Guardian). Decide which player is the latecomer, if any.",
+            use=[J("The Remnants"), J("Cast"), "Each Remnant's Person page links its actor."])
+         + step(4, "Set up sound",
+            "Run the macro <em>The Back Room: set up SoundBard</em> once (Macro Directory: the folder icon at the left end of the hotbar). It fills two SoundBard banks: Corridors and People. The playlists Back Room: Music and Back Room: Stingers are there for anything else.",
+            use=["Macro: The Back Room: set up SoundBard", "Playlists: Back Room: Ambience, Music, Stingers"])
+         + step(5, "Set the opening",
+            "Make the landing scene active and click <em>Activate</em> on it once so its music starts. Place the player tokens on the cots in The Back Room scene, out of sight until you need them.",
+            use=["Scene: Welcome: The Stickit Inn (navigation: The Stickit Inn)", SC("backroom") + " (navigation: Upstairs)"])
+         + "<h2>Session 1: Rooms 1–2, Corridor visits 1–2</h2>"
+         + step(6, "While players arrive",
+            "The landing scene is up and the Stickit Inn's music is playing. Nothing to do.",
+            use=["Scene: Welcome: The Stickit Inn"])
+         + step(7, "The evening at the Stickit Inn",
+            f"Narrate the inn and the job, played completely straight: {A('stranger')} in the corner booth, three days to Thistlecross, forty gold. Show the handout. If you want a picture on screen, activate the vista of the common room for a moment. Start the music track <em>Session 1: A Cozy Tavern</em>.",
+            use=[J("Room 1: The Back Room") + " (The Evening)", J("Handout: The Job"), "Scene: Vista: The Common Room (optional)"])
+         + step(8, "Upstairs to the back room",
+            f"Activate {SC('backroom')} and read the boxed text. If a player is late, run The Latecomer: their character arrives last, with Barnaby and a candle.",
+            use=[SC("backroom"), J("Room 1: The Back Room") + " (The Latecomer)", J("Barnaby Stickit")])
+         + step(9, "The night event",
+            "Someone wakes; the lantern is lit. The stone in the corner has a hilt in it: when a player clicks the stone, that player gets the Toothless Key handout automatically. Barnaby comes down the stone stairs with a tray and asks them to go back to bed (The Guardian is not a fight).",
+            use=[J("Room 1: The Back Room") + " (The Night Event, The Guardian)", J("Handout: The Toothless Key") + " (opens itself from the stone)", "SoundBard: The lantern lights itself"])
+         + step(10, "Into the Corridors (visit 1)",
+            "When a token steps onto the stairwell or the hayloft door, it is sent to a random Corridor scene. Activate that scene. Open the matching Corridor journal and use its visit-band cue (nothing yet at visits 1–2). Tick visit 1.",
+            use=[J("The Corridor Pool: rules for every place"), "The Corridor journal for wherever they landed (Stairwell, Stable, Hallway, Clearing, Market Row, Crossing, Crossroads)", TB("pool") + " if you'd rather choose by roll"])
+         + step(11, "Visit 2, and the way to Room 2",
+            "Any door sends them somewhere else in the pool; tick visit 2. When you are ready for Room 2, double-click <em>GM: Reveal the X door → Room 2</em> in the scene they are in: the X appears on one door. Walking through it takes them to the Common Room.",
+            use=["GM control (any Corridor scene): Reveal the X door → Room 2"])
+         + step(12, "Room 2: the Common Room That Isn't",
+            f"Activate {SC('common-room')}. Every patron is a role. Roll the drunk's joke once and repeat it forever. One patron is real: {A('remnant-fred')}. When he says his Signature, click his table: everyone gets the X Map. End the session on the map.",
+            use=[SC("common-room"), J("Room 2: The Common Room That Isn't"), TB("jokes"), J("Fred the Fighter"), J("Handout: The X Map") + " (opens itself from Fred's table)", "SoundBard: POW! (Fred)"])
+         + "<h2>Session 2: Corridor visits 3–6, Room 3</h2>"
+         + step(13, "Back into the Corridors",
+            "The common room's far door leads into the pool. Every arrival resets the fog and whispers you the band. Visits 3–4: sound (footsteps a half-beat late). Visits 5–6: a glimpse. Use each place's own cue first, then the generic table. Books on a shelf are half-page books. Each short rest in a Corridor costs a Misremembering.",
+            use=["The Corridor journal for each place", TB("cues"), TB("books"), TB("misremember"), "SoundBard: Corridors bank", "Music: Corridors: Eerie Forest / Mystery"])
+         + step(14, "The Cover (once, at visits 3–6)",
+            "When the table needs a real fight, double-click <em>GM: Next door → The Cover</em> instead of letting them roll a door. The six monsters are frozen; stepping into a person-shaped gap wakes one (the tile whispers which). The cave's exit puts them back in the pool; nothing from the treasure pile survives it.",
+            use=["GM control (any Corridor scene): Next door → The Cover", SC("cover-cavern"), J("The Cover"), "Music: The Cover: Dracona Mortis", "SoundBard: A monster wakes"])
+         + step(15, "The Cellar (optional, visit 5+)",
+            "The Cellar is never a random destination. From visit 5, use <em>GM: Next door → the Cellar</em> when you want it.",
+            use=["GM control: Next door → the Cellar", J("Corridor: Cellar")])
+         + step(16, "The way to Room 3",
+            "Once they have the X Map, double-click <em>GM: Reveal the X door → Room 3</em> in the scene they are in. The X door takes them to the Corridor Between.",
+            use=["GM control (any Corridor scene): Reveal the X door → Room 3"])
+         + step(17, "Room 3: the Corridor Between",
+            f"Activate {SC('corridor-between')}. Walking forward loops through six identical segments. Teach the rule with the clue ladder, one clue per pass. On the second pass {A('echo')} steps out of the far door (the tile reminds you). When someone sincerely leaves something behind, double-click <em>GM: Loop Break</em>, apply the Setback (one Misremembering), and ask whether anyone else wants to leave something too. Write down who left what. End the session here if you like: the next far door leads back into the Corridors.",
+            use=[SC("corridor-between"), J("Room 3: The Corridor Between") + " (The Trick, Leaving Something Behind, The Setback &amp; the Echo)", J("The Echo"), TB("misremember"), "GM control: Loop Break"])
+         + "<h2>Session 3: visit 7+, Room 4, Room 5</h2>"
+         + step(18, "A Corridor at visit 7+",
+            f"The far door of Room 3 puts them back in the pool, now at visit 7 or more: a Remnant is in the room. Place {A('remnant-strider')}'s token in this scene. He is not hostile; he wants the game to go on.",
+            use=["The Corridor journal for the place", J("Strider"), J("The Remnants"), "SoundBard: Strider's arrow"])
+         + step(19, "The way to Room 4",
+            "Double-click <em>GM: Reveal the X door → Room 4</em>. The X door takes them to the Hoard.",
+            use=["GM control (any Corridor scene): Reveal the X door → Room 4"])
+         + step(20, "Room 4: the Hoard",
+            f"Activate {SC('hoard')}. The reading room, fully arrived; the Remnants are waiting in the inner room. The fight starts when someone makes it start. Rorvik's chair is empty: at the top of round 2 he bursts in (“Sorry I'm late. What did I miss?”). The Remnants can't be beaten: they stand back up. At the top of round 3, spell out the stakes and double-click <em>GM: Open the way back</em>: the glass doors they came in by now lead out. Combat ends when a character walks through them without looking back.",
+            use=[SC("hoard"), J("Room 4: The Hoard"), J("Fred the Fighter") + ", " + J("Thon") + ", " + J("Rorvik") + ", " + J("T. Morlock") + ", " + J("Strider"), J("Half-page Book 12: (Untitled)") + " (on the inner room's shelves)", "Music: It's All Led Up to This", "SoundBard: People bank (Rorvik bursts in)", "GM control: Open the way back"])
+         + step(21, "Room 5: the Back Room, again",
+            "The glass doors bring them back to The Back Room with the fog kept: they never left. The toothless key opens the door at the top of the stairs. Double-click <em>GM: Reveal</em> if you want to un-hide the Corridor scenes' real names. Offer the choice: leave or stay. Use the tally: the Misremembering list and what each of them left behind.",
+            use=[SC("backroom"), J("Room 5: The Back Room, Again") + " (Dawn, The Choice)", "GM control: Reveal (Room 5)", "Music: Room 5, dawn: Hope"])
+         + step(22, "The Last Word",
+            "Out of character, after the choice: put the dice down and read the closing to the players. Then stop.",
+            use=[J("Room 5: The Back Room, Again") + " (The Last Word)", "Music: The Last Word: Sad Strings"])
+         + "<h2>Afterwards</h2>" + P("To clear the adventure out of a world, run the macro <em>The Back Room: remove the adventure from this world</em>. It asks first, then deletes exactly what the adventure imported, itself included, and leaves your own documents alone."), 1),
+    ]))
+
     # ------------------------------------------------------------------ 01 RULES (players' journal)
     entries.append(("01. Rules of the Back Room", [
         ("The Four Rules", "<h1>Rules of the Back Room</h1>" + P("Four rules carry the theme. They are for you, not the players: each one is discovered at the table — the first rewritten detail, the first door that opens on somewhere else, the first thing left behind. Say the rule aloud only after the table has met it.")
@@ -133,7 +218,7 @@ def build(L):
               "<strong>Leaving something behind is the only way forward.</strong> Something the player chooses and does not get back: an item set down, a slot spent on nothing, a story told once and never again. It is required once, to break the Room 3 loop; it is what the Remnants are made of; and it is the choice in Room 5. Never gate it on a keyword; reward the first sincere sacrifice the table invents. What counts, what doesn't, and the clues that teach it are in <em>Room 3: Leaving Something Behind</em>.")),
         ("The Corridors", "<h2>The Corridors</h2>" + P("The Corridors connect the five rooms and are where 'stuck' happens. Three rules run them.",
             "<strong>1. No door leads back.</strong> Every door the party uses sends them to a random Corridor scene from the pool, never the scene they left. In Foundry the door tiles do this; the GM only watches.",
-            "<strong>2. Something is in here with you — by visit count.</strong> Track how many Corridor scenes the party has entered in total (the tiles count for you and whisper the band to the GM on each arrival).")
+            "<strong>2. Something is in here with you — by visit count.</strong> Track how many Corridor scenes the party has entered in total (keep a tally; on each arrival the tiles reset the fog and whisper you the band reminder, but they do not count).")
          + table(["Visits", "Cue", "Library layer"], [
             ["1–2", "Nothing. Furniture is wrong by one detail.", "A strip of green wainscoting on one wall."],
             ["3–4", "Sound: footsteps matching theirs, a half-beat late. A chair creaks in an empty room. (The Cover is reached from a pool door in this band or the next.)", "Doors become double wooden doors with glass panels; through one, bookshelves."],

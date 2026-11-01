@@ -172,11 +172,11 @@ def build_tiles(ctx):
                         ([chat("<strong>Second pass.</strong> The Echo steps out of the far door. Roll initiative.", to="gm")] if i == 2 else []),
                         name=f"Segment {i} far door → segment {min(i + 1, 6) if i < 6 else 1}")
         if (r := rect(key, "exit")):
-            hoard = builders["hoard"].tuuid("arrive") if present("hoard") and rect("hoard", "arrive") else None
-            tb.tile("exit", r, [sound("sting-door"), teleport(hoard)] if hoard else [chat("Room 4 not built yet.")], hidden=True, active=False, name="Exit → The Hoard (armed by Loop Break)")
+            # the loop breaks back into the Corridors (visit 7+, a Remnant in the room); the X door to Room 4 is revealed from there
+            tb.tile("exit", r, [sound("sting-door"), teleport(pool_destinations(None))] if pool_keys else [chat("Pool not built yet.")], hidden=True, active=False, name="Exit → Corridor pool (armed by Loop Break)")
             tb.tile("gm-break", [0, 0, 100, 100], [activate([tb.tuuid(f"seg{i}") for i in range(1, 7) if rect(key, f"seg{i}")], "deactivate"),
                                                     showhide(tb.tuuid("exit"), "show"), activate(tb.tuuid("exit"), "activate"),
-                                                    chat("<strong>Loop broken.</strong> The next far door is the exit. Apply the Setback: one character's bond, ideal or named person is now different; tell the other players.", to="gm")],
+                                                    chat("<strong>Loop broken.</strong> The next far door opens back into the Corridors (visit 7+; reveal the X door to Room 4 when you are ready). Apply the Setback: one character's bond, ideal or named person is now different; tell the other players.", to="gm")],
                     trigger="dblclick", img=f"{MOD}/tiles/gm-break.webp", hidden=True, restriction="all", controlled="gm", name="GM: Loop Break (something was left behind)")
         out[key] = tb.tiles
 
@@ -214,14 +214,14 @@ GM_GUIDE = """<h2>Automation with Monk's Active Tile Triggers</h2>
 <tr><td>Any pool scene</td><td>Reveal the X door</td><td>Swaps this scene's X-door slot from a pool door to the X door, which leads to the next fixed room. Fire it once the previous room's condition is met.</td></tr>
 <tr><td>Any pool scene</td><td>Next door → the Cellar</td><td>Sends the party to a Cellar copy. The Cellar is never in the random pool; use this from visit 5.</td></tr>
 <tr><td>Any pool scene</td><td>Next door → The Cover</td><td>Sends the party to the cavern. Once, at visits 3–6.</td></tr>
-<tr><td>Corridor Between</td><td>Loop Break</td><td>Disarms the segment doors and reveals the exit to the Hoard. Fire it when something sincere is left behind.</td></tr>
+<tr><td>Corridor Between</td><td>Loop Break</td><td>Disarms the segment doors and reveals the exit, which leads back into the Corridors. Fire it when something sincere is left behind; reveal the X door to Room 4 from a Corridor afterwards.</td></tr>
 <tr><td>The Hoard</td><td>Open the way back</td><td>Arms the glass doors as the exit to Room 5. Fire it at the top of round 3.</td></tr>
 <tr><td>The Back Room</td><td>Reveal</td><td>A reminder to un-hide the pool copies' real names for the moment in Room 5.</td></tr>
 </tbody></table>
 <h3>Automatic Tiles</h3>
 <table><thead><tr><th>Where</th><th>Trigger</th><th>Effect</th></tr></thead><tbody>
 <tr><td>Pool scenes, each door</td><td>Enter</td><td>Door cue; the token is sent to a random arrival in any pool copy except this scene. Never the Cellar.</td></tr>
-<tr><td>Pool scenes, each arrival</td><td>Enter</td><td>Fog is reset for everyone and the GM is whispered the visit-band reminder. <strong>Tick the visit counter by hand.</strong></td></tr>
+<tr><td>Pool scenes, each arrival</td><td>Enter</td><td>Fog is reset for everyone and the GM is whispered the visit-band reminder. <strong>Tick the visit counter by hand</strong> (the tiles remind you; they do not count).</td></tr>
 <tr><td>Back Room, stairwell and loft</td><td>Enter</td><td>The night doors: into the pool. Visit 1.</td></tr>
 <tr><td>Back Room, the stone</td><td>Click</td><td>Opens the Toothless Key handout for that player.</td></tr>
 <tr><td>Common Room, the Remnant's table</td><td>Click (once)</td><td>Opens the X Map handout for everyone; reminds you the X door may now appear.</td></tr>
@@ -234,7 +234,7 @@ GM_GUIDE = """<h2>Automation with Monk's Active Tile Triggers</h2>
 PAGE_NOTES = {
     "The Night Event": "Automated: the stairwell and loft doors send tokens into the Corridor pool; clicking the stone opens the key handout.",
     "The Puzzle": "Automated: click the Remnant's table when the Signature is said to hand out the X map; then use GM: Reveal the X door in whichever pool scene the party reaches next.",
-    "The Trick": "Automated: each far door walks the party into the next identical segment. Fire GM: Loop Break when something is left behind; the next far door becomes the exit.",
+    "The Trick": "Automated: each far door walks the party into the next identical segment. Fire GM: Loop Break when something is left behind; the next far door becomes the exit, back into the Corridors.",
     "The Antagonist": "Automated: fire GM: Open the way back at the top of round 3; the glass doors then send tokens to Room 5 with the fog kept.",
     "Rules for Every Place": "Automated: every pool door teleports to a random arrival in another copy; every arrival resets fog and whispers the visit-band reminder. The Cellar and The Cover are reached by GM controls.",
     "The Cavern": "Automated: each person-shaped gap whispers which monster wakes, once.",
