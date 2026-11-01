@@ -3,7 +3,7 @@
  "name": "The Back Room",
  "img": "modules/the-back-room/maps/cover.webp",
  "caption": "A liminal-horror adventure for 5th\u20138th level characters",
- "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 40 journal entries; 2 roll tables; 2 playlists.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
+ "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 52 journal entries; 3 roll tables; 3 playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
  "actors": [
   {
    "_id": "dzOCj45n3twcxQJN",
@@ -81275,7 +81275,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>The Back Room</h1><p><em>The Back Room</em> is a liminal-horror adventure for four to five characters of 5th to 8th level, run over two or three sessions. The party meets at the Stickit Inn, a roadside tavern famous for its cider, played completely straight. They take the hook, buy provisions, and bed down in the storeroom over the kitchen before the dawn road. They never leave that room. The whole dungeon \u2014 stairwells, stables, corridors, campsites \u2014 is the storeroom, misremembered.</p><p>The thing in there with them is not a monster. It is the first party: each player's first-ever D&D character, as the table misremembers them \u2014 overpowered, cooler than they were, one running joke swollen into a whole personality. These are the <strong>Remnants</strong>. They are not hostile. They want the game to keep going, forever, with the party in it.</p><p>The message, in one line: <em>the places you are most comfortable are the ones you never finished leaving.</em></p><aside class=\"notable\"><h4>Theme: Unfinished</h4><p>One word, chosen first. Every room is something that was never finished \u2014 a story cut off, a character who never levelled, a campaign that died in the spring. 'Liminal' describes the dressing; 'unfinished' is the point. When you improvise a detail for a room, ask what in it was left undone.</p></aside><aside class=\"notable\"><h4>Content Notes</h4><p>Isolation, time loss, having one's memories quietly edited, a copy of a character, and a warm place that does not want anyone to leave. No gore. Talk with your players before you start about anything they'd rather fade to black.</p></aside><h2>Sound</h2><p><strong>Automatic.</strong> Every scene and vista has an ambient loop as its scene sound (playlist <em>Back Room: Ambience</em>): it starts when you activate the scene and stops when you leave. The Corridor copies share their place's loop. The landing scene comes in already active, so after importing click <em>Activate</em> on it once to start its music. The door tiles play their own stingers.</p><p><strong>By hand.</strong> <em>Back Room: Music</em> has a track for each beat that wants one (Session 1 tavern, the Corridors, The Cover, the Echo, the Hoard fight, dawn, the Last Word); most of the adventure is better with ambience alone. Run the macro <em>The Back Room: set up SoundBard</em> once per GM browser to fill a SoundBard bank with the cues: the door, a door closing somewhere, footsteps a half-beat late, the X, the lantern lighting itself, the waterfall that stops when someone speaks, a horse, the Remnants laughing through the door, Fred's POW!, Rorvik bursting in, a monster waking, Strider's arrow.</p><p>The ambience and music come from four audio modules this one recommends (Ivan Duch's Music Packs, Michael Ghelfi Studios Audio Pack, SoundFx Library, Adventure Music); without them those sounds are silent and everything else works.</p><h2>The Shape of It</h2><p>The spine is a Five-Room Dungeon, but the five rooms are <em>destinations</em>, not neighbours. The party reaches each one by wandering the <strong>Corridors</strong>: a pool of eight in-between places behind random doors, where no door ever leads back. Five fixed beats threaded through an unfixed maze.</p><table><thead><tr><th>Beat</th><th>Role</th><th>Scene</th></tr></thead><tbody><tr><td>1</td><td>Entrance / Guardian</td><td>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} \u2014 the storeroom over the kitchen; the barkeep as a gentle gate</td></tr><tr><td>2</td><td>Puzzle / Roleplay</td><td>@UUID[Scene.uKyO8AvTiuT8ys4Y]{The Common Room} \u2014 every patron is a role; find the Remnant among them</td></tr><tr><td>3</td><td>Trick / Setback</td><td>@UUID[Scene.KVQF67B2Q8tZP4pt]{The Corridor Between} \u2014 the corridor takes something from the party</td></tr><tr><td>4</td><td>Climax</td><td>@UUID[Scene.DhFbGAUmoWaedMdE]{The Hoard} \u2014 the first party, assembled, wants to finish the game</td></tr><tr><td>5</td><td>Reward / Revelation</td><td>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} again \u2014 open the door or stay</td></tr></tbody></table><p><strong>The central gimmick, escalating: misremembering.</strong> Early, the rooms are misremembered. Middle, the party's own past starts to be. Late, the party meets the misremembered versions of themselves and has to decide whether to leave them behind.</p><p><strong>Tone curve.</strong> Early rooms are off by one detail (comic, uncanny): the sword in the stone is a spoon. Middle rooms are wrong in ways that implicate the party: a barkeep who knows things the characters never said aloud. Late rooms stop pretending: the Remnants are in the room, and they are glad to see you.</p><h2>The Library Layer</h2><p>The players at this table began playing D&D in the upstairs room of a library: a reading room with pointed arches, dark timber ribs, two tall stained-glass windows in arched bays, a stained-glass lantern in the ceiling, green-painted wainscoting, armchairs round a low table, and an inner glass-walled room with double wooden doors and bookshelves. That room is the memory the whole adventure is built on, so the dungeon gradually becomes it: one detail in Room 1, one more per Corridor visit, a step per segment in Room 3, and in Room 4 the Hoard <em>is</em> the reading room. It is the misremembering, surfacing.</p><p>If your table did not start in a library, swap in the room where they did start \u2014 a basement, a kitchen table, a dorm lounge \u2014 and ladder its details the same way. The steps are in the Corridor rules.</p><aside class=\"notable\"><h4>Every book is a half-page book</h4><p>Wherever the library layer puts a book or a shelf, every volume is one half-page long. This is a global rule, not a room's trope. Never explain it.</p></aside><h2>Goal &amp; Progression</h2><p><strong>The stated goal</strong> arrives in Room 2: the Remnant hands the party a map with an X and says it marks the way out. It points at the Hoard. From then on the players can say what they are doing \u2014 follow the X \u2014 and the X pulls them through the Corridors.</p><p><strong>The real goal</strong> is discovered in Rooms 4\u20135: the way out was the door they came in by. The stated goal was the thing keeping them from it.</p><p><strong>Progression rule.</strong> Every Corridor scene has one door that can carry the X; the X moves between scenes when nobody looks at the map. The X door leads to the <em>next fixed room</em>, but it only appears once the party has done what the previous room required: found the Remnant in Room 2; left something behind in Room 3. All other doors are pool doors. Random doors for wandering, one scripted door for progress.</p><h2>Pacing (2\u20133 sessions)</h2><ul><li><strong>Session 1:</strong> Rooms 1\u20132 and two Corridors (visits 1\u20132).</li><li><strong>Session 2:</strong> three or four Corridors (visits 3\u20136, including The Cover and the glimpse), then Room 3.</li><li><strong>Session 3</strong> (or the back half of 2): a Corridor at visit 7+ with a Remnant in it, Room 4, Room 5.</li></ul><p>The Corridors are the pacing valve: add loops when the table is enjoying the dread, cut them when it isn't. Levels 5\u20138 is the right tier on purpose: past local nobodies, not yet legends. The characters are in a transition whether the players have noticed or not.</p>"
+      "content": "<h1>The Back Room</h1><p><em>The Back Room</em> is a liminal-horror adventure for four to five characters of 5th to 8th level, run over two or three sessions. The party meets at the Stickit Inn, a roadside tavern famous for its cider, played completely straight. They take the hook, buy provisions, and bed down in the storeroom over the kitchen before the dawn road. They never leave that room. The whole dungeon \u2014 stairwells, stables, corridors, campsites \u2014 is the storeroom, misremembered.</p><p>The thing in there with them is not a monster. It is the first party: each player's first-ever D&D character, as the table misremembers them \u2014 overpowered, cooler than they were, one running joke swollen into a whole personality. These are the <strong>Remnants</strong>. They are not hostile. They want the game to keep going, forever, with the party in it.</p><p>The message, in one line: <em>the places you are most comfortable are the ones you never finished leaving.</em></p><aside class=\"notable\"><h4>Theme: Unfinished</h4><p>One word, chosen first. Every room is something that was never finished \u2014 a story cut off, a character who never levelled, a campaign that died in the spring. 'Liminal' describes the dressing; 'unfinished' is the point. When you improvise a detail for a room, ask what in it was left undone.</p></aside><aside class=\"notable\"><h4>Content Notes</h4><p>Isolation, time loss, having one's memories quietly edited, a copy of a character, and a warm place that does not want anyone to leave. No gore. Talk with your players before you start about anything they'd rather fade to black.</p></aside><h2>Sound</h2><p><strong>Automatic.</strong> Every scene and vista has an ambient loop as its scene sound (playlist <em>Back Room: Ambience</em>): it starts when you activate the scene and stops when you leave. The Corridor copies share their place's loop. The landing scene comes in already active, so after importing click <em>Activate</em> on it once to start its music. The door tiles play their own stingers.</p><p><strong>By hand.</strong> <em>Back Room: Music</em> has a track for each beat that wants one (Session 1 tavern, the Corridors, The Cover, the Echo, the Hoard fight, dawn, the Last Word); most of the adventure is better with ambience alone. Run the macro <em>The Back Room: set up SoundBard</em> once per GM browser to fill a SoundBard bank with the cues: the door, a door closing somewhere, footsteps a half-beat late, the X, the lantern lighting itself, the waterfall that stops when someone speaks, a horse, the Remnants laughing through the door, Fred's POW!, Rorvik bursting in, a monster waking, Strider's arrow.</p><p>The ambience and music come from four audio modules this one recommends (Ivan Duch's Music Packs, Michael Ghelfi Studios Audio Pack, SoundFx Library, Adventure Music); without them those sounds are silent and everything else works.</p><h2>The Shape of It</h2><p>The spine is a Five-Room Dungeon, but the five rooms are <em>destinations</em>, not neighbours. The party reaches each one by wandering the <strong>Corridors</strong>: a pool of eight in-between places behind random doors, where no door ever leads back. Five fixed beats threaded through an unfixed maze.</p><table><thead><tr><th>Beat</th><th>Role</th><th>Scene</th></tr></thead><tbody><tr><td>1</td><td>Entrance / Guardian</td><td>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} \u2014 the storeroom over the kitchen; the barkeep as a gentle gate</td></tr><tr><td>2</td><td>Puzzle / Roleplay</td><td>@UUID[Scene.uKyO8AvTiuT8ys4Y]{The Common Room} \u2014 every patron is a role; find the Remnant among them</td></tr><tr><td>3</td><td>Trick / Setback</td><td>@UUID[Scene.KVQF67B2Q8tZP4pt]{The Corridor Between} \u2014 the corridor takes something from the party</td></tr><tr><td>4</td><td>Climax</td><td>@UUID[Scene.DhFbGAUmoWaedMdE]{The Hoard} \u2014 the first party, assembled, wants to finish the game</td></tr><tr><td>5</td><td>Reward / Revelation</td><td>@UUID[Scene.lpscmZZIlhgEYct6]{The Back Room} again \u2014 open the door or stay</td></tr></tbody></table><p><strong>The central gimmick, escalating: misremembering.</strong> Early, the rooms are misremembered. Middle, the party's own past starts to be. Late, the party meets the misremembered versions of themselves and has to decide whether to leave them behind.</p><p><strong>Tone curve.</strong> Early rooms are off by one detail (comic, uncanny): the sword in the stone is a spoon. Middle rooms are wrong in ways that implicate the party: a barkeep who knows things the characters never said aloud. Late rooms stop pretending: the Remnants are in the room, and they are glad to see you.</p><h2>The Library Layer</h2><p>The players at this table began playing D&D in the upstairs room of a library: a reading room with pointed arches, dark timber ribs, two tall stained-glass windows in arched bays, a stained-glass lantern in the ceiling, green-painted wainscoting, armchairs round a low table, and an inner glass-walled room with double wooden doors and bookshelves. That room is the memory the whole adventure is built on, so the dungeon gradually becomes it: one detail in Room 1, one more per Corridor visit, a step per segment in Room 3, and in Room 4 the Hoard <em>is</em> the reading room. It is the misremembering, surfacing.</p><p>If your table did not start in a library, swap in the room where they did start \u2014 a basement, a kitchen table, a dorm lounge \u2014 and ladder its details the same way. The steps are in the Corridor rules.</p><aside class=\"notable\"><h4>Every book is a half-page book</h4><p>Wherever the library layer puts a book or a shelf, every volume is one half-page long. This is a global rule, not a room's trope. Never explain it.</p><p>When a player opens one, roll on @UUID[RollTable.s5y6739k0kQfPWox]{the Half-page Books table} (or pick): each result links to a short handout to show them. Books 1\u20134 fit anywhere, 5\u20137 from visit 3 (each nods to one of the Remnants), 8\u201311 from visit 5, and 12 belongs on the shelves of the Hoard's inner room.</p></aside><h2>Goal &amp; Progression</h2><p><strong>The stated goal</strong> arrives in Room 2: the Remnant hands the party a map with an X and says it marks the way out. It points at the Hoard. From then on the players can say what they are doing \u2014 follow the X \u2014 and the X pulls them through the Corridors.</p><p><strong>The real goal</strong> is discovered in Rooms 4\u20135: the way out was the door they came in by. The stated goal was the thing keeping them from it.</p><p><strong>Progression rule.</strong> Every Corridor scene has one door that can carry the X; the X moves between scenes when nobody looks at the map. The X door leads to the <em>next fixed room</em>, but it only appears once the party has done what the previous room required: found the Remnant in Room 2; left something behind in Room 3. All other doors are pool doors. Random doors for wandering, one scripted door for progress.</p><h2>Pacing (2\u20133 sessions)</h2><ul><li><strong>Session 1:</strong> Rooms 1\u20132 and two Corridors (visits 1\u20132).</li><li><strong>Session 2:</strong> three or four Corridors (visits 3\u20136, including The Cover and the glimpse), then Room 3.</li><li><strong>Session 3</strong> (or the back half of 2): a Corridor at visit 7+ with a Remnant in it, Room 4, Room 5.</li></ul><p>The Corridors are the pacing valve: add loops when the table is enjoying the dread, cut them when it isn't. Levels 5\u20138 is the right tier on purpose: past local nobodies, not yet legends. The characters are in a transition whether the players have noticed or not.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -83400,6 +83400,534 @@
    "categories": []
   },
   {
+   "_id": "DfM11bqBcKqdoG6i",
+   "name": "Half-page Book 1: The Journal of Aldous Penhallow, Adventurer (Fourth Day)",
+   "pages": [
+    {
+     "_id": "mtfBl7f4u1Tqcstc",
+     "name": "Half-page Book 1: The Journal of Aldous Penhallow, Adventurer (Fourth Day)",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>The Journal of Aldous Penhallow, Adventurer (Fourth Day)</h2><p><em>Fourth day in the round room. No doors, no windows, and in the middle a marble statue of a fat king. Brannoc tried to dig under it and Wren tried to pray to it. Nothing worked. This morning Pell found a silver spoon on the floor beside the plinth, right where we have walked a hundred times, and said, very quietly, \u201cWhat if.\u201d The marble tastes faintly of almonds. We have eaten the left foot. There is a draught now from under the king, and Pell thinks if we keep going until</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 100000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "7S5MMC3FiVswsyYd",
+   "name": "Half-page Book 2: A Field Guide to the Creatures of the Region",
+   "pages": [
+    {
+     "_id": "gEkxVuFUEPc8T4Tk",
+     "name": "Half-page Book 2: A Field Guide to the Creatures of the Region",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>A Field Guide to the Creatures of the Region</h2><p><em>RAT. Common. Found in cellars. Will attack if cornered, and frequently when not. A farmer in the next village will pay for ten of them. He will always need ten more.</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 200000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "ML6CWSrxpwY4oS2p",
+   "name": "Half-page Book 3: On the Proper Keeping of Inns",
+   "pages": [
+    {
+     "_id": "0CY9yi31XmgW1Y7t",
+     "name": "Half-page Book 3: On the Proper Keeping of Inns",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>On the Proper Keeping of Inns</h2><p><em>A good inn offers a fire, a bed and a fair meal. The traveller should know that a free night is never free: someone will knock before dawn. Do not answer to your name. Pour the cider first and ask questions after, because once the cider is poured</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 300000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "NZ88ftDV9eiPSo5k",
+   "name": "Half-page Book 4: Stairs, and Where They Go",
+   "pages": [
+    {
+     "_id": "Vkx2B34Kb7l0sgVY",
+     "name": "Half-page Book 4: Stairs, and Where They Go",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>Stairs, and Where They Go</h2><p><em>Every stair goes up or down. It is the first thing a child learns about stairs and the last thing an old man forgets. If you count the steps going up, count them again coming down, and get a different number, you have not miscounted. Go back to the landing where the book lay face down and</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 400000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "RbpWDNP8jCstOUww",
+   "name": "Half-page Book 5: A Short Guide to Tracking in Difficult Country",
+   "pages": [
+    {
+     "_id": "em7H9LgK6SlX6L59",
+     "name": "Half-page Book 5: A Short Guide to Tracking in Difficult Country",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>A Short Guide to Tracking in Difficult Country</h2><p><em>Every trail tells you three things: who passed, how long ago, and whether they meant to come back. These tracks are yours. They are a day old. They go in, and they</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 500000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "DwbITdMjmvj54O9Q",
+   "name": "Half-page Book 6: The Art of the High Wire",
+   "pages": [
+    {
+     "_id": "R35xPabdtqmRTCWy",
+     "name": "Half-page Book 6: The Art of the High Wire",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>The Art of the High Wire</h2><p><em>The rope does not care how good you are; it cares where your weight is. Look at the far post, never at your feet. Anyone who has crossed once will tell you the middle is not the hard part. The hard part is the moment you notice there is no far post, and you</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 600000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "QQNt9Qp7f3VX5t4y",
+   "name": "Half-page Book 7: Rods and Their Configurations",
+   "pages": [
+    {
+     "_id": "vXJq5tnwKrPayEwi",
+     "name": "Half-page Book 7: Rods and Their Configurations",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>Rods and Their Configurations</h2><p><em>Press the first stud: a mace. The second: an axe. The third: a ladder fifty feet long, which is more ladder than most problems need. There are six studs. Someone has labelled the fourth in a hand you almost recognise. The label says</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 700000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "UPl91UJM8aMHPp95",
+   "name": "Half-page Book 8: The Adventures of Fred the Fighter, No. 3",
+   "pages": [
+    {
+     "_id": "JNv0XXrs5u6Trna5",
+     "name": "Half-page Book 8: The Adventures of Fred the Fighter, No. 3",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>The Adventures of Fred the Fighter, No. 3</h2><p><em>Panel one: Fred, winged helmet, sword raised. \u201cPOW!\u201d Panel two: the troll falls over. Panel three: Fred grins out at the reader. \u201cSame time next week?\u201d</em> (The fourth panel is ruled in pencil and was never drawn.)</p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 800000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "YxwZSgz3EcnLUsql",
+   "name": "Half-page Book 9: A Letter, Folded Into a Book",
+   "pages": [
+    {
+     "_id": "yVTcndBXOjnL1XuV",
+     "name": "Half-page Book 9: A Letter, Folded Into a Book",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>A Letter, Folded Into a Book</h2><p><em>Sorry I\u2019m late. Got turned round on the stairs, the stable had one horse too many, and I\u2019m fairly sure I walked through the same market twice. Start without me. Save me a chair. I\u2019ll be there before the</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 900000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "JjfjfAA1Lw1smIkY",
+   "name": "Half-page Book 10: Rules for the Reading Room",
+   "pages": [
+    {
+     "_id": "mRKwuoNpf2pjf8JD",
+     "name": "Half-page Book 10: Rules for the Reading Room",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>Rules for the Reading Room</h2><p><em>Quiet, please. No food at the tables. Roll dice on the felt, not the wood; the wood remembers. The room closes at nine. The room closes at nine. If you are still here when the room closes, push your chair in for whoever</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 1000000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "Jfu54g8SJYjFeClz",
+   "name": "Half-page Book 11: Recipe: Stickit Cider",
+   "pages": [
+    {
+     "_id": "B12ecAj5QYW0xGVd",
+     "name": "Half-page Book 11: Recipe: Stickit Cider",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>Recipe: Stickit Cider</h2><p><em>Take apples from the old trees behind the inn, the sour ones nobody eats. Press them on the first cold night. Leave the barrel in the back room for one winter and do not open the door to check on it, however many times you hear</em></p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 1100000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
+   "_id": "p5WcZzzwvi1Bn3aT",
+   "name": "Half-page Book 12: (Untitled)",
+   "pages": [
+    {
+     "_id": "W4bDmjxKM6yFGYqq",
+     "name": "Half-page Book 12: (Untitled)",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>(Untitled)</h2><p>A clean title page, and under it one line: <em>\u201cFor the ones who kept the chairs warm.\u201d</em> The rest of the page is blank.</p>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "USkMllGBfuOM0ijb",
+   "sort": 1200000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
    "_id": "LnqnzR7yZI7BSfhf",
    "name": "The Back Room",
    "folder": "zuJ82ny8N829RA33",
@@ -83842,7 +84370,7 @@
      "_id": "ZJ3gDk9Hs0Eefc6l",
      "type": "text",
      "name": "",
-     "description": "A half-page book, face down, where nobody left one.",
+     "description": "A half-page book, face down, where nobody left one (roll on the Half-page Books table for which).",
      "img": "icons/svg/d20-black.svg",
      "weight": 1,
      "range": [
@@ -83854,6 +84382,191 @@
     }
    ],
    "formula": "1d6",
+   "replacement": true,
+   "displayRoll": true,
+   "folder": "Fv0gxthw8sxCMiG4",
+   "sort": 0,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {}
+  },
+  {
+   "_id": "s5y6739k0kQfPWox",
+   "name": "Half-page Books",
+   "img": "icons/sundries/books/book-open-brown.webp",
+   "description": "<p>Every book in the Corridors is one half-page long. Roll when a player opens one, or pick by visit band; click the link to show the handout. Never explain it.</p>",
+   "results": [
+    {
+     "_id": "qsYDCHVsGB1GkFh1",
+     "type": "text",
+     "name": "",
+     "description": "<strong>The Journal of Aldous Penhallow, Adventurer (Fourth Day)</strong> (anywhere). @UUID[JournalEntry.DfM11bqBcKqdoG6i]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      1,
+      1
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "LhekS4Gm5CxmFjnV",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A Field Guide to the Creatures of the Region</strong> (anywhere). @UUID[JournalEntry.7S5MMC3FiVswsyYd]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      2,
+      2
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "0PBmZQ8isYSaNPB9",
+     "type": "text",
+     "name": "",
+     "description": "<strong>On the Proper Keeping of Inns</strong> (anywhere). @UUID[JournalEntry.ML6CWSrxpwY4oS2p]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      3,
+      3
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "AbvTcIWE1vJmOavp",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Stairs, and Where They Go</strong> (anywhere). @UUID[JournalEntry.NZ88ftDV9eiPSo5k]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      4,
+      4
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "yFek4NbcQdx0iP7Z",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A Short Guide to Tracking in Difficult Country</strong> (visit 3+). @UUID[JournalEntry.RbpWDNP8jCstOUww]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      5,
+      5
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "z29wocNRbUni06it",
+     "type": "text",
+     "name": "",
+     "description": "<strong>The Art of the High Wire</strong> (visit 3+). @UUID[JournalEntry.DwbITdMjmvj54O9Q]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      6,
+      6
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "ghc02M0Xb2ENLRUb",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Rods and Their Configurations</strong> (visit 3+). @UUID[JournalEntry.QQNt9Qp7f3VX5t4y]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      7,
+      7
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "SgK3SosflhDfrQfr",
+     "type": "text",
+     "name": "",
+     "description": "<strong>The Adventures of Fred the Fighter, No. 3</strong> (visit 5+). @UUID[JournalEntry.UPl91UJM8aMHPp95]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      8,
+      8
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "pDr755QWRSe4nup7",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A Letter, Folded Into a Book</strong> (visit 5+). @UUID[JournalEntry.YxwZSgz3EcnLUsql]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      9,
+      9
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "xJPqjWwCW3QRVWwC",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Rules for the Reading Room</strong> (visit 5+). @UUID[JournalEntry.JjfjfAA1Lw1smIkY]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      10,
+      10
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "q4T2ZEsqLv91jgEr",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Recipe: Stickit Cider</strong> (visit 5+). @UUID[JournalEntry.Jfu54g8SJYjFeClz]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      11,
+      11
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "E01BVpBlH0c1EsCX",
+     "type": "text",
+     "name": "",
+     "description": "<strong>(Untitled)</strong> (the Hoard only). @UUID[JournalEntry.p5WcZzzwvi1Bn3aT]{Show the handout}",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      12,
+      12
+     ],
+     "drawn": false,
+     "flags": {}
+    }
+   ],
+   "formula": "1d12",
    "replacement": true,
    "displayRoll": true,
    "folder": "Fv0gxthw8sxCMiG4",
@@ -84373,6 +85086,16 @@
    "color": "#3b6a5a",
    "sorting": "a",
    "folder": "zuJ82ny8N829RA33",
+   "sort": 0,
+   "flags": {}
+  },
+  {
+   "_id": "USkMllGBfuOM0ijb",
+   "name": "Half-page Books",
+   "type": "JournalEntry",
+   "color": "#3b6a5a",
+   "sorting": "m",
+   "folder": "IRHrGNWIxD83mzHg",
    "sort": 0,
    "flags": {}
   },

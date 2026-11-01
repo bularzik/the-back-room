@@ -2,6 +2,34 @@
 Source of truth: docs/the-back-room.md and docs/corridor-pool.md. GM text in <p>, read-aloud in <blockquote>."""
 
 def box(*ts): return '<blockquote class="read-aloud">' + "".join(f"<p><em>{t}</em></p>" for t in ts) + "</blockquote>"
+# The half-page books: (band, title, text). Each is a player handout and a row of the Half-page Books table.
+HALF_PAGE_BOOKS = [
+    ("anywhere", "The Journal of Aldous Penhallow, Adventurer (Fourth Day)",
+     "<em>Fourth day in the round room. No doors, no windows, and in the middle a marble statue of a fat king. Brannoc tried to dig under it and Wren tried to pray to it. Nothing worked. This morning Pell found a silver spoon on the floor beside the plinth, right where we have walked a hundred times, and said, very quietly, “What if.” The marble tastes faintly of almonds. We have eaten the left foot. There is a draught now from under the king, and Pell thinks if we keep going until</em>"),
+    ("anywhere", "A Field Guide to the Creatures of the Region",
+     "<em>RAT. Common. Found in cellars. Will attack if cornered, and frequently when not. A farmer in the next village will pay for ten of them. He will always need ten more.</em>"),
+    ("anywhere", "On the Proper Keeping of Inns",
+     "<em>A good inn offers a fire, a bed and a fair meal. The traveller should know that a free night is never free: someone will knock before dawn. Do not answer to your name. Pour the cider first and ask questions after, because once the cider is poured</em>"),
+    ("anywhere", "Stairs, and Where They Go",
+     "<em>Every stair goes up or down. It is the first thing a child learns about stairs and the last thing an old man forgets. If you count the steps going up, count them again coming down, and get a different number, you have not miscounted. Go back to the landing where the book lay face down and</em>"),
+    ("visit 3+", "A Short Guide to Tracking in Difficult Country",
+     "<em>Every trail tells you three things: who passed, how long ago, and whether they meant to come back. These tracks are yours. They are a day old. They go in, and they</em>"),
+    ("visit 3+", "The Art of the High Wire",
+     "<em>The rope does not care how good you are; it cares where your weight is. Look at the far post, never at your feet. Anyone who has crossed once will tell you the middle is not the hard part. The hard part is the moment you notice there is no far post, and you</em>"),
+    ("visit 3+", "Rods and Their Configurations",
+     "<em>Press the first stud: a mace. The second: an axe. The third: a ladder fifty feet long, which is more ladder than most problems need. There are six studs. Someone has labelled the fourth in a hand you almost recognise. The label says</em>"),
+    ("visit 5+", "The Adventures of Fred the Fighter, No. 3",
+     "<em>Panel one: Fred, winged helmet, sword raised. “POW!” Panel two: the troll falls over. Panel three: Fred grins out at the reader. “Same time next week?”</em> (The fourth panel is ruled in pencil and was never drawn.)"),
+    ("visit 5+", "A Letter, Folded Into a Book",
+     "<em>Sorry I’m late. Got turned round on the stairs, the stable had one horse too many, and I’m fairly sure I walked through the same market twice. Start without me. Save me a chair. I’ll be there before the</em>"),
+    ("visit 5+", "Rules for the Reading Room",
+     "<em>Quiet, please. No food at the tables. Roll dice on the felt, not the wood; the wood remembers. The room closes at nine. The room closes at nine. If you are still here when the room closes, push your chair in for whoever</em>"),
+    ("visit 5+", "Recipe: Stickit Cider",
+     "<em>Take apples from the old trees behind the inn, the sour ones nobody eats. Press them on the first cold night. Leave the barrel in the back room for one winter and do not open the door to check on it, however many times you hear</em>"),
+    ("the Hoard only", "(Untitled)",
+     "A clean title page, and under it one line: <em>“For the ones who kept the chairs warm.”</em> The rest of the page is blank."),
+]
+
 def aside(title, body): return f'<aside class="notable"><h4>{title}</h4>{body}</aside>'
 def ul(*items): return "<ul>" + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
 def ol(*items): return "<ol>" + "".join(f"<li>{i}</li>" for i in items) + "</ol>"
@@ -44,7 +72,7 @@ def build(L):
         ("The Library Layer", "<h2>The Library Layer</h2>" + P(
             "The players at this table began playing D&D in the upstairs room of a library: a reading room with pointed arches, dark timber ribs, two tall stained-glass windows in arched bays, a stained-glass lantern in the ceiling, green-painted wainscoting, armchairs round a low table, and an inner glass-walled room with double wooden doors and bookshelves. That room is the memory the whole adventure is built on, so the dungeon gradually becomes it: one detail in Room 1, one more per Corridor visit, a step per segment in Room 3, and in Room 4 the Hoard <em>is</em> the reading room. It is the misremembering, surfacing.",
             "If your table did not start in a library, swap in the room where they did start — a basement, a kitchen table, a dorm lounge — and ladder its details the same way. The steps are in the Corridor rules.")
-         + aside("Every book is a half-page book", P("Wherever the library layer puts a book or a shelf, every volume is one half-page long. This is a global rule, not a room's trope. Never explain it.")), 2),
+         + aside("Every book is a half-page book", P("Wherever the library layer puts a book or a shelf, every volume is one half-page long. This is a global rule, not a room's trope. Never explain it.", f"When a player opens one, roll on {TB('books', 'the Half-page Books table')} (or pick): each result links to a short handout to show them. Books 1–4 fit anywhere, 5–7 from visit 3 (each nods to one of the Remnants), 8–11 from visit 5, and 12 belongs on the shelves of the Hoard's inner room.")), 2),
         ("Goal & Progression", "<h2>Goal &amp; Progression</h2>" + P(
             "<strong>The stated goal</strong> arrives in Room 2: the Remnant hands the party a map with an X and says it marks the way out. It points at the Hoard. From then on the players can say what they are doing — follow the X — and the X pulls them through the Corridors.",
             "<strong>The real goal</strong> is discovered in Rooms 4–5: the way out was the door they came in by. The stated goal was the thing keeping them from it.",

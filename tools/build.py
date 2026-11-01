@@ -34,8 +34,8 @@ def mapfor(k):
 missing = [k for k in SCENE_KEYS if k not in built]
 if missing: print("  scenes not yet mapped (skipped):", ", ".join(sorted(set(m.rsplit('-', 1)[0] if m not in FIXED else m for m in missing))))
 
-table_ids = {"pool": uid("table", "pool"), "cues": uid("table", "cues")}
-F = {t: uid("folder", t) for t in ("JournalEntry", "Handouts", "Actor", "Actor-npc", "Scene", "Scene-pool", "Scene-vista", "Playlist", "RollTable")}
+table_ids = {"pool": uid("table", "pool"), "cues": uid("table", "cues"), "books": uid("table", "books")}
+F = {t: uid("folder", t) for t in ("JournalEntry", "Handouts", "Handouts-books", "Actor", "Actor-npc", "Scene", "Scene-pool", "Scene-vista", "Playlist", "RollTable")}
 # Vistas: painted, gridless roleplay scenes (vistas/<key>.webp) shown to the players on arrival; also the Place pages' pictures
 VISTAS = {"backroom": "The Back Room", "common-room": "The Common Room", "corridor-between": "The Corridor Between", "hoard": "The Hoard", "cover-cavern": "The Cover",
           "c1-stairwell": "Corridor: Stairwell", "c2-stable": "Corridor: Stable", "c3-inn-hallway": "Corridor: Hallway of Inn Doors", "c4-campfire": "Corridor: Campfire Clearing",
@@ -58,7 +58,7 @@ def L(kind, key, name=None):
         a = allactors[key]; return f"@UUID[Actor.{a.id}]{{{name or a.doc['name']}}}"
     if kind == "scene":
         return f"@UUID[Scene.{scene_ids[key]}]{{{name or SCENE_KEYS[key]}}}" if key in built else f"<em>{name or SCENE_KEYS[key]}</em>"
-    if kind == "table": return f"@UUID[RollTable.{table_ids[key]}]{{{name or ('the Corridor Pool table' if key == 'pool' else 'the Cue table')}}}"
+    if kind == "table": return f"@UUID[RollTable.{table_ids[key]}]{{{name or {'pool': 'the Corridor Pool table', 'cues': 'the Cue table', 'books': 'the Half-page Books table'}[key]}}}"
     raise KeyError(kind)
 
 # ---------- journal: Monk's Enhanced Journal entries + Campaign Companion sessions ----------
@@ -173,6 +173,9 @@ for pname, html, *_ in _entries["10. Handouts"]:
     img = f"handouts/{HANDOUT_IMG[pname]}.webp" if pname in HANDOUT_IMG else None
     src = f"modules/{MOD}/{img}" if img and os.path.exists(f"{ROOT}/{img}") else None   # a handout without its picture yet stays text-only
     jid = mej_entry(pname, "journalentry", html, F["Handouts"], sort=nxt(), src=src); handout_ids[pname] = f"JournalEntry.{jid}"
+book_ids = []   # the half-page books: one small handout each, in a subfolder; the Half-page Books table links them
+for n, (band, title, text) in enumerate(journal.HALF_PAGE_BOOKS, 1):
+    book_ids.append(mej_entry(f"Half-page Book {n}: {title}", "journalentry", f"<h2>{title}</h2><p>{text}</p>", F["Handouts-books"], sort=n * 100000))
 # Campaign Companion structure: the campaign's portal entry and its default timeline (what createCampaign() makes)
 PORTAL_ID, TIMELINE_ID = uid("journal", "campaign-portal"), uid("journal", "campaign-timeline")
 journals.append({"_id": PORTAL_ID, "name": TITLE, "folder": F["JournalEntry"], "sort": 0, "ownership": {"default": 0}, "categories": [],
@@ -220,8 +223,11 @@ tables = [
         (3, 3, "A door closes somewhere behind the party; all the doors are as they were."),
         (4, 4, "A figure at the end of the corridor, gone when looked at directly. It is wearing something one of the players' first characters wore."),
         (5, 5, "Someone says one character's name in the voice of the player who sits beside them."),
-        (6, 6, "A half-page book, face down, where nobody left one."),
+        (6, 6, "A half-page book, face down, where nobody left one (roll on the Half-page Books table for which)."),
     ], "icons/svg/eye.svg"),
+    table("books", "Half-page Books", f"1d{len(journal.HALF_PAGE_BOOKS)}", "<p>Every book in the Corridors is one half-page long. Roll when a player opens one, or pick by visit band; click the link to show the handout. Never explain it.</p>", [
+        (n, n, f"<strong>{title}</strong> ({band}). @UUID[JournalEntry.{book_ids[n - 1]}]{{Show the handout}}")
+        for n, (band, title, _) in enumerate(journal.HALF_PAGE_BOOKS, 1)], "icons/sundries/books/book-open-brown.webp"),
 ]
 
 # ---------- playlists (v1 audio reused as placeholders until tools/audio.py is rerun for v2) ----------
@@ -392,6 +398,7 @@ folders = [
     {"_id": F["JournalEntry"], "name": TITLE, "type": "JournalEntry", "color": "#27413b", "sorting": "m", "folder": None, "sort": 0,
      "flags": {CC: {"campaign": {"ownershipDefault": "none", "defaultTimelineId": TIMELINE_ID}}}},   # a Campaign Companion campaign; the companion adds the portal and timeline
     {"_id": F["Handouts"], "name": "Handouts", "type": "JournalEntry", "color": "#3b6a5a", "sorting": "a", "folder": F["JournalEntry"], "sort": 0, "flags": {}},
+    {"_id": F["Handouts-books"], "name": "Half-page Books", "type": "JournalEntry", "color": "#3b6a5a", "sorting": "m", "folder": F["Handouts"], "sort": 0, "flags": {}},
     {"_id": F["Actor"], "name": "Back Room: The Cover", "type": "Actor", "color": "#7a2e24", "sorting": "a", "folder": None, "sort": 0, "flags": {}},
     {"_id": F["Actor-npc"], "name": "Back Room: People", "type": "Actor", "color": "#27413b", "sorting": "a", "folder": None, "sort": 0, "flags": {}},
     {"_id": F["Scene"], "name": TITLE, "type": "Scene", "color": "#27413b", "sorting": "m", "folder": None, "sort": 0, "flags": {}},
@@ -404,7 +411,7 @@ folders = [
 adv_id = uid("adventure", ID)
 adventure = {"_id": adv_id, "name": TITLE, "img": f"{MOD}/maps/cover.webp",
              "caption": "A liminal-horror adventure for 5th–8th level characters",
-             "description": f"<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites — all the back room, misremembered — and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> {len(scenes)} scenes with walls, lights, notes and Monk's Active Tile Triggers automation; {len(adv_actors)} actors; {len(journals)} journal entries; 2 roll tables; 2 playlists.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
+             "description": f"<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites — all the back room, misremembered — and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> {len(scenes)} scenes with walls, lights, notes and Monk's Active Tile Triggers automation; {len(adv_actors)} actors; {len(journals)} journal entries; {len(tables)} roll tables; {len(playlists)} playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
              "actors": adv_actors, "combats": [], "items": [], "scenes": scenes, "journal": journals, "tables": tables,
              "macros": macros, "cards": [], "playlists": playlists, "folders": folders, "sort": 0, "flags": {}, "_key": f"!adventures!{adv_id}"}
 json.dump(adventure, open(f"{SRC}/{PACK_ADV}/{PACK_ADV}.json", "w"), indent=1)
