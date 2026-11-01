@@ -42,6 +42,91 @@ DRUNK_JOKES = [
     "Best thing about this inn? Nobody ever leaves a bad word about it. <em>(Beat.)</em> Nobody ever leaves.",
 ]
 
+# Lines for each NPC's Person page: (when, line). Use them, change them, ignore them.
+DIALOG = {
+    "barkeep": [
+        ("Pouring", "House cider. Pressed in the yard, served cold. Goes down like water and gets up like a mule."),
+        ("Showing them upstairs", "Cot each, made up fresh. Bread on at first light, and a jug for the road. Mind the third step; it's been the third step since my father's day."),
+        ("The night, on the stone stairs", "Not morning yet. Back to bed, now. The road'll be there tomorrow. It always is."),
+        ("He knows (pick the detail before the session)", "Your mother still keeps the lamp in the window, doesn't she? The blue one."),
+        ("If pressed about how he knows", "Know what, love? Drink your milk."),
+        ("If they go back to sleep", "There we are. I'll set another tray."),
+        ("Room 5, from downstairs", "Are they up yet? Bread's going hard. Tell them the wagon's in the yard."),
+    ],
+    "stranger": [
+        ("The hook", "Lamp oil, over the Kettle Pass to Thistlecross. Three days. Forty a head, twenty tonight, the rest on delivery. We leave at first light."),
+        ("Asked if it's dangerous", "It's a road. Roads have weather. That's the whole of it."),
+        ("Asked his name", "Kael Shadowmere. (He does not smile. Nobody ever believes him.)"),
+        ("Asked why he's hooded", "It's cold in the booth."),
+        ("Room 2, every booth, word for word", "Lamp oil, over the Kettle Pass to Thistlecross. Three days. Forty a head…"),
+        ("Room 5, from downstairs", "Are they up yet, Barnaby? We've a pass to cross."),
+    ],
+    "remnant-fred": [
+        ("Introducing himself", "FRED THE FIGHTER!"),
+        ("Greeting the party", "There you are! Took your time. Ready for the next panel?"),
+        ("Sizing them up", "Four of you. Good. Fits the frame."),
+        ("His Signature, when he swings", "POW!"),
+        ("Asked about his past", "Summer. Ink. A camp paper. Then… To be continued!"),
+        ("Handing over the map", "The X is the way out. Everyone knows that. Next week, we follow it."),
+        ("Room 4, as they reach the glass doors", "Hey. Hey! There's still a panel left. Same time next week?"),
+    ],
+    "remnant-thon": [
+        ("Greeting", "Ah, you'll want to see this. Everybody wants to see this."),
+        ("Showing off the rod", "Button one, mace. Button two, flaming blade. Button three, and this is the good one, listen for the click…"),
+        ("Asked to cast a spell", "Spells? Yes, certainly, but have you seen button six? It points north. Always. Even here. Especially here."),
+        ("His Signature", "Hold on. (Click.) There. Ladder."),
+        ("The Blank", "I knew a spell once. Started with an F. Doesn't matter. Button four."),
+        ("Room 4, pleading", "Stay. I haven't shown you button seven. Nobody's ever seen button seven."),
+    ],
+    "remnant-rorvik": [
+        ("Every few minutes", "Is it my turn yet?"),
+        ("Arriving in the Hoard, round 2", "Sorry I'm late. What did I miss?"),
+        ("Insulted", "Say that again. Go on. Say it with your sword out."),
+        ("Asked about his adventures", "Adventures? I was there for all of them. Mostly. Sitting by the side. Waiting."),
+        ("His Signature, first in initiative", "Me first. I've waited long enough."),
+        ("Room 4, as they leave", "You're leaving? I only just got here!"),
+    ],
+    "remnant-morlock": [
+        ("Introducing himself, from somewhere high up", "T. Morlock. Seventh level. Sixty thousand three hundred and eighty-one experience points. You can check."),
+        ("Showing his sheet", "Every box filled in. Look: tightrope, one hundred percent."),
+        ("Asked what the T. stands for", "…It stands for T."),
+        ("About carpet making", "Nobody asks about the carpets. Warp, weft, a proper knot. It's very calming."),
+        ("If anyone touches the leather bag", "Don't. Don't do that."),
+        ("Passing through a wall", "Elishaf."),
+        ("Room 4, from a rafter", "Stay. I'll teach you the high wire. It's easy, once you stop looking for the far post."),
+    ],
+    "remnant-strider": [
+        ("First sighting, visit 7+", "You're lost. Don't argue. I know these halls."),
+        ("Offering to lead", "This way. Every door goes somewhere. Only one goes where you're going."),
+        ("Asked who he is", "Strider will do. It's what everyone calls me."),
+        ("Asked about his lineage", "(He tells it, earnestly, at length: a story every player at the table has read in a book. He does not notice.)"),
+        ("His Signature, with the bow", "Hold still. (He doesn't miss.)"),
+        ("Room 4, quietly, as they reach the doors", "I've walked a long way to sit at this table. Stay a while. The road can wait."),
+    ],
+    "remnant-rogue": [
+        ("Greeting", "Don't ask. It's complicated."),
+        ("Asked about the tragedy", "It's… complicated."),
+        ("Asked three times", "(Goes quiet, and looks at a player whose character it isn't.)"),
+        ("Room 4", "Nobody leaves. That's the one thing I'm sure of."),
+    ],
+    "remnant-barbarian": [
+        ("Greeting", "GRUKK SKULLSPLITTER!"),
+        ("Asked anything about its past", "Grukk Skullsplitter. (Louder.) GRUKK SKULLSPLITTER."),
+        ("Happily", "Grukk not angry. Grukk never angry. Grukk just strong."),
+        ("Room 4", "Stay! Grukk carry you. Grukk carry everyone."),
+    ],
+    "remnant-wizard": [
+        ("Greeting", "Mordecai the Magnificent. Master of the arcane. All of it."),
+        ("Asked to cast anything else", "Certainly. (Gestures. Frowns.) Fireball."),
+        ("Showing the spellbook", "Very rare tome. One page, but what a page."),
+        ("Room 4", "Don't go. I've prepared something special. (It is a fireball.)"),
+    ],
+    "echo": [
+        ("It does not speak", "It mouths whatever the character it copies said on their last turn, a moment late, without a sound."),
+        ("When the loop breaks", "Nothing. It is just not there any more."),
+    ],
+}
+
 # The half-page books: (band, title, text). Each is a player handout and a row of the Half-page Books table.
 HALF_PAGE_BOOKS = [
     ("anywhere", "The Journal of Aldous Penhallow, Adventurer (Fourth Day)",

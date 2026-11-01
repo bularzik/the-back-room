@@ -155,7 +155,10 @@ for key, (role, attrs) in PEOPLE.items():
     # role/location fill the sheet's header; src is the portrait (MEJ sets it to the actor's image when an actor is linked by hand)
     data = {"attributes": attrs, "actor": actor_ref(key), "role": role, "location": PERSON_LOCATION[key],
             "relationships": rels(*[rel(rn, role="appears here") for rn in rooms], *([rel("The Remnants", relationship="member")] if attrs["faction"] == "The Remnants" else []))}
-    mej_entry(name, "person", a.doc["system"]["details"]["biography"]["value"], F["JournalEntry"], sort=nxt(), data=data, src=a.doc["img"])
+    says = journal.DIALOG.get(key, [])
+    quote = lambda line: line if line.startswith("(") or key == "echo" else "\u201c" + line + "\u201d"
+    says_html = ("<h2>Things They Say</h2>" + journal.ul(*["<strong>" + when + ".</strong> " + quote(line) for when, line in says])) if says else ""
+    mej_entry(name, "person", a.doc["system"]["details"]["biography"]["value"] + says_html, F["JournalEntry"], sort=nxt(), data=data, src=a.doc["img"])
 mej_entry("The Remnants", "organization", journal.P(
     "The first party: each player's first-ever D&D character, as the table misremembers them — overpowered, cooler than they were, one running joke swollen into a whole personality. They are not hostile. They want the game to keep going, forever, with the party in it.",
     "This table's five, built from the players' own answers: Fred the Fighter (in Room 2), Strider (in a Corridor at visit 7+), and Thon, Rorvik and T. Morlock, who wait with the others in the Hoard. The three fallbacks stand in if a player misses a session, or for another table.")
