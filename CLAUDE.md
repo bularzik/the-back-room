@@ -247,7 +247,7 @@ Chrome tab at http://127.0.0.1:7860/ via the Chrome tools.
 - Vistas: 13 (5 rooms + 8 Corridor places) in `vistas/`, scenes in folder "Vistas", pictures on Place pages.
   Exact prompts/settings are embedded in the Draw Things PNGs (XMP `exif:UserComment` JSON: c, uc, seed,
   strength) and collected in ~/Claude/Projects/map-review/vista-prompts.json; gallery vistas.html there.
-- NPCs: Barnaby Stickit (the Stickit Inn, famous for its cider), Kael Shadowmere; this table's five Remnants
+- NPCs: Bartleby Stickit (Bart) (the Stickit Inn, famous for its cider), Kael Shadowmere; this table's five Remnants
   (Fred the Fighter, Thon, Rorvik, T. Morlock from the player's real AD&D sheet, Strider) plus three
   fallbacks. Text links to NPCs go to their MEJ Person page (which carries the actor link, portrait = page
   `src`, role, location). Rorvik's player is habitually late: Room 1 "The Latecomer", Rorvik enters the Hoard

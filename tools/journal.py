@@ -59,7 +59,7 @@ DIALOG = {
         ("Asked his name", "Kael Shadowmere. (He does not smile. Nobody ever believes him.)"),
         ("Asked why he's hooded", "It's cold in the booth."),
         ("Room 2, every booth, word for word", "Lamp oil, over the Kettle Pass to Thistlecross. Three days. Forty a head…"),
-        ("Room 5, from downstairs", "Are they up yet, Barnaby? We've a pass to cross."),
+        ("Room 5, from downstairs", "Are they up yet, Bart? We've a pass to cross."),
     ],
     "remnant-fred": [
         ("Introducing himself", "FRED THE FIGHTER!"),
@@ -245,10 +245,10 @@ def build(L):
             f"Narrate the inn and the job, played completely straight: {A('stranger')} in the corner booth, three days to Thistlecross, forty gold. Show the handout. If you want a picture on screen, activate the vista of the common room for a moment. Start the music track <em>Session 1: A Cozy Tavern</em>.",
             use=[J("Room 1: The Back Room") + " (The Evening)", J("Handout: The Job"), "Scene: Vista: The Common Room (optional)"])
          + step(8, "Upstairs to the back room",
-            f"Activate {SC('backroom')} and read the boxed text. If a player is late, run The Latecomer: their character arrives last, with Barnaby and a candle.",
-            use=[SC("backroom"), J("Room 1: The Back Room") + " (The Latecomer)", J("Barnaby Stickit")])
+            f"Activate {SC('backroom')} and read the boxed text. If a player is late, run The Latecomer: their character arrives last, with Bartleby and a candle.",
+            use=[SC("backroom"), J("Room 1: The Back Room") + " (The Latecomer)", J("Bartleby Stickit")])
          + step(9, "The night event",
-            "Someone wakes; the lantern is lit. The stone in the corner has a hilt in it: when a player clicks the stone, that player gets the Toothless Key handout automatically. Barnaby comes down the stone stairs with a tray and asks them to go back to bed (The Guardian is not a fight).",
+            "Someone wakes; the lantern is lit. The stone in the corner has a hilt in it: when a player clicks the stone, that player gets the Toothless Key handout automatically. Bartleby comes down the stone stairs with a tray and asks them to go back to bed (The Guardian is not a fight).",
             use=[J("Room 1: The Back Room") + " (The Night Event, The Guardian)", J("Handout: The Toothless Key") + " (opens itself from the stone)", "SoundBard: The lantern lights itself"])
          + step(10, "Into the Corridors (visit 1)",
             "When a token steps onto the stairwell or the hayloft door, it is sent to a random Corridor scene. Activate that scene. Open the matching Corridor journal and use its visit-band cue (nothing yet at visits 1–2). Tick visit 1.",
@@ -340,7 +340,7 @@ def build(L):
                  "<strong>The cider.</strong> Everyone for three days in any direction knows the Stickit's cider. Someone in the party has been promising the others a mug for weeks.",
                  "<strong>The job brought them.</strong> Word has gone round the nearby towns: guards wanted for a wagon over the pass, ask at the Stickit Inn. They came to answer it.",
                  "<strong>Your own campaign.</strong> They are passing through on the way to wherever they were already going, and this is where night falls.")
-            + P("For a table that started playing together long ago, the cliché is the point: this is how the first party met, too.", "What the party already knows about the road is in the handout <em>The Kettle Pass</em>: give it to them before the session, or let Barnaby and the stranger hand it out a line at a time."))
+            + P("For a table that started playing together long ago, the cliché is the point: this is how the first party met, too.", "What the party already knows about the road is in the handout <em>The Kettle Pass</em>: give it to them before the session, or let Bartleby and the stranger hand it out a line at a time."))
          + box("The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light, and a jug of the house cider for the road.")
          + P("Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.")
          + aside("Keyed areas", ul("<strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.",
@@ -350,8 +350,8 @@ def build(L):
                                    "<strong>A5. The stone.</strong> In the corner by the chest: a stone with a hilt in it."))),
         ("The Latecomer", "<h2>The Latecomer</h2>" + P(
             f"At this table one player usually arrives late (the player whose first character is {A('remnant-rorvik')}), and session one will be no different. Plan for it rather than around it: their character is the last guest of the night at the Stickit Inn, and the rest of the party meets them in the back room.")
-         + box("Footsteps on the stairs, and a second light. Barnaby comes up with a candle and someone behind him, travel-stained, apologising. 'One more for the road, if you'll have them. Came in on the last of the light.' The last cot, you notice, was already made up.")
-         + P("Run the introductions by lantern light, in character, as the others are bedding down; the newcomer has heard about the job from the stranger downstairs and is in. If the player arrives after the night event has begun, they are the one who wakes: they arrive in the dark, Barnaby is not with them, and the lantern is already lit. A late arrival is the best possible way into this adventure."), 2),
+         + box("Footsteps on the stairs, and a second light. Bartleby comes up with a candle and someone behind him, travel-stained, apologising. 'One more for the road, if you'll have them. Came in on the last of the light.' The last cot, you notice, was already made up.")
+         + P("Run the introductions by lantern light, in character, as the others are bedding down; the newcomer has heard about the job from the stranger downstairs and is in. If the player arrives after the night event has begun, they are the one who wakes: they arrive in the dark, Bartleby is not with them, and the lantern is already lit. A late arrival is the best possible way into this adventure."), 2),
         ("The Night Event", "<h2>The Night Event (the Insomnia Rule)</h2>" + P("Someone wakes. Pick the character whose player is most likely to get up and look.")
          + box("The lantern is lit. Nobody lit it. The door to the landing is open a hand's width and the stairs beyond it are stone, going down — the stairs you came up, but too many of them, and no light at the bottom where the common room should be.")
          + P("Behind the shelves (A3), a second door nobody noticed: it opens into the <strong>hayloft</strong> over the stable, with a ladder down. This is how the storeroom connects to the yard; it also seeds the Stable in the Corridor pool, and it is the <em>riddle door</em> (see the Corridor Pool, Stable).",
@@ -524,12 +524,12 @@ def build(L):
               "<strong>Don't lean.</strong> No music cue, no meaningful look, no hint that one answer is right. Let the silence go on longer than is comfortable. The back room is warm; outside it is a cold morning and a long road.",
               "<strong>Make it physical.</strong> On three, each player puts a hand on the table (stay) or a die in the middle (leave). Or have each player move their token: to the landing door, or to the loft door.")
          + "<h3>If they leave</h3>" + box(
-              "The key turns as if the lock had been waiting for it. The stairs down are wooden, and there are fourteen of them; you count. The common room smells of bread. Barnaby is behind the bar in his apron, wiping a mug that is already clean, and he looks up and says, \u201cThere they are. Bread's hot. Jug's by the door.\u201d",
+              "The key turns as if the lock had been waiting for it. The stairs down are wooden, and there are fourteen of them; you count. The common room smells of bread. Bartleby is behind the bar in his apron, wiping a mug that is already clean, and he looks up and says, \u201cThere they are. Bread's hot. Jug's by the door.\u201d",
               "In the corner booth, the stranger has his hood down. He is younger than you thought, and he is checking the straps on a pack. \u201cWagon's in the yard,\u201d he says. \u201cIf you're still coming.\u201d",
               "Outside, it is a cold, clear morning. The wagon smells of lamp oil and wet rope. The Kettle Pass road goes up into the hills exactly the way roads do, one bend at a time, and nobody has to count the bends.",
               "Somewhere behind you, an upstairs window catches the sun. Just glass. All four panes clear.")
          + P("Then the mechanics: each character who left keeps the changed details as they are now, gains a level, and gets one boon of your choice tied to what they left behind in Room 3 (a character who left a holy symbol finds their faith sits lighter and surer; one who spent a story finds people listen when they speak). The Remnants are gone. The toothless key is gone from every pocket.",
-             "Any character who stayed is simply not at the bar in the morning. Barnaby sets out one fewer mug and does not say anything about it, and neither does anyone else.")
+             "Any character who stayed is simply not at the bar in the morning. Bartleby sets out one fewer mug and does not say anything about it, and neither does anyone else.")
          + "<h3>If they stay</h3>" + box(
               "The hayloft is warm and full of lamplight, and there is a table up here that was never in any hayloft: a low table, and chairs round it, and the people you used to be already sitting down. Someone has rolled dice. They are still warm. There is a chair for each of you, and a character sheet on each chair, and the name at the top is the one you almost gave them.",
               "Nobody asks whether you are ready. Somebody says, \u201cRight. Where were we?\u201d, and nobody remembers, and it doesn't matter.")

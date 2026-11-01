@@ -334,12 +334,12 @@ def build_npcs():
     m.attack("Longbow", 1, 8, "piercing", "dex", kind="ranged", reach=None, rng=(150, 600), img="icons/weapons/bows/longbow-recurve-leather-brown.webp")
     out["remnant-strider"] = m
 
-    m = Monster("barkeep", "Barnaby Stickit", 0, "med", "humanoid", "Neutral", 10, 9, "2d8", (12, 10, 11, 10, 14, 15), {"walk": 30}, TK["barkeep"],
+    m = Monster("barkeep", "Bartleby Stickit", 0, "med", "humanoid", "Neutral", 10, 9, "2d8", (12, 10, 11, 10, 14, 15), {"walk": 30}, TK["barkeep"],
                 disposition=1, ac_calc="flat", languages="Common", lang_values=("common",), subtype="human",
-                bio=P("Keeper of the Stickit Inn, as his father was. Kind. Tired in a way that is not unhappy. He pours the house cider with a heavy hand, led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.",
+                bio=P("Bartleby Stickit, Bart to his friends (which is everyone who has drunk his cider twice). Keeper of the Stickit Inn, as his father was. Kind. Tired in a way that is not unhappy. He pours the house cider with a heavy hand, led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.",
                       "<strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.",
                       "<strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning."))
-    m.trait("Not a Fight", P("Barnaby never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning."))
+    m.trait("Not a Fight", P("Bartleby never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning."))
     m.trait("He Knows", P("Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table: pick it from the sheet before the session. With nothing on the sheet to use, he asks after the character by the name the player almost gave them."))
     out["barkeep"] = m
 
@@ -347,7 +347,7 @@ def build_npcs():
                 disposition=0, ac_calc="flat", languages="Common", lang_values=("common",), subtype="human",
                 bio=P("A hooded stranger in the corner booth of the Stickit Inn, with a job and an untouched mug of cider. He gives his name as Kael Shadowmere, as if anyone could keep a straight face. Play it completely straight: the job is real, the pay is fair, the directions are good.",
                       "<strong>Room 2.</strong> There is a hooded stranger in every booth, and every one of them is a role, repeating the hook word for word. None of them is the Remnant.",
-                      "<strong>Room 5.</strong> The stranger's voice rises from the common room below, asking Barnaby whether the party is up yet. The job is still there."))
+                      "<strong>Room 5.</strong> The stranger's voice rises from the common room below, asking Bart whether the party is up yet. The job is still there."))
     m.trait("The Hook", P("The stranger offers a plain, ordinary job: ride guard on a wagon of lamp oil over the Kettle Pass to Thistlecross, three days, forty gold a head, half tonight, leaving at first light (the handout <em>The Job</em>). It is never a trick, and if the party leaves at the end, it is still there to be done."))
     out["stranger"] = m
     return out
