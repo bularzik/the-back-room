@@ -1,6 +1,6 @@
 """Builds src/packs for The Back Room (module id the-back-room) from tools/maps.json, journal.py, actors.py, matt.py.
 Scenes whose maps are not in maps.json yet are skipped (with a note), so journals and actors build before the maps do."""
-import json, os, shutil, sys
+import json, math, os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from actors import build_monsters, build_npcs, uid, MOD
 import journal, matt
@@ -374,7 +374,7 @@ SCENE_TOKENS = {
                     ("stranger", 300, 200, False, "A hooded stranger"), ("stranger", 300, 900, False, "A hooded stranger"),
                     ("stranger", 950, 1000, False, "A hooded stranger"),
                     ("role-barmaid", 800, 700, False, None), ("role-guard", 200, 500, False, None), ("role-guard", 200, 700, False, None),
-                    ("role-drunk", 880, 250, False, None), ("role-merchant", 1000, 750, False, None), ("role-oldman", 550, 950, False, None)],
+                    ("role-drunk", 880, 250, False, None), ("role-merchant", 1000, 750, False, None), ("role-oldman", 420, 1000, False, None)],
     "corridor-between": [("echo", 2300, 350, True, None)],
     "hoard": [("remnant-fred", 400, 170, False, None), ("remnant-thon", 500, 170, False, None),
               ("remnant-morlock", 330, 240, False, None), ("remnant-strider", 550, 240, False, None),
@@ -384,12 +384,25 @@ SCENE_TOKENS = {
     **{f"{place}-c": [("remnant-strider", x, y, True, None)] for place, (x, y) in STRIDER_C.items()},
 }
 PROTO_ONLY = ("randomImg", "appendNumber", "prependAdjective")
+PATROLLERS = {("common-room", "role-barmaid")}   # tokens Patrol walks (scripts/the-back-room.js adds the Region behaviour)
+# The barmaid's circuit round the middle table of the Common Room: an octagon, walked along its edge.
+_cx, _cy, _rx, _ry = 745, 810, 200, 130
+BARMAID_LOOP = [round(v) for a in range(8) for v in (_cx + _rx * math.cos(a * math.pi / 4 + math.pi / 8), _cy + _ry * math.sin(a * math.pi / 4 + math.pi / 8))]
+def scene_regions(key, sid):
+    if key != "common-room": return []
+    return [{"_id": uid(sid, "region", "barmaid"), "name": "The barmaid's circuit", "color": "#c9a227",
+             "shapes": [{"type": "polygon", "points": BARMAID_LOOP, "hole": False}],
+             "elevation": {"bottom": None, "top": None, "topInclusive": False}, "behaviors": [],
+             "visibility": 0, "highlightMode": "shapes", "displayMeasurements": False, "hidden": False, "locked": False,
+             "flags": {MODULE_ID_FLAG: {"patrol": "The Barmaid"}}}]
+MODULE_ID_FLAG = "the-back-room"
 def scene_tokens(key, sid):
     out = []
     for n, (akey, x, y, hidden, name) in enumerate(SCENE_TOKENS.get(key, [])):
         a = allactors[akey]; proto = {k: v for k, v in json.loads(json.dumps(a.doc["prototypeToken"])).items() if k not in PROTO_ONLY}
         out.append({**proto, "_id": uid(sid, "token", str(n)), "name": name or proto.get("name") or a.doc["name"], "actorId": a.id, "actorLink": False,
-                    "x": int(x), "y": int(y), "elevation": 0, "rotation": 0, "hidden": bool(hidden), "locked": False, "alpha": 1, "flags": {}})
+                    "x": int(x), "y": int(y), "elevation": 0, "rotation": 0, "hidden": bool(hidden), "locked": False, "alpha": 1,
+                    "flags": {"patrol": {"enablePatrol": True}} if (key, akey) in PATROLLERS else {}})
     return out
 
 scenes = []
@@ -422,7 +435,7 @@ for i, key in enumerate(built):
                    "grid": {"type": 1, "size": 100, "style": "solidLines", "thickness": 1, "color": "#000000", "alpha": .12, "distance": 5, "units": "ft"},
                    "tokenVision": True, "fog": {"exploration": True, "reset": None, "overlay": None, "colors": {"explored": None, "unexplored": None}},
                    "environment": {"darknessLevel": darkness, "darknessLock": False, "globalLight": {"enabled": False}, "cycle": True},
-                   "drawings": [], "tokens": scene_tokens(key, sid), "lights": lights, "notes": notes, "sounds": [], "regions": [], "tiles": [], "walls": walls,
+                   "drawings": [], "tokens": scene_tokens(key, sid), "lights": lights, "notes": notes, "sounds": [], "regions": scene_regions(key, sid), "tiles": [], "walls": walls,
                    "playlist": uid("playlist", "amb"), "playlistSound": amb_id(place_of(key)), "journal": jref, "journalEntryPage": None,
                    "weather": "", "folder": F["Scene-pool"] if is_pool else F["Scene"], "sort": (i + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
 
@@ -502,11 +515,12 @@ manifest = {
             {"id": "michaelghelfi", "type": "module", "manifest": "https://r2.foundryvtt.com/packages-public/michaelghelfi/module.json", "reason": "Ambience (cave, campfire, open fields) and music."},
             {"id": "soundfxlibrary", "type": "module", "manifest": "https://github.com/MaterialFoundry/SoundFxLibrary/releases/latest/download/module.json", "reason": "Ambience (drips, wind, market) and the SoundBard sound effects."},
             {"id": "adventuremusic", "type": "module", "manifest": "https://r2.foundryvtt.com/packages-public/adventuremusic/module.json", "reason": "Battle music for The Cover and the Hoard."},
+            {"id": "patrol", "type": "module", "manifest": "https://github.com/theripper93/Patrol/releases/latest/download/module.json", "reason": "The barmaid in the Common Room walks her endless circle on her own."},
             {"id": "soundbard", "type": "module", "manifest": "https://github.com/ongoingpast/Campendium-SoundBard/releases/latest/download/module.json", "reason": "The macro 'The Back Room: set up SoundBard' fills two banks with the adventure's cues."}]},
     "packs": [
         {"name": PACK_ADV, "label": f"{TITLE} (Adventure)", "path": f"packs/{PACK_ADV}", "type": "Adventure", "system": "dnd5e", "ownership": {"PLAYER": "NONE", "ASSISTANT": "OWNER"}}],
     "packFolders": [{"name": TITLE, "sorting": "m", "color": "#27413b", "packs": [PACK_ADV]}],
-    "languages": [], "esmodules": [], "styles": ["styles/the-back-room.css"],
+    "languages": [], "esmodules": ["scripts/the-back-room.js"], "styles": ["styles/the-back-room.css"],
 }
 json.dump(manifest, open(f"{ROOT}/module.json", "w"), indent=2)
 print("sources written:", len(scenes), "scenes,", len(journals), "journals,", sum(len(j['pages']) for j in journals), "pages,", len(adv_actors), "actors")

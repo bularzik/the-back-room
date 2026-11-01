@@ -12581,7 +12581,11 @@
      "hidden": false,
      "locked": false,
      "alpha": 1,
-     "flags": {}
+     "flags": {
+      "patrol": {
+       "enablePatrol": true
+      }
+     }
     },
     {
      "name": "Inn Guard",
@@ -12724,8 +12728,8 @@
      },
      "_id": "Egy2hKXpF9z0RQS2",
      "actorId": "uUVx4vr67JvzAH5J",
-     "x": 550,
-     "y": 950,
+     "x": 420,
+     "y": 1000,
      "elevation": 0,
      "rotation": 0,
      "hidden": false,
@@ -13159,7 +13163,53 @@
     }
    ],
    "sounds": [],
-   "regions": [],
+   "regions": [
+    {
+     "_id": "jDc8FKSvGGjbTGBC",
+     "name": "The barmaid's circuit",
+     "color": "#c9a227",
+     "shapes": [
+      {
+       "type": "polygon",
+       "points": [
+        930,
+        860,
+        822,
+        930,
+        668,
+        930,
+        560,
+        860,
+        560,
+        760,
+        668,
+        690,
+        822,
+        690,
+        930,
+        760
+       ],
+       "hole": false
+      }
+     ],
+     "elevation": {
+      "bottom": null,
+      "top": null,
+      "topInclusive": false
+     },
+     "behaviors": [],
+     "visibility": 0,
+     "highlightMode": "shapes",
+     "displayMeasurements": false,
+     "hidden": false,
+     "locked": false,
+     "flags": {
+      "the-back-room": {
+       "patrol": "The Barmaid"
+      }
+     }
+    }
+   ],
    "tiles": [
     {
      "_id": "mnaxPGNfonvjUnRM",
@@ -71278,7 +71328,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.aWw0Z8nmdJOkzlVB]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 2: The Common Room That Isn't</h1><blockquote class=\"read-aloud\"><p><em>The Stickit Inn's common room. The fire is lit, the tables are full, and nobody is looking at you. In every booth, a hooded stranger. The barmaid is walking a slow circle between the tables with a tray and has not arrived at one. A drunk by the hearth is telling a joke to nobody.</em></p></blockquote><p>Every patron is a <em>role</em>: a hooded stranger in every booth, a quest-giver who repeats the hook word for word, a barmaid who walks in a circle and never arrives, a drunk who says the same line no matter how many times you talk to him. Guards at the door say there's nothing to see here. There's a lot to see here.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>B1. The booths.</strong> A hooded stranger in each, offering the job in the same words.</li><li><strong>B2. The bar.</strong> Nobody behind it. Mugs of the house cider, full, every one the same pale gold. One is a different colour.</li><li><strong>B3. The hearth.</strong> The drunk, and his one line: roll on @UUID[RollTable.EH7rPdsPvHwTYLOu]{the Drunk\u2019s Joke table} the first time anyone talks to him, then tell that same joke, word for word and with the same pause, every time after.</li><li><strong>B4. The door.</strong> Two guards. 'Nothing to see here.'</li><li><strong>B5. The stairs.</strong> Up to a landing that is not the landing they came down.</li></ul></aside><h2>The Puzzle</h2><p>One patron is not a role. It is the first <strong>Remnant</strong>, @UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}: one player's first character, misremembered (and possibly never played at all; he was certainly a comic strip). It doesn't know it's in a tavern. It thinks it's mid-adventure and the party are old companions. The puzzle is social: figure out which patron is real, and get it to say the thing everyone remembers it for (its Signature). When it does, the room goes quiet and every role turns to look at the party.</p><p><strong>Three clues</strong>, so the table can't miss it:</p><ol><li>The Remnant is the only patron who asks the party a question.</li><li>It is the only one whose cider is a different colour: red as wine, where every other mug in the room is pale gold.</li><li>The player whose character it is will recognise it from the description before anyone else does \u2014 let that player sweat before they say so.</li></ol><p><strong>Payoff.</strong> The Remnant gives them a map with an X. The X moves when nobody looks at it. It is pointing at the Corridors. Give the handout <em>The X Map</em>. From this moment the X door can appear in the Corridors (the GM's X-door tile).</p><h3>The roles, in their own words</h3><p>Every role has one line and says it exactly the same way every time, whoever asks and whatever they ask. Never improvise past it; the repetition is the horror.</p><table><thead><tr><th>Role</th><th>Their line</th></tr></thead><tbody><tr><td>A hooded stranger (every booth)</td><td>\u201cLamp oil, over the Kettle Pass to Thistlecross. Three days. Forty a head, twenty tonight, the rest on delivery. We leave at first light.\u201d</td></tr><tr><td>The barmaid (walking her circle)</td><td>\u201cJust coming, love.\u201d (She never arrives. Step into her path and she walks round you, still smiling, still coming.)</td></tr><tr><td>The guards at the door (B4)</td><td>\u201cMove along. Nothing to see here.\u201d (Both together. Ask what they are guarding: \u201cNothing to see here.\u201d)</td></tr><tr><td>A merchant at a table</td><td>\u201cFinest wares this side of the pass! Have a look!\u201d (There is nothing on the table.)</td></tr><tr><td>An old man by the window</td><td>\u201cIn my day, the pass was a dangerous road.\u201d (Ask how: \u201cIn my day, the pass was a dangerous road.\u201d)</td></tr><tr><td>The drunk (B3)</td><td>His one joke: roll once on @UUID[RollTable.EH7rPdsPvHwTYLOu]{the Drunk\u2019s Joke table}, then the same joke forever.</td></tr></tbody></table><p>When Fred says his Signature, every role stops mid-line and turns to look at the party, all at once. Hold it for a beat. Then they go back to their lines, a little quieter.</p><h3>The way out</h3><ul><li><strong>The door (B4)</strong> is the way on. Before the Signature the guards stand in it (\u201cNothing to see here\u201d); after, they step aside together without a word. The door tile sends the party into the Corridors, copy B.</li><li><strong>The stairs (B5)</strong> go up to a landing, a door, and the bottom of the same stairs. Every time. Let them try twice.</li><li><strong>If they leave without the map</strong> (they fight past the guards, or Fred never says it): let them. Fred turns up in the next Corridor they enter, a beat behind them, out of breath: \u201cYou forgot this!\u201d He gives them the map there.</li></ul><h3>The X Map in play</h3><p>The handout is a picture of a maze of rooms with an X on it. It is how the players feel they are following something, while the doors stay random. Use it like this:</p><ul><li><strong>When they look at it in a Corridor,</strong> the X is never on the room they are in. It is a room or two away, in a direction you choose: ahead, left, past the stairs. If they go that way, the next room is somewhere else entirely, and the X is a room or two away again. Describe it plainly each time.</li><li><strong>It only moves when nobody is looking.</strong> If a player says they keep their eyes on it, it stays perfectly still, and nothing changes. The moment they fold it away, or look up, it has moved.</li><li><strong>The X door appears when they look away.</strong> When you are ready for the next room (Room 3 after the map, Room 4 after Room 3 and Strider), wait until nobody is looking at the map, fire <em>GM: Reveal the X door</em>, and then let them look: the X is on the room they are in, on one of its doors. One of the doors now has an X on it, too.</li><li><strong>Strider can read it.</strong> At visit 7+ he glances at it and says \u201cThat's two doors from here\u201d, and he is right, because you make him right.</li></ul><aside class=\"notable\"><h4>Automation</h4><p>Automated: click the Remnant's table when the Signature is said to hand out the X map; then use GM: Reveal the X door in whichever pool scene the party reaches next.</p></aside>"
+      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.aWw0Z8nmdJOkzlVB]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 2: The Common Room That Isn't</h1><blockquote class=\"read-aloud\"><p><em>The Stickit Inn's common room. The fire is lit, the tables are full, and nobody is looking at you. In every booth, a hooded stranger. The barmaid is walking a slow circle between the tables with a tray and has not arrived at one. A drunk by the hearth is telling a joke to nobody.</em></p></blockquote><p>Every patron is a <em>role</em>: a hooded stranger in every booth, a quest-giver who repeats the hook word for word, a barmaid who walks in a circle and never arrives, a drunk who says the same line no matter how many times you talk to him. Guards at the door say there's nothing to see here. There's a lot to see here.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>B1. The booths.</strong> A hooded stranger in each, offering the job in the same words.</li><li><strong>B2. The bar.</strong> Nobody behind it. Mugs of the house cider, full, every one the same pale gold. One is a different colour.</li><li><strong>B3. The hearth.</strong> The drunk, and his one line: roll on @UUID[RollTable.EH7rPdsPvHwTYLOu]{the Drunk\u2019s Joke table} the first time anyone talks to him, then tell that same joke, word for word and with the same pause, every time after.</li><li><strong>B4. The door.</strong> Two guards. 'Nothing to see here.'</li><li><strong>B5. The stairs.</strong> Up to a landing that is not the landing they came down.</li></ul></aside><h2>The Puzzle</h2><p>One patron is not a role. It is the first <strong>Remnant</strong>, @UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}: one player's first character, misremembered (and possibly never played at all; he was certainly a comic strip). It doesn't know it's in a tavern. It thinks it's mid-adventure and the party are old companions. The puzzle is social: figure out which patron is real, and get it to say the thing everyone remembers it for (its Signature). When it does, the room goes quiet and every role turns to look at the party.</p><p><strong>Three clues</strong>, so the table can't miss it:</p><ol><li>The Remnant is the only patron who asks the party a question.</li><li>It is the only one whose cider is a different colour: red as wine, where every other mug in the room is pale gold.</li><li>The player whose character it is will recognise it from the description before anyone else does \u2014 let that player sweat before they say so.</li></ol><p><strong>Payoff.</strong> The Remnant gives them a map with an X. The X moves when nobody looks at it. It is pointing at the Corridors. Give the handout <em>The X Map</em>. From this moment the X door can appear in the Corridors (the GM's X-door tile).</p><h3>The roles, in their own words</h3><p>Every role has one line and says it exactly the same way every time, whoever asks and whatever they ask. Never improvise past it; the repetition is the horror.</p><table><thead><tr><th>Role</th><th>Their line</th></tr></thead><tbody><tr><td>A hooded stranger (every booth)</td><td>\u201cLamp oil, over the Kettle Pass to Thistlecross. Three days. Forty a head, twenty tonight, the rest on delivery. We leave at first light.\u201d</td></tr><tr><td>The barmaid (walking her circle)</td><td>\u201cJust coming, love.\u201d (She never arrives. Step into her path and she walks round you, still smiling, still coming.) With the <em>Patrol</em> module installed she walks her circuit round the middle table by herself while you are on this scene; Patrol's walking-figure button in the token controls stops and starts her.</td></tr><tr><td>The guards at the door (B4)</td><td>\u201cMove along. Nothing to see here.\u201d (Both together. Ask what they are guarding: \u201cNothing to see here.\u201d)</td></tr><tr><td>A merchant at a table</td><td>\u201cFinest wares this side of the pass! Have a look!\u201d (There is nothing on the table.)</td></tr><tr><td>An old man by the window</td><td>\u201cIn my day, the pass was a dangerous road.\u201d (Ask how: \u201cIn my day, the pass was a dangerous road.\u201d)</td></tr><tr><td>The drunk (B3)</td><td>His one joke: roll once on @UUID[RollTable.EH7rPdsPvHwTYLOu]{the Drunk\u2019s Joke table}, then the same joke forever.</td></tr></tbody></table><p>When Fred says his Signature, every role stops mid-line and turns to look at the party, all at once. Hold it for a beat. Then they go back to their lines, a little quieter.</p><h3>The way out</h3><ul><li><strong>The door (B4)</strong> is the way on. Before the Signature the guards stand in it (\u201cNothing to see here\u201d); after, they step aside together without a word. The door tile sends the party into the Corridors, copy B.</li><li><strong>The stairs (B5)</strong> go up to a landing, a door, and the bottom of the same stairs. Every time. Let them try twice.</li><li><strong>If they leave without the map</strong> (they fight past the guards, or Fred never says it): let them. Fred turns up in the next Corridor they enter, a beat behind them, out of breath: \u201cYou forgot this!\u201d He gives them the map there.</li></ul><h3>The X Map in play</h3><p>The handout is a picture of a maze of rooms with an X on it. It is how the players feel they are following something, while the doors stay random. Use it like this:</p><ul><li><strong>When they look at it in a Corridor,</strong> the X is never on the room they are in. It is a room or two away, in a direction you choose: ahead, left, past the stairs. If they go that way, the next room is somewhere else entirely, and the X is a room or two away again. Describe it plainly each time.</li><li><strong>It only moves when nobody is looking.</strong> If a player says they keep their eyes on it, it stays perfectly still, and nothing changes. The moment they fold it away, or look up, it has moved.</li><li><strong>The X door appears when they look away.</strong> When you are ready for the next room (Room 3 after the map, Room 4 after Room 3 and Strider), wait until nobody is looking at the map, fire <em>GM: Reveal the X door</em>, and then let them look: the X is on the room they are in, on one of its doors. One of the doors now has an X on it, too.</li><li><strong>Strider can read it.</strong> At visit 7+ he glances at it and says \u201cThat's two doors from here\u201d, and he is right, because you make him right.</li></ul><aside class=\"notable\"><h4>Automation</h4><p>Automated: click the Remnant's table when the Signature is said to hand out the X map; then use GM: Reveal the X door in whichever pool scene the party reaches next.</p></aside>"
      },
      "sort": 100000,
      "ownership": {

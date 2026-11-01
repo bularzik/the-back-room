@@ -15,6 +15,6 @@ writeFileSync("module.json", JSON.stringify(m, null, 2) + "\n");
 writeFileSync("dist/module.json", JSON.stringify(m, null, 2) + "\n");
 // Release notes: dist/CHANGELOG.md (shipped, without [Unreleased]) and dist/RELEASE_NOTES.md (this version's section).
 execSync(`node tools/js/changelog.mjs ship ${m.version}`, { stdio: "inherit" });
-execSync("zip -rq dist/module.zip module.json README.md packs maps audio tiles tokens vistas handouts styles", { stdio: "inherit" });
+execSync("zip -rq dist/module.zip module.json README.md packs maps audio tiles tokens vistas handouts styles scripts", { stdio: "inherit" });
 execSync("zip -jq dist/module.zip dist/CHANGELOG.md", { stdio: "inherit" });
 console.log(`Packaged ${m.id} ${m.version} -> dist/module.zip`);

@@ -385,7 +385,7 @@ def build(L):
          + "<h3>The roles, in their own words</h3>" + P("Every role has one line and says it exactly the same way every time, whoever asks and whatever they ask. Never improvise past it; the repetition is the horror.")
          + table(["Role", "Their line"], [
               ["A hooded stranger (every booth)", "\u201cLamp oil, over the Kettle Pass to Thistlecross. Three days. Forty a head, twenty tonight, the rest on delivery. We leave at first light.\u201d"],
-              ["The barmaid (walking her circle)", "\u201cJust coming, love.\u201d (She never arrives. Step into her path and she walks round you, still smiling, still coming.)"],
+              ["The barmaid (walking her circle)", "\u201cJust coming, love.\u201d (She never arrives. Step into her path and she walks round you, still smiling, still coming.) With the <em>Patrol</em> module installed she walks her circuit round the middle table by herself while you are on this scene; Patrol's walking-figure button in the token controls stops and starts her."],
               ["The guards at the door (B4)", "\u201cMove along. Nothing to see here.\u201d (Both together. Ask what they are guarding: \u201cNothing to see here.\u201d)"],
               ["A merchant at a table", "\u201cFinest wares this side of the pass! Have a look!\u201d (There is nothing on the table.)"],
               ["An old man by the window", "\u201cIn my day, the pass was a dangerous road.\u201d (Ask how: \u201cIn my day, the pass was a dangerous road.\u201d)"],

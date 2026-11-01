@@ -84,6 +84,12 @@
         "reason": "Battle music for The Cover and the Hoard."
       },
       {
+        "id": "patrol",
+        "type": "module",
+        "manifest": "https://github.com/theripper93/Patrol/releases/latest/download/module.json",
+        "reason": "The barmaid in the Common Room walks her endless circle on her own."
+      },
+      {
         "id": "soundbard",
         "type": "module",
         "manifest": "https://github.com/ongoingpast/Campendium-SoundBard/releases/latest/download/module.json",
@@ -115,7 +121,9 @@
     }
   ],
   "languages": [],
-  "esmodules": [],
+  "esmodules": [
+    "scripts/the-back-room.js"
+  ],
   "styles": [
     "styles/the-back-room.css"
   ]
