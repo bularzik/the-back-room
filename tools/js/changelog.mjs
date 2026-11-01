@@ -63,6 +63,11 @@ if (cmd === "check") {
   const tag = sh("git describe --tags --abbrev=0");
   const since = tag ? Number(sh(`git rev-list --count ${tag}..HEAD`) || 0) : 0;
   const unrel = doc.sections.find(s => s.version === "Unreleased");
+  const tagVersion = tag.replace(/^v/, "");
+  // After a release made straight from [Unreleased], the repo copy still holds those notes under [Unreleased]; date them,
+  // or the next release would ship them again.
+  if (tagVersion && unrel && hasContent(unrel) && !doc.sections.some(s => s.version === tagVersion))
+    console.warn(`CHANGELOG: ${tag} was released but has no section here; its notes are probably still under [Unreleased]. Run \`npm run changelog:release -- ${tagVersion}\` and commit.`);
   if (!unrel) console.warn("CHANGELOG: there is no [Unreleased] section.");
   else if (since > 0 && !hasContent(unrel)) console.warn(`CHANGELOG: ${since} commit(s) since ${tag}, but [Unreleased] is empty. Add the user-facing changes to CHANGELOG.md.`);
   else console.log(`CHANGELOG: [Unreleased] ${hasContent(unrel) ? "has notes" : "is empty"}${tag ? ` (${since} commit(s) since ${tag})` : ""}.`);
