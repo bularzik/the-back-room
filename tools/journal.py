@@ -378,7 +378,26 @@ def build(L):
             "The Remnant is the only patron who asks the party a question.",
             "It is the only one whose cider is a different colour: red as wine, where every other mug in the room is pale gold.",
             "The player whose character it is will recognise it from the description before anyone else does — let that player sweat before they say so.")
-         + P("<strong>Payoff.</strong> The Remnant gives them a map with an X. The X moves when nobody looks at it. It is pointing at the Corridors. Give the handout <em>The X Map</em>. From this moment the X door can appear in the Corridors (the GM's X-door tile)."), 2),
+         + P("<strong>Payoff.</strong> The Remnant gives them a map with an X. The X moves when nobody looks at it. It is pointing at the Corridors. Give the handout <em>The X Map</em>. From this moment the X door can appear in the Corridors (the GM's X-door tile).")
+         + "<h3>The roles, in their own words</h3>" + P("Every role has one line and says it exactly the same way every time, whoever asks and whatever they ask. Never improvise past it; the repetition is the horror.")
+         + table(["Role", "Their line"], [
+              ["A hooded stranger (every booth)", "\u201cLamp oil, over the Kettle Pass to Thistlecross. Three days. Forty a head, twenty tonight, the rest on delivery. We leave at first light.\u201d"],
+              ["The barmaid (walking her circle)", "\u201cJust coming, love.\u201d (She never arrives. Step into her path and she walks round you, still smiling, still coming.)"],
+              ["The guards at the door (B4)", "\u201cMove along. Nothing to see here.\u201d (Both together. Ask what they are guarding: \u201cNothing to see here.\u201d)"],
+              ["A merchant at a table", "\u201cFinest wares this side of the pass! Have a look!\u201d (There is nothing on the table.)"],
+              ["An old man by the window", "\u201cIn my day, the pass was a dangerous road.\u201d (Ask how: \u201cIn my day, the pass was a dangerous road.\u201d)"],
+              ["The drunk (B3)", "His one joke: roll once on " + TB('jokes') + ", then the same joke forever."],
+         ])
+         + P("When Fred says his Signature, every role stops mid-line and turns to look at the party, all at once. Hold it for a beat. Then they go back to their lines, a little quieter.")
+         + "<h3>The way out</h3>" + ul(
+              "<strong>The door (B4)</strong> is the way on. Before the Signature the guards stand in it (\u201cNothing to see here\u201d); after, they step aside together without a word. The door tile sends the party into the Corridors, copy B.",
+              "<strong>The stairs (B5)</strong> go up to a landing, a door, and the bottom of the same stairs. Every time. Let them try twice.",
+              "<strong>If they leave without the map</strong> (they fight past the guards, or Fred never says it): let them. Fred turns up in the next Corridor they enter, a beat behind them, out of breath: \u201cYou forgot this!\u201d He gives them the map there.")
+         + "<h3>The X Map in play</h3>" + P("The handout is a picture of a maze of rooms with an X on it. It is how the players feel they are following something, while the doors stay random. Use it like this:")
+         + ul("<strong>When they look at it in a Corridor,</strong> the X is never on the room they are in. It is a room or two away, in a direction you choose: ahead, left, past the stairs. If they go that way, the next room is somewhere else entirely, and the X is a room or two away again. Describe it plainly each time.",
+              "<strong>It only moves when nobody is looking.</strong> If a player says they keep their eyes on it, it stays perfectly still, and nothing changes. The moment they fold it away, or look up, it has moved.",
+              "<strong>The X door appears when they look away.</strong> When you are ready for the next room (Room 3 after the map, Room 4 after Room 3 and Strider), wait until nobody is looking at the map, fire <em>GM: Reveal the X door</em>, and then let them look: the X is on the room they are in, on one of its doors. One of the doors now has an X on it, too.",
+              "<strong>Strider can read it.</strong> At visit 7+ he glances at it and says \u201cThat's two doors from here\u201d, and he is right, because you make him right."), 2),
     ]))
 
     # ------------------------------------------------------------------ 04 ROOM 3
@@ -466,8 +485,25 @@ def build(L):
             f"<strong>Rorvik is late.</strong> {A('remnant-rorvik')} is not in the room when the fight begins. At the top of round 2 the inner room's double doors bang open and he strides in, longsword already out:")
          + box("'Sorry I'm late. What did I miss?'")
          + P("From that round on he acts first, every round, as if he had been there all along. (His player will know exactly why.)")
+         + "<h3>How it starts</h3>" + P(
+              "The Remnants never attack first, so nobody draws a sword. Instead, when the party comes through the inner room's doors, the Remnants stand up, delighted, and Fred says it for all of them: \u201cYou made it! Right. Everybody roll initiative.\u201d They think the party is the boss, or the rescue, or the sequel, and that it's time to play.",
+              "Ask everyone to roll initiative, for real. The combat tracker is the session starting. That is the trap: once the rounds begin, they want them never to stop.")
+         + "<h3>What the Remnants do on their turns</h3>" + P("Until someone attacks them, they play, not fight. Each turn, a Remnant does its Signature at the room, the way a player shows off a favourite trick:")
+         + ul("<strong>Fred:</strong> swings at nothing; POW! hangs in the air over the low table.",
+              "<strong>Thon:</strong> presses a button; the rod becomes a ladder up to the timber ribs, or a ram against a bookshelf, and he looks round to see if anyone saw.",
+              "<strong>T. Morlock:</strong> vaults onto the back of an armchair, runs along the top of a bookshelf, lands on the table among the dice without disturbing one.",
+              "<strong>Strider:</strong> stands by the glass doors, looking at them, saying nothing. Someone has to notice where he's standing.",
+              "<strong>Rorvik (from round 2):</strong> acts first, every round, and wants to know what's happening.")
+         + P("If the party attacks, the Remnants fight back, gladly: this is the game. Signatures land, nobody stays down, and the room rebuilds itself round them. Make every hit feel like a good session: cheering, mock outrage, someone shouting a rule. It is the happiest fight in the adventure and it cannot be won.",
+             "If the party never attacks, the rounds still pass: talk, temptation, offers. The Remnants pull out chairs, roll dice for them, ask what their characters' names are. Rorvik still arrives at round 2. The way back still opens at round 3.")
+         + "<h3>Round 3: the stakes</h3>" + P("At the top of round 3, stop and say it out of the fiction, plainly: <em>they can't be beaten; beating them is the loop. The doors you came in by are open now. Walking out is the only way to end this.</em> Fire <em>GM: Open the way back</em>.")
          + "<h2>How It Actually Ends</h2>" + P(
-            "The glass double doors the party came in by (D1) now lead back the way they came — the first time in the adventure that's been true. Combat ends the moment a character walks through them without looking back. Remnants will not follow. They will call after the party by the players' real character names from Room 1, and then by the <em>first</em> characters' names, and then stop. The Room 4 Exit tile sends the party to Room 5."), 2),
+            "The glass double doors the party came in by (D1) now lead back the way they came — the first time in the adventure that's been true. Combat ends the moment a character walks through them without looking back. Remnants will not follow. They will call after the party by the players' real character names from Room 1, and then by the <em>first</em> characters' names, and then stop. The Room 4 Exit tile sends the party to Room 5.")
+         + "<h3>Without looking back</h3>" + ul(
+              "Each character walks out on their own turn. Before a player moves their token onto the doors, ask once: <em>\u201cDo you look back?\u201d</em>",
+              "<strong>If they don't,</strong> they step through and are gone (the tile takes them).",
+              "<strong>If they do,</strong> they stop on the threshold (keep the token just short of the doors). They see their own first character's chair pulled out for them, and a Remnant mouthing their first character's name. Nothing else happens. They can try again next turn.",
+              "<strong>Anyone left behind</strong> when everyone else has gone can still walk out; the Remnants won't stop them. But ask the question again, each time."), 2),
     ]))
 
     # ------------------------------------------------------------------ 06 ROOM 5
@@ -528,6 +564,12 @@ def build(L):
             ["3", "A pointed arch where a square frame was; a small stained-glass lantern-window high in a wall; carpet over stone or dirt."],
             ["4", "Dark timber ribs overhead, meeting in a point. The room is half library now."]])
          + P("Copy A = the place's base step (0 for most). Copy B = base + 1. Copy C = base + 2. The generic cues (footsteps a half-beat late; a figure at the end of the corridor) apply anywhere; each place's own cues are below.")
+         + "<h3>Visit 7+: the Remnant in the room</h3>" + P(
+            "After Room 3 the party is in C copies, and every place's 7+ cue puts a Remnant in the room. The first is always Strider; after that, use whichever Remnant suits the place (Thon on a stair, Morlock on a rafter, Fred at the fire). Place the token, and play it from its Person page.")
+         + ul("<strong>Strider, the first time.</strong> He is in the room when they arrive, back to the wall, hood up, and he speaks first: \u201cYou're lost. Don't argue. I know these halls.\u201d He knows their names. He offers to lead.",
+              "<strong>If they follow him,</strong> he walks to a door without hesitating. Wait until nobody is looking at the map, fire <em>GM: Reveal the X door \u2192 Room 4</em>, and the X is on the door he is standing beside. He holds it open: \u201cAfter you.\u201d He does not come through. In the Hoard he is already in his chair.",
+              "<strong>If they don't,</strong> he doesn't argue. In the next room they enter, he is already there, by a door, waiting: \u201cThis way.\u201d Each refusal costs a visit, nothing else. Reveal the X door when you're ready either way.",
+              "<strong>The others, after Strider.</strong> A Remnant in a C copy is glad to see them, does not attack, and is on its way somewhere: \u201cSession's about to start. You coming?\u201d It leaves by a door the party didn't come through, and is in its chair in the Hoard.")
          + "<h3>Indoors to outdoors: going through</h3>" + P(
             "A door in the stairwell opens onto a crossroads at dusk; a gap in the trees round a campfire leads into a stable. Don't explain it, and never apologise for it. The Corridors are the storeroom misremembered, and memory joins places the way dreams do: by feeling, not by floor plan. What makes it uncanny instead of silly is that every crossing is described the same way, plainly, as if it were obvious.")
          + ul("<strong>Every way out is a door.</strong> Outdoors, the doors are still doors: the arches at either end of Market Row, the door standing on its own at the end of the ferry jetty, the gaps in the trees round the clearing, the four roads at the crossroads. Going through any of them, describe a threshold: a step over something, a change of air, a latch under the hand, even where there is no latch.",
@@ -621,7 +663,7 @@ def build(L):
             [A("roper"), "The one nobody could draw properly; it looks like three different things from three angles.", "Roper, unchanged; describe it differently each round"],
             [A("owlbear"), "Just an owlbear. Something in here has to be.", "Owlbear, unchanged"]])
          + P("The treasure pile is real and quietly foreshadows Room 4: the Hoard has no dragon because the dragon is here, still frozen. Nothing taken from this pile survives the next Corridor door.",
-             "The dryads themselves stay a glimpse cue, not a fight: at the campfire clearing, figures dancing just outside the firelight who never look over."), 2),
+             "<strong>Afterwards.</strong> Monsters nobody woke stay frozen, still fighting nobody. The exit puts the party back in the Corridors (copy B). Award experience for the monsters they woke; that is the only treasure that leaves the cave. If anyone pockets coins from the pile, the coins are leaves by the next room, and nobody saw them change."), 2),
     ]))
 
     # ------------------------------------------------------------------ 09 CAST
@@ -631,7 +673,7 @@ def build(L):
             f"{A('stranger')} — the hook, played straight; a role in every booth of Room 2.",
             f"{A('remnant-fred')}, {A('remnant-thon')}, {A('remnant-rorvik')}, {A('remnant-morlock')}, {A('remnant-strider')} — this table's Remnants, the players' first characters.",
             f"{A('remnant-rogue')}, {A('remnant-barbarian')}, {A('remnant-wizard')} — the fallback Remnants, for an absent player or another table.",
-            f"{A('echo')} — Room 3's blank-faced copy, built as a 5th-level character halved; swap in the mirrored character's own sheet if you have time, it plays as written if not.")
+            f"{A('echo')} — Room 3's blank-faced copy of one character; the macro <em>The Back Room: make the Echo of a character</em> makes a halved copy of a real character.")
          + "<h2>Monsters</h2>" + ul(f"{A('dragon')}, {A('unicorn')}, {A('centaur')}, {A('troll')}, {A('roper')}, {A('owlbear')} — The Cover.")),
     ]))
 
