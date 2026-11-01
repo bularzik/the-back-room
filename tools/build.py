@@ -265,32 +265,45 @@ MUSIC = [  # (key, name, path, repeat, volume)
     ("m-last", "The Last Word: Sad Strings", f"{IVAN}/sad-strings.ogg", False, .45),
 ]
 # SoundBard pads (StreamDeck-style panel; its banks are stored per browser, so a macro fills one for the GM)
-PADS = [  # (name, path, emoji, volume, loop)
-    ("Door, slowly", f"{SFX}/Misc/Single/Squeaky Door Open Slow/squeaky-door-open-slow-1.mp3", "🚪", .7, False),
-    ("A door closes somewhere", f"{SFX}/Misc/Single/Door Close/door-close-1.mp3", "🔒", .6, False),
-    ("Footsteps, a half-beat late", f"the-back-room/audio/sting-footsteps.ogg", "👣", .7, False),
-    ("The X", f"the-back-room/audio/sting-x-door.ogg", "❌", .7, False),
-    ("The lantern lights itself", f"{SFX}/Combat/Single/Spell Whoosh/spell-whoosh-1.mp3", "🏮", .5, False),
-    ("Waterfall (stops when someone speaks)", f"{SFX}/Nature/Loops/Waterfall/waterfall-1.mp3", "🌊", .5, True),
-    ("A horse shifts its weight", f"{SFX}/Creatures/Animals/Horse Whinny/horse-whinny-2.mp3", "🐴", .5, False),
-    ("Remnants laughing, through the door", f"{SFX}/Tavern/Loops/Chatter/chatter-3.mp3", "😂", .35, False),
-    ("POW! (Fred)", f"{SFX}/Combat/Single/Melee Hit/melee-hit-7.mp3", "💥", .8, False),
-    ("Rorvik bursts in", f"{SFX}/Misc/Single/Impact/impact-2.mp3", "⏰", .8, False),
-    ("A monster wakes (The Cover)", f"{SFX}/Creatures/Monsters/Growl/growl-3.mp3", "🐉", .7, False),
-    ("Strider's arrow", f"{SFX}/Combat/Single/Arrow Fly-By/arrow-fly-by-1.mp3", "🏹", .7, False),
-]
-SOUNDBARD_MACRO = """// Fills a SoundBard bank named "The Back Room" with this adventure's cues (SoundBard keeps banks per browser,
-// so each GM who wants the pads runs this once). Re-running it refreshes the same bank.
+OWN = "the-back-room/audio"
+BANKS = {  # SoundBard banks: name -> pads (name, path under modules/, emoji, volume, loop); 12 pads per bank
+    "The Back Room: Corridors": [
+        ("Door, slowly", f"{SFX}/Misc/Single/Squeaky Door Open Slow/squeaky-door-open-slow-1.mp3", "🚪", .7, False),
+        ("A door closes somewhere", f"{SFX}/Misc/Single/Door Close/door-close-1.mp3", "🔒", .6, False),
+        ("Footsteps, a half-beat late", f"{OWN}/sting-footsteps.ogg", "👣", .7, False),
+        ("The X", f"{OWN}/sting-x-door.ogg", "❌", .7, False),
+        ("The lantern lights itself", f"{SFX}/Combat/Single/Spell Whoosh/spell-whoosh-1.mp3", "🏮", .5, False),
+        ("Waterfall (stops when someone speaks)", f"{SFX}/Nature/Loops/Waterfall/waterfall-1.mp3", "🌊", .5, True),
+        ("The ferry bell", f"{OWN}/sfx-ferry-bell.ogg", "🔔", .7, False),
+        ("A horse shifts its weight", f"{SFX}/Creatures/Animals/Horse Whinny/horse-whinny-2.mp3", "🐴", .5, False),
+        ("Pages turning", f"{OWN}/sfx-pages-turning.ogg", "📖", .7, False),
+        ("Dice, warm, just rolled", f"{OWN}/sfx-dice-rolled.ogg", "🎲", .7, False),
+        ("A monster wakes (The Cover)", f"{SFX}/Creatures/Monsters/Growl/growl-3.mp3", "🐉", .7, False),
+        ("Cider, poured", f"{OWN}/sfx-cider-poured.ogg", "🍺", .7, False)],
+    "The Back Room: People": [
+        ("Remnants laughing, through the door", f"{OWN}/sfx-remnants-laughing.ogg", "😂", .4, False),
+        ("POW! (Fred)", f"{SFX}/Combat/Single/Melee Hit/melee-hit-7.mp3", "💥", .8, False),
+        ("Rorvik bursts in", f"{SFX}/Misc/Single/Impact/impact-2.mp3", "⏰", .8, False),
+        ("Strider's arrow", f"{SFX}/Combat/Single/Arrow Fly-By/arrow-fly-by-1.mp3", "🏹", .7, False),
+        ("Thon's rod clicks into a new shape", f"{SFX}/Combat/Single/Shield Hit/shield-hit-3.mp3", "🔧", .6, False),
+        ("T. Morlock lands a vault", f"{SFX}/Combat/Single/Throw Hit/throw-hit-1.mp3", "🤸", .6, False)],
+}
+SOUNDBARD_MACRO = """// Fills SoundBard banks with this adventure's cues (SoundBard keeps banks per browser, so each GM who wants
+// the pads runs this once). Re-running it refreshes the same banks.
 if (!game.modules.get("soundbard")?.active) return ui.notifications.warn("Enable the SoundBard module first.");
-const PADS = """ + json.dumps([[n, f"modules/{p}", e, v, l] for n, p, e, v, l in PADS], ensure_ascii=False) + """;
+const BANKS = """ + json.dumps({b: [[n, f"modules/{p}", e, v, l] for n, p, e, v, l in pads] for b, pads in BANKS.items()}, ensure_ascii=False) + """;
 const data = foundry.utils.deepClone(game.settings.get("soundbard", "soundBank"));
-let bank = data.banks.find(b => b.name === "The Back Room") ?? data.banks.find(b => !b.name && b.slots.every(s => !s.src));
-if (!bank) return ui.notifications.warn("SoundBard has no empty bank left; clear one and run this again.");
-bank.name = "The Back Room";
-PADS.forEach(([name, src, emoji, volume, loop], i) => { if (bank.slots[i]) Object.assign(bank.slots[i], { name, src, emoji, volume, loop }); });
+const done = [];
+for (const [name, pads] of Object.entries(BANKS)) {
+  let bank = data.banks.find(b => b.name === name) ?? data.banks.find(b => !b.name && b.slots.every(s => !s.src));
+  if (!bank) { ui.notifications.warn(`SoundBard has no empty bank left for "${name}"; clear one and run this again.`); continue; }
+  bank.name = name;
+  bank.slots.forEach((slot, i) => Object.assign(slot, pads[i] ? { name: pads[i][0], src: pads[i][1], emoji: pads[i][2], volume: pads[i][3], loop: pads[i][4] } : { name: "", src: "", emoji: "" }));
+  done.push(bank);
+}
 await game.settings.set("soundbard", "soundBank", data);
-await game.settings.set("soundbard", "activeBank", bank.id);
-ui.notifications.info(`SoundBard: bank ${bank.id} is now "The Back Room" (${Math.min(PADS.length, bank.slots.length)} pads).`);"""
+if (done[0]) await game.settings.set("soundbard", "activeBank", done[0].id);
+ui.notifications.info(`SoundBard: ${done.map(b => `bank ${b.id} "${b.name}"`).join(", ")}.`);"""
 macros = [{"_id": uid("macro", "soundbard"), "name": "The Back Room: set up SoundBard", "type": "script", "scope": "global", "author": None,
            "img": "icons/tools/instruments/drum-hand-tan.webp", "command": SOUNDBARD_MACRO, "folder": None, "sort": 0, "ownership": {"default": 0}, "flags": {}}]
 playlists = [
@@ -300,8 +313,10 @@ playlists = [
     {"_id": uid("playlist", "music"), "name": "Back Room: Music", "description": "Music for the beats that need it. Play by hand; most of the adventure is better with ambience alone.",
      "mode": -1, "fade": 2000, "sounds": [xsnd(k, n, p, r, v) for k, n, p, r, v in MUSIC],
      "folder": F["Playlist"], "sort": 150000, "ownership": {"default": 0}, "flags": {}, "playing": False},
-    {"_id": uid("playlist", "sting"), "name": "Back Room: Stingers", "description": "One-shot cues used by the door tiles.", "mode": -1, "fade": None,
-     "sounds": [snd("Door", "sting-door", False, .7), snd("The X", "sting-x-door", False, .7), snd("Footsteps, a half-beat late", "sting-footsteps", False, .7)],
+    {"_id": uid("playlist", "sting"), "name": "Back Room: Stingers", "description": "One-shot cues: the door tiles' stingers, plus the bell, pages, dice, cider and the Remnants' laughter (also on the SoundBard pads).", "mode": -1, "fade": None,
+     "sounds": [snd("Door", "sting-door", False, .7), snd("The X", "sting-x-door", False, .7), snd("Footsteps, a half-beat late", "sting-footsteps", False, .7),
+                snd("The ferry bell", "sfx-ferry-bell", False, .7), snd("Pages turning", "sfx-pages-turning", False, .7), snd("Dice, warm, just rolled", "sfx-dice-rolled", False, .7),
+                snd("Cider, poured", "sfx-cider-poured", False, .7), snd("Remnants laughing, through the door", "sfx-remnants-laughing", False, .4)],
      "folder": F["Playlist"], "sort": 200000, "ownership": {"default": 0}, "flags": {}, "playing": False},
 ]
 
