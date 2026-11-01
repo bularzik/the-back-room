@@ -1,5 +1,6 @@
 // CHANGELOG.md tooling (Keep a Changelog). Three commands:
-//   node tools/js/changelog.mjs check            Warn when there are commits since the last tag but [Unreleased] is empty.
+//   node tools/js/changelog.mjs check            Warn when there are commits since the last tag but [Unreleased] is empty,
+//                                                or when a bullet is wrapped onto a second line (BBMM can't render that).
 //                                                Runs at the end of every `npm run build:packs`.
 //   node tools/js/changelog.mjs ship <version>   Used by package.mjs at release time. Writes dist/CHANGELOG.md (the shipped
 //                                                copy, without [Unreleased]) and dist/RELEASE_NOTES.md (this version's section,
@@ -65,12 +66,16 @@ if (cmd === "check") {
   if (!unrel) console.warn("CHANGELOG: there is no [Unreleased] section.");
   else if (since > 0 && !hasContent(unrel)) console.warn(`CHANGELOG: ${since} commit(s) since ${tag}, but [Unreleased] is empty. Add the user-facing changes to CHANGELOG.md.`);
   else console.log(`CHANGELOG: [Unreleased] ${hasContent(unrel) ? "has notes" : "is empty"}${tag ? ` (${since} commit(s) since ${tag})` : ""}.`);
+  // BBMM renders one line at a time: a bullet continued on the next line becomes a stray paragraph.
+  const wrapped = doc.sections.flatMap(s => s.body).filter(l => /^\s{2,}\S/.test(l) && !/^\s*[-*+]\s/.test(l));
+  if (wrapped.length) console.warn(`CHANGELOG: ${wrapped.length} wrapped line(s); keep each bullet on one line so BBMM shows it properly. First: "${wrapped[0].trim().slice(0, 60)}"`);
 } else if (cmd === "ship") {
   const version = (arg || "").replace(/^v/, "");
   const sec = promote(doc, version);
   if (!sec) { console.error(`CHANGELOG: no notes for ${version}: [Unreleased] is empty and there is no [${version}] section.`); process.exit(1); }
-  const shipped = { ...doc, sections: doc.sections.filter(s => s.version !== "Unreleased") };
-  shipped.links = compareLinks(doc.sections).filter(l => !l.startsWith("[Unreleased]"));
+  // The shipped copy is what Big Bad Module Manager (BBMM) shows the GM on login: it reads CHANGELOG.md from the module's
+  // root with a line-based Markdown renderer, so drop what it can't render (the blockquote note, link references).
+  const shipped = { head: doc.head.filter(l => !l.startsWith(">")), sections: doc.sections.filter(s => s.version !== "Unreleased"), links: [] };
   mkdirSync("dist", { recursive: true });
   writeFileSync("dist/CHANGELOG.md", render(shipped));
   writeFileSync("dist/RELEASE_NOTES.md", trimBlank(sec.body).join("\n") + `\n\nFull changelog: ${REPO}/blob/v${version}/CHANGELOG.md\n`);
