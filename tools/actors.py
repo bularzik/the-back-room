@@ -148,6 +148,7 @@ def P(*paras): return "".join(f"<p>{x}</p>" for x in paras)
 
 # Token art: tokens/token-<key>.webp, 512px round portraits generated with Draw Things (SD 1.5) and masked by tools/make_tokens.py.
 TK = {k: f"token-{k}" for k in ("dragon", "unicorn", "centaur", "troll", "roper", "owlbear", "echo", "rogue", "barbarian", "wizard", "barkeep", "stranger",
+                                "barmaid", "guard", "drunk", "merchant", "oldman",
                                 "fred", "thon", "rorvik", "morlock", "strider")}
 
 REMNANT_RULE = P("<strong>The Remnant Rule.</strong> When this creature drops to 0 Hit Points it does not die. At the start of its next turn it stands up in the pose it fell in, with all its Hit Points, and continues mid-sentence. The only way to be rid of it is to leave the room by a door it did not come through; it cannot follow.")
@@ -351,4 +352,28 @@ def build_npcs():
                       "<strong>Room 5.</strong> The stranger's voice rises from the common room below, asking Bart whether the party is up yet. The job is still there."))
     m.trait("The Hook", P("The stranger offers a plain, ordinary job: ride guard on a wagon of lamp oil over the Kettle Pass to Thistlecross, three days, forty gold a head, half tonight, leaving at first light (the handout <em>The Job</em>). It is never a trick, and if the party leaves at the end, it is still there to be done."))
     out["stranger"] = m
+
+    # ---- Room 2's roles: patrons of the Common Room That Isn't. Each has one line, said the same way every time. ----
+    ROLE_RULE = P("<strong>A Role.</strong> This is not a person; it is a part in a scene. It says its one line, word for word, whoever asks and whatever they ask, and does nothing else. It cannot be persuaded, frightened or charmed out of it. If attacked it does not fight back: it says its line again, a little quieter. When Fred says his Signature, every role stops mid-line and turns to look at the party.")
+    roles = [
+        ("role-barmaid", "The Barmaid", "barmaid", (10, 12, 10, 10, 10, 12), "\u201cJust coming, love.\u201d She never arrives. Step into her path and she walks round you, still smiling, still coming.",
+         "A barmaid in an apron, a tray of full cider mugs on one hand, walking a slow circle between the tables. She has been walking it all night."),
+        ("role-guard", "Inn Guard", "guard", (13, 11, 12, 10, 10, 10), "\u201cMove along. Nothing to see here.\u201d (Both guards say it together. Ask what they are guarding: \u201cNothing to see here.\u201d)",
+         "One of two guards at the Common Room's door, leather jerkin, short spear. Before Fred's Signature they stand in the doorway; after it, they step aside together without a word."),
+        ("role-drunk", "The Drunk", "drunk", (10, 8, 12, 10, 8, 12), "His one joke: roll once on the table <em>The Drunk's Joke</em>, then tell that same joke, word for word and with the same pause, forever. Nobody else laughs.",
+         "A drunk in an armchair by the hearth, telling a joke to nobody, and laughing at the end of it."),
+        ("role-merchant", "The Merchant", "merchant", (10, 10, 10, 12, 10, 14), "\u201cFinest wares this side of the pass! Have a look!\u201d There is nothing on the table.",
+         "A travelling merchant at a table, fur-trimmed coat, hands spread over the goods he does not have."),
+        ("role-oldman", "The Old Man", "oldman", (8, 8, 10, 12, 12, 10), "\u201cIn my day, the pass was a dangerous road.\u201d Ask how: \u201cIn my day, the pass was a dangerous road.\u201d",
+         "A very old man at a table near the wall, a wool shawl round his shoulders, looking at a window that isn't there."),
+    ]
+    for key, name, tok, abil, line, bio in roles:
+        m = Monster(key, name, 0, "med", "humanoid", "Unaligned", 10, 4, "1d8", abil, {"walk": 30}, TK[tok],
+                    disposition=0, ac_calc="flat", languages="Common", lang_values=("common",), subtype="human",
+                    bio=P(bio, "<strong>Room 2, the Common Room That Isn't.</strong> Every patron is a role, and so is this one. Its line: " + line))
+        m.trait("A Role", ROLE_RULE)
+        m.trait("Its Line", P(line))
+        if key == "role-guard":
+            m.attack("Spear", 1, 6, "piercing", "str", img="icons/weapons/polearms/spear-simple-engraved.webp")
+        out[key] = m
     return out

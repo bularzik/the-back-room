@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Actors for the Common Room's roles:** the Barmaid, two Inn Guards, the Drunk, the Merchant and the Old Man, each with a portrait token, their one line, and a note that they never break role. They are placed in the Common Room.
 - **NPCs and monsters are placed on the maps.** Fred and three hooded strangers in the Common Room; the five Remnants round the inner room's table in the Hoard; the six monsters frozen in The Cover's tableau. People who arrive mid-scene are hidden tokens to reveal: Bartleby on the night stairs, the Echo in the Corridor Between, Rorvik in the Hoard, Strider beside the X door in every C copy of the Corridors.
 
 ## [2.4.2] - 2026-11-01
