@@ -339,7 +339,9 @@ ui.notifications.info(`Removed: ${counts.join(", ") || "nothing (the adventure i
 macros = [{"_id": uid("macro", "soundbard"), "name": "The Back Room: set up SoundBard", "type": "script", "scope": "global", "author": None,
            "img": "icons/tools/instruments/drum-hand-tan.webp", "command": SOUNDBARD_MACRO, "folder": None, "sort": 0, "ownership": {"default": 0}, "flags": {}},
           {"_id": uid("macro", "remove"), "name": "The Back Room: remove the adventure from this world", "type": "script", "scope": "global", "author": None,
-           "img": "icons/svg/trash.svg", "command": REMOVE_MACRO, "folder": None, "sort": 100, "ownership": {"default": 0}, "flags": {}}]
+           "img": "icons/svg/trash.svg", "command": REMOVE_MACRO, "folder": None, "sort": 100, "ownership": {"default": 0}, "flags": {}},
+          {"_id": uid("macro", "echo"), "name": "The Back Room: make the Echo of a character", "type": "script", "scope": "global", "author": None,
+           "img": "icons/magic/control/silhouette-hold-change-blue.webp", "command": open(f"{ROOT}/tools/macros/make-echo.js").read(), "folder": None, "sort": 50, "ownership": {"default": 0}, "flags": {}}]
 playlists = [
     {"_id": uid("playlist", "amb"), "name": "Back Room: Ambience", "description": "One loop per place. Each scene and its vista plays its place's loop automatically as its scene sound; the Corridor copies share their place's loop.",
      "mode": -1, "fade": 1500, "sounds": [amb_sound(k) for k in AMBIENCE],
