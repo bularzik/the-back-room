@@ -51,6 +51,8 @@ DIALOG = {
         ("He knows (pick the detail before the session)", "Your mother still keeps the lamp in the window, doesn't she? The blue one."),
         ("If pressed about how he knows", "Know what, love? Drink your milk."),
         ("If they go back to sleep", "There we are. I'll set another tray."),
+        ("Asked if he used to be a scrivener", "(He nods.) But I'm not any more."),
+        ("Asked why, or asked to write, copy or witness anything", "I would prefer not to."),
         ("Room 5, from downstairs", "Are they up yet? Bread's going hard. Tell them the wagon's in the yard."),
     ],
     "stranger": [

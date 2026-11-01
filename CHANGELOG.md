@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - The barkeep is now **Bartleby Stickit**, Bart to his friends (was Barnaby). His Person page has a new link, so re-import the adventure.
 
+### Added
+- Bartleby used to be a scrivener. He isn't any more. He would prefer not to say why.
+
 ## [2.4.1] - 2026-11-01
 
 ### Added

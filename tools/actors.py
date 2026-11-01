@@ -341,6 +341,7 @@ def build_npcs():
                       "<strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning."))
     m.trait("Not a Fight", P("Bartleby never attacks and cannot be made to. If attacked he sets the tray down, says 'well', and goes back up the stairs. He will have set a second tray by morning."))
     m.trait("He Knows", P("Once, in Room 1, he mentions one detail from a character's backstory that the player has never said aloud at the table: pick it from the sheet before the session. With nothing on the sheet to use, he asks after the character by the name the player almost gave them."))
+    m.trait("Formerly a Scrivener", P("Asked whether he used to be a scrivener, he nods: 'But I'm not any more.' Asked why, or asked to write, copy, check or witness anything at all: 'I would prefer not to.' He says it pleasantly, every time, and goes back to wiping the mug."))
     out["barkeep"] = m
 
     m = Monster("stranger", "Kael Shadowmere", 0, "med", "humanoid", "Neutral", 11, 13, "3d8", (10, 12, 11, 13, 12, 14), {"walk": 30}, TK["stranger"],

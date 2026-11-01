@@ -9541,6 +9541,46 @@
      "ownership": {
       "default": 0
      }
+    },
+    {
+     "_id": "6EiE66wrijED0HWF",
+     "name": "Formerly a Scrivener",
+     "type": "feat",
+     "img": "icons/magic/symbols/question-stone-yellow.webp",
+     "system": {
+      "type": {
+       "value": "monster",
+       "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "description": {
+       "value": "<p>Asked whether he used to be a scrivener, he nods: 'But I'm not any more.' Asked why, or asked to write, copy, check or witness anything at all: 'I would prefer not to.' He says it pleasantly, every time, and goes back to wiping the mug.</p>",
+       "chat": ""
+      },
+      "identifier": "formerly-a-scrivener",
+      "source": {
+       "revision": 1,
+       "rules": "2024",
+       "book": "The Back Room",
+       "license": ""
+      },
+      "properties": [
+       "trait"
+      ],
+      "requirements": ""
+     },
+     "effects": [],
+     "flags": {},
+     "folder": null,
+     "sort": 300000,
+     "ownership": {
+      "default": 0
+     }
     }
    ],
    "effects": [],
@@ -69643,7 +69683,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<p>Bartleby Stickit, Bart to his friends (which is everyone who has drunk his cider twice). Keeper of the Stickit Inn, as his father was. Kind. Tired in a way that is not unhappy. He pours the house cider with a heavy hand, led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.</p><p><strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.</p><p><strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning.</p><h2>Things They Say</h2><ul><li><strong>Pouring.</strong> \u201cHouse cider. Pressed in the yard, served cold. Goes down like water and gets up like a mule.\u201d</li><li><strong>Showing them upstairs.</strong> \u201cCot each, made up fresh. Bread on at first light, and a jug for the road. Mind the third step; it's been the third step since my father's day.\u201d</li><li><strong>The night, on the stone stairs.</strong> \u201cNot morning yet. Back to bed, now. The road'll be there tomorrow. It always is.\u201d</li><li><strong>He knows (pick the detail before the session).</strong> \u201cYour mother still keeps the lamp in the window, doesn't she? The blue one.\u201d</li><li><strong>If pressed about how he knows.</strong> \u201cKnow what, love? Drink your milk.\u201d</li><li><strong>If they go back to sleep.</strong> \u201cThere we are. I'll set another tray.\u201d</li><li><strong>Room 5, from downstairs.</strong> \u201cAre they up yet? Bread's going hard. Tell them the wagon's in the yard.\u201d</li></ul>"
+      "content": "<p>Bartleby Stickit, Bart to his friends (which is everyone who has drunk his cider twice). Keeper of the Stickit Inn, as his father was. Kind. Tired in a way that is not unhappy. He pours the house cider with a heavy hand, led the party up the stairs with a lantern and showed them the cots, and in the night he comes down the wrong stairwell with a tray.</p><p><strong>Room 1.</strong> He tells them it is not morning yet and they should go back to bed; the road will be there tomorrow. He knows one detail about one character that the character has never told anyone. If pressed about it he does not understand the question.</p><p><strong>Room 5.</strong> His voice from the common room below is the sound of ordinary morning.</p><h2>Things They Say</h2><ul><li><strong>Pouring.</strong> \u201cHouse cider. Pressed in the yard, served cold. Goes down like water and gets up like a mule.\u201d</li><li><strong>Showing them upstairs.</strong> \u201cCot each, made up fresh. Bread on at first light, and a jug for the road. Mind the third step; it's been the third step since my father's day.\u201d</li><li><strong>The night, on the stone stairs.</strong> \u201cNot morning yet. Back to bed, now. The road'll be there tomorrow. It always is.\u201d</li><li><strong>He knows (pick the detail before the session).</strong> \u201cYour mother still keeps the lamp in the window, doesn't she? The blue one.\u201d</li><li><strong>If pressed about how he knows.</strong> \u201cKnow what, love? Drink your milk.\u201d</li><li><strong>If they go back to sleep.</strong> \u201cThere we are. I'll set another tray.\u201d</li><li><strong>Asked if he used to be a scrivener.</strong> (He nods.) But I'm not any more.</li><li><strong>Asked why, or asked to write, copy or witness anything.</strong> \u201cI would prefer not to.\u201d</li><li><strong>Room 5, from downstairs.</strong> \u201cAre they up yet? Bread's going hard. Tell them the wagon's in the yard.\u201d</li></ul>"
      },
      "sort": 100000,
      "ownership": {
