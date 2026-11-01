@@ -3,7 +3,7 @@
  "name": "The Back Room",
  "img": "modules/the-back-room/maps/cover.webp",
  "caption": "A liminal-horror adventure for 5th\u20138th level characters",
- "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 53 journal entries; 5 roll tables; 3 playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
+ "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 54 journal entries; 5 roll tables; 3 playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
  "actors": [
   {
    "_id": "dzOCj45n3twcxQJN",
@@ -81713,7 +81713,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.pfm6KZbSlr8JKy2C]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 1: The Back Room</h1><p>The Stickit Inn sits where the Kettle Pass road leaves the valley, and everyone for three days in any direction knows its cider: pressed in the yard, served cold in clay mugs, stronger than it tastes.</p><p>Play the clich\u00e9 straight and let the players relax into it. @UUID[JournalEntry.OtOUVhSExtP4SOGO]{Kael Shadowmere} in the corner booth has a job: ride guard on a lamp-oil wagon over the Kettle Pass to Thistlecross \u2014 three days, forty gold each, half now, leaving at first light (the handout <em>The Job</em> has the terms; swap in your own hook if your campaign already has one). The party takes it, buys provisions, and @UUID[JournalEntry.8B2rub2TA88o9Vyh]{Barnaby Stickit} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.</p><aside class=\"notable\"><h4>Why they're here</h4><p>The adventure never says, on purpose: <em>you all meet in a tavern</em> is the oldest opening in the game, and playing it straight lets the players relax. If your table wants a reason, pick one (or roll a d4):</p><ol><li><strong>It's on the road.</strong> The inn sits where the Kettle Pass road leaves the valley: the last bed and hot meal before three days of high road. Anyone going over the pass stops here.</li><li><strong>The cider.</strong> Everyone for three days in any direction knows the Stickit's cider. Someone in the party has been promising the others a mug for weeks.</li><li><strong>The job brought them.</strong> Word has gone round the nearby towns: guards wanted for a wagon over the pass, ask at the Stickit Inn. They came to answer it.</li><li><strong>Your own campaign.</strong> They are passing through on the way to wherever they were already going, and this is where night falls.</li></ol><p>For a table that started playing together long ago, the clich\u00e9 is the point: this is how the first party met, too.</p></aside><blockquote class=\"read-aloud\"><p><em>The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light, and a jug of the house cider for the road.</em></p></blockquote><p>Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.</li><li><strong>A2. The cots.</strong> One per character, along the left wall, blankets turned down.</li><li><strong>A3. The shelves.</strong> Provisions, with the party's receipts tucked under the crocks. Behind the far unit, a door nobody has noticed yet.</li><li><strong>A4. The window.</strong> Small, four panes. One of them is coloured.</li><li><strong>A5. The stone.</strong> In the corner by the chest: a stone with a hilt in it.</li></ul></aside><h2>The Latecomer</h2><p>At this table one player usually arrives late (the player whose first character is @UUID[JournalEntry.B2W0zbujemjBh92N]{Rorvik}), and session one will be no different. Plan for it rather than around it: their character is the last guest of the night at the Stickit Inn, and the rest of the party meets them in the back room.</p><blockquote class=\"read-aloud\"><p><em>Footsteps on the stairs, and a second light. Barnaby comes up with a candle and someone behind him, travel-stained, apologising. 'One more for the road, if you'll have them. Came in on the last of the light.' The last cot, you notice, was already made up.</em></p></blockquote><p>Run the introductions by lantern light, in character, as the others are bedding down; the newcomer has heard about the job from the stranger downstairs and is in. If the player arrives after the night event has begun, they are the one who wakes: they arrive in the dark, Barnaby is not with them, and the lantern is already lit. A late arrival is the best possible way into this adventure.</p><h2>The Night Event (the Insomnia Rule)</h2><p>Someone wakes. Pick the character whose player is most likely to get up and look.</p><blockquote class=\"read-aloud\"><p><em>The lantern is lit. Nobody lit it. The door to the landing is open a hand's width and the stairs beyond it are stone, going down \u2014 the stairs you came up, but too many of them, and no light at the bottom where the common room should be.</em></p></blockquote><p>Behind the shelves (A3), a second door nobody noticed: it opens into the <strong>hayloft</strong> over the stable, with a ladder down. This is how the storeroom connects to the yard; it also seeds the Stable in the Corridor pool, and it is the <em>riddle door</em> (see the Corridor Pool, Stable).</p><p><strong>The first anchor object.</strong> The stone in the corner (A5) has a hilt in it. Whoever pulls draws out a long iron key with no teeth. It opens nothing in the room. Keep it; it matters in Room 5. Give the handout <em>The Toothless Key</em>.</p><aside class=\"notable\"><h4>Automation</h4><p>Automated: the stairwell and loft doors send tokens into the Corridor pool; clicking the stone opens the key handout.</p></aside><h2>The Guardian Is Not a Fight</h2><p>@UUID[JournalEntry.8B2rub2TA88o9Vyh]{Barnaby Stickit} comes down the stone stairwell carrying a tray. He is kind. He tells them it's not morning yet and they should go back to bed; the road will be there tomorrow. He knows a detail about one character that the character has never told anyone \u2014 pick it from a sheet before the session. If pressed, he doesn't understand the question.</p><p>The test here is only whether the party chooses the stairwell (or the loft ladder) over the cot. If they go back to sleep, they wake in Room 1 again, and the barkeep has set a second tray.</p><p><strong>Leaving.</strong> Whichever way they go \u2014 down the stairwell or down the loft ladder \u2014 the first door at the bottom is a Corridor door. Visit 1 begins.</p>"
+      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.pfm6KZbSlr8JKy2C]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 1: The Back Room</h1><p>The Stickit Inn sits where the Kettle Pass road leaves the valley, and everyone for three days in any direction knows its cider: pressed in the yard, served cold in clay mugs, stronger than it tastes.</p><p>Play the clich\u00e9 straight and let the players relax into it. @UUID[JournalEntry.OtOUVhSExtP4SOGO]{Kael Shadowmere} in the corner booth has a job: ride guard on a lamp-oil wagon over the Kettle Pass to Thistlecross \u2014 three days, forty gold each, half now, leaving at first light (the handout <em>The Job</em> has the terms; swap in your own hook if your campaign already has one). The party takes it, buys provisions, and @UUID[JournalEntry.8B2rub2TA88o9Vyh]{Barnaby Stickit} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.</p><aside class=\"notable\"><h4>Why they're here</h4><p>The adventure never says, on purpose: <em>you all meet in a tavern</em> is the oldest opening in the game, and playing it straight lets the players relax. If your table wants a reason, pick one (or roll a d4):</p><ol><li><strong>It's on the road.</strong> The inn sits where the Kettle Pass road leaves the valley: the last bed and hot meal before three days of high road. Anyone going over the pass stops here.</li><li><strong>The cider.</strong> Everyone for three days in any direction knows the Stickit's cider. Someone in the party has been promising the others a mug for weeks.</li><li><strong>The job brought them.</strong> Word has gone round the nearby towns: guards wanted for a wagon over the pass, ask at the Stickit Inn. They came to answer it.</li><li><strong>Your own campaign.</strong> They are passing through on the way to wherever they were already going, and this is where night falls.</li></ol><p>For a table that started playing together long ago, the clich\u00e9 is the point: this is how the first party met, too.</p><p>What the party already knows about the road is in the handout <em>The Kettle Pass</em>: give it to them before the session, or let Barnaby and the stranger hand it out a line at a time.</p></aside><blockquote class=\"read-aloud\"><p><em>The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light, and a jug of the house cider for the road.</em></p></blockquote><p>Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.</li><li><strong>A2. The cots.</strong> One per character, along the left wall, blankets turned down.</li><li><strong>A3. The shelves.</strong> Provisions, with the party's receipts tucked under the crocks. Behind the far unit, a door nobody has noticed yet.</li><li><strong>A4. The window.</strong> Small, four panes. One of them is coloured.</li><li><strong>A5. The stone.</strong> In the corner by the chest: a stone with a hilt in it.</li></ul></aside><h2>The Latecomer</h2><p>At this table one player usually arrives late (the player whose first character is @UUID[JournalEntry.B2W0zbujemjBh92N]{Rorvik}), and session one will be no different. Plan for it rather than around it: their character is the last guest of the night at the Stickit Inn, and the rest of the party meets them in the back room.</p><blockquote class=\"read-aloud\"><p><em>Footsteps on the stairs, and a second light. Barnaby comes up with a candle and someone behind him, travel-stained, apologising. 'One more for the road, if you'll have them. Came in on the last of the light.' The last cot, you notice, was already made up.</em></p></blockquote><p>Run the introductions by lantern light, in character, as the others are bedding down; the newcomer has heard about the job from the stranger downstairs and is in. If the player arrives after the night event has begun, they are the one who wakes: they arrive in the dark, Barnaby is not with them, and the lantern is already lit. A late arrival is the best possible way into this adventure.</p><h2>The Night Event (the Insomnia Rule)</h2><p>Someone wakes. Pick the character whose player is most likely to get up and look.</p><blockquote class=\"read-aloud\"><p><em>The lantern is lit. Nobody lit it. The door to the landing is open a hand's width and the stairs beyond it are stone, going down \u2014 the stairs you came up, but too many of them, and no light at the bottom where the common room should be.</em></p></blockquote><p>Behind the shelves (A3), a second door nobody noticed: it opens into the <strong>hayloft</strong> over the stable, with a ladder down. This is how the storeroom connects to the yard; it also seeds the Stable in the Corridor pool, and it is the <em>riddle door</em> (see the Corridor Pool, Stable).</p><p><strong>The first anchor object.</strong> The stone in the corner (A5) has a hilt in it. Whoever pulls draws out a long iron key with no teeth. It opens nothing in the room. Keep it; it matters in Room 5. Give the handout <em>The Toothless Key</em>.</p><aside class=\"notable\"><h4>Automation</h4><p>Automated: the stairwell and loft doors send tokens into the Corridor pool; clicking the stone opens the key handout.</p></aside><h2>The Guardian Is Not a Fight</h2><p>@UUID[JournalEntry.8B2rub2TA88o9Vyh]{Barnaby Stickit} comes down the stone stairwell carrying a tray. He is kind. He tells them it's not morning yet and they should go back to bed; the road will be there tomorrow. He knows a detail about one character that the character has never told anyone \u2014 pick it from a sheet before the session. If pressed, he doesn't understand the question.</p><p>The test here is only whether the party chooses the stairwell (or the loft ladder) over the cot. If they go back to sleep, they wake in Room 1 again, and the barkeep has set a second tray.</p><p><strong>Leaving.</strong> Whichever way they go \u2014 down the stairwell or down the loft ladder \u2014 the first door at the bottom is a Corridor door. Visit 1 begins.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -83662,6 +83662,50 @@
    "categories": []
   },
   {
+   "_id": "PW8iiETLJOhRH2GV",
+   "name": "Handout: The Kettle Pass",
+   "pages": [
+    {
+     "_id": "pw1cJvI53F7DzUEp",
+     "name": "Handout: The Kettle Pass",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h2>The Kettle Pass</h2><p><em>What anyone in the valley could tell you, and what a traveller picks up over a mug at the Stickit Inn.</em></p><h3>The road</h3><ul><li>The Kettle Pass is the only road over the hills between the valley and Thistlecross: three days by wagon, two on a good horse, one if you are a fool.</li><li>It takes its name from the Kettle, a round, steep-sided basin near the top where the road runs along the rim. On cold mornings the basin fills with mist to the brim and steams like a pot on the hob.</li><li>The road is old and well kept: stone-cobbled on the steep stretches, with mile-stones every mile and three way-shelters, a day apart, each with a roof, a fire-ring and a cord of wood that travellers are expected to replace.</li><li>The Stickit Inn stands where the road leaves the valley floor. It is the last proper bed and hot meal before the pass, and the first after it. Nobody remembers it not being there.</li></ul><h3>The trade</h3><ul><li>Thistlecross makes its living on wool, slate and lamp oil, and the oil goes over the pass in wagons all year. A chandler in Thistlecross, Old Wenna Marsh, buys every barrel the valley sends and pays on the nail.</li><li>Wagons hire guards for the crossing as a matter of course. Usually the guards are bored. Being bored is the job.</li><li>Stickit cider goes the other way: half the taverns in Thistlecross keep a barrel of it behind the bar and charge double.</li></ul><h3>The weather</h3><ul><li>The pass is quiet in the late season, before the snow. After the first heavy snow it closes until spring, and nobody tries it.</li><li>The mist in the Kettle can come up fast. The rule every carter learns from their mother: if you lose the road, stop, light a lamp, and wait. The road will be there when it clears. It always is.</li><li>The wind across the top sounds like voices if you let it. Carters sing to drown it out, and every one of them has a song for it.</li></ul><h3>What people say</h3><ul><li>There have been no bandits on the pass in living memory. There was a troll under the Kettle bridge once, in somebody's grandfather's day, and it was dealt with by four or five capable people nobody remembers the names of.</li><li>Count the mile-stones as you pass them. Everybody does. Nobody can tell you why.</li><li>The middle way-shelter has names carved into every beam, left by travellers over the years. It is lucky to add yours, and unlucky to look for your own.</li></ul>"
+     },
+     "sort": 100000,
+     "ownership": {
+      "default": -1
+     },
+     "flags": {
+      "monks-enhanced-journal": {
+       "type": "journalentry"
+      }
+     },
+     "image": {},
+     "video": {},
+     "src": null,
+     "system": {}
+    }
+   ],
+   "folder": "IRHrGNWIxD83mzHg",
+   "sort": 3600000,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {
+    "monks-enhanced-journal": {
+     "pagetype": "journalentry",
+     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+    }
+   },
+   "categories": []
+  },
+  {
    "_id": "5XTLcFdNQL0mKlgF",
    "name": "Handout: The X Map",
    "pages": [
@@ -83693,7 +83737,7 @@
     }
    ],
    "folder": "IRHrGNWIxD83mzHg",
-   "sort": 3600000,
+   "sort": 3700000,
    "ownership": {
     "default": 0
    },
@@ -84344,7 +84388,7 @@
     }
    ],
    "folder": "zuJ82ny8N829RA33",
-   "sort": 3700000,
+   "sort": 3800000,
    "ownership": {
     "default": 0
    },
@@ -84399,7 +84443,7 @@
     }
    ],
    "folder": "zuJ82ny8N829RA33",
-   "sort": 3800000,
+   "sort": 3900000,
    "ownership": {
     "default": 0
    },
@@ -84454,7 +84498,7 @@
     }
    ],
    "folder": "zuJ82ny8N829RA33",
-   "sort": 3900000,
+   "sort": 4000000,
    "ownership": {
     "default": 0
    },

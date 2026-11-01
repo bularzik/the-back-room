@@ -340,7 +340,7 @@ def build(L):
                  "<strong>The cider.</strong> Everyone for three days in any direction knows the Stickit's cider. Someone in the party has been promising the others a mug for weeks.",
                  "<strong>The job brought them.</strong> Word has gone round the nearby towns: guards wanted for a wagon over the pass, ask at the Stickit Inn. They came to answer it.",
                  "<strong>Your own campaign.</strong> They are passing through on the way to wherever they were already going, and this is where night falls.")
-            + P("For a table that started playing together long ago, the cliché is the point: this is how the first party met, too."))
+            + P("For a table that started playing together long ago, the cliché is the point: this is how the first party met, too.", "What the party already knows about the road is in the handout <em>The Kettle Pass</em>: give it to them before the session, or let Barnaby and the stranger hand it out a line at a time."))
          + box("The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light, and a jug of the house cider for the road.")
          + P("Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.")
          + aside("Keyed areas", ul("<strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.",
@@ -632,6 +632,25 @@ def build(L):
         ("Handout: The Job", "<h2>The Job</h2>" + P("<em>Wanted: four or five capable people to ride guard on a wagon of lamp oil from the Stickit Inn over the Kettle Pass to Thistlecross. Three days by the high road. Forty gold a head, twenty of it tonight, the rest from the chandler at Thistlecross on delivery. We leave at first light. Bring your own bedrolls; the wagon has room for packs. Ask for the one in the corner booth.</em>",
             "<em>The pass is quiet this time of year. The road is good. Nothing about this is a trick.</em>")),
         ("Handout: The Toothless Key", "<h2>The Toothless Key</h2>" + P("A long iron key, drawn from a stone in the corner of the storeroom. It has a bow, a shank, and no teeth at all. It opens nothing in the room you found it in.", "<em>Keep it.</em>")),
+        ("Handout: The Kettle Pass", "<h2>The Kettle Pass</h2>" + P(
+            "<em>What anyone in the valley could tell you, and what a traveller picks up over a mug at the Stickit Inn.</em>")
+            + "<h3>The road</h3>" + ul(
+                "The Kettle Pass is the only road over the hills between the valley and Thistlecross: three days by wagon, two on a good horse, one if you are a fool.",
+                "It takes its name from the Kettle, a round, steep-sided basin near the top where the road runs along the rim. On cold mornings the basin fills with mist to the brim and steams like a pot on the hob.",
+                "The road is old and well kept: stone-cobbled on the steep stretches, with mile-stones every mile and three way-shelters, a day apart, each with a roof, a fire-ring and a cord of wood that travellers are expected to replace.",
+                "The Stickit Inn stands where the road leaves the valley floor. It is the last proper bed and hot meal before the pass, and the first after it. Nobody remembers it not being there.")
+            + "<h3>The trade</h3>" + ul(
+                "Thistlecross makes its living on wool, slate and lamp oil, and the oil goes over the pass in wagons all year. A chandler in Thistlecross, Old Wenna Marsh, buys every barrel the valley sends and pays on the nail.",
+                "Wagons hire guards for the crossing as a matter of course. Usually the guards are bored. Being bored is the job.",
+                "Stickit cider goes the other way: half the taverns in Thistlecross keep a barrel of it behind the bar and charge double.")
+            + "<h3>The weather</h3>" + ul(
+                "The pass is quiet in the late season, before the snow. After the first heavy snow it closes until spring, and nobody tries it.",
+                "The mist in the Kettle can come up fast. The rule every carter learns from their mother: if you lose the road, stop, light a lamp, and wait. The road will be there when it clears. It always is.",
+                "The wind across the top sounds like voices if you let it. Carters sing to drown it out, and every one of them has a song for it.")
+            + "<h3>What people say</h3>" + ul(
+                "There have been no bandits on the pass in living memory. There was a troll under the Kettle bridge once, in somebody's grandfather's day, and it was dealt with by four or five capable people nobody remembers the names of.",
+                "Count the mile-stones as you pass them. Everybody does. Nobody can tell you why.",
+                "The middle way-shelter has names carved into every beam, left by travellers over the years. It is lucky to add yours, and unlucky to look for your own.")),
         ("Handout: The X Map", "<h2>The X Map</h2>" + P("A map, drawn in a hand none of you recognise, of a place none of you have been. There is an X on it. The X marks the way out.", "<em>Do not look at the X for a moment. Now look again.</em>")),
     ]))
 
