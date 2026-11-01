@@ -427,11 +427,11 @@ manifest = {
                       "manifest": "https://github.com/ironmonk108/monks-active-tiles/releases/latest/download/module.json",
                       "compatibility": {"minimum": "14.01"}, "reason": "Scene automation: random Corridor doors, fog resets, the X door, the Corridor Between loop, the Room 4 exit and GM controls."}],
         "recommends": [  # the adventure's ambience, music and SoundBard pads point at these; without them those sounds are silent
-            {"id": "ivan-duch-music-packs", "type": "module", "reason": "Ambience and music (tavern, night, the reading room, the Corridors, the last word)."},
-            {"id": "michaelghelfi", "type": "module", "reason": "Ambience (cave, campfire, open fields) and music."},
-            {"id": "soundfxlibrary", "type": "module", "reason": "Ambience (drips, wind, market) and the SoundBard sound effects."},
-            {"id": "adventuremusic", "type": "module", "reason": "Battle music for The Cover and the Hoard."},
-            {"id": "soundbard", "type": "module", "reason": "The macro 'The Back Room: set up SoundBard' fills a bank with the adventure's cues."}]},
+            {"id": "ivan-duch-music-packs", "type": "module", "manifest": "https://r2.foundryvtt.com/packages-public/ivan-duch-music-packs/module.json", "reason": "Ambience and music (tavern, night, the reading room, the Corridors, the last word)."},
+            {"id": "michaelghelfi", "type": "module", "manifest": "https://r2.foundryvtt.com/packages-public/michaelghelfi/module.json", "reason": "Ambience (cave, campfire, open fields) and music."},
+            {"id": "soundfxlibrary", "type": "module", "manifest": "https://github.com/MaterialFoundry/SoundFxLibrary/releases/latest/download/module.json", "reason": "Ambience (drips, wind, market) and the SoundBard sound effects."},
+            {"id": "adventuremusic", "type": "module", "manifest": "https://r2.foundryvtt.com/packages-public/adventuremusic/module.json", "reason": "Battle music for The Cover and the Hoard."},
+            {"id": "soundbard", "type": "module", "manifest": "https://github.com/ongoingpast/Campendium-SoundBard/releases/latest/download/module.json", "reason": "The macro 'The Back Room: set up SoundBard' fills two banks with the adventure's cues."}]},
     "packs": [
         {"name": PACK_ADV, "label": f"{TITLE} (Adventure)", "path": f"packs/{PACK_ADV}", "type": "Adventure", "system": "dnd5e", "ownership": {"PLAYER": "NONE", "ASSISTANT": "OWNER"}}],
     "packFolders": [{"name": TITLE, "sorting": "m", "color": "#27413b", "packs": [PACK_ADV]}],

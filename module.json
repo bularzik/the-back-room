@@ -61,27 +61,32 @@
       {
         "id": "ivan-duch-music-packs",
         "type": "module",
+        "manifest": "https://r2.foundryvtt.com/packages-public/ivan-duch-music-packs/module.json",
         "reason": "Ambience and music (tavern, night, the reading room, the Corridors, the last word)."
       },
       {
         "id": "michaelghelfi",
         "type": "module",
+        "manifest": "https://r2.foundryvtt.com/packages-public/michaelghelfi/module.json",
         "reason": "Ambience (cave, campfire, open fields) and music."
       },
       {
         "id": "soundfxlibrary",
         "type": "module",
+        "manifest": "https://github.com/MaterialFoundry/SoundFxLibrary/releases/latest/download/module.json",
         "reason": "Ambience (drips, wind, market) and the SoundBard sound effects."
       },
       {
         "id": "adventuremusic",
         "type": "module",
+        "manifest": "https://r2.foundryvtt.com/packages-public/adventuremusic/module.json",
         "reason": "Battle music for The Cover and the Hoard."
       },
       {
         "id": "soundbard",
         "type": "module",
-        "reason": "The macro 'The Back Room: set up SoundBard' fills a bank with the adventure's cues."
+        "manifest": "https://github.com/ongoingpast/Campendium-SoundBard/releases/latest/download/module.json",
+        "reason": "The macro 'The Back Room: set up SoundBard' fills two banks with the adventure's cues."
       }
     ]
   },
