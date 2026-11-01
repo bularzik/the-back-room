@@ -189,7 +189,7 @@ def build(L):
             use=["GM control (any Corridor scene): Reveal the X door → Room 3"])
          + step(17, "Room 3: the Corridor Between",
             f"Activate {SC('corridor-between')}. Walking forward loops through six identical segments. Teach the rule with the clue ladder, one clue per pass. On the second pass {A('echo')} steps out of the far door (the tile reminds you). When someone sincerely leaves something behind, double-click <em>GM: Loop Break</em>, apply the Setback (one Misremembering), and ask whether anyone else wants to leave something too. Write down who left what. End the session here if you like: the next far door leads back into the Corridors.",
-            use=[SC("corridor-between"), J("Room 3: The Corridor Between") + " (The Trick, Leaving Something Behind, The Setback &amp; the Echo)", J("The Echo"), TB("misremember"), "GM control: Loop Break"])
+            use=[SC("corridor-between"), J("Room 3: The Corridor Between") + " (The Trick, Leaving Something Behind, The Setback &amp; the Echo)", J("The Echo"), "Macro: The Back Room: make the Echo of a character", TB("misremember"), "GM control: Loop Break"])
          + "<h2>Session 3: visit 7+, Room 4, Room 5</h2>"
          + step(18, "A Corridor at visit 7+",
             f"The far door of Room 3 puts them back in the pool, now at visit 7 or more: a Remnant is in the room. Place {A('remnant-strider')}'s token in this scene. He is not hostile; he wants the game to go on.",
@@ -250,6 +250,12 @@ def build(L):
         ("The Evening", "<h1>Room 1: The Back Room</h1>" + P(
             "The Stickit Inn sits where the Kettle Pass road leaves the valley, and everyone for three days in any direction knows its cider: pressed in the yard, served cold in clay mugs, stronger than it tastes.",
             f"Play the cliché straight and let the players relax into it. {A('stranger')} in the corner booth has a job: ride guard on a lamp-oil wagon over the Kettle Pass to Thistlecross — three days, forty gold each, half now, leaving at first light (the handout <em>The Job</em> has the terms; swap in your own hook if your campaign already has one). The party takes it, buys provisions, and {A('barkeep')} leads them <strong>up the stairs</strong> from the common room to the storeroom over the kitchen, where they can sleep before the dawn road.")
+         + aside("Why they're here", P("The adventure never says, on purpose: <em>you all meet in a tavern</em> is the oldest opening in the game, and playing it straight lets the players relax. If your table wants a reason, pick one (or roll a d4):")
+            + ol("<strong>It's on the road.</strong> The inn sits where the Kettle Pass road leaves the valley: the last bed and hot meal before three days of high road. Anyone going over the pass stops here.",
+                 "<strong>The cider.</strong> Everyone for three days in any direction knows the Stickit's cider. Someone in the party has been promising the others a mug for weeks.",
+                 "<strong>The job brought them.</strong> Word has gone round the nearby towns: guards wanted for a wagon over the pass, ask at the Stickit Inn. They came to answer it.",
+                 "<strong>Your own campaign.</strong> They are passing through on the way to wherever they were already going, and this is where night falls.")
+            + P("For a table that started playing together long ago, the cliché is the point: this is how the first party met, too."))
          + box("The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He sets the lantern down and tells you he'll have bread on at first light, and a jug of the house cider for the road.")
          + P("Describe it in loving, mundane detail. Let them count the cots. In the window, one pane of coloured glass that was not there at supper. Nobody comments on it; the GM does not either.")
          + aside("Keyed areas", ul("<strong>A1. The landing.</strong> Top of the common-room stairs. The door to the storeroom.",
@@ -339,9 +345,9 @@ def build(L):
          + "<h3>Who it copies</h3>" + P(
             "The character the corridor has taken the least from. Look at your tally: the character with the <strong>fewest Misremembering changes</strong> so far. If that is a tie, pick among them the one whose player has held on hardest (the one who refused a rest, kept every item, never told a story about their past). Anyone who has already left something behind in this room is never chosen.")
          + "<h3>Setting it up in Foundry</h3>" + ol(
-            "Drag The Echo's actor onto the scene at the far door the party just came through.",
-            "Open its token settings: give it the copied character's token image, set the tint to grey, and blank the name (or call it “—”).",
-            "If you have the time, use the copied character's real numbers halved instead of the stat block (AC, HP, attack bonus, damage, save DC). The stat block, a 5th-level adventurer halved, plays fine as it is.",
+            "Before the session (or at the table), run the macro <em>The Back Room: make the Echo of a character</em> and pick the character. It makes a new actor, <em>The Echo of</em> that character: their token art tinted grey with no name, their size, speed and ability scores, and copies of their equipped weapons and their spells with every number halved (hit points, AC, attack bonuses, damage and healing, save DCs). The base Echo is left alone, so you can make another.",
+            "Drag that actor onto the scene at the far door the party just came through. Its attacks and spells roll from its own sheet, already halved.",
+            "No time for the macro? Use The Echo as it is (a 5th-level adventurer halved) and give its token the character's art.",
             "Roll initiative. The Echo acts immediately <em>after</em> the character it copies, every round.")
          + "<h3>Running it: it repeats their last turn</h3>" + ul(
             "<strong>Round 1.</strong> The Echo does nothing. It stands at the door in the pose the character is in, and moves when they move. Let the table look at it.",
