@@ -83382,7 +83382,7 @@
      },
      "image": {},
      "video": {},
-     "src": null,
+     "src": "modules/modules/the-back-room/handouts/handout-x-map.webp",
      "system": {}
     }
    ],
@@ -83394,7 +83394,7 @@
    "flags": {
     "monks-enhanced-journal": {
      "pagetype": "journalentry",
-     "img": "modules/monks-enhanced-journal/assets/journalentry.png"
+     "img": "modules/modules/the-back-room/handouts/handout-x-map.webp"
     }
    },
    "categories": []
