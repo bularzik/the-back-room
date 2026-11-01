@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.0] - 2026-11-01
+
 ### Added
 - **Actors for the Common Room's roles:** the Barmaid, two Inn Guards, the Drunk, the Merchant and the Old Man, each with a portrait token, their one line, and a note that they never break role. They are placed in the Common Room.
 - **The barmaid walks her circle.** With the optional Patrol module installed, she walks round the Common Room's middle table on her own whenever the GM is viewing the scene (Patrol's walking-figure button stops and starts her). Without Patrol she stands still and nothing else changes.
@@ -120,7 +122,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.4.2...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.0...HEAD
+[2.5.0]: https://github.com/bularzik/the-back-room/compare/v2.4.2...v2.5.0
 [2.4.2]: https://github.com/bularzik/the-back-room/compare/v2.4.1...v2.4.2
 [2.4.1]: https://github.com/bularzik/the-back-room/compare/v2.4.0...v2.4.1
 [2.4.0]: https://github.com/bularzik/the-back-room/compare/v2.3.0...v2.4.0
