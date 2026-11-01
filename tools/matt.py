@@ -139,7 +139,10 @@ def build_tiles(ctx):
     # ======================= ROOM 1 / ROOM 5: THE BACK ROOM =======================
     if present("backroom"):
         tb = builders["backroom"]; key = "backroom"
-        if (r := rect(key, "landing")): tb.tile("landing", r, [scroll("Dawn under the door.")], trigger=ARRIVE, active=True, name="Arrival (Room 5)")
+        # Room 5 arrival (only a teleport from the Hoard fires it): the night doors stop leading into the Corridors, so the
+        # landing door and the hayloft door are just the two doors of the choice.
+        night = [tb.tuuid(n) for n in ("stairwell", "loft") if rect(key, n)]
+        if (r := rect(key, "landing")): tb.tile("landing", r, [scroll("Dawn under the door.")] + ([activate(night, "deactivate")] if night else []), trigger=ARRIVE, active=True, name="Arrival (Room 5): turns off the night doors")
         for name, text in (("stairwell", "Too many steps."), ("loft", "Hay, and under it, the sound of horses.")):
             if (r := rect(key, name)):
                 tb.tile(name, r, [scroll(text), teleport(pool_destinations(None))] if pool_keys else [chat("Pool not built yet.")], name=f"Night door: {name} → Corridor pool")
@@ -223,6 +226,7 @@ GM_GUIDE = """<h2>Automation with Monk's Active Tile Triggers</h2>
 <tr><td>Pool scenes, each door</td><td>Enter</td><td>Door cue; the token is sent to a random arrival in any pool copy except this scene. Never the Cellar.</td></tr>
 <tr><td>Pool scenes, each arrival</td><td>Enter</td><td>Fog is reset for everyone and the GM is whispered the visit-band reminder. <strong>Tick the visit counter by hand</strong> (the tiles remind you; they do not count).</td></tr>
 <tr><td>Back Room, stairwell and loft</td><td>Enter</td><td>The night doors: into the pool. Visit 1.</td></tr>
+<tr><td>Back Room, the landing</td><td>Arrival from the Hoard</td><td>Room 5: turns off the stairwell and loft doors, so they no longer lead into the Corridors. The choice is made at the table: the landing door leaves, the hayloft door stays.</td></tr>
 <tr><td>Back Room, the stone</td><td>Click</td><td>Opens the Toothless Key handout for that player.</td></tr>
 <tr><td>Common Room, the Remnant's table</td><td>Click (once)</td><td>Opens the X Map handout for everyone; reminds you the X door may now appear.</td></tr>
 <tr><td>Corridor Between, each far door</td><td>Enter</td><td>Moves the token to the start of the next identical segment, same relative position. The second far door whispers the Echo reminder.</td></tr>
