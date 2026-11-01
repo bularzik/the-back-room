@@ -225,11 +225,81 @@ tables = [
 def snd(name, file, repeat, vol, desc=""):
     return {"_id": uid("sound", file), "name": name, "path": f"{MOD}/audio/{file}.ogg", "repeat": repeat, "volume": vol,
             "description": desc, "fade": 1000 if repeat else None, "playing": False, "pausedTime": None, "sort": 0, "flags": {}}
+def xsnd(key, name, path, repeat, vol, desc=""):
+    """A sound from another installed audio module (recommended in the manifest; nothing is copied into this module)."""
+    return {"_id": uid("sound", key), "name": name, "path": f"modules/{path}", "repeat": repeat, "volume": vol,
+            "description": desc, "fade": 1500 if repeat else None, "playing": False, "pausedTime": None, "sort": 0, "flags": {}}
+IVAN, MG, AM, SFX = "ivan-duch-music-packs/audio", "michaelghelfi", "adventuremusic", "soundfxlibrary"
+# One ambient loop per place; every scene (and its vista) plays its place's loop as its scene sound.
+AMBIENCE = {   # key: (name, path or None for this module's own file, volume)
+    "landing": ("The Stickit Inn, before the game (The Innkeeper)", f"{IVAN}/the-innkeeper-loop.ogg", .5),
+    "backroom": ("Storeroom at night (town night)", f"{IVAN}/town-night-ambiance.ogg", .4),
+    "common-room": ("The common room (peaceful tavern)", f"{IVAN}/ambiance-peaceful-tavern.ogg", .5),
+    "corridor-between": ("The corridor hum", None, .4),
+    "hoard": ("The reading room (Scholars of Mysterious Arts)", f"{IVAN}/scholars-of-mysterious-arts-loop.ogg", .45),
+    "cover-cavern": ("The cavern", f"{MG}/ambience/SimpleCave.ogg", .5),
+    "c1-stairwell": ("Stairwell: water dripping, echoing", f"{SFX}/Nature/Loops/Water Drips Echo/water-drips-echo-1.mp3", .45),
+    "c2-stable": ("Stable: night outside the walls", f"{IVAN}/ambiance-the-grassland-night.ogg", .4),
+    "c3-inn-hallway": ("Inn hallway: the taproom, far below", f"{IVAN}/peaceful-tavern-ambiance.ogg", .2),
+    "c4-campfire": ("Campfire in the woods", f"{MG}/ambience/CampfireinWoods.ogg", .5),
+    "c5-market": ("Market at closing", f"{SFX}/Town/Loops/Market/market-2.mp3", .3),
+    "c6-ferry": ("Wind down a dry riverbed", f"{SFX}/Nature/Loops/Wind/wind-1.mp3", .4),
+    "c7-crossroads": ("Crossroads at dusk (open fields)", f"{MG}/ambience/FieldsofOreskos.ogg", .45),
+    "c8-cellar": ("Cellar: dripping", f"{SFX}/Nature/Loops/Water Drips/water-drips-1.mp3", .4),
+}
+def amb_sound(k):
+    name, path, vol = AMBIENCE[k]
+    return snd(name, "ambience-corridor", True, vol) if path is None else xsnd("amb-" + k, name, path, True, vol)
+amb_id = lambda k: uid("sound", "ambience-corridor") if AMBIENCE[k][1] is None else uid("sound", "amb-" + k)
+place_of = lambda key: key if key in AMBIENCE else key.rsplit("-", 1)[0]   # pool copy c1-stairwell-b -> c1-stairwell
+MUSIC = [  # (key, name, path, repeat, volume)
+    ("m-tavern", "Session 1: A Cozy Tavern", f"{IVAN}/a-cozy-tavern.ogg", True, .4),
+    ("m-inn", "Session 1: The Inn", f"{MG}/music/TheInn.mp3", True, .4),
+    ("m-eerie", "Corridors: Eerie Forest", f"{IVAN}/eerie-forest-loop.ogg", True, .35),
+    ("m-mystery", "Corridors: Mystery", f"{IVAN}/mystery-aboard-the-mno-loop.ogg", True, .35),
+    ("m-whispers", "Corridors, late: Whispers in the Cell", f"{IVAN}/whispers-in-the-cell.ogg", True, .35),
+    ("m-cover", "The Cover: Dracona Mortis", f"{AM}/battles/DraconaMortis.mp3", True, .5),
+    ("m-echo", "Room 3, the Echo: Haunted Mansion", f"{IVAN}/haunted-mansion.ogg", True, .4),
+    ("m-hoard", "Room 4, the fight: It's All Led Up to This", f"{AM}/battles/ItsAllLedUpToThis.mp3", True, .5),
+    ("m-dawn", "Room 5, dawn: Hope", f"{MG}/music/Hope.mp3", False, .45),
+    ("m-last", "The Last Word: Sad Strings", f"{IVAN}/sad-strings.ogg", False, .45),
+]
+# SoundBard pads (StreamDeck-style panel; its banks are stored per browser, so a macro fills one for the GM)
+PADS = [  # (name, path, emoji, volume, loop)
+    ("Door, slowly", f"{SFX}/Misc/Single/Squeaky Door Open Slow/squeaky-door-open-slow-1.mp3", "🚪", .7, False),
+    ("A door closes somewhere", f"{SFX}/Misc/Single/Door Close/door-close-1.mp3", "🔒", .6, False),
+    ("Footsteps, a half-beat late", f"the-back-room/audio/sting-footsteps.ogg", "👣", .7, False),
+    ("The X", f"the-back-room/audio/sting-x-door.ogg", "❌", .7, False),
+    ("The lantern lights itself", f"{SFX}/Combat/Single/Spell Whoosh/spell-whoosh-1.mp3", "🏮", .5, False),
+    ("Waterfall (stops when someone speaks)", f"{SFX}/Nature/Loops/Waterfall/waterfall-1.mp3", "🌊", .5, True),
+    ("A horse shifts its weight", f"{SFX}/Creatures/Animals/Horse Whinny/horse-whinny-2.mp3", "🐴", .5, False),
+    ("Remnants laughing, through the door", f"{SFX}/Tavern/Loops/Chatter/chatter-3.mp3", "😂", .35, False),
+    ("POW! (Fred)", f"{SFX}/Combat/Single/Melee Hit/melee-hit-7.mp3", "💥", .8, False),
+    ("Rorvik bursts in", f"{SFX}/Misc/Single/Impact/impact-2.mp3", "⏰", .8, False),
+    ("A monster wakes (The Cover)", f"{SFX}/Creatures/Monsters/Growl/growl-3.mp3", "🐉", .7, False),
+    ("Strider's arrow", f"{SFX}/Combat/Single/Arrow Fly-By/arrow-fly-by-1.mp3", "🏹", .7, False),
+]
+SOUNDBARD_MACRO = """// Fills a SoundBard bank named "The Back Room" with this adventure's cues (SoundBard keeps banks per browser,
+// so each GM who wants the pads runs this once). Re-running it refreshes the same bank.
+if (!game.modules.get("soundbard")?.active) return ui.notifications.warn("Enable the SoundBard module first.");
+const PADS = """ + json.dumps([[n, f"modules/{p}", e, v, l] for n, p, e, v, l in PADS], ensure_ascii=False) + """;
+const data = foundry.utils.deepClone(game.settings.get("soundbard", "soundBank"));
+let bank = data.banks.find(b => b.name === "The Back Room") ?? data.banks.find(b => !b.name && b.slots.every(s => !s.src));
+if (!bank) return ui.notifications.warn("SoundBard has no empty bank left; clear one and run this again.");
+bank.name = "The Back Room";
+PADS.forEach(([name, src, emoji, volume, loop], i) => { if (bank.slots[i]) Object.assign(bank.slots[i], { name, src, emoji, volume, loop }); });
+await game.settings.set("soundbard", "soundBank", data);
+await game.settings.set("soundbard", "activeBank", bank.id);
+ui.notifications.info(`SoundBard: bank ${bank.id} is now "The Back Room" (${Math.min(PADS.length, bank.slots.length)} pads).`);"""
+macros = [{"_id": uid("macro", "soundbard"), "name": "The Back Room: set up SoundBard", "type": "script", "scope": "global", "author": None,
+           "img": "icons/tools/instruments/drum-hand-tan.webp", "command": SOUNDBARD_MACRO, "folder": None, "sort": 0, "ownership": {"default": 0}, "flags": {}}]
 playlists = [
-    {"_id": uid("playlist", "amb"), "name": "Back Room: Ambience", "description": "Ambient loops: the tavern for Session 1, the hum for the Corridors, dawn in the reading room for the ending.",
-     "mode": -1, "fade": 1000, "sounds": [snd("Tavern, late", "ambience-tavern", True, .45), snd("Corridor hum", "ambience-corridor", True, .4),
-                                           snd("Reading room, dawn", "ambience-reading-room", True, .4)],
+    {"_id": uid("playlist", "amb"), "name": "Back Room: Ambience", "description": "One loop per place. Each scene and its vista plays its place's loop automatically as its scene sound; the Corridor copies share their place's loop.",
+     "mode": -1, "fade": 1500, "sounds": [amb_sound(k) for k in AMBIENCE],
      "folder": F["Playlist"], "sort": 100000, "ownership": {"default": 0}, "flags": {}, "playing": False},
+    {"_id": uid("playlist", "music"), "name": "Back Room: Music", "description": "Music for the beats that need it. Play by hand; most of the adventure is better with ambience alone.",
+     "mode": -1, "fade": 2000, "sounds": [xsnd(k, n, p, r, v) for k, n, p, r, v in MUSIC],
+     "folder": F["Playlist"], "sort": 150000, "ownership": {"default": 0}, "flags": {}, "playing": False},
     {"_id": uid("playlist", "sting"), "name": "Back Room: Stingers", "description": "One-shot cues used by the door tiles.", "mode": -1, "fade": None,
      "sounds": [snd("Door", "sting-door", False, .7), snd("The X", "sting-x-door", False, .7), snd("Footsteps, a half-beat late", "sting-footsteps", False, .7)],
      "folder": F["Playlist"], "sort": 200000, "ownership": {"default": 0}, "flags": {}, "playing": False},
@@ -269,7 +339,7 @@ for i, key in enumerate(built):
                    "tokenVision": True, "fog": {"exploration": True, "reset": None, "overlay": None, "colors": {"explored": None, "unexplored": None}},
                    "environment": {"darknessLevel": darkness, "darknessLock": False, "globalLight": {"enabled": False}, "cycle": True},
                    "drawings": [], "tokens": [], "lights": lights, "notes": notes, "sounds": [], "regions": [], "tiles": [], "walls": walls,
-                   "playlist": None, "playlistSound": None, "journal": jref, "journalEntryPage": None,
+                   "playlist": uid("playlist", "amb"), "playlistSound": amb_id(place_of(key)), "journal": jref, "journalEntryPage": None,
                    "weather": "", "folder": F["Scene-pool"] if is_pool else F["Scene"], "sort": (i + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
 
 # Landing scene: the title card players see when they connect before the game starts. Gridless, lit, first in the
@@ -281,7 +351,7 @@ scenes.append({"_id": uid("scene", "landing"), "name": "Welcome: The Stickit Inn
                "tokenVision": False, "fog": {"exploration": False, "reset": None, "overlay": None, "colors": {"explored": None, "unexplored": None}},
                "environment": {"darknessLevel": 0, "darknessLock": True, "globalLight": {"enabled": True}, "cycle": False},
                "drawings": [], "tokens": [], "lights": [], "notes": [], "sounds": [], "regions": [], "tiles": [], "walls": [],
-               "playlist": uid("playlist", "amb"), "playlistSound": uid("sound", "ambience-tavern"), "journal": None, "journalEntryPage": None,
+               "playlist": uid("playlist", "amb"), "playlistSound": amb_id("landing"), "journal": None, "journalEntryPage": None,
                "weather": "", "folder": F["Scene"], "sort": 0, "ownership": {"default": 0}, "flags": {}})
 
 for vi, (vk, vname) in enumerate(VISTAS.items()):
@@ -292,7 +362,7 @@ for vi, (vk, vname) in enumerate(VISTAS.items()):
                    "tokenVision": False, "fog": {"exploration": False, "reset": None, "overlay": None, "colors": {"explored": None, "unexplored": None}},
                    "environment": {"darknessLevel": 0, "darknessLock": True, "globalLight": {"enabled": True}, "cycle": False},
                    "drawings": [], "tokens": [], "lights": [], "notes": [], "sounds": [], "regions": [], "tiles": [], "walls": [],
-                   "playlist": None, "playlistSound": None, "journal": None, "journalEntryPage": None,
+                   "playlist": uid("playlist", "amb"), "playlistSound": amb_id(vk), "journal": None, "journalEntryPage": None,
                    "weather": "", "folder": F["Scene-vista"], "sort": (vi + 1) * 100000, "ownership": {"default": 0}, "flags": {}})
 
 ctx = {"scene_ids": {k: scene_ids[k] for k in built}, "rects": {k: mapfor(k).get("rects", {}) for k in built}, "handouts": handout_ids,
@@ -318,7 +388,7 @@ adventure = {"_id": adv_id, "name": TITLE, "img": f"{MOD}/maps/cover.webp",
              "caption": "A liminal-horror adventure for 5th–8th level characters",
              "description": f"<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites — all the back room, misremembered — and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> {len(scenes)} scenes with walls, lights, notes and Monk's Active Tile Triggers automation; {len(adv_actors)} actors; {len(journals)} journal entries; 2 roll tables; 2 playlists.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
              "actors": adv_actors, "combats": [], "items": [], "scenes": scenes, "journal": journals, "tables": tables,
-             "macros": [], "cards": [], "playlists": playlists, "folders": folders, "sort": 0, "flags": {}, "_key": f"!adventures!{adv_id}"}
+             "macros": macros, "cards": [], "playlists": playlists, "folders": folders, "sort": 0, "flags": {}, "_key": f"!adventures!{adv_id}"}
 json.dump(adventure, open(f"{SRC}/{PACK_ADV}/{PACK_ADV}.json", "w"), indent=1)
 
 # ---------- manifest ----------
@@ -340,7 +410,13 @@ manifest = {
                       "compatibility": {"minimum": "0.26.0"}, "reason": "The adventure's journal folder is a campaign with three Session pages."},
                      {"id": "monks-active-tiles", "type": "module",
                       "manifest": "https://github.com/ironmonk108/monks-active-tiles/releases/latest/download/module.json",
-                      "compatibility": {"minimum": "14.01"}, "reason": "Scene automation: random Corridor doors, fog resets, the X door, the Corridor Between loop, the Room 4 exit and GM controls."}]},
+                      "compatibility": {"minimum": "14.01"}, "reason": "Scene automation: random Corridor doors, fog resets, the X door, the Corridor Between loop, the Room 4 exit and GM controls."}],
+        "recommends": [  # the adventure's ambience, music and SoundBard pads point at these; without them those sounds are silent
+            {"id": "ivan-duch-music-packs", "type": "module", "reason": "Ambience and music (tavern, night, the reading room, the Corridors, the last word)."},
+            {"id": "michaelghelfi", "type": "module", "reason": "Ambience (cave, campfire, open fields) and music."},
+            {"id": "soundfxlibrary", "type": "module", "reason": "Ambience (drips, wind, market) and the SoundBard sound effects."},
+            {"id": "adventuremusic", "type": "module", "reason": "Battle music for The Cover and the Hoard."},
+            {"id": "soundbard", "type": "module", "reason": "The macro 'The Back Room: set up SoundBard' fills a bank with the adventure's cues."}]},
     "packs": [
         {"name": PACK_ADV, "label": f"{TITLE} (Adventure)", "path": f"packs/{PACK_ADV}", "type": "Adventure", "system": "dnd5e", "ownership": {"PLAYER": "NONE", "ASSISTANT": "OWNER"}}],
     "packFolders": [{"name": TITLE, "sorting": "m", "color": "#27413b", "packs": [PACK_ADV]}],
