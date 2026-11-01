@@ -1,11 +1,26 @@
 name: Release Module
 
+# Two ways to release:
+#  1. By hand: create a GitHub release with a tag like v2.6.0 (`gh release create v2.6.0 ...`).
+#  2. Hands-off: date the notes with `npm run changelog:release -- 2.6.0`, commit and push to main. When a push to
+#     main changes CHANGELOG.md and its newest dated section ("## [2.6.0] - date") has no tag yet, this workflow
+#     creates the tag and the release itself. (Claude sessions can push branches but not tags or releases.)
+# Either way the job builds and validates the packs, stamps module.json, ships the changelog, and attaches
+# module.json, module.zip and CHANGELOG.md, with the version's changelog section as the release notes.
+
 on:
   release:
     types: [published]
+  push:
+    branches: [main]
+    paths: [CHANGELOG.md]
 
 permissions:
   contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -13,21 +28,46 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Decide the version
+        id: version
+        env:
+          EVENT: ${{ github.event_name }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          if [ "$EVENT" = "release" ]; then
+            echo "tag=$RELEASE_TAG" >> "$GITHUB_OUTPUT"; echo "release=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          v=$(grep -m1 -oE '^## \[[0-9]+\.[0-9]+\.[0-9]+\]' CHANGELOG.md | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' || true)
+          if [ -z "$v" ]; then echo "No dated version in CHANGELOG.md; nothing to release."; echo "release=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if git ls-remote --exit-code --tags origin "refs/tags/v$v" >/dev/null; then
+            echo "v$v is already tagged; nothing to release."; echo "release=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "Releasing v$v from the changelog."
+          echo "tag=v$v" >> "$GITHUB_OUTPUT"; echo "release=true" >> "$GITHUB_OUTPUT"
+
       - uses: actions/setup-node@v4
+        if: steps.version.outputs.release == 'true'
         with:
           node-version: 22
 
       - run: npm install
+        if: steps.version.outputs.release == 'true'
 
       - name: Compile packs, validate, and package
+        if: steps.version.outputs.release == 'true'
         run: npm run package
         env:
           REPO: ${{ github.repository }}
-          TAG: ${{ github.event.release.tag_name }}
+          TAG: ${{ steps.version.outputs.tag }}
 
-      - name: Attach module.json, module.zip and CHANGELOG.md; set the release notes from CHANGELOG.md
+      - name: Create or update the release; attach module.json, module.zip and CHANGELOG.md; notes from CHANGELOG.md
+        if: steps.version.outputs.release == 'true'
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          target_commitish: ${{ github.sha }}
+          make_latest: true
           body_path: dist/RELEASE_NOTES.md
           files: |
             dist/module.json
