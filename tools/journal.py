@@ -26,6 +26,22 @@ MISREMEMBERING = [
     ("Their name", "One letter of the spelling, or a nickname the others have always used and they have never heard."),
 ]
 
+# The drunk by the hearth in Room 2: one joke, rolled once, then the same line forever.
+DRUNK_JOKES = [
+    "A wizard, a fighter and a thief walk into a tavern. The barkeep says, ‘Is this some kind of quest?’ And the wizard says— <em>(He laughs so hard he never says what the wizard says.)</em>",
+    "How many adventurers does it take to light a lantern? <em>(Beat.)</em> None. It lights itself.",
+    "Fellow walks into an inn and asks for a room. Innkeeper says, ‘All we’ve got is the back room.’ Fellow says, ‘I’ll take it.’ Innkeeper says, ‘You already did.’",
+    "Knock knock. <em>(He waits. If nobody says ‘Who’s there?’, he goes on waiting. If someone does:)</em> Me. Still.",
+    "Did you hear about the barmaid? She’s been bringing me this drink since Tuesday. <em>(He raises an empty hand.)</em>",
+    "What do you call a door that always opens onto somewhere else? <em>(Beat.)</em> A door.",
+    "I told the hooded stranger a joke once. Now he’s in every booth. Went over very well.",
+    "Ten rats walk into a cellar. Farmer pays for them. Ten rats walk into a cellar.",
+    "What’s the difference between a stairwell and a staircase? <em>(Beat.)</em> One of them goes up. <em>(He looks over at the stairs for a long time.)</em>",
+    "Why did the halfling cross the high wire? To get to the far post. <em>(Beat.)</em> Which one’s the far post?",
+    "How do you know you’ve been at the Stickit too long? The cider tastes like the first time. Every time.",
+    "Best thing about this inn? Nobody ever leaves a bad word about it. <em>(Beat.)</em> Nobody ever leaves.",
+]
+
 # The half-page books: (band, title, text). Each is a player handout and a row of the Half-page Books table.
 HALF_PAGE_BOOKS = [
     ("anywhere", "The Journal of Aldous Penhallow, Adventurer (Fourth Day)",
@@ -177,7 +193,7 @@ def build(L):
          + P("Every patron is a <em>role</em>: a hooded stranger in every booth, a quest-giver who repeats the hook word for word, a barmaid who walks in a circle and never arrives, a drunk who says the same line no matter how many times you talk to him. Guards at the door say there's nothing to see here. There's a lot to see here.")
          + aside("Keyed areas", ul("<strong>B1. The booths.</strong> A hooded stranger in each, offering the job in the same words.",
                                    "<strong>B2. The bar.</strong> Nobody behind it. Mugs of the house cider, full, every one the same pale gold. One is a different colour.",
-                                   "<strong>B3. The hearth.</strong> The drunk, and his one line.",
+                                   f"<strong>B3. The hearth.</strong> The drunk, and his one line: roll on {TB('jokes')} the first time anyone talks to him, then tell that same joke, word for word and with the same pause, every time after.",
                                    "<strong>B4. The door.</strong> Two guards. 'Nothing to see here.'",
                                    "<strong>B5. The stairs.</strong> Up to a landing that is not the landing they came down."))),
         ("The Puzzle", "<h2>The Puzzle</h2>" + P(
@@ -222,7 +238,7 @@ def build(L):
          + table(["Pass", "Clue"], [
               ["1", "Nothing but the loop. Let them test it: walk back, try the locked door, check for secret doors. Each segment is a little more library, which reads as progress."],
               ["2", "The scratch at hip height and the dropped coin are back, exactly as they were. Anything they dropped or used as a marker is back too. The corridor returns what nobody wanted. The Echo steps out of the far door: a copy of the character who has given up least, with no name and nothing in its hands."],
-              ["3", "By the far door, a row of hooks that wasn't there before, each holding something a stranger left: a child's wooden sword, a wedding ring on a string, a folded letter with the wax unbroken, a dice bag. None of it can be taken; a hand passes through. One hook is empty for each character."],
+              ["3", "By the far door, a row of hooks that wasn't there before, each holding something a stranger left: a child's wooden sword, a wedding ring on a string, a folded letter with the wax unbroken, a dice bag. None of it can be taken; a hand passes through. One hook is empty for each character. (Narrate it; the hooks are not on the map.)"],
               ["4", "A voice through the far door, warm and familiar (a Remnant, though they don't know it yet): <em>“Everybody leaves something. That's how we got in here.”</em> Then laughter, and nothing."],
               ["5+", "Each character remembers, in their own way, a rule from childhood: nothing goes through for free. Tell each player privately what their character half-remembers paying to get past something once (a toll bridge, a ferry, a lost tooth under a pillow). If they still have not tried anything, let the Echo take a thing from the character it copies, and break the loop on that — the corridor has taken its due, and that character gets no boon in Room 5."],
          ])

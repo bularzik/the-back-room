@@ -3,7 +3,7 @@
  "name": "The Back Room",
  "img": "modules/the-back-room/maps/cover.webp",
  "caption": "A liminal-horror adventure for 5th\u20138th level characters",
- "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 52 journal entries; 4 roll tables; 3 playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
+ "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 52 journal entries; 5 roll tables; 3 playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
  "actors": [
   {
    "_id": "dzOCj45n3twcxQJN",
@@ -81471,7 +81471,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.aWw0Z8nmdJOkzlVB]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 2: The Common Room That Isn't</h1><blockquote class=\"read-aloud\"><p><em>The Stickit Inn's common room. The fire is lit, the tables are full, and nobody is looking at you. In every booth, a hooded stranger. The barmaid is walking a slow circle between the tables with a tray and has not arrived at one. A drunk by the hearth is telling a joke to nobody.</em></p></blockquote><p>Every patron is a <em>role</em>: a hooded stranger in every booth, a quest-giver who repeats the hook word for word, a barmaid who walks in a circle and never arrives, a drunk who says the same line no matter how many times you talk to him. Guards at the door say there's nothing to see here. There's a lot to see here.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>B1. The booths.</strong> A hooded stranger in each, offering the job in the same words.</li><li><strong>B2. The bar.</strong> Nobody behind it. Mugs of the house cider, full, every one the same pale gold. One is a different colour.</li><li><strong>B3. The hearth.</strong> The drunk, and his one line.</li><li><strong>B4. The door.</strong> Two guards. 'Nothing to see here.'</li><li><strong>B5. The stairs.</strong> Up to a landing that is not the landing they came down.</li></ul></aside><h2>The Puzzle</h2><p>One patron is not a role. It is the first <strong>Remnant</strong>, @UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}: one player's first character, misremembered (and possibly never played at all; he was certainly a comic strip). It doesn't know it's in a tavern. It thinks it's mid-adventure and the party are old companions. The puzzle is social: figure out which patron is real, and get it to say the thing everyone remembers it for (its Signature). When it does, the room goes quiet and every role turns to look at the party.</p><p><strong>Three clues</strong>, so the table can't miss it:</p><ol><li>The Remnant is the only patron who asks the party a question.</li><li>It is the only one whose cider is a different colour: red as wine, where every other mug in the room is pale gold.</li><li>The player whose character it is will recognise it from the description before anyone else does \u2014 let that player sweat before they say so.</li></ol><p><strong>Payoff.</strong> The Remnant gives them a map with an X. The X moves when nobody looks at it. It is pointing at the Corridors. Give the handout <em>The X Map</em>. From this moment the X door can appear in the Corridors (the GM's X-door tile).</p><aside class=\"notable\"><h4>Automation</h4><p>Automated: click the Remnant's table when the Signature is said to hand out the X map; then use GM: Reveal the X door in whichever pool scene the party reaches next.</p></aside>"
+      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.aWw0Z8nmdJOkzlVB]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 2: The Common Room That Isn't</h1><blockquote class=\"read-aloud\"><p><em>The Stickit Inn's common room. The fire is lit, the tables are full, and nobody is looking at you. In every booth, a hooded stranger. The barmaid is walking a slow circle between the tables with a tray and has not arrived at one. A drunk by the hearth is telling a joke to nobody.</em></p></blockquote><p>Every patron is a <em>role</em>: a hooded stranger in every booth, a quest-giver who repeats the hook word for word, a barmaid who walks in a circle and never arrives, a drunk who says the same line no matter how many times you talk to him. Guards at the door say there's nothing to see here. There's a lot to see here.</p><aside class=\"notable\"><h4>Keyed areas</h4><ul><li><strong>B1. The booths.</strong> A hooded stranger in each, offering the job in the same words.</li><li><strong>B2. The bar.</strong> Nobody behind it. Mugs of the house cider, full, every one the same pale gold. One is a different colour.</li><li><strong>B3. The hearth.</strong> The drunk, and his one line: roll on @UUID[RollTable.EH7rPdsPvHwTYLOu]{the Drunk\u2019s Joke table} the first time anyone talks to him, then tell that same joke, word for word and with the same pause, every time after.</li><li><strong>B4. The door.</strong> Two guards. 'Nothing to see here.'</li><li><strong>B5. The stairs.</strong> Up to a landing that is not the landing they came down.</li></ul></aside><h2>The Puzzle</h2><p>One patron is not a role. It is the first <strong>Remnant</strong>, @UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}: one player's first character, misremembered (and possibly never played at all; he was certainly a comic strip). It doesn't know it's in a tavern. It thinks it's mid-adventure and the party are old companions. The puzzle is social: figure out which patron is real, and get it to say the thing everyone remembers it for (its Signature). When it does, the room goes quiet and every role turns to look at the party.</p><p><strong>Three clues</strong>, so the table can't miss it:</p><ol><li>The Remnant is the only patron who asks the party a question.</li><li>It is the only one whose cider is a different colour: red as wine, where every other mug in the room is pale gold.</li><li>The player whose character it is will recognise it from the description before anyone else does \u2014 let that player sweat before they say so.</li></ol><p><strong>Payoff.</strong> The Remnant gives them a map with an X. The X moves when nobody looks at it. It is pointing at the Corridors. Give the handout <em>The X Map</em>. From this moment the X door can appear in the Corridors (the GM's X-door tile).</p><aside class=\"notable\"><h4>Automation</h4><p>Automated: click the Remnant's table when the Signature is said to hand out the X map; then use GM: Reveal the X door in whichever pool scene the party reaches next.</p></aside>"
      },
      "sort": 100000,
      "ownership": {
@@ -81535,7 +81535,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.K2wx1qmvyXXsdJ3K]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 3: The Corridor Between</h1><blockquote class=\"read-aloud\"><p><em>A corridor ten feet wide with a door at the far end. Torches lit ahead, dark behind. The door behind you is locked, and you can see the key for it hanging on a nail beside the far door.</em></p></blockquote><p>Two doors: the near one is locked and its key is behind the far one. The far one opens onto the same corridor, from the other end.</p><p><strong>The trick.</strong> Walking forward loops. In Foundry the loop is not a teleport: the map is a strip of identical segments and the party simply walks on (see Automation). Each pass is one step more library \u2014 ribs overhead, then the green paint, then the pointed arch at the far door \u2014 which reads as progress, and is: the corridor is going somewhere.</p><p><strong>Breaking it.</strong> The loop breaks on any sincere act of leaving something behind \u2014 a treasured item set down, a spell slot spent on nothing, a story a player tells about their first character and then agrees never to tell again. Don't gate it on a keyword; reward the first real sacrifice the table invents. When it breaks, the GM fires the Loop Break tile and the next far door is the exit. What counts, what doesn't, and how the table works it out are on the next page.</p><aside class=\"notable\"><h4>Segments</h4><p><strong>C1\u2013C6.</strong> Six identical segments in a line. Each far door is a tile that lets the party into the next segment. Segment dressing ladders the library: C1 plain; C2 a scratch on the wall at hip height and a dropped coin; C3 green wainscoting; C4 a glass double door with a bookshelf behind; C5 a pointed arch; C6 ribs overhead. Attentive players notice the scratch at the same height and the coin back on the floor.</p></aside><aside class=\"notable\"><h4>Automation</h4><p>Automated: each far door walks the party into the next identical segment. Fire GM: Loop Break when something is left behind; the next far door becomes the exit.</p></aside><h2>Leaving Something Behind</h2><p>This is the one thing the adventure asks of the players, and it should feel like a choice, not a password. Here is how to judge it, and how they find out.</p><h3>The test</h3><p>It counts when all three are true. When in doubt, ask the player one question: <em>\u201cIs that for good?\u201d</em> If the answer is yes, and it costs them to say it, it counts.</p><ol><li><strong>Chosen.</strong> The player decides, for their own character. Nobody can leave something behind on someone else's behalf.</li><li><strong>It costs.</strong> The character, or the player, will miss it. It is something they would otherwise use, carry, or tell.</li><li><strong>It stays.</strong> It is left in the corridor, and nobody goes back for it or gets it back later.</li></ol><h3>Counts</h3><ul><li><strong>A thing that matters.</strong> A named weapon, a holy symbol, an attuned magic item, a backstory keepsake (the ring, the letter, the father's sword), a real share of the party's gold. Set down on the floor and walked away from.</li><li><strong>Power spent on nothing.</strong> A spell slot of the character's highest level, or a once-a-day feature (Rage, Channel Divinity, Wild Shape, a Ki or Sorcery pool), spent into the empty corridor with no target and no effect. The player says aloud what they are giving up.</li><li><strong>A story told once.</strong> A player tells the table a real memory of their first character, or of an old session, and agrees never to tell it again. (The GM can keep it; it turns up in Room 4.)</li><li><strong>Part of who they are.</strong> A title, a vow, a nickname, a backstory detail. The player picks it and lets it go; apply it like Misremembering, except they chose it.</li></ul><h3>Doesn't count</h3><ul><li><strong>Junk.</strong> A torch, a copper piece, a ration, a rock. The corridor gives it back: it is lying on the floor of the next segment, in the same spot, like the coin.</li><li><strong>Anything taken back.</strong> Picked up again, fetched with Mage Hand, recovered later by any means. If they go back for it, the loop resumes.</li><li><strong>Loopholes.</strong> An illusion of an item, a conjured or summoned object, a decoy, a \u201cloan\u201d. The corridor is not fooled, and neither is anyone at the table.</li><li><strong>Resources spent for a reason.</strong> A spell cast at the Echo, a potion drunk to heal, a feature used to scout. That is play, not leaving.</li><li><strong>Someone else's sacrifice.</strong> An NPC's belongings, a familiar dismissed on another character's say-so, another player's item.</li><li><strong>Hit points or blood.</strong> Bodies heal. The Back Room does not take what comes back on its own; rests cost memory here, not hit points.</li></ul><h3>When it breaks</h3><p>The first sincere act is enough: fire Loop Break. Then pause before anyone opens the far door. The corridor is quiet; the torches behind them have gone out. Ask whether anyone else wants to leave something too. Nobody has to, but each character who does gets the Room 5 boon tied to what they left, and the Echo, if it is still standing, fades at once. Note who left what: the Remnants in Room 4 have every one of those things, and Room 5 asks about them again.</p><h3>How the players figure it out</h3><p>Never tell them the rule. Let the corridor teach it, one clue per pass through the far door, and stop as soon as someone tries something.</p><table><thead><tr><th>Pass</th><th>Clue</th></tr></thead><tbody><tr><td>1</td><td>Nothing but the loop. Let them test it: walk back, try the locked door, check for secret doors. Each segment is a little more library, which reads as progress.</td></tr><tr><td>2</td><td>The scratch at hip height and the dropped coin are back, exactly as they were. Anything they dropped or used as a marker is back too. The corridor returns what nobody wanted. The Echo steps out of the far door: a copy of the character who has given up least, with no name and nothing in its hands.</td></tr><tr><td>3</td><td>By the far door, a row of hooks that wasn't there before, each holding something a stranger left: a child's wooden sword, a wedding ring on a string, a folded letter with the wax unbroken, a dice bag. None of it can be taken; a hand passes through. One hook is empty for each character.</td></tr><tr><td>4</td><td>A voice through the far door, warm and familiar (a Remnant, though they don't know it yet): <em>\u201cEverybody leaves something. That's how we got in here.\u201d</em> Then laughter, and nothing.</td></tr><tr><td>5+</td><td>Each character remembers, in their own way, a rule from childhood: nothing goes through for free. Tell each player privately what their character half-remembers paying to get past something once (a toll bridge, a ferry, a lost tooth under a pillow). If they still have not tried anything, let the Echo take a thing from the character it copies, and break the loop on that \u2014 the corridor has taken its due, and that character gets no boon in Room 5.</td></tr></tbody></table><aside class=\"notable\"><h4>Things that seed it earlier</h4><ul><li>The Ferry crossing in the Corridors: a jetty with no water and no ferry, the toll post empty. People expect to pay the ferryman.</li><li>The half-page book <em>On the Proper Keeping of Inns</em>: a free night is never free.</li><li>Fred in Room 2 wears things that are not his: a ring, a scarf, a holy symbol from some other party. He doesn't know where they came from.</li><li>The Remnants themselves are the answer, seen backwards: they are what people left behind.</li></ul></aside><h2>The Setback</h2><p>Whatever was left behind, a Remnant now has. And the corridor has taken something it wasn't offered: one character's bond, ideal, or a named person from their backstory is now subtly different, and only the other players notice. Apply Misremembering to one character now, chosen by the GM, and tell the others (@UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table}: use 4, 11, 14 or 15, or reroll until one comes up). This is the point where misremembering stops being about the rooms and starts being about the party.</p><h2>The Echo</h2><p>On the second pass through the far door, a blank-faced copy of one character steps out of it: @UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo}. Pick the character who has left the least behind, if there's a choice. In this fight every attack repeats itself one round later in the same squares: the party must fight their own last turn. The Echo has the character's sheet with every number halved and no name. It stops when the loop breaks. This fight is mandatory, not conditional.</p>"
+      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.K2wx1qmvyXXsdJ3K]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 3: The Corridor Between</h1><blockquote class=\"read-aloud\"><p><em>A corridor ten feet wide with a door at the far end. Torches lit ahead, dark behind. The door behind you is locked, and you can see the key for it hanging on a nail beside the far door.</em></p></blockquote><p>Two doors: the near one is locked and its key is behind the far one. The far one opens onto the same corridor, from the other end.</p><p><strong>The trick.</strong> Walking forward loops. In Foundry the loop is not a teleport: the map is a strip of identical segments and the party simply walks on (see Automation). Each pass is one step more library \u2014 ribs overhead, then the green paint, then the pointed arch at the far door \u2014 which reads as progress, and is: the corridor is going somewhere.</p><p><strong>Breaking it.</strong> The loop breaks on any sincere act of leaving something behind \u2014 a treasured item set down, a spell slot spent on nothing, a story a player tells about their first character and then agrees never to tell again. Don't gate it on a keyword; reward the first real sacrifice the table invents. When it breaks, the GM fires the Loop Break tile and the next far door is the exit. What counts, what doesn't, and how the table works it out are on the next page.</p><aside class=\"notable\"><h4>Segments</h4><p><strong>C1\u2013C6.</strong> Six identical segments in a line. Each far door is a tile that lets the party into the next segment. Segment dressing ladders the library: C1 plain; C2 a scratch on the wall at hip height and a dropped coin; C3 green wainscoting; C4 a glass double door with a bookshelf behind; C5 a pointed arch; C6 ribs overhead. Attentive players notice the scratch at the same height and the coin back on the floor.</p></aside><aside class=\"notable\"><h4>Automation</h4><p>Automated: each far door walks the party into the next identical segment. Fire GM: Loop Break when something is left behind; the next far door becomes the exit.</p></aside><h2>Leaving Something Behind</h2><p>This is the one thing the adventure asks of the players, and it should feel like a choice, not a password. Here is how to judge it, and how they find out.</p><h3>The test</h3><p>It counts when all three are true. When in doubt, ask the player one question: <em>\u201cIs that for good?\u201d</em> If the answer is yes, and it costs them to say it, it counts.</p><ol><li><strong>Chosen.</strong> The player decides, for their own character. Nobody can leave something behind on someone else's behalf.</li><li><strong>It costs.</strong> The character, or the player, will miss it. It is something they would otherwise use, carry, or tell.</li><li><strong>It stays.</strong> It is left in the corridor, and nobody goes back for it or gets it back later.</li></ol><h3>Counts</h3><ul><li><strong>A thing that matters.</strong> A named weapon, a holy symbol, an attuned magic item, a backstory keepsake (the ring, the letter, the father's sword), a real share of the party's gold. Set down on the floor and walked away from.</li><li><strong>Power spent on nothing.</strong> A spell slot of the character's highest level, or a once-a-day feature (Rage, Channel Divinity, Wild Shape, a Ki or Sorcery pool), spent into the empty corridor with no target and no effect. The player says aloud what they are giving up.</li><li><strong>A story told once.</strong> A player tells the table a real memory of their first character, or of an old session, and agrees never to tell it again. (The GM can keep it; it turns up in Room 4.)</li><li><strong>Part of who they are.</strong> A title, a vow, a nickname, a backstory detail. The player picks it and lets it go; apply it like Misremembering, except they chose it.</li></ul><h3>Doesn't count</h3><ul><li><strong>Junk.</strong> A torch, a copper piece, a ration, a rock. The corridor gives it back: it is lying on the floor of the next segment, in the same spot, like the coin.</li><li><strong>Anything taken back.</strong> Picked up again, fetched with Mage Hand, recovered later by any means. If they go back for it, the loop resumes.</li><li><strong>Loopholes.</strong> An illusion of an item, a conjured or summoned object, a decoy, a \u201cloan\u201d. The corridor is not fooled, and neither is anyone at the table.</li><li><strong>Resources spent for a reason.</strong> A spell cast at the Echo, a potion drunk to heal, a feature used to scout. That is play, not leaving.</li><li><strong>Someone else's sacrifice.</strong> An NPC's belongings, a familiar dismissed on another character's say-so, another player's item.</li><li><strong>Hit points or blood.</strong> Bodies heal. The Back Room does not take what comes back on its own; rests cost memory here, not hit points.</li></ul><h3>When it breaks</h3><p>The first sincere act is enough: fire Loop Break. Then pause before anyone opens the far door. The corridor is quiet; the torches behind them have gone out. Ask whether anyone else wants to leave something too. Nobody has to, but each character who does gets the Room 5 boon tied to what they left, and the Echo, if it is still standing, fades at once. Note who left what: the Remnants in Room 4 have every one of those things, and Room 5 asks about them again.</p><h3>How the players figure it out</h3><p>Never tell them the rule. Let the corridor teach it, one clue per pass through the far door, and stop as soon as someone tries something.</p><table><thead><tr><th>Pass</th><th>Clue</th></tr></thead><tbody><tr><td>1</td><td>Nothing but the loop. Let them test it: walk back, try the locked door, check for secret doors. Each segment is a little more library, which reads as progress.</td></tr><tr><td>2</td><td>The scratch at hip height and the dropped coin are back, exactly as they were. Anything they dropped or used as a marker is back too. The corridor returns what nobody wanted. The Echo steps out of the far door: a copy of the character who has given up least, with no name and nothing in its hands.</td></tr><tr><td>3</td><td>By the far door, a row of hooks that wasn't there before, each holding something a stranger left: a child's wooden sword, a wedding ring on a string, a folded letter with the wax unbroken, a dice bag. None of it can be taken; a hand passes through. One hook is empty for each character. (Narrate it; the hooks are not on the map.)</td></tr><tr><td>4</td><td>A voice through the far door, warm and familiar (a Remnant, though they don't know it yet): <em>\u201cEverybody leaves something. That's how we got in here.\u201d</em> Then laughter, and nothing.</td></tr><tr><td>5+</td><td>Each character remembers, in their own way, a rule from childhood: nothing goes through for free. Tell each player privately what their character half-remembers paying to get past something once (a toll bridge, a ferry, a lost tooth under a pillow). If they still have not tried anything, let the Echo take a thing from the character it copies, and break the loop on that \u2014 the corridor has taken its due, and that character gets no boon in Room 5.</td></tr></tbody></table><aside class=\"notable\"><h4>Things that seed it earlier</h4><ul><li>The Ferry crossing in the Corridors: a jetty with no water and no ferry, the toll post empty. People expect to pay the ferryman.</li><li>The half-page book <em>On the Proper Keeping of Inns</em>: a free night is never free.</li><li>Fred in Room 2 wears things that are not his: a ring, a scarf, a holy symbol from some other party. He doesn't know where they came from.</li><li>The Remnants themselves are the answer, seen backwards: they are what people left behind.</li></ul></aside><h2>The Setback</h2><p>Whatever was left behind, a Remnant now has. And the corridor has taken something it wasn't offered: one character's bond, ideal, or a named person from their backstory is now subtly different, and only the other players notice. Apply Misremembering to one character now, chosen by the GM, and tell the others (@UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table}: use 4, 11, 14 or 15, or reroll until one comes up). This is the point where misremembering stops being about the rooms and starts being about the party.</p><h2>The Echo</h2><p>On the second pass through the far door, a blank-faced copy of one character steps out of it: @UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo}. Pick the character who has left the least behind, if there's a choice. In this fight every attack repeats itself one round later in the same squares: the party must fight their own last turn. The Echo has the character's sheet with every number halved and no name. It stops when the loop breaks. This fight is mandatory, not conditional.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -84864,6 +84864,191 @@
     }
    ],
    "formula": "1d20",
+   "replacement": true,
+   "displayRoll": true,
+   "folder": "Fv0gxthw8sxCMiG4",
+   "sort": 0,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {}
+  },
+  {
+   "_id": "EH7rPdsPvHwTYLOu",
+   "name": "The Drunk's Joke",
+   "img": "icons/consumables/drinks/alcohol-beer-stein-wooden-metal-brown.webp",
+   "description": "<p>Room 2, the hearth (B3). Roll once, the first time anyone talks to the drunk. That is his only line from then on: the same words, the same pause, the same laugh at the end, however many times anyone speaks to him and whoever does. Nobody else in the room laughs. Roll again only after the Remnant has said its Signature, if you want the room to have moved on one step.</p>",
+   "results": [
+    {
+     "_id": "DAJqicbvvMOVD3r1",
+     "type": "text",
+     "name": "",
+     "description": "A wizard, a fighter and a thief walk into a tavern. The barkeep says, \u2018Is this some kind of quest?\u2019 And the wizard says\u2014 <em>(He laughs so hard he never says what the wizard says.)</em>",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      1,
+      1
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "Wkmgv7MkzazM2iWs",
+     "type": "text",
+     "name": "",
+     "description": "How many adventurers does it take to light a lantern? <em>(Beat.)</em> None. It lights itself.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      2,
+      2
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "g9anEebgE1yNVrqO",
+     "type": "text",
+     "name": "",
+     "description": "Fellow walks into an inn and asks for a room. Innkeeper says, \u2018All we\u2019ve got is the back room.\u2019 Fellow says, \u2018I\u2019ll take it.\u2019 Innkeeper says, \u2018You already did.\u2019",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      3,
+      3
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "PIR0hTkG5xNxg4zp",
+     "type": "text",
+     "name": "",
+     "description": "Knock knock. <em>(He waits. If nobody says \u2018Who\u2019s there?\u2019, he goes on waiting. If someone does:)</em> Me. Still.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      4,
+      4
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "AZAqEodlqAF66kfL",
+     "type": "text",
+     "name": "",
+     "description": "Did you hear about the barmaid? She\u2019s been bringing me this drink since Tuesday. <em>(He raises an empty hand.)</em>",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      5,
+      5
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "euHUflC9c7RbsoBT",
+     "type": "text",
+     "name": "",
+     "description": "What do you call a door that always opens onto somewhere else? <em>(Beat.)</em> A door.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      6,
+      6
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "PLMMTocdgYwDjBB3",
+     "type": "text",
+     "name": "",
+     "description": "I told the hooded stranger a joke once. Now he\u2019s in every booth. Went over very well.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      7,
+      7
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "R5f0vuMCaHhphpuQ",
+     "type": "text",
+     "name": "",
+     "description": "Ten rats walk into a cellar. Farmer pays for them. Ten rats walk into a cellar.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      8,
+      8
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "MQ6O5IMkBdNWUyMZ",
+     "type": "text",
+     "name": "",
+     "description": "What\u2019s the difference between a stairwell and a staircase? <em>(Beat.)</em> One of them goes up. <em>(He looks over at the stairs for a long time.)</em>",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      9,
+      9
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "HOyBZesPPIfbtNfH",
+     "type": "text",
+     "name": "",
+     "description": "Why did the halfling cross the high wire? To get to the far post. <em>(Beat.)</em> Which one\u2019s the far post?",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      10,
+      10
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "FiVE3Oww64p697tu",
+     "type": "text",
+     "name": "",
+     "description": "How do you know you\u2019ve been at the Stickit too long? The cider tastes like the first time. Every time.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      11,
+      11
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "8vF8KCh1EKL8iRKN",
+     "type": "text",
+     "name": "",
+     "description": "Best thing about this inn? Nobody ever leaves a bad word about it. <em>(Beat.)</em> Nobody ever leaves.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      12,
+      12
+     ],
+     "drawn": false,
+     "flags": {}
+    }
+   ],
+   "formula": "1d12",
    "replacement": true,
    "displayRoll": true,
    "folder": "Fv0gxthw8sxCMiG4",
