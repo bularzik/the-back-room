@@ -34,7 +34,7 @@ def mapfor(k):
 missing = [k for k in SCENE_KEYS if k not in built]
 if missing: print("  scenes not yet mapped (skipped):", ", ".join(sorted(set(m.rsplit('-', 1)[0] if m not in FIXED else m for m in missing))))
 
-table_ids = {"pool": uid("table", "pool"), "cues": uid("table", "cues"), "books": uid("table", "books")}
+table_ids = {"pool": uid("table", "pool"), "cues": uid("table", "cues"), "books": uid("table", "books"), "misremember": uid("table", "misremember")}
 F = {t: uid("folder", t) for t in ("JournalEntry", "Handouts", "Handouts-books", "Actor", "Actor-npc", "Scene", "Scene-pool", "Scene-vista", "Playlist", "RollTable")}
 # Vistas: painted, gridless roleplay scenes (vistas/<key>.webp) shown to the players on arrival; also the Place pages' pictures
 VISTAS = {"backroom": "The Back Room", "common-room": "The Common Room", "corridor-between": "The Corridor Between", "hoard": "The Hoard", "cover-cavern": "The Cover",
@@ -58,7 +58,7 @@ def L(kind, key, name=None):
         a = allactors[key]; return f"@UUID[Actor.{a.id}]{{{name or a.doc['name']}}}"
     if kind == "scene":
         return f"@UUID[Scene.{scene_ids[key]}]{{{name or SCENE_KEYS[key]}}}" if key in built else f"<em>{name or SCENE_KEYS[key]}</em>"
-    if kind == "table": return f"@UUID[RollTable.{table_ids[key]}]{{{name or {'pool': 'the Corridor Pool table', 'cues': 'the Cue table', 'books': 'the Half-page Books table'}[key]}}}"
+    if kind == "table": return f"@UUID[RollTable.{table_ids[key]}]{{{name or {'pool': 'the Corridor Pool table', 'cues': 'the Cue table', 'books': 'the Half-page Books table', 'misremember': 'the Misremembering table'}[key]}}}"
     raise KeyError(kind)
 
 # ---------- journal: Monk's Enhanced Journal entries + Campaign Companion sessions ----------
@@ -228,6 +228,8 @@ tables = [
     table("books", "Half-page Books", f"1d{len(journal.HALF_PAGE_BOOKS)}", "<p>Every book in the Corridors is one half-page long. Roll when a player opens one, or pick by visit band; click the link to show the handout. Never explain it.</p>", [
         (n, n, f"<strong>{title}</strong> ({band}). @UUID[JournalEntry.{book_ids[n - 1]}]{{Show the handout}}")
         for n, (band, title, _) in enumerate(journal.HALF_PAGE_BOOKS, 1)], "icons/sundries/books/book-open-brown.webp"),
+    table("misremember", "Misremembering", f"1d{len(journal.MISREMEMBERING)}", "<p>Each short rest taken in a Corridor rewrites one small backstory detail of one character. Roll for the detail (or pick one that fits their sheet), change it on the sheet, and tell only the <em>other</em> players. Keep it small and plausible. Write down who, what it was and what it is now: Room 5 needs the list. In Room 3 use a bond, an ideal or a named person (4, 11, 14 or 15).</p>", [
+        (n, n, f"<strong>{what}.</strong> {how}") for n, (what, how) in enumerate(journal.MISREMEMBERING, 1)], "icons/magic/control/hypnosis-mesmerism-swirl.webp"),
 ]
 
 # ---------- playlists (v1 audio reused as placeholders until tools/audio.py is rerun for v2) ----------

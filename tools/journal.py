@@ -2,6 +2,30 @@
 Source of truth: docs/the-back-room.md and docs/corridor-pool.md. GM text in <p>, read-aloud in <blockquote>."""
 
 def box(*ts): return '<blockquote class="read-aloud">' + "".join(f"<p><em>{t}</em></p>" for t in ts) + "</blockquote>"
+# Misremembering: what one short rest in the Corridors rewrites. (detail, how it shifts)
+MISREMEMBERING = [
+    ("A sibling's name", "It drifts by a sound or two (Tomas is Thomas now), or a brother has become a sister."),
+    ("The door of the house they grew up in", "A different colour. They will describe it the new way without noticing."),
+    ("Which god they pray to", "The same prayers and the same holy days, addressed to a neighbouring god's name."),
+    ("Their mentor's fate", "Alive where they died, retired where they vanished, or the other way round."),
+    ("Their hometown", "One syllable off, or it stands on a river now instead of the coast."),
+    ("A scar", "On the other side of the body, or from a different wound with a different story."),
+    ("A favourite food or drink", "Now Stickit cider, which they had never tasted before last night."),
+    ("A parent's trade", "The baker was a chandler; the soldier was a ferryman."),
+    ("How they met one other party member", "Their version now starts somewhere else, and the other player's version no longer matches."),
+    ("An heirloom on their sheet", "A slightly different object: the locket is a ring, the dagger has a different pommel."),
+    ("A rival", "Same name, but the grudge has turned around: the rival now owes them."),
+    ("Their age", "A year or two off, and their birthday falls in a different season."),
+    ("A language they speak", "Swapped for a related one. Let them find out when another player mentions it."),
+    ("Their ideal", "Reworded so that it means a little less."),
+    ("Their bond", "The person they protect is now someone else from their own story."),
+    ("A fear", "Now something from the Corridors: stairs that do not end, doors with the same number, a fire that gives no heat."),
+    ("A childhood pet or mount", "The same name, a different animal."),
+    ("Why they became an adventurer", "Now simply: because the others were going."),
+    ("Their first adventure", "It now took place in the upstairs room of a library."),
+    ("Their name", "One letter of the spelling, or a nickname the others have always used and they have never heard."),
+]
+
 # The half-page books: (band, title, text). Each is a player handout and a row of the Half-page Books table.
 HALF_PAGE_BOOKS = [
     ("anywhere", "The Journal of Aldous Penhallow, Adventurer (Fourth Day)",
@@ -87,7 +111,7 @@ def build(L):
     # ------------------------------------------------------------------ 01 RULES (players' journal)
     entries.append(("01. Rules of the Back Room", [
         ("The Four Rules", "<h1>Rules of the Back Room</h1>" + P("Four rules carry the theme. They are for you, not the players: each one is discovered at the table — the first rewritten detail, the first door that opens on somewhere else, the first thing left behind. Say the rule aloud only after the table has met it.")
-         + ol("<strong>Misremembering.</strong> Each short rest taken in a Corridor rewrites one small backstory detail of one character — a sibling's name, the colour of the house, which god. The GM changes it on the sheet and tells only the <em>other</em> players. Track every change (who, what it was, what it is now): Room 5 needs the list.",
+         + ol(f"<strong>Misremembering.</strong> Each short rest taken in a Corridor rewrites one small backstory detail of one character — a sibling's name, the colour of the house, which god. The GM changes it on the sheet and tells only the <em>other</em> players. Roll on {TB('misremember')} for what changes, or pick. Track every change (who, what it was, what it is now): Room 5 needs the list.",
               "<strong>The Signature.</strong> A Remnant's one remembered thing auto-succeeds once per round, no roll, no save. Everything else about it is blank. A finished character has a whole sheet; an unfinished one has one line.",
               "<strong>No door leads back.</strong> Every door in the Corridors sends the party somewhere else in the pool, never to the place they left. The one scripted exception is the Room 4 exit. The visit counter escalates what is in there with them.",
               "<strong>Leaving something behind is the only way forward.</strong> Each transition out of a fixed room costs something the player chooses — an item set down, a slot spent on nothing, a story told once and never again. It breaks the Room 3 loop, it is what the Remnants are made of, and it is the choice in Room 5. Never gate it on a keyword; reward the first sincere sacrifice the table invents.")),
@@ -174,7 +198,7 @@ def build(L):
              "<strong>Breaking it.</strong> The loop breaks on any sincere act of leaving something behind — a treasured item set down, a spell slot spent on nothing, a story a player tells about their first character and then agrees never to tell again. Don't gate it on a keyword; reward the first real sacrifice the table invents. When it breaks, the GM fires the Loop Break tile and the next far door is the exit.")
          + aside("Segments", P("<strong>C1–C6.</strong> Six identical segments in a line. Each far door is a tile that lets the party into the next segment. Segment dressing ladders the library: C1 plain; C2 a scratch on the wall at hip height and a dropped coin; C3 green wainscoting; C4 a glass double door with a bookshelf behind; C5 a pointed arch; C6 ribs overhead. Attentive players notice the scratch at the same height and the coin back on the floor."))),
         ("The Setback & the Echo", "<h2>The Setback</h2>" + P(
-            "Whatever was left behind, a Remnant now has. And the corridor has taken something it wasn't offered: one character's bond, ideal, or a named person from their backstory is now subtly different, and only the other players notice. Apply Misremembering to one character now, chosen by the GM, and tell the others. This is the point where misremembering stops being about the rooms and starts being about the party.")
+            f"Whatever was left behind, a Remnant now has. And the corridor has taken something it wasn't offered: one character's bond, ideal, or a named person from their backstory is now subtly different, and only the other players notice. Apply Misremembering to one character now, chosen by the GM, and tell the others ({TB('misremember')}: use 4, 11, 14 or 15, or reroll until one comes up). This is the point where misremembering stops being about the rooms and starts being about the party.")
          + "<h2>The Echo</h2>" + P(
             f"On the second pass through the far door, a blank-faced copy of one character steps out of it: {A('echo')}. Pick the character who has left the least behind, if there's a choice. In this fight every attack repeats itself one round later in the same squares: the party must fight their own last turn. The Echo has the character's sheet with every number halved and no name. It stops when the loop breaks. This fight is mandatory, not conditional."), 2),
     ]))

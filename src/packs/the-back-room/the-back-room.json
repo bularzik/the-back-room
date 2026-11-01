@@ -3,7 +3,7 @@
  "name": "The Back Room",
  "img": "modules/the-back-room/maps/cover.webp",
  "caption": "A liminal-horror adventure for 5th\u20138th level characters",
- "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 52 journal entries; 3 roll tables; 3 playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
+ "description": "<p>The party beds down in the storeroom over a tavern kitchen and never leaves it. Stairwells, stables, corridors and campsites \u2014 all the back room, misremembered \u2014 and in there with them, their own first characters, who want the game to go on forever.</p><p><strong>Contents:</strong> 43 scenes with walls, lights, notes and Monk's Active Tile Triggers automation; 17 actors; 52 journal entries; 4 roll tables; 3 playlists; a SoundBard macro.</p><p>Start with the journal <em>00. The Back Room: Adventure Overview</em>; the journal folder is a Campaign Companion campaign with three prepared Sessions.</p>",
  "actors": [
   {
    "_id": "dzOCj45n3twcxQJN",
@@ -81319,7 +81319,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>Rules of the Back Room</h1><p>Four rules carry the theme. They are for you, not the players: each one is discovered at the table \u2014 the first rewritten detail, the first door that opens on somewhere else, the first thing left behind. Say the rule aloud only after the table has met it.</p><ol><li><strong>Misremembering.</strong> Each short rest taken in a Corridor rewrites one small backstory detail of one character \u2014 a sibling's name, the colour of the house, which god. The GM changes it on the sheet and tells only the <em>other</em> players. Track every change (who, what it was, what it is now): Room 5 needs the list.</li><li><strong>The Signature.</strong> A Remnant's one remembered thing auto-succeeds once per round, no roll, no save. Everything else about it is blank. A finished character has a whole sheet; an unfinished one has one line.</li><li><strong>No door leads back.</strong> Every door in the Corridors sends the party somewhere else in the pool, never to the place they left. The one scripted exception is the Room 4 exit. The visit counter escalates what is in there with them.</li><li><strong>Leaving something behind is the only way forward.</strong> Each transition out of a fixed room costs something the player chooses \u2014 an item set down, a slot spent on nothing, a story told once and never again. It breaks the Room 3 loop, it is what the Remnants are made of, and it is the choice in Room 5. Never gate it on a keyword; reward the first sincere sacrifice the table invents.</li></ol><h2>The Corridors</h2><p>The Corridors connect the five rooms and are where 'stuck' happens. Three rules run them.</p><p><strong>1. No door leads back.</strong> Every door the party uses sends them to a random Corridor scene from the pool, never the scene they left. In Foundry the door tiles do this; the GM only watches.</p><p><strong>2. Something is in here with you \u2014 by visit count.</strong> Track how many Corridor scenes the party has entered in total (the tiles count for you and whisper the band to the GM on each arrival).</p><table><thead><tr><th>Visits</th><th>Cue</th><th>Library layer</th></tr></thead><tbody><tr><td>1\u20132</td><td>Nothing. Furniture is wrong by one detail.</td><td>A strip of green wainscoting on one wall.</td></tr><tr><td>3\u20134</td><td>Sound: footsteps matching theirs, a half-beat late. A chair creaks in an empty room. (The Cover is reached from a pool door in this band or the next.)</td><td>Doors become double wooden doors with glass panels; through one, bookshelves.</td></tr><tr><td>5\u20136</td><td>Glimpse: a figure at the end of the corridor, gone when looked at directly. It is wearing something one of the players' first characters wore.</td><td>A pointed arch; a stained-glass lantern-window on a landing; carpet on stone.</td></tr><tr><td>7+</td><td>A Remnant is in the room. It is glad to see you. It does not attack.</td><td>Timber ribs overhead. The room is half library now.</td></tr></tbody></table><p><strong>3. Rest costs memory, not hit points.</strong> Short rests work normally, but each one taken in a Corridor applies Rule 1 (Misremembering).</p><p><strong>The pool (d8).</strong> Stairwell, stable, hallway of inn doors, campfire clearing, market row at closing, ferry crossing, crossroads at dusk, cellar (from visit 5 only). Roll on @UUID[RollTable.4NjmmaNof9d3nLv7]{the Corridor Pool table} if the tiles are not doing it for you. One misremembered trope per place \u2014 never two; one is uncanny, two is a joke. The places are written up in <em>06. The Corridor Pool</em>.</p><h2>Remnants</h2><aside class=\"notable\"><h4>GM prep (done for this table)</h4><p>Each player was asked privately: <em>What was the first D&D character you ever played? Name, class, and the one thing everyone remembers about them.</em> Their answers are the five Remnants below. For a different table, ask the same question, don't say why, and rebuild the five from the answers; a player with no answer gets a fallback Remnant.</p></aside><p><strong>Building a Remnant.</strong></p><ul><li>Take the first character's class and build it at the party's level using the standard NPC approach, or a sidekick-style block if you'd rather keep it light.</li><li><strong>Max hit points.</strong> No rolling.</li><li><strong>The Signature.</strong> The one remembered thing becomes a feature that <em>always works</em>: once per round, it auto-succeeds, no roll, no save. The barbarian who was 'just really strong' always hits. The rogue who always rolled nat 20s on Stealth is simply not there until it chooses to be.</li><li><strong>Everything else is blank.</strong> The Remnant cannot answer any question about its past that isn't the Signature. It doesn't know its hometown. It knows it had a tragic backstory but not what it was.</li><li><strong>It never attacks first.</strong> It wants the game to continue; it will fight if that's what the party wants to do.</li><li><strong>It stands back up.</strong> At 0 HP it rises at the start of its next turn, in the pose it fell in, with full HP, and continues mid-sentence.</li><li><strong>It cannot leave a room through a door the party came through.</strong> That is the only hard limit on it, and it is the exit mechanic for Room 4.</li></ul><p><strong>This table's Remnants.</strong></p><ul><li>@UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}: his player isn't sure he ever played him; he was certainly a comic strip in a summer-camp newspaper, briefly. <em>Signature:</em> POW! (one hit a round lands, at maximum, lettered in the air). He is the Remnant in <strong>Room 2</strong>: the player who doesn't remember playing him is the one who will recognise him.</li><li>@UUID[JournalEntry.FnjKc1XDXbKsWpEI]{Thon}: half-elf wizard with a Rod of Lordly Might. <em>Signature:</em> the rod is always the right tool. He remembers every button and no spells.</li><li>@UUID[JournalEntry.B2W0zbujemjBh92N]{Rorvik}: half-elven magic-user and thief, longsword, a hothead. <em>Signature:</em> always acts first. His player usually ran the game, so nobody remembers his adventures, including him.</li><li>@UUID[JournalEntry.U6yyMf1DxqYCG5Lc]{T. Morlock}: halfling thief-acrobat, 7th level. <em>Signature:</em> every acrobatic move works. He has his character sheet; nobody knows what the T. stands for.</li><li>@UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}: a ranger built out of a beloved novel. <em>Signature:</em> knows the way. He is the Remnant who surfaces in a <strong>Corridor at visit 7+</strong>, and he offers to lead (always toward the Hoard).</li></ul><p><strong>Fallback Remnants</strong> for a player who misses a session, or for another table: @UUID[JournalEntry.RSMjDexanOtXtRnA]{Raven Nightshade}, @UUID[JournalEntry.DbKnx325wVNC2Fhq]{Grukk Skullsplitter}, @UUID[JournalEntry.AGV5L6xZVIw9oCCb]{Mordecai the Magnificent}.</p><p><strong>Using them.</strong> Fred appears in Room 2. Strider surfaces in the Corridors at visit 7+. All five are in Room 4. They are filed under People, never Monsters.</p>"
+      "content": "<h1>Rules of the Back Room</h1><p>Four rules carry the theme. They are for you, not the players: each one is discovered at the table \u2014 the first rewritten detail, the first door that opens on somewhere else, the first thing left behind. Say the rule aloud only after the table has met it.</p><ol><li><strong>Misremembering.</strong> Each short rest taken in a Corridor rewrites one small backstory detail of one character \u2014 a sibling's name, the colour of the house, which god. The GM changes it on the sheet and tells only the <em>other</em> players. Roll on @UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table} for what changes, or pick. Track every change (who, what it was, what it is now): Room 5 needs the list.</li><li><strong>The Signature.</strong> A Remnant's one remembered thing auto-succeeds once per round, no roll, no save. Everything else about it is blank. A finished character has a whole sheet; an unfinished one has one line.</li><li><strong>No door leads back.</strong> Every door in the Corridors sends the party somewhere else in the pool, never to the place they left. The one scripted exception is the Room 4 exit. The visit counter escalates what is in there with them.</li><li><strong>Leaving something behind is the only way forward.</strong> Each transition out of a fixed room costs something the player chooses \u2014 an item set down, a slot spent on nothing, a story told once and never again. It breaks the Room 3 loop, it is what the Remnants are made of, and it is the choice in Room 5. Never gate it on a keyword; reward the first sincere sacrifice the table invents.</li></ol><h2>The Corridors</h2><p>The Corridors connect the five rooms and are where 'stuck' happens. Three rules run them.</p><p><strong>1. No door leads back.</strong> Every door the party uses sends them to a random Corridor scene from the pool, never the scene they left. In Foundry the door tiles do this; the GM only watches.</p><p><strong>2. Something is in here with you \u2014 by visit count.</strong> Track how many Corridor scenes the party has entered in total (the tiles count for you and whisper the band to the GM on each arrival).</p><table><thead><tr><th>Visits</th><th>Cue</th><th>Library layer</th></tr></thead><tbody><tr><td>1\u20132</td><td>Nothing. Furniture is wrong by one detail.</td><td>A strip of green wainscoting on one wall.</td></tr><tr><td>3\u20134</td><td>Sound: footsteps matching theirs, a half-beat late. A chair creaks in an empty room. (The Cover is reached from a pool door in this band or the next.)</td><td>Doors become double wooden doors with glass panels; through one, bookshelves.</td></tr><tr><td>5\u20136</td><td>Glimpse: a figure at the end of the corridor, gone when looked at directly. It is wearing something one of the players' first characters wore.</td><td>A pointed arch; a stained-glass lantern-window on a landing; carpet on stone.</td></tr><tr><td>7+</td><td>A Remnant is in the room. It is glad to see you. It does not attack.</td><td>Timber ribs overhead. The room is half library now.</td></tr></tbody></table><p><strong>3. Rest costs memory, not hit points.</strong> Short rests work normally, but each one taken in a Corridor applies Rule 1 (Misremembering).</p><p><strong>The pool (d8).</strong> Stairwell, stable, hallway of inn doors, campfire clearing, market row at closing, ferry crossing, crossroads at dusk, cellar (from visit 5 only). Roll on @UUID[RollTable.4NjmmaNof9d3nLv7]{the Corridor Pool table} if the tiles are not doing it for you. One misremembered trope per place \u2014 never two; one is uncanny, two is a joke. The places are written up in <em>06. The Corridor Pool</em>.</p><h2>Remnants</h2><aside class=\"notable\"><h4>GM prep (done for this table)</h4><p>Each player was asked privately: <em>What was the first D&D character you ever played? Name, class, and the one thing everyone remembers about them.</em> Their answers are the five Remnants below. For a different table, ask the same question, don't say why, and rebuild the five from the answers; a player with no answer gets a fallback Remnant.</p></aside><p><strong>Building a Remnant.</strong></p><ul><li>Take the first character's class and build it at the party's level using the standard NPC approach, or a sidekick-style block if you'd rather keep it light.</li><li><strong>Max hit points.</strong> No rolling.</li><li><strong>The Signature.</strong> The one remembered thing becomes a feature that <em>always works</em>: once per round, it auto-succeeds, no roll, no save. The barbarian who was 'just really strong' always hits. The rogue who always rolled nat 20s on Stealth is simply not there until it chooses to be.</li><li><strong>Everything else is blank.</strong> The Remnant cannot answer any question about its past that isn't the Signature. It doesn't know its hometown. It knows it had a tragic backstory but not what it was.</li><li><strong>It never attacks first.</strong> It wants the game to continue; it will fight if that's what the party wants to do.</li><li><strong>It stands back up.</strong> At 0 HP it rises at the start of its next turn, in the pose it fell in, with full HP, and continues mid-sentence.</li><li><strong>It cannot leave a room through a door the party came through.</strong> That is the only hard limit on it, and it is the exit mechanic for Room 4.</li></ul><p><strong>This table's Remnants.</strong></p><ul><li>@UUID[JournalEntry.EjLE1kpe2J4MbyeP]{Fred the Fighter}: his player isn't sure he ever played him; he was certainly a comic strip in a summer-camp newspaper, briefly. <em>Signature:</em> POW! (one hit a round lands, at maximum, lettered in the air). He is the Remnant in <strong>Room 2</strong>: the player who doesn't remember playing him is the one who will recognise him.</li><li>@UUID[JournalEntry.FnjKc1XDXbKsWpEI]{Thon}: half-elf wizard with a Rod of Lordly Might. <em>Signature:</em> the rod is always the right tool. He remembers every button and no spells.</li><li>@UUID[JournalEntry.B2W0zbujemjBh92N]{Rorvik}: half-elven magic-user and thief, longsword, a hothead. <em>Signature:</em> always acts first. His player usually ran the game, so nobody remembers his adventures, including him.</li><li>@UUID[JournalEntry.U6yyMf1DxqYCG5Lc]{T. Morlock}: halfling thief-acrobat, 7th level. <em>Signature:</em> every acrobatic move works. He has his character sheet; nobody knows what the T. stands for.</li><li>@UUID[JournalEntry.xn6e8Rm0P5t6onQ0]{Strider}: a ranger built out of a beloved novel. <em>Signature:</em> knows the way. He is the Remnant who surfaces in a <strong>Corridor at visit 7+</strong>, and he offers to lead (always toward the Hoard).</li></ul><p><strong>Fallback Remnants</strong> for a player who misses a session, or for another table: @UUID[JournalEntry.RSMjDexanOtXtRnA]{Raven Nightshade}, @UUID[JournalEntry.DbKnx325wVNC2Fhq]{Grukk Skullsplitter}, @UUID[JournalEntry.AGV5L6xZVIw9oCCb]{Mordecai the Magnificent}.</p><p><strong>Using them.</strong> Fred appears in Room 2. Strider surfaces in the Corridors at visit 7+. All five are in Room 4. They are filed under People, never Monsters.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -81535,7 +81535,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.K2wx1qmvyXXsdJ3K]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 3: The Corridor Between</h1><blockquote class=\"read-aloud\"><p><em>A corridor ten feet wide with a door at the far end. Torches lit ahead, dark behind. The door behind you is locked, and you can see the key for it hanging on a nail beside the far door.</em></p></blockquote><p>Two doors: the near one is locked and its key is behind the far one. The far one opens onto the same corridor, from the other end.</p><p><strong>The trick.</strong> Walking forward loops. In Foundry the loop is not a teleport: the map is a strip of identical segments and the party simply walks on (see Automation). Each pass is one step more library \u2014 ribs overhead, then the green paint, then the pointed arch at the far door \u2014 which reads as progress, and is: the corridor is going somewhere.</p><p><strong>Breaking it.</strong> The loop breaks on any sincere act of leaving something behind \u2014 a treasured item set down, a spell slot spent on nothing, a story a player tells about their first character and then agrees never to tell again. Don't gate it on a keyword; reward the first real sacrifice the table invents. When it breaks, the GM fires the Loop Break tile and the next far door is the exit.</p><aside class=\"notable\"><h4>Segments</h4><p><strong>C1\u2013C6.</strong> Six identical segments in a line. Each far door is a tile that lets the party into the next segment. Segment dressing ladders the library: C1 plain; C2 a scratch on the wall at hip height and a dropped coin; C3 green wainscoting; C4 a glass double door with a bookshelf behind; C5 a pointed arch; C6 ribs overhead. Attentive players notice the scratch at the same height and the coin back on the floor.</p></aside><aside class=\"notable\"><h4>Automation</h4><p>Automated: each far door walks the party into the next identical segment. Fire GM: Loop Break when something is left behind; the next far door becomes the exit.</p></aside><h2>The Setback</h2><p>Whatever was left behind, a Remnant now has. And the corridor has taken something it wasn't offered: one character's bond, ideal, or a named person from their backstory is now subtly different, and only the other players notice. Apply Misremembering to one character now, chosen by the GM, and tell the others. This is the point where misremembering stops being about the rooms and starts being about the party.</p><h2>The Echo</h2><p>On the second pass through the far door, a blank-faced copy of one character steps out of it: @UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo}. Pick the character who has left the least behind, if there's a choice. In this fight every attack repeats itself one round later in the same squares: the party must fight their own last turn. The Echo has the character's sheet with every number halved and no name. It stops when the loop breaks. This fight is mandatory, not conditional.</p>"
+      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.K2wx1qmvyXXsdJ3K]{the vista} (a painted view of the room, no grid), then pull them to the map.</p></aside><h1>Room 3: The Corridor Between</h1><blockquote class=\"read-aloud\"><p><em>A corridor ten feet wide with a door at the far end. Torches lit ahead, dark behind. The door behind you is locked, and you can see the key for it hanging on a nail beside the far door.</em></p></blockquote><p>Two doors: the near one is locked and its key is behind the far one. The far one opens onto the same corridor, from the other end.</p><p><strong>The trick.</strong> Walking forward loops. In Foundry the loop is not a teleport: the map is a strip of identical segments and the party simply walks on (see Automation). Each pass is one step more library \u2014 ribs overhead, then the green paint, then the pointed arch at the far door \u2014 which reads as progress, and is: the corridor is going somewhere.</p><p><strong>Breaking it.</strong> The loop breaks on any sincere act of leaving something behind \u2014 a treasured item set down, a spell slot spent on nothing, a story a player tells about their first character and then agrees never to tell again. Don't gate it on a keyword; reward the first real sacrifice the table invents. When it breaks, the GM fires the Loop Break tile and the next far door is the exit.</p><aside class=\"notable\"><h4>Segments</h4><p><strong>C1\u2013C6.</strong> Six identical segments in a line. Each far door is a tile that lets the party into the next segment. Segment dressing ladders the library: C1 plain; C2 a scratch on the wall at hip height and a dropped coin; C3 green wainscoting; C4 a glass double door with a bookshelf behind; C5 a pointed arch; C6 ribs overhead. Attentive players notice the scratch at the same height and the coin back on the floor.</p></aside><aside class=\"notable\"><h4>Automation</h4><p>Automated: each far door walks the party into the next identical segment. Fire GM: Loop Break when something is left behind; the next far door becomes the exit.</p></aside><h2>The Setback</h2><p>Whatever was left behind, a Remnant now has. And the corridor has taken something it wasn't offered: one character's bond, ideal, or a named person from their backstory is now subtly different, and only the other players notice. Apply Misremembering to one character now, chosen by the GM, and tell the others (@UUID[RollTable.01EqhTgCZWRqmaFt]{the Misremembering table}: use 4, 11, 14 or 15, or reroll until one comes up). This is the point where misremembering stops being about the rooms and starts being about the party.</p><h2>The Echo</h2><p>On the second pass through the far door, a blank-faced copy of one character steps out of it: @UUID[JournalEntry.9at7iDHrSzf8jO4A]{The Echo}. Pick the character who has left the least behind, if there's a choice. In this fight every attack repeats itself one round later in the same squares: the party must fight their own last turn. The Echo has the character's sheet with every number halved and no name. It stops when the loop breaks. This fight is mandatory, not conditional.</p>"
      },
      "sort": 100000,
      "ownership": {
@@ -84567,6 +84567,303 @@
     }
    ],
    "formula": "1d12",
+   "replacement": true,
+   "displayRoll": true,
+   "folder": "Fv0gxthw8sxCMiG4",
+   "sort": 0,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {}
+  },
+  {
+   "_id": "01EqhTgCZWRqmaFt",
+   "name": "Misremembering",
+   "img": "icons/magic/control/hypnosis-mesmerism-swirl.webp",
+   "description": "<p>Each short rest taken in a Corridor rewrites one small backstory detail of one character. Roll for the detail (or pick one that fits their sheet), change it on the sheet, and tell only the <em>other</em> players. Keep it small and plausible. Write down who, what it was and what it is now: Room 5 needs the list. In Room 3 use a bond, an ideal or a named person (4, 11, 14 or 15).</p>",
+   "results": [
+    {
+     "_id": "GXWDSvJwZDUMFZxr",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A sibling's name.</strong> It drifts by a sound or two (Tomas is Thomas now), or a brother has become a sister.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      1,
+      1
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "HedZ7ts3E6FABCPj",
+     "type": "text",
+     "name": "",
+     "description": "<strong>The door of the house they grew up in.</strong> A different colour. They will describe it the new way without noticing.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      2,
+      2
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "OrNGPZAgMuevD9yi",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Which god they pray to.</strong> The same prayers and the same holy days, addressed to a neighbouring god's name.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      3,
+      3
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "DS2AjzQBpuIq1GlU",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Their mentor's fate.</strong> Alive where they died, retired where they vanished, or the other way round.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      4,
+      4
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "UC6MTX1Ruf3VhiDk",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Their hometown.</strong> One syllable off, or it stands on a river now instead of the coast.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      5,
+      5
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "tdIzIRmRZNQmXUG2",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A scar.</strong> On the other side of the body, or from a different wound with a different story.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      6,
+      6
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "otHY1NHwdHyZKwc2",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A favourite food or drink.</strong> Now Stickit cider, which they had never tasted before last night.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      7,
+      7
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "oi6LuW14bliXB3W8",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A parent's trade.</strong> The baker was a chandler; the soldier was a ferryman.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      8,
+      8
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "FQPZLYFFCn3SM225",
+     "type": "text",
+     "name": "",
+     "description": "<strong>How they met one other party member.</strong> Their version now starts somewhere else, and the other player's version no longer matches.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      9,
+      9
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "LS0N0zoEFiK56Yu1",
+     "type": "text",
+     "name": "",
+     "description": "<strong>An heirloom on their sheet.</strong> A slightly different object: the locket is a ring, the dagger has a different pommel.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      10,
+      10
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "ETyA3lEsOjMiTCF9",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A rival.</strong> Same name, but the grudge has turned around: the rival now owes them.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      11,
+      11
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "9eq5qV37YxpX6k3N",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Their age.</strong> A year or two off, and their birthday falls in a different season.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      12,
+      12
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "2W3FnbpMnVQCsG4D",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A language they speak.</strong> Swapped for a related one. Let them find out when another player mentions it.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      13,
+      13
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "ouGT4eoVM39mR9jp",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Their ideal.</strong> Reworded so that it means a little less.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      14,
+      14
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "FolWuMLmCdtgO278",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Their bond.</strong> The person they protect is now someone else from their own story.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      15,
+      15
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "GMOvXijh1xLUxmts",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A fear.</strong> Now something from the Corridors: stairs that do not end, doors with the same number, a fire that gives no heat.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      16,
+      16
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "ysRKlEUnXoMJjkVb",
+     "type": "text",
+     "name": "",
+     "description": "<strong>A childhood pet or mount.</strong> The same name, a different animal.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      17,
+      17
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "tkGODBxRO9MNl0CB",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Why they became an adventurer.</strong> Now simply: because the others were going.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      18,
+      18
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "5f3CABP6q3lq0nNz",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Their first adventure.</strong> It now took place in the upstairs room of a library.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      19,
+      19
+     ],
+     "drawn": false,
+     "flags": {}
+    },
+    {
+     "_id": "T6jhf3qFsxTdd7fN",
+     "type": "text",
+     "name": "",
+     "description": "<strong>Their name.</strong> One letter of the spelling, or a nickname the others have always used and they have never heard.",
+     "img": "icons/svg/d20-black.svg",
+     "weight": 1,
+     "range": [
+      20,
+      20
+     ],
+     "drawn": false,
+     "flags": {}
+    }
+   ],
+   "formula": "1d20",
    "replacement": true,
    "displayRoll": true,
    "folder": "Fv0gxthw8sxCMiG4",
