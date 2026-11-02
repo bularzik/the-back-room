@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.1] - 2026-11-02
+
 ### Fixed
 - **The party stays together in the Corridors.** Each character going through a Corridor door used to land somewhere different. Now the first one through a door takes the whole party, every player character on the scene, to one place. The same goes for Room 1's night doors, Room 2's door, Room 3's exit, The Cover's exit, the X doors and the Cellar control.
 - Characters arriving through a door no longer land on the same square.
@@ -126,7 +128,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.0...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.1...HEAD
+[2.5.1]: https://github.com/bularzik/the-back-room/compare/v2.5.0...v2.5.1
 [2.5.0]: https://github.com/bularzik/the-back-room/compare/v2.4.2...v2.5.0
 [2.4.2]: https://github.com/bularzik/the-back-room/compare/v2.4.1...v2.4.2
 [2.4.1]: https://github.com/bularzik/the-back-room/compare/v2.4.0...v2.4.1
