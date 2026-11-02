@@ -20,6 +20,11 @@ MATT = "monks-active-tiles"
 AUD = f"{MOD}/audio"
 TOKEN = {"id": "token", "name": "Triggering Token"}
 PLAYERS = {"id": "players", "name": "Players"}
+# Outdoor exits with no door drawn on the map (a road or a path off the edge). Their trigger tiles show a free-standing
+# open door frame instead of the blank texture, facing into the map from the given edge, so players can see the way out.
+OPEN_EXITS = {"c4-campfire": {"door1": "top", "door2": "right", "door3": "bottom"},
+              "c6-ferry": {"door1": "left"},
+              "c7-crossroads": {"door1": "top", "door2": "bottom", "door3": "right"}}
 POOL = ["c1-stairwell", "c2-stable", "c3-inn-hallway", "c4-campfire", "c5-market", "c6-ferry", "c7-crossroads", "c8-cellar"]
 COPIES = ("a", "b", "c")
 ARRIVE = ["create", "enter"]   # a cross-scene teleport CREATES the token on the destination scene; "enter" alone never fires
@@ -33,7 +38,7 @@ class TB:
     def tid(self, key): return uid(self.sid, "tile", key)
     def tuuid(self, key): return f"Scene.{self.sid}.Tile.{self.tid(key)}"
     def tile(self, key, rect, actions=(), trigger="enter", img=None, hidden=False, active=True,
-             restriction="player", controlled="all", pertoken=False, chance=100, name=None):
+             restriction="player", controlled="all", pertoken=False, chance=100, name=None, fit="fill"):
         x, y, w, h = rect
         acts = []
         for i, (a, data) in enumerate(actions):
@@ -43,7 +48,7 @@ class TB:
         self.n += 1
         self.tiles.append({
             "_id": self.tid(key), "x": int(x), "y": int(y), "width": int(w), "height": int(h),
-            "texture": {"src": img or BLANK, "anchorX": .5, "anchorY": .5, "scaleX": 1, "scaleY": 1, "tint": "#ffffff", "alphaThreshold": .75, "fit": "fill"},
+            "texture": {"src": img or BLANK, "anchorX": .5, "anchorY": .5, "scaleX": 1, "scaleY": 1, "tint": "#ffffff", "alphaThreshold": .75, "fit": fit},
             "elevation": 0, "sort": self.n, "rotation": 0, "alpha": 1, "hidden": hidden, "locked": False,
             "occlusion": {"mode": 0, "alpha": 0}, "restrictions": {"light": False, "weather": False},
             "flags": {MATT: {"name": name or key, "active": active, "trigger": trigger, "restriction": restriction,
@@ -119,7 +124,9 @@ def build_tiles(ctx):
                 and (leaving is None or place(k) != place(leaving)) for u in arrive_uuids[k]]
     def corridor_door(tb, key, name, r, dests, xdoor=False):
         acts = [sound("sting-door"), *party_teleport(dests)] if dests else [chat(f"No pool destinations built yet ({key}/{name}).")]
-        tb.tile(name, r, acts, name=f"Pool door {name}" + (" (X-door slot)" if xdoor else ""))
+        side = OPEN_EXITS.get(place(key), {}).get(name)   # an exit with no door on the map gets a free-standing door frame
+        tb.tile(name, r, acts, name=f"Pool door {name}" + (" (X-door slot)" if xdoor else ""),
+                img=f"{MOD}/tiles/exit-door-{side}.webp" if side else None, fit="contain" if side else "fill")
 
     # ======================= THE CORRIDOR POOL =======================
     for key in pool_keys:

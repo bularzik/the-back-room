@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Outdoor exits are visible.** The ways out of the Campfire Clearing, the Crossroads and the path into the Ferry Crossing had nothing on the map to mark them. Each now shows a free-standing open door frame with light spilling through it: the Corridors' doors, even outdoors.
+
 ## [2.5.1] - 2026-11-02
 
 ### Fixed
