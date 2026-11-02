@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **Going through a door activates the new scene.** When the party moves to another scene through a Corridor door (or Room 1's night doors, Room 2's door, Room 3's exit, The Cover's door and exit, an X door or the Cellar control), that scene becomes the active scene: its ambience starts and everyone's view follows. The Hoard's exit is left to you, since characters walk out one at a time.
+
 ## [2.5.2] - 2026-11-02
 
 ### Fixed

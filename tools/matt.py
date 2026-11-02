@@ -75,7 +75,13 @@ def party_teleport(dest_uuids):
         if i > 0: acts.append(("anchor", {"tag": f"dest{i}", "stop": True}))
         if i < n - 1: acts.append(("random", {"number": f"{100 / (n - i):.4f}", "fail": f"dest{i + 1}"}))
         acts.append(teleport(d, entity=PLAYERS))
+        acts.append(activate_scene(d))
     return acts
+def activate_scene(dest_uuid):
+    """Activate the destination's scene (its ambience starts and everyone's view follows). MATT only activates when the
+    GM's client is among the action's users, hence for: everyone; it does nothing if the scene is already active."""
+    scene_uuid = ".".join(dest_uuid.split(".")[:2])   # Scene.<id>.Tile.<id> -> Scene.<id>
+    return ("scene", {"sceneid": {"id": scene_uuid, "name": "Destination scene"}, "activate": True, "for": "everyone"})
 def teleport(dest_uuids, entity=TOKEN, position="random", cross=True):
     """MATT takes one location {id, name} or a LIST of them, and picks one at random from a list."""
     if isinstance(dest_uuids, (list, tuple)):
@@ -156,7 +162,7 @@ def build_tiles(ctx):
             tb.tile("gm-cellar", [0, 100, 100, 100], party_teleport(cellar), trigger="dblclick", img=f"{MOD}/tiles/gm-cellar.webp",
                     hidden=True, restriction="all", controlled="gm", name="GM: Next door → the Cellar (visit 5+)")
         if present("cover-cavern") and (m := rect("cover-cavern", "mouth")) and not key.startswith("c8-cellar"):
-            tb.tile("gm-cover", [0, 200, 100, 100], [teleport(builders["cover-cavern"].tuuid("mouth"), entity=PLAYERS)], trigger="dblclick",
+            tb.tile("gm-cover", [0, 200, 100, 100], party_teleport(builders["cover-cavern"].tuuid("mouth")), trigger="dblclick",
                     img=f"{MOD}/tiles/gm-cover.webp", hidden=True, restriction="all", controlled="gm", name="GM: Next door → The Cover (visits 3–6, once)")
         out[key] = tb.tiles
 
