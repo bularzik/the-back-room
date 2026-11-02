@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.2] - 2026-11-02
+
 ### Fixed
 - **Outdoor exits are visible.** The ways out of the Campfire Clearing, the Crossroads and the path into the Ferry Crossing had nothing on the map to mark them. Each now shows a free-standing open door frame with light spilling through it: the Corridors' doors, even outdoors.
 
@@ -131,7 +133,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.1...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.2...HEAD
+[2.5.2]: https://github.com/bularzik/the-back-room/compare/v2.5.1...v2.5.2
 [2.5.1]: https://github.com/bularzik/the-back-room/compare/v2.5.0...v2.5.1
 [2.5.0]: https://github.com/bularzik/the-back-room/compare/v2.4.2...v2.5.0
 [2.4.2]: https://github.com/bularzik/the-back-room/compare/v2.4.1...v2.4.2
