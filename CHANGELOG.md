@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **The party stays together in the Corridors.** Each character going through a Corridor door used to land somewhere different. Now the first one through a door takes the whole party, every player character on the scene, to one place. The same goes for Room 1's night doors, Room 2's door, Room 3's exit, The Cover's exit, the X doors and the Cellar control.
+- Characters arriving through a door no longer land on the same square.
+
 ## [2.5.0] - 2026-11-01
 
 ### Added

@@ -58,6 +58,19 @@ def chat(text, to="gm", flavor="", speaker=None):
     return ("chatmessage", {"flavor": flavor, "text": text, "entity": speaker or "", "incharacter": False, "chatbubble": "false", "showto": to, "language": ""})
 def sound(file, to="everyone", vol="0.8"):
     return ("playsound", {"audiofile": f"{AUD}/{file}.ogg", "audiofor": to, "volume": vol, "loop": False, "fade": 0.25, "scenerestrict": False, "prevent": False, "delay": False, "playlist": True})
+def party_teleport(dest_uuids):
+    """Move the whole party (every player character's token on the scene) to ONE destination picked at random.
+    MATT's own random pick happens separately for each token it moves, which split a party of five across five places.
+    So roll once with a chain of MATT 'random' filters that jump to landings: destination i continues with chance
+    1/(n-i), otherwise jumps to the next landing. A landing reached in normal order stops (stop-when-reached), so
+    exactly one teleport runs. Arrival points within the destination are kept apart by avoidtokens."""
+    dests = list(dest_uuids) if isinstance(dest_uuids, (list, tuple)) else [dest_uuids]
+    acts, n = [], len(dests)
+    for i, d in enumerate(dests):
+        if i > 0: acts.append(("anchor", {"tag": f"dest{i}", "stop": True}))
+        if i < n - 1: acts.append(("random", {"number": f"{100 / (n - i):.4f}", "fail": f"dest{i + 1}"}))
+        acts.append(teleport(d, entity=PLAYERS))
+    return acts
 def teleport(dest_uuids, entity=TOKEN, position="random", cross=True):
     """MATT takes one location {id, name} or a LIST of them, and picks one at random from a list."""
     if isinstance(dest_uuids, (list, tuple)):
@@ -105,7 +118,7 @@ def build_tiles(ctx):
         return [u for k in pool_keys if k.endswith("-" + copy) and not k.startswith("c8-cellar")
                 and (leaving is None or place(k) != place(leaving)) for u in arrive_uuids[k]]
     def corridor_door(tb, key, name, r, dests, xdoor=False):
-        acts = [sound("sting-door"), teleport(dests)] if dests else [chat(f"No pool destinations built yet ({key}/{name}).")]
+        acts = [sound("sting-door"), *party_teleport(dests)] if dests else [chat(f"No pool destinations built yet ({key}/{name}).")]
         tb.tile(name, r, acts, name=f"Pool door {name}" + (" (X-door slot)" if xdoor else ""))
 
     # ======================= THE CORRIDOR POOL =======================
@@ -125,7 +138,7 @@ def build_tiles(ctx):
                                               ("3", "corridor-between", "arrive1", "Room 3: The Corridor Between"),
                                               ("4", "hoard", "arrive", "Room 4: The Hoard")):
                 dest = builders[dkey].tuuid(drect) if present(dkey) and R.get(dkey, {}).get(drect) else None
-                tb.tile(f"xdoor{stage}", r, [sound("sting-x-door"), scroll("The X."), teleport(dest)] if dest else [chat(f"X door: {label} not built yet.")],
+                tb.tile(f"xdoor{stage}", r, [sound("sting-x-door"), scroll("The X."), *party_teleport(dest)] if dest else [chat(f"X door: {label} not built yet.")],
                         img=f"{MOD}/tiles/x-door.webp", hidden=True, active=False, name=f"The X Door → {label} (hidden until the GM reveals it)")
                 tb.tile(f"gm-x{stage}", [0, 300 + 100 * int(stage), 100, 100],
                         [showhide(tb.tuuid(f"xdoor{stage}"), "show"), activate(tb.tuuid(f"xdoor{stage}"), "activate"), activate(tb.tuuid(xd), "deactivate"),
@@ -133,7 +146,7 @@ def build_tiles(ctx):
                         trigger="dblclick", img=f"{MOD}/tiles/gm-x.webp", hidden=True, restriction="all", controlled="gm", name=f"GM: Reveal the X door → {label}")
         cellar = [u for k in pool_keys if k == f"c8-cellar-{key[-1]}" for u in arrive_uuids[k]]   # the Cellar at this scene's stage
         if cellar and not key.startswith("c8-cellar"):
-            tb.tile("gm-cellar", [0, 100, 100, 100], [teleport(cellar, entity=PLAYERS)], trigger="dblclick", img=f"{MOD}/tiles/gm-cellar.webp",
+            tb.tile("gm-cellar", [0, 100, 100, 100], party_teleport(cellar), trigger="dblclick", img=f"{MOD}/tiles/gm-cellar.webp",
                     hidden=True, restriction="all", controlled="gm", name="GM: Next door → the Cellar (visit 5+)")
         if present("cover-cavern") and (m := rect("cover-cavern", "mouth")) and not key.startswith("c8-cellar"):
             tb.tile("gm-cover", [0, 200, 100, 100], [teleport(builders["cover-cavern"].tuuid("mouth"), entity=PLAYERS)], trigger="dblclick",
@@ -149,7 +162,7 @@ def build_tiles(ctx):
         if (r := rect(key, "landing")): tb.tile("landing", r, [scroll("Dawn under the door.")] + ([activate(night, "deactivate")] if night else []), trigger=ARRIVE, active=True, name="Arrival (Room 5): turns off the night doors")
         for name, text in (("stairwell", "Too many steps."), ("loft", "Hay, and under it, the sound of horses.")):
             if (r := rect(key, name)):
-                tb.tile(name, r, [scroll(text), teleport(pool_destinations("a"))] if pool_keys else [chat("Pool not built yet.")], name=f"Night door: {name} → Corridor pool (copy A)")
+                tb.tile(name, r, [scroll(text), *party_teleport(pool_destinations("a"))] if pool_keys else [chat("Pool not built yet.")], name=f"Night door: {name} → Corridor pool (copy A)")
         if "Handout: The Toothless Key" in H and (r := rect(key, "stone")):
             tb.tile("stone", r, [journal(H["Handout: The Toothless Key"], to="trigger"), chat("Someone pulled the key.", to="gm")], trigger="click", pertoken=True, name="The stone with the hilt (click)")
         tb.tile("gm-reveal", [0, 0, 100, 100], [chat("<strong>Reveal.</strong> Un-hide the pool copies' real names in the scene directory and keep the fog as it is. They never left.", to="gm")],
@@ -164,7 +177,7 @@ def build_tiles(ctx):
             tb.tile("remnant", r, [journal(H["Handout: The X Map"]), chat("The Remnant has handed over the map. The X door may now appear in the Corridors (GM: Reveal the X door, in any pool scene).", to="gm"), deactivate_self()],
                     trigger="click", name="The Remnant's table (click when the Signature is said)")
         if (r := rect(key, "xdoor")):
-            tb.tile("xdoor", r, [sound("sting-door"), teleport(pool_destinations("b"))] if pool_keys else [chat("Pool not built yet.")], name="Door → Corridor pool (copy B)")
+            tb.tile("xdoor", r, [sound("sting-door"), *party_teleport(pool_destinations("b"))] if pool_keys else [chat("Pool not built yet.")], name="Door → Corridor pool (copy B)")
         out[key] = tb.tiles
 
     # ======================= ROOM 3: THE CORRIDOR BETWEEN =======================
@@ -180,7 +193,7 @@ def build_tiles(ctx):
                         name=f"Segment {i} far door → segment {min(i + 1, 6) if i < 6 else 1}")
         if (r := rect(key, "exit")):
             # the loop breaks back into the Corridors (visit 7+, a Remnant in the room); the X door to Room 4 is revealed from there
-            tb.tile("exit", r, [sound("sting-door"), teleport(pool_destinations("c"))] if pool_keys else [chat("Pool not built yet.")], hidden=True, active=False, name="Exit → Corridor pool, copy C (armed by Loop Break)")
+            tb.tile("exit", r, [sound("sting-door"), *party_teleport(pool_destinations("c"))] if pool_keys else [chat("Pool not built yet.")], hidden=True, active=False, name="Exit → Corridor pool, copy C (armed by Loop Break)")
             tb.tile("gm-break", [0, 0, 100, 100], [activate([tb.tuuid(f"seg{i}") for i in range(1, 7) if rect(key, f"seg{i}")], "deactivate"),
                                                     showhide(tb.tuuid("exit"), "show"), activate(tb.tuuid("exit"), "activate"),
                                                     chat("<strong>Loop broken.</strong> The next far door opens back into the Corridors (visit 7+; reveal the X door to Room 4 when you are ready). Apply the Setback: one character's bond, ideal or named person is now different; tell the other players.", to="gm")],
@@ -207,7 +220,7 @@ def build_tiles(ctx):
                 tb.tile(f"gap-{mon}", r, [chat(f"<strong>A gap was stepped into.</strong> The {mon} wakes — and only the {mon}. Roll its initiative; it acts right after the character that woke it.", to="gm"),
                                            scroll("It turns its head."), deactivate_self()], name=f"Gap: wakes the {mon} (once)")
         if (r := rect(key, "exit")):
-            tb.tile("exit", r, [sound("sting-door"), chat("Nothing taken from the pile survives this door.", to="gm"), teleport(pool_destinations("b"))] if pool_keys else [chat("Pool not built yet.")], name="Exit → Corridor pool (copy B)")
+            tb.tile("exit", r, [sound("sting-door"), chat("Nothing taken from the pile survives this door.", to="gm"), *party_teleport(pool_destinations("b"))] if pool_keys else [chat("Pool not built yet.")], name="Exit → Corridor pool (copy B)")
         out[key] = tb.tiles
 
     for w in warnings: print("  matt:", w)
@@ -227,7 +240,7 @@ GM_GUIDE = """<h2>Automation with Monk's Active Tile Triggers</h2>
 </tbody></table>
 <h3>Automatic Tiles</h3>
 <table><thead><tr><th>Where</th><th>Trigger</th><th>Effect</th></tr></thead><tbody>
-<tr><td>Pool scenes, each door</td><td>Enter</td><td>Door cue; the token is sent to a random arrival in another place, in the <em>same copy</em> as this scene (A, B or C). Never another copy of this place, never the Cellar.</td></tr>
+<tr><td>Pool scenes, each door</td><td>Enter</td><td>Door cue; the <em>whole party</em> (every player character's token on the scene) goes to one random arrival in another place, in the <em>same copy</em> as this scene (A, B or C). Never another copy of this place, never the Cellar. The party always arrives together.</td></tr>
 <tr><td>Pool scenes, each arrival</td><td>Enter</td><td>Fog is reset for everyone and the GM is whispered the visit-band reminder. <strong>Tick the visit counter by hand</strong> (the tiles remind you; they do not count).</td></tr>
 <tr><td>Back Room, stairwell and loft</td><td>Enter</td><td>The night doors: into the pool, copy A. Visit 1.</td></tr>
 <tr><td>Back Room, the landing</td><td>Arrival from the Hoard</td><td>Room 5: turns off the stairwell and loft doors, so they no longer lead into the Corridors. The choice is made at the table: the landing door leaves, the hayloft door stays.</td></tr>
