@@ -116,7 +116,7 @@ def build(L):
          + "<h2>Session 3</h2>"
          + step(12, "The Cover", "Three waves. The cave mouth tile wakes wave 1 and brings in the Remnants. Use the GM controls for Rorvik (top of round 2), wave 2 and wave 3.", use=[SC("cover-cavern"), J("The Cover"), "GM controls: Rorvik bursts in · Wave 2 wakes · Wave 3 wakes", "Music: The Cover"])
          + step(13, "Goodbyes", "After wave 3, the Remnants say goodbye, one by one, and each gives their own player something from the pile. Then the cave's back passage opens: it leads to Room 5.", use=[J("The Cover") + " (After the Fight)"])
-         + step(14, "Room 5", "Dawn. Two doors: home, or the table. Each player chooses for their own character.", use=[J("Room 5: The Back Room, Again"), "Music: Room 5, dawn"])),
+         + step(14, "Room 5", "Dawn. Two doors: home, or the table. Each player chooses for their own character. Close with The Last Word, out of character.", use=[J("Room 5: The Back Room, Again") + " (The Choice, The Last Word)", "Music: Room 5, dawn; then After the fight: Sad Strings"])),
     ]))
 
     # ------------------------------------------------------------------ ROOM 1
@@ -296,7 +296,20 @@ def build(L):
          + P("Each character who goes home gains a level, and keeps what the Remnants gave them.")
          + "<h3>If they stay</h3>" + box(
               "The hayloft is warm and full of lamplight, and there is a low table up here, and chairs round it, and the people you used to be already sitting down. There is a character sheet on your chair, and the name at the top is the one you almost gave them. Somebody says, “Right. Where were we?”, and nobody remembers, and it doesn't matter.")
-         + P("The campaign ends here for that character, and it is allowed to be a good ending."), 2),
+         + P("The campaign ends here for that character, and it is allowed to be a good ending.")
+         + "<h3>Then, The Last Word</h3>" + P("When the last character has gone through a door, stop the scene's sound and start <em>After the fight: Sad Strings</em> (playlist <em>Unfinished Fight: Music</em>). Let it play a few bars. Then put the dice down and read The Last Word."), 2),
+        ("The Last Word", "<h2>The Last Word</h2>" + P("Close the campaign out of character: put the dice down, look up from the screen, and speak to the players, not their characters. There are two closings here. The first was written for this storyline; the second is the original Back Room closing. Read one, or the first and then the second.")
+         + "<h3>For The Unfinished Fight</h3>" + box(
+               "Every one of us left something unfinished at a table somewhere. A dungeon we never got to the bottom of. A dragon we never reached, because it got late, or somebody moved away, or the group just stopped meeting.",
+               "Tonight, our first characters got to finish theirs. And we were the ones who helped them do it.",
+               "That's the thing about this game. A story isn't over when we stop playing it. It's over when we decide it is.",
+               "So, for Fred, and Thon, and Rorvik, and T. Morlock, and Strider: we finished it. The end.")
+         + "<h3>The original closing</h3>" + box(
+               "Over the years, this game has been our interstice: our liminal space. We pause our busy lives, the ones where we hurtle from one thing to the next, and make room around a table to weave stories about things that don't exist.",
+               "After tonight it's back to the real world, and whatever the next destination is, good or bad.",
+               "There have been times when being in the back room, playing this game, was better than real life. There have been times, I think, when all of us thought it might be better just to stay in that back room.",
+               "But our time here is done now. Time to go back.")
+         + P("Then stop. Don't recap, and don't explain the ending. Let the table sit with it, and let whoever wants to say their first character's name one last time say it."), 2),
     ]))
 
     # ------------------------------------------------------------------ CAST, HANDOUTS
