@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:packs": "python3 tools/build.py && node tools/js/compile.mjs && node tools/js/changelog.mjs check",
+    "build:packs": "python3 tools/build.py && python3 tools/build_unfinished.py && node tools/js/compile.mjs && node tools/js/changelog.mjs check",
     "validate": "node tools/js/validate.mjs",
     "package": "npm run build:packs && npm run validate && node tools/js/package.mjs",
     "changelog:release": "node tools/js/changelog.mjs release"

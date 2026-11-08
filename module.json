@@ -1,7 +1,7 @@
 {
   "id": "the-back-room",
   "title": "The Back Room",
-  "description": "<p>A Backrooms-inspired liminal-horror adventure for D&amp;D 5e (2024 rules), levels 5\u20138: the party beds down in a tavern back room and never leaves it. Scenes, actors, journals, handouts, roll tables and ambient audio, with Monk's Active Tile Triggers automation.</p>",
+  "description": "<p>A Backrooms-inspired liminal-horror adventure for D&amp;D 5e (2024 rules), levels 5\u20138: the party beds down in a tavern back room and never leaves it. Two adventures in one module: <em>The Back Room</em> (the Corridors) and <em>The Back Room: The Unfinished Fight</em> (a fixed road to the fight on the cover of the 1977 Monster Manual, with the players' first characters at their side). Scenes, actors, journals, handouts, roll tables and ambient audio, with Monk's Active Tile Triggers automation.</p>",
   "version": "2.0.0",
   "url": "https://github.com/bularzik/the-back-room",
   "manifest": "https://github.com/bularzik/the-back-room/releases/latest/download/module.json",
@@ -108,6 +108,17 @@
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "the-back-room-unfinished",
+      "label": "The Back Room: The Unfinished Fight (Adventure)",
+      "path": "packs/the-back-room-unfinished",
+      "type": "Adventure",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -116,7 +127,8 @@
       "sorting": "m",
       "color": "#27413b",
       "packs": [
-        "the-back-room"
+        "the-back-room",
+        "the-back-room-unfinished"
       ]
     }
   ],
