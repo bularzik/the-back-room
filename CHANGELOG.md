@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.5] - 2026-11-09
+
 ### Fixed
 - **Handout pictures show.** The pictures for The Job, The Toothless Key and The X Map never loaded: the path to each image was written wrong. Each picture now sits at the top of its handout, above the text, and in the handout's Picture tab.
 
@@ -147,7 +149,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.4...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.5...HEAD
+[2.5.5]: https://github.com/bularzik/the-back-room/compare/v2.5.4...v2.5.5
 [2.5.4]: https://github.com/bularzik/the-back-room/compare/v2.5.3...v2.5.4
 [2.5.3]: https://github.com/bularzik/the-back-room/compare/v2.5.2...v2.5.3
 [2.5.2]: https://github.com/bularzik/the-back-room/compare/v2.5.1...v2.5.2
