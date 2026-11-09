@@ -97,7 +97,7 @@ def build_waves():
     multi(m, f"The {M} makes one Hooves attack and one Radiant Horn attack.")
     m.attack("Hooves", 2, 6, "bludgeoning", "str", img="icons/creatures/mammals/horse-hooves-blue.webp")
     m.attack("Radiant Horn", 1, 8, "piercing", "str", extra_parts=[(2, 8, ["radiant"])], img="icons/magic/light/beam-rays-yellow.webp")
-    m.utility("Healing Touch", P(f"The {M} touches one other monster of the Cover within 5 feet, which regains [[/heal 4d8+4]] Hit Points. If that monster has 0 Hit Points (including a troll that is down), it stands up."), recharge=5, img="icons/magic/life/heart-cross-green.webp")
+    m.utility("Healing Touch", P(f"The {M} touches one other monster of the Cover within 5 feet, which regains [[/heal 4d8+4]] Hit Points. It can't bring back the dead; but if the troll is down and not yet burned, this stands it up at once."), recharge=5, img="icons/magic/life/heart-cross-green.webp")
     m.utility("Shimmering Shield", P(f"The {M} grants one other monster of the Cover within 60 feet a +2 bonus to Armor Class until the start of the unicorn's next turn."), act_type="bonus", img="icons/magic/defensive/shield-barrier-glowing-blue.webp")
     m.utility("Charge", P(f"If the {M} moves at least 20 feet straight toward a target and then hits it with Radiant Horn, the target takes an extra [[/damage 2d8 piercing]] and must succeed on a DC 15 Strength saving throw or have the Prone condition."), img="icons/skills/movement/arrow-upward-yellow.webp")
     out["unicorn"] = m
@@ -157,7 +157,12 @@ REMOVE_TRAITS = {"Cannot Follow", "Stands Back Up", "Sorry I'm Late"}
 VARIANT_TRAITS = {
     "remnant-rorvik": [("Sorry I'm Late", P("In the Cover, Rorvik is not there when wave 1 wakes. At the top of round 2 he comes in through the cave mouth at a run, longsword out: <em>“Sorry I'm late. What did I miss?”</em> From then on Hothead applies as normal: he acts first, every round, as if he had been there all along."))],
     "remnant-thon": [("The Buttons, in Order", P("Thon presses the rod's buttons in order, one per press, and names each one: <strong>1</strong> mace, <strong>2</strong> flaming blade, <strong>3</strong> battleaxe, <strong>4</strong> spear, <strong>5</strong> ladder, <strong>6</strong> battering ram, <strong>7</strong> a pole that points north. He insists on showing them in order, every time, unless someone asks for one by name: then he grins, says its number, and presses it. As the battering ram, it opens any door."))],
-    "remnant-strider": [("Knows the Way (The Unfinished Fight)", P("Strider has been at the Crossroads a long time, because he has never had a map. Show him the X Map and he reads it at a glance: <em>“That's two doors from here.”</em> He points down the east road, and he is right."))],
+}
+# Sentences in the original Remnants' traits that belong to The Back Room's Corridors; replaced or cut here.
+TEXT_EDITS = {
+    "remnant-strider": [("In the Corridors he knows which door leads where, and if asked the GM tells him the truth (he will offer to lead; where he leads is always toward the Hoard).",
+                         "He has never had a map, which is why he has been sitting at the Crossroads so long. Show him one and he reads it at a glance, and he is right.")],
+    "remnant-morlock": [(" It never carries him out of a room through a wall the party has left by: the Remnant rule still holds.", "")],
 }
 VARIANT_BIO = P("<strong>Remnant.</strong> One of the first party: a player's first-ever character, as the table remembers them. Max Hit Points, never rolled. It never attacks first. It cannot answer any question about its past that is not its Signature. In this adventure it wants one thing: to finish the fight on the cover of the Monster Manual, which the first party never did.")
 
@@ -166,11 +171,17 @@ def build_allies():
     the party's allies for the Cover. The Echo is not in this adventure."""
     npcs = build_npcs()
     npcs.pop("echo", None)
+    bio = npcs["barkeep"].doc["system"]["details"]["biography"]
+    bio["value"] = bio["value"].replace("comes down the wrong stairwell with a tray", "comes up the stone stairs with a tray")
     for key, m in npcs.items():
         if not key.startswith("remnant-"): continue
         bio = m.doc["system"]["details"]["biography"]
         bio["value"] = bio["value"].split("<p><strong>Remnant.</strong>")[0] + VARIANT_BIO
         m.items[:] = [it for it in m.items if it["name"] not in REMOVE_TRAITS]
+        for it in m.items:   # the Signature's sure hit: once per wave in this adventure's one fight
+            d = it["system"]["description"]
+            d["value"] = d["value"].replace("Once per round", "Once per wave of the Cover (once per round anywhere else)")
+            for old, new in TEXT_EDITS.get(key, []): d["value"] = d["value"].replace(old, new)
         m.trait("Ally in the Cover", ALLY_RULE, img="icons/magic/life/heart-cross-green.webp")
         for name, html in VARIANT_TRAITS.get(key, []): m.trait(name, html)
         m.doc["prototypeToken"]["disposition"] = 1   # friendly

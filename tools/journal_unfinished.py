@@ -2,7 +2,7 @@
 
 Route: Room 1 (the night) -> Room 2 (Fred, the X Map) -> the Crossroads (Strider) -> the Cellar (Thon) -> the Stable
 (T. Morlock) -> the Hoard (the ask) -> the Cover (three waves, with the Remnants) -> Room 5 (stay or go home).
-No random doors, no misremembering, no Echo. Every door leads to one place, and back."""
+No random doors, no misremembering, no Echo. Every door leads to one place."""
 import copy
 from journal import box, P, ul, ol, aside, table, DIALOG as BASE_DIALOG
 
@@ -28,6 +28,8 @@ DIALOG["remnant-fred"] = [
 ]
 DIALOG["remnant-thon"] = [
     ("Greeting", "Ah, you'll want to see this. Everybody wants to see this."),
+    ("In the Hoard, the ask", "I've pressed every button on this rod but one fight. Help me press the last one."),
+    ("In the Cover", "Button three! No, four! It doesn't matter, they all hit!"),
     ("In the Cellar, pressing buttons in order", "Button one, mace! (Click.) Button two, flaming blade! Hold on, I'll get there. They go in order."),
     ("Asked for the battering ram by name", "Button six! (Click. It is a battering ram.) Why didn't you say?"),
     ("Asked to cast a spell", "Spells? Yes, certainly, but have you seen button seven? It points north. Always. Even here. Especially here."),
@@ -50,6 +52,8 @@ DIALOG["remnant-morlock"] = [
     ("Asked what the T. stands for", "…It stands for T."),
     ("If anyone touches the leather bag", "Don't. Don't do that."),
     ("Walking into the stable wall", "Elishaf. (He is half through it.) Well? Come on."),
+    ("In the Hoard, the ask", "Seventh level, and I never fought a single thing on that cover. Not one. Will you come?"),
+    ("In the Cover, vaulting", "Tightrope, one hundred percent!"),
     ("After wave 3", "We finished it. Put that on the sheet. (He hands it to you. The T. still doesn't say.)"),
 ]
 DIALOG["remnant-strider"] = [
@@ -58,9 +62,18 @@ DIALOG["remnant-strider"] = [
     ("Asked who he is", "Strider will do. It's what everyone calls me."),
     ("Asked about his lineage", "(He tells it, earnestly, at length: a story every player at the table has read in a book. He does not notice.)"),
     ("Leaving the Crossroads", "Go on. I know the way now. I'll see you at the table."),
+    ("In the Hoard, the ask", "There's a road I never walked to the end. It goes through that door. Walk it with me."),
+    ("In the Cover", "Get behind me. No: beside me. That's how it was."),
     ("His Signature, with the bow", "Hold still. (He doesn't miss.)"),
     ("After wave 3", "The road goes ever on. Not this one, though. This one's done."),
 ]
+
+for _k, _lines in {
+    "remnant-rogue": [("In the Hoard, the ask", "There's one thing I left unfinished. It's complicated. It's that cave."), ("In the Cover", "(Steps into a shadow nobody else can see, and comes out behind the troll.)"), ("After wave 3", "We finished it. Huh. That's… not complicated at all.")],
+    "remnant-barbarian": [("In the Hoard, the ask", "GRUKK HELP. You help Grukk. Big fight. Grukk save best monster for you."), ("In the Cover", "GRUKK SKULLSPLITTER! (Not angry. Just strong.)"), ("After wave 3", "We finish. Grukk happy. Grukk always happy, but now MORE.")],
+    "remnant-wizard": [("In the Hoard, the ask", "I have prepared something special for this fight. (It is a fireball.) Will you come and watch?"), ("In the Cover", "Fireball! (It is, as promised, a fireball.)"), ("After wave 3", "We finished it. I'd like to learn a second spell now.")],
+}.items():
+    DIALOG[_k] = [l for l in DIALOG.get(_k, []) if not l[0].startswith("Room ")] + _lines
 
 def build(L):
     A = lambda k, n=None: L("actor", k, n)
@@ -73,14 +86,14 @@ def build(L):
     entries.append(("00. The Unfinished Fight: Overview", [
         ("Introduction", "<h1>The Back Room: The Unfinished Fight</h1>" + P(
             "A three-session adventure for five 7th-level characters (it runs for 5th–8th). The party beds down in the back room of the Stickit Inn, and in the night the inn turns into somewhere else. On the way through it they meet the first party: each player's first-ever D&D character, the way the table remembers them. Those characters have one problem. On the cover of the 1977 Monster Manual there is a fight that was never finished, and they cannot finish it on their own.",
-            "The adventure is a road with stops, not a maze. Every door goes to one place, and back. Each stop is a puzzle, a fight, or both; each one has a Remnant in it; and the last stop is a long, hard fight in three waves, with the Remnants at the party's side.")
+            "The adventure is a road with stops, not a maze. Every door goes to one place, and the way the party came in goes back where they came from (except at the Crossroads, whose roads only loop). Each stop is a puzzle, a fight, or both; each one has a Remnant in it; and the last stop is a long, hard fight in three waves, with the Remnants at the party's side.")
          + aside("If you ran The Back Room", P("This is the same module, maps, people and art, with a different route. Gone: the random Corridor doors, Misremembering, the visit count, the X door and its GM controls, the Corridor Between and the Echo. New: a fixed route (Crossroads, Cellar, Stable), a puzzle and a Remnant at each stop, the Hoard's request, and the Cover as three back-to-back waves fought together with the Remnants. The Back Room's own journals, scenes and tiles are untouched; import one adventure or the other into a world, not both."))),
         ("The Route", "<h2>The Route</h2>" + table(["#", "Scene", "What happens", "Who"], [
             ["1", SC("backroom"), "The evening, the night, the stairs that are wrong.", A("barkeep")],
             ["2", SC("common-room"), "A room of roles. Find the real one. He hands over the X Map and the door unlocks.", A("remnant-fred")],
             ["3", SC("c7-crossroads"), "Every road comes back here, except one. Strider has never had a map.", A("remnant-strider")],
             ["4", SC("c8-cellar"), "A door that won't open, a rod with seven buttons, and the provisions chests are breathing.", A("remnant-thon")],
-            ["5", SC("c2-stable"), "Two of the doors lead back to the hayloft. The way on is through the wall.", A("remnant-morlock")],
+            ["5", SC("c2-stable"), "The south doors loop back to the hayloft. The way on is through the east wall.", A("remnant-morlock")],
             ["6", SC("hoard"), "The first party, at their table. They ask.", "All five (Rorvik's chair is empty)"],
             ["7", SC("cover-cavern"), "The fight from the cover, in three waves, together.", "The six monsters; the five Remnants"],
             ["8", SC("backroom", "The Back Room, again"), "Dawn. Two doors: home, or the table.", "The Remnants, through the hayloft door"]])
@@ -102,20 +115,20 @@ def build(L):
          + "<h2>Before session 1</h2>"
          + step(1, "Check the modules", "Required: Monk's Enhanced Journal, Campaign Companion, Monk's Active Tile Triggers. Recommended for sound: Ivan Duch's Music Packs, Michael Ghelfi, SoundFx Library, Adventure Music, SoundBard; and Patrol, for the barmaid.")
          + step(2, "Read the route", "The overview, then the Hoard and the Cover journals: the end explains the beginning.", use=[J("00. The Unfinished Fight: Overview"), J("The Hoard"), J("The Cover")])
-         + step(3, "Prepare the people", f"Read {J('The Remnants')}. Pick one secret detail from each character's backstory for {A('barkeep')} to know (Room 1). Decide who the latecomer is, if anyone.", use=[J("The Remnants"), "Each Remnant's Person page has their lines and links their actor."])
+         + step(3, "Prepare the people", f"Read {J('The Remnants')}. Pick one secret detail from one character's backstory for {A('barkeep')} to know (Room 1). Decide who the latecomer is, if anyone.", use=[J("The Remnants"), "Each Remnant's Person page has their lines and links their actor."])
          + step(4, "Set the opening", "The scene <em>Welcome: The Stickit Inn</em> is active on import: it's what players see when they connect. Give out the handouts The Job and The Kettle Pass.", use=["Handouts: The Job, The Kettle Pass"])
          + "<h2>Session 1</h2>"
-         + step(5, "The evening", "Play the inn straight in the common room (the vista is enough), then Bartleby leads them upstairs. Move everyone to Room 1 and activate it.", use=[SC("backroom"), J("Room 1: The Back Room")])
+         + step(5, "The evening", "Play the inn straight in the common room (the vista is enough), then Bartleby leads them upstairs. Activate Room 1 and drag the party's tokens onto the cots: no door brings them, Bartleby does.", use=[SC("backroom"), J("Room 1: The Back Room")])
          + step(6, "Night falls", "When everyone has bedded down, double-click the GM control <em>Night falls</em> (top-left corner of the scene, on the Tiles layer). It lights the lantern, puts Bartleby on the stairs, opens the hayloft door that wasn't there, and arms the stairs and the hayloft door: both now lead down into Room 2.", use=["GM control: Night falls"])
          + step(7, "Room 2", "Roles, one line each. Fred is the real one. When he says his Signature, click his table (the tile under him): everyone gets the X Map, and the door's lock opens. If it doesn't, click the door icon yourself.", use=[SC("common-room"), J("Room 2: The Common Room That Isn't"), TB("jokes")])
          + "<h2>Session 2</h2>"
          + step(8, "The Crossroads", "Four roads out. North, south and west come back to the crossroads. East goes on. Strider reads the map and points east.", use=[SC("c7-crossroads"), J("The Crossroads")])
          + step(9, "The Cellar", "The fight. The east door won't open until Thon presses button six. When he does, click the door icon to open it; the chests stop.", use=[SC("c8-cellar"), J("The Cellar")])
-         + step(10, "The Stable", "Two doors lead back up to the hayloft. When T. Morlock walks into the east wall, click the door icon there to open it: that is the hole he left.", use=[SC("c2-stable"), J("The Stable")])
+         + step(10, "The Stable", "The south doors loop back to the hayloft, and the hayloft ladder goes back to the Cellar. When T. Morlock walks into the east wall, click the door icon there to open it: that is the hole he left.", use=[SC("c2-stable"), J("The Stable")])
          + step(11, "The Hoard", "The Remnants ask. When the party agrees, Thon opens the side door: click its door icon. End the session there, or go straight on.", use=[SC("hoard"), J("The Hoard")])
          + "<h2>Session 3</h2>"
          + step(12, "The Cover", "Three waves. The cave mouth tile wakes wave 1 and brings in the Remnants. Use the GM controls for Rorvik (top of round 2), wave 2 and wave 3.", use=[SC("cover-cavern"), J("The Cover"), "GM controls: Rorvik bursts in · Wave 2 wakes · Wave 3 wakes", "Music: The Cover"])
-         + step(13, "Goodbyes", "After wave 3, the Remnants say goodbye, one by one, and each gives their own player something from the pile. Then the cave's back passage opens: it leads to Room 5.", use=[J("The Cover") + " (After the Fight)"])
+         + step(13, "Goodbyes", "After wave 3, the Remnants say goodbye, one by one, and each gives their own player something from the pile. Then the party leaves by the cave's back passage (west side): it leads to Room 5.", use=[J("The Cover") + " (After the Fight)"])
          + step(14, "Room 5", "Dawn. Two doors: home, or the table. Each player chooses for their own character. Close with The Last Word, out of character.", use=[J("Room 5: The Back Room, Again") + " (The Choice, The Last Word)", "Music: Room 5, dawn; then After the fight: Sad Strings"])),
     ]))
 
@@ -128,7 +141,7 @@ def build(L):
                                        "<strong>The job brought them.</strong> Word went round: guards wanted for a wagon over the pass, ask at the Stickit Inn.",
                                        "<strong>They were passing through,</strong> and this is where night fell."))
          + box("The barkeep goes up ahead of you with the lantern. A short landing at the top of the stairs, a door, and the storeroom: shelves of sacks and crocks, a cot for each of you already made up, one lantern on a hook, a small window over the yard. He tells you he'll have bread on at first light, and a jug of the house cider for the road.")
-         + P("Describe it in loving, mundane detail. Let them count the cots. The room has one door: the one they came in by. There is no other way out, and nothing to explore, which is the point: let them settle in, talk, and go to bed.")
+         + P("Describe it in loving, mundane detail. Let them count the cots. The room has one door: the one they came in by. There is no other way out, and nothing to explore but the stone in the corner (A5: leave it until night, or let them find it now), which is the point: let them settle in, talk, and go to bed.")
          + aside("Keyed areas", ul("<strong>A1. The landing.</strong> Top of the stairs down to the common room.",
                                    "<strong>A2. The cots.</strong> One per character, blankets turned down.",
                                    "<strong>A3. The shelves.</strong> Provisions, the party's receipts tucked under the crocks. Behind the far unit, at night only, a door.",
@@ -183,7 +196,7 @@ def build(L):
               ["South", "Back to the crossroads. They come in by the north road."],
               ["West", "Back to the crossroads. They come in by the east road."],
               ["East", "On: a cellar door in a bank of earth. The Cellar."]])
-         + P("<strong>The puzzle</strong> is only this: the signs lie and the roads loop. Let them try north first, everyone does. Show Strider the X Map and he reads it at a glance: “That's two doors from here.” He points east, and he is right (the Cellar door, then the Stable door, and the Hoard is through the next). The X on the map, when they look, is east.",
+         + P("<strong>The puzzle</strong> is only this: the signs lie and the roads loop. Let them try north first, everyone does. Show Strider the X Map and he reads it at a glance: “That's two doors from here.” He points east, and he is right: he means the first party's table, two doors on (the cellar door, then the stable wall). The X itself is one door further, behind that table. The X on the map, when they look, is east.",
              "Strider does not come with them. “Go on. I know the way now. I'll see you at the table.”")
          + aside("Doors", P("The four roads are tiles at the map's edges (the free-standing door frames). North, south and west loop back here; east goes to the Cellar. The Cellar's way back out comes in on the east road."))),
     ]))
@@ -195,7 +208,7 @@ def build(L):
          + P(f"{A('remnant-thon')} has been trying to open the east door for a long time. It has no handle and no lock; nothing opens it (Strength, thieves' tools, <em>knock</em>: it is not locked, it is just shut). His rod will, as a battering ram. The trouble is the order.")
          + "<h3>The rod</h3>" + P("Thon presses the buttons in order, one per press, one press on each of his turns, and names each one aloud: <strong>1</strong> mace, <strong>2</strong> flaming blade, <strong>3</strong> battleaxe, <strong>4</strong> spear, <strong>5</strong> ladder, <strong>6</strong> battering ram, <strong>7</strong> a pole that points north. He insists they go in order (“Hold on, I'll get there”). If anyone asks for the battering ram, or button six, by name, he grins, says “Button six!”, and presses it.",
             "So the door opens on his sixth turn by itself, or as soon as someone listens to the list and asks for the ram. A party that pays attention gets out in two rounds; one that doesn't fights for six.")
-         + "<h3>The chests</h3>" + P(f"The first click wakes the {A('chest', 'Provisions Chests')} (four of them, already on the map). They fight until the door opens; then they stop where they are and are only chests again, and anyone stuck to one falls free. Thon will not fight them (“I'm busy”); he has a door to open.",
+         + "<h3>The chests</h3>" + P(f"Roll initiative when the party comes in; Thon is in it. His first button press, on his first turn, wakes the {A('chest', 'Provisions Chests')} (four of them, already on the map), or anyone touching a chest wakes them sooner. They fight until the door opens; then they stop where they are and are only chests again, and anyone stuck to one falls free. Thon will not fight them (“I'm busy”); he has a door to open.",
             "This is the adventure's only fight before the Cover. It should cost a spell slot or two and some hit points, not a life. Let the party short rest afterwards; Thon shows them every button again while they do.")
          + P("<strong>When the door opens</strong>, click its door icon to open it in Foundry. Beyond it is a ladder up, and the smell of hay. Thon stays: “See you at the table. Ask me about button seven.”")
          + aside("Doors", P("The door they came in by leads back to the Crossroads (by the east road). The east door is locked on the map until you open it; the tile behind it goes to the Stable."))),
@@ -212,13 +225,13 @@ def build(L):
               ["The east door", "Locked, with no keyhole. It doesn't open. The way on is through the wall."]])
          + "<h3>Getting T. Morlock down</h3>" + P("He will not come down (“Why would I come down? Come up.”). Someone has to climb to him: the posts are smooth, Strength (Athletics) DC 15, or a rope, a spell, a familiar. Or ask to see his sheet: he lowers it on a string, then the string, then himself, because nobody ever asks to see it.",
             "When someone is up with him, or has read his sheet out loud (seventh level, every box filled in, climb walls ninety-nine percent), he drops twenty feet, lands on his feet, walks to the east wall, says “Elishaf”, and walks into it. There is a halfling-shaped hole. “Well? Come on.”")
-         + P("<strong>When he goes through the wall,</strong> click the east door's icon to open it: that is the hole. It stays open for a minute; the tile behind it goes to the Hoard. He does not come through after them. He is already there when they arrive.")),
+         + P("<strong>When he goes through the wall,</strong> click the east door's icon to open it: that is the hole. The tile behind it goes to the Hoard. Leave the door open; nobody comes back this way unless they come back from the Hoard. He does not come through after them. He is already there when they arrive.")),
     ]))
 
     # ------------------------------------------------------------------ HOARD
     entries.append(("The Hoard", [
         ("The Room", "<h1>The Hoard</h1>" + box(
-            "A reading room: two tall arched windows of stained glass, timber ribs across the ceiling, books to the beams. Armchairs round a low table, dice on the table, still warm. Beyond it, through glass double doors, a smaller room lined with shelves, and in it, people you know. Fred. Thon. Strider. T. Morlock on the back of a chair. One chair is empty, and someone has put a character sheet on it anyway.")
+            "A reading room: two tall arched windows of stained glass, timber ribs across the ceiling, books to the beams. Armchairs round a low table, dice on the table, still warm. Beyond it, through an inner doorway, a smaller room lined with shelves, and in it, people you know. Fred. Thon. Strider. T. Morlock on the back of a chair. One chair is empty, and someone has put a character sheet on it anyway.")
          + P("These are the Remnants, the first party, at their table. The empty chair is Rorvik's: he is late, as always. They are delighted to see the party, and they have been waiting a long time to ask them something.")
          + aside("Keyed areas", ul("<strong>D1. The glass doors</strong> (south): the way in, and back to the Stable.",
                                    "<strong>D2. The armchairs.</strong> Dice on the low table, warm, and a battered copy of the 1977 Monster Manual, face up.",
@@ -237,7 +250,7 @@ def build(L):
               "<strong>They won't be alone.</strong> The first party fights at their side.",
               "<strong>The treasure is real</strong> (After the Fight, in the Cover journal).",
               "<strong>It's the players' own first characters asking.</strong> Let each Remnant ask its own player, by name. That is the hook; play it straight.")
-         + P("If the party refuses, the Remnants don't argue. They go back to their game, and the glass doors lead back the way the party came: Stable, Cellar, Crossroads, Common Room, and up the stairs to the back room, where Bartleby has set out a tray and it is still not morning. Every road comes back to this table. When they come back, the chairs are still there.")
+         + P("If the party refuses, the Remnants don't argue. They go back to their game. The glass doors lead back to the Stable, the Stable to the Cellar, the Cellar to the Crossroads, and at the Crossroads every road but the east one loops: there is no road back to the inn. Sooner or later every road comes back to this table, and the chairs are still there.")
          + "<h3>When they say yes</h3>" + P("Thon gets up: “Allow me. Button six.” The side door bursts open. <strong>Click the side door's icon</strong> to open it; the tile beyond goes to the Cover. If the table wants a long rest first, they take it here, and the Remnants keep watch, rolling dice all night.")),
     ]))
 
@@ -245,34 +258,38 @@ def build(L):
     entries.append(("The Cover", [
         ("The Cavern", "<h1>The Cover</h1>" + box(
             "A dark cavern, and in it the picture from the cover of the Monster Manual, exactly as you remember it: a red dragon rearing over a pile of treasure, a unicorn, a centaur with a bow, a troll, a thing like a stump with tendrils, an owlbear. All frozen mid-fight. Fighting gaps: person-shaped spaces in the air where the adventurers stood. The gaps are your size. Behind you, the first party comes in, weapons out.")
-         + P("The party and the Remnants fight the six monsters together, two at a time: three waves, back to back, no rest between them. Each wave is a hard fight on its own for a strong party of five. The point is not any one wave; it is all three, in a row, with what they have left.")
+         + P("The party and the Remnants fight the six monsters together, two at a time: three waves, back to back, no rest between them. Each wave is a hard fight on its own for a strong party of five. The point is not any one wave; it is all three, in a row, with what they have left.",
+             "<strong>The gaps</strong> do nothing by themselves. When the fight starts, each Remnant steps into its own gap, the place it stood in 1977, and fights from there.")
          + aside("Keyed areas", ul("<strong>E1. The cave mouth.</strong> Where the party and the Remnants come in. The roper's gap (the thief); the piercers on the ceiling above.", "<strong>E2. The ledge.</strong> The centaur's gap (the archer).",
-                                   "<strong>E3. The hoard.</strong> The dragon's gap (the fighter with the shield), and the treasure.", "<strong>E4. The chest.</strong> The troll's gap (the dwarf).", "<strong>E5. The back wall.</strong> The owlbear's gap (the cleric); the unicorn's gap (the elf) beside it.",
-                                   "<strong>The back passage</strong> (west side): the way out, once it is over."))),
+                                   "<strong>E3. The treasure.</strong> The dragon's gap (the fighter with the shield), and the treasure.", "<strong>E4. The chest.</strong> The troll's gap (the dwarf).", "<strong>E5. The back wall.</strong> The owlbear's gap (the cleric); the unicorn's gap (the elf) beside it.",
+                                   "<strong>The back passage</strong> (west side): the way out. It is open from the start; see If they flee mid-fight."))),
         ("The Waves", "<h2>The Waves</h2>" + table(["Wave", "Monsters", "Wakes", "Its trick"], [
             ["1", f"{A('troll')}, {A('roper')}, six {A('piercer', 'Piercers')}", "The moment the party enters (the cave-mouth tile).", "The troll gets back up unless burned. The roper grapples from 60 feet and reels; the piercers drop on whoever it reels in."],
             ["2", f"{A('centaur')}, {A('unicorn')}, three {A('outrider', 'Outriders')}", "When wave 1's last monster drops: fire <em>GM: Wave 2 wakes</em>.", "Arrows from everywhere. The unicorn heals and shields the others, and can stand a downed monster back up: kill it first."],
             ["3", f"{A('owlbear')}, {A('dragon')}, two {A('cub', 'Owlbear Cubs')}", "When wave 2's last monster drops: fire <em>GM: Wave 3 wakes</em>.", "The dragon breathes on the most people it can catch, Remnants included. The owlbear grabs and holds."]])
          + P("<strong>Between waves.</strong> When a wave's last monster drops, the next pair takes one round to finish its 1977 pose and turn around. That round is the only breath the party gets: drink a potion, stand someone up, move. No short rest.",
-             "<strong>The big six are visible from the start</strong>, frozen (their Still Fighting 1977 trait). Their hangers-on are hidden until their wave: the controls reveal them. Roll initiative once for the whole fight; add each wave's monsters when they wake, acting at the top of the next round.")
+             "<strong>On the map from the start:</strong> the big six, frozen (their Still Fighting 1977 trait), and wave 1's six piercers on the ceiling over the roper. Waves 2 and 3's hangers-on (the outriders, the cubs) are hidden until their wave: the controls reveal them. <strong>Wave 1 is over</strong> when the roper and every piercer are dead and the troll is down <em>and burned</em>: a troll that is down but not burned stands up again, and wave 2 waits for it. Roll initiative once for the whole fight; add each wave's monsters when they wake, acting at the top of the next round.")
          + aside("If it goes badly", P("If two characters are down when wave 2 ends, wave 3 comes without the cubs (delete them from the scene). If the party is still fresh after wave 2, let the dragon open with its breath. Don't soften more than that: three hard fights in a row is the adventure.")), 2),
         ("The Remnants in the Fight", "<h2>The Remnants in the Fight</h2>" + P("The Remnants are allies, and you run them. They are the first party, not the heroes: the players' characters finish this fight. One rule keeps them in their place:")
-         + ul("<strong>Once per wave, each Remnant uses its Signature, and it always works</strong> (on each Remnant's sheet: Fred's POW!, Thon's rod, Strider's arrow, T. Morlock's vault and backstab, Rorvik's Hothead).",
+         + ul("<strong>Once per wave, each Remnant uses its Signature, and it always works</strong> (on each Remnant's sheet: Fred's POW!, Thon's rod, Strider's arrow, T. Morlock's vault and backstab, Rorvik's sure hit). Rorvik also always acts first; that part of his Signature has no limit.",
               "<strong>Every other turn, it Helps</strong> a character next to it (Advantage on that character's next attack or check), or Dodges. Describe it as the old party fighting the way it used to: shouting advice, a shield in the way.",
               "<strong>It never takes the last hit</strong> on a monster.",
               "<strong>It doesn't die.</strong> At 0 Hit Points it goes down, and stands up at the start of its next turn with half its Hit Points, mid-sentence. It has been in this fight before.")
          + "<h3>Rorvik</h3>" + P(f"{A('remnant-rorvik')} isn't there when wave 1 wakes. At the top of round 2, fire <em>GM: Rorvik bursts in</em>: he runs in through the cave mouth, sword out. “Sorry I'm late. What did I miss?” From then on he acts first every round.")
-         + P("<strong>Speak for them.</strong> Each Remnant has a line for each wave on its Person page. Give each one a moment: the player whose first character it is should get to watch it do the thing everyone remembers.")),
+         + P("<strong>Speak for them.</strong> Each Remnant has lines for the ask, the fight and the goodbye on its Person page. Give each one a moment: the player whose first character it is should get to watch it do the thing everyone remembers.")),
         ("After the Fight", "<h2>After the Fight</h2>" + box("The dragon goes down onto the hoard, and the coins slide. The cavern is quiet. The gaps in the air are gone. The first party stands there, breathing hard, looking at each other as if they had just remembered something.")
          + P("<strong>The goodbyes.</strong> Each Remnant comes to its own player, one at a time, and says its last line (on its Person page): Fred's “We finished it. THE END.”, Strider's “This one's done.” Speak to the player, not the character. Then each one takes something from the pile and gives it to them:")
          + table(["From", "To their own player's character"], [
               [A("remnant-fred"), "A <em>+1 longsword</em> (or the character's own weapon, made +1). The POW! still appears when it crits."],
               [A("remnant-thon"), "A <em>wand of the war mage +1</em>. It has one button, and it is labelled."],
               [A("remnant-strider"), "A <em>cloak of elvenkind</em>, travel-stained."],
-              [A("remnant-morlock"), "A <em>ring of protection</em>, from his own finger. And, if they ask, his sheet."],
-              [A("remnant-rorvik"), "A <em>pair of boots of speed</em>. “You'll never be late.”"]])
+              [A("remnant-morlock"), "A <em>ring of protection</em> (+1; it says +3 on his sheet, but that stays in the Cover), from his own finger. And, if they ask, his sheet."],
+              [A("remnant-rorvik"), "A <em>pair of boots of speed</em>. “You'll never be late.”"],
+              [A("remnant-rogue"), "(If a fallback stood in.) A <em>cloak of protection</em>. “It's complicated. Wear it anyway.”"],
+              [A("remnant-barbarian"), "(If a fallback stood in.) <em>Gauntlets of ogre power</em>. “Now you just strong too.”"],
+              [A("remnant-wizard"), "(If a fallback stood in.) A <em>wand of magic missiles</em>. “Not a fireball. I'm sorry.”"]])
          + P("<strong>The offer.</strong> Then the Remnants say what they came to say: the fight is done, and anyone can go home now. Or anyone can come with them. The table is still up there, and there's a chair for everyone. “Come on. Last panel. Or the first one.”",
-             "<strong>The way out.</strong> The back passage (west side of the cavern) is open now. Its tile leads to Room 5: the back room, at dawn. The Remnants go ahead: they will be on the other side of the hayloft door.")
+             "<strong>The way out.</strong> The back passage (west side of the cavern) leads to Room 5: the back room, at dawn. The Remnants go ahead: they will be on the other side of the hayloft door.")
          + aside("If they flee mid-fight", P("The back passage is a way out at any time. A party that runs ends up in Room 5 having not finished it. Play Room 5 anyway: the Remnants are not behind the hayloft door, only the sound of a fight, still going.")), 2),
     ]))
 
@@ -290,6 +307,7 @@ def build(L):
               "<strong>The gift of staying:</strong> the game never ends. Every session is session one, with the people you started with. Say so plainly. It is not a trick.",
               "<strong>Don't lean.</strong> No hint that one answer is right. Let the silence go on longer than is comfortable.",
               "<strong>Make it physical.</strong> Each player moves their token to a door.")
+         + "<h3>In Foundry</h3>" + ul("<strong>Home:</strong> the landing door is locked (the arrival locked it). When a character uses the key, right-click the door's icon to unlock it, and they walk down the stairs. Remove their token at the bottom.", "<strong>The table:</strong> the hayloft door is a plain door now (the night tiles are off). A character who goes through it is gone: remove their token.", "When every token is gone, the adventure is over. Stop the scene sound and go to The Last Word.")
          + "<h3>If they go home</h3>" + box(
               "The key turns as if the lock had been waiting for it. The stairs are wooden, and there are fourteen of them; you count. Bartleby is behind the bar, wiping a mug that is already clean. “There they are. Bread's hot. Jug's by the door.”",
               "In the corner booth, the stranger has his hood down, checking the straps on a pack. “Wagon's in the yard,” he says. “If you're still coming.” Outside it is a cold, clear morning, and the road goes up into the hills one bend at a time.")
