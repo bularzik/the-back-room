@@ -176,7 +176,8 @@ mej_entry("Cast", "journalentry", join_pages(_entries["09. Cast"]), F["JournalEn
 HANDOUT_IMG = {"Handout: The Job": "handout-the-job", "Handout: The Toothless Key": "handout-toothless-key", "Handout: The X Map": "handout-x-map"}
 for pname, html, *_ in _entries["10. Handouts"]:
     img = f"handouts/{HANDOUT_IMG[pname]}.webp" if pname in HANDOUT_IMG else None
-    src = f"modules/{MOD}/{img}" if img and os.path.exists(f"{ROOT}/{img}") else None   # a handout without its picture yet stays text-only
+    src = f"{MOD}/{img}" if img and os.path.exists(f"{ROOT}/{img}") else None   # a handout without its picture yet stays text-only
+    if src: html = f'<p class="handout-picture"><img src="{src}" alt="{pname[9:]}" style="max-width:100%;height:auto"></p>' + html   # MEJ's journalentry page shows src only on its Picture tab
     jid = mej_entry(pname, "journalentry", html, F["Handouts"], sort=nxt(), src=src); handout_ids[pname] = f"JournalEntry.{jid}"
 book_ids = []   # the half-page books: one small handout each, in a subfolder; the Half-page Books table links them
 for n, (band, title, text) in enumerate(journal.HALF_PAGE_BOOKS, 1):

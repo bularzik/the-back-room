@@ -38,7 +38,8 @@ for (const s of adv.scenes) for (const t of s.tiles) {
     }
   }
 }
-// Every module-relative asset path must exist
+// Every module-relative asset path must exist, and be spelled once (a doubled "modules/modules/" never loads)
+for (const [m] of text.matchAll(/modules\/modules\/[^"]*/g)) warn(`Doubled module path ${m}`);
 for (const [, path] of text.matchAll(/modules\/the-back-room\/([^"'\s)\\]+)/g)) files.add(path);
 for (const f of files) if (!existsSync(f)) warn(`Missing asset ${f}`);
 // IDs must be 16-char alphanumeric and unique
