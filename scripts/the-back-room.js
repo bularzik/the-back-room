@@ -36,7 +36,7 @@ Hooks.on("canvasReady", async canvas => {
 // Arrivals stay apart. Monk's Active Tile Triggers moves the whole party through a door in one go, and its own
 // "avoid tokens" check can't see the tokens it is creating in the same batch, so two can land on one square. After a
 // teleport (MATT marks the token flags.monks-active-tiles.teleporting), the GM's client nudges any token that overlaps
-// another to the nearest free square that isn't through a wall.
+// another, or that MATT dropped onto a door tile, to the nearest free square that isn't through a wall or on a door tile.
 const _queue = [];
 let _running = false;
 function overlaps(a, b, size) {
@@ -50,11 +50,19 @@ function crossesWall(scene, A, B) {
   }
   return false;
 }
+// Never nudge an arrival onto a door: a tile that teleports (one step later the party would be gone again).
+function onDoorTile(scene, cand, size) {
+  return scene.tiles.some(t => {
+    const f = t.flags?.["monks-active-tiles"];
+    if (!f?.active || !f.actions?.some(a => a.action === "teleport")) return false;
+    return cand.x < t.x + t.width && t.x < cand.x + cand.width * size && cand.y < t.y + t.height && t.y < cand.y + cand.height * size;
+  });
+}
 async function spreadOut(doc) {
   const scene = doc.parent; if (!scene || !scene.tokens.has(doc.id)) return;
   const size = scene.dimensions.size;
   const others = () => scene.tokens.filter(t => t.id !== doc.id);
-  if (!others().some(t => overlaps(doc, t, size))) return;
+  if (!others().some(t => overlaps(doc, t, size)) && !onDoorTile(scene, doc, size)) return;
   const half = size * doc.width / 2, origin = { x: doc.x + half, y: doc.y + half };
   for (let r = 1; r <= 4; r++) {
     for (let dx = -r; dx <= r; dx++) for (let dy = -r; dy <= r; dy++) {
@@ -63,6 +71,7 @@ async function spreadOut(doc) {
       if (cand.x < 0 || cand.y < 0 || cand.x + doc.width * size > scene.dimensions.sceneWidth + scene.dimensions.sceneX * 2
           || cand.y + doc.height * size > scene.dimensions.sceneHeight + scene.dimensions.sceneY * 2) continue;
       if (others().some(t => overlaps(cand, t, size))) continue;
+      if (onDoorTile(scene, cand, size)) continue;
       if (crossesWall(scene, origin, { x: cand.x + half, y: cand.y + half })) continue;
       await doc.update({ x: cand.x, y: cand.y }, { animate: false });
       return;
