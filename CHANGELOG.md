@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.0] - 2026-11-09
+
 ### Added
 - **A second adventure: The Back Room: The Unfinished Fight.** A new Adventure compendium in the same module, built from the same maps, people and art, for five 7th-level characters over three sessions. Import it from the compendium folder *The Back Room*; import one adventure or the other into a world, not both.
 - **A road instead of a maze.** Room 1, the Common Room That Isn't, a crossroads, a cellar, a stable, the Hoard and the Cover. Every door goes to one place and back; the whole party moves together and the new scene becomes active.
@@ -160,7 +162,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.5...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.6.0...HEAD
+[2.6.0]: https://github.com/bularzik/the-back-room/compare/v2.5.5...v2.6.0
 [2.5.5]: https://github.com/bularzik/the-back-room/compare/v2.5.4...v2.5.5
 [2.5.4]: https://github.com/bularzik/the-back-room/compare/v2.5.3...v2.5.4
 [2.5.3]: https://github.com/bularzik/the-back-room/compare/v2.5.2...v2.5.3
