@@ -157,6 +157,7 @@ for pname, html, *_ in base_entries["10. Handouts"]:
         html = "<h2>The X Map</h2>" + base_journal.P("A map, drawn in a hand none of you recognise, of a place none of you have been: a crossroads, a cellar, a stable, a room full of books, and beyond it a cave. There is an X on the cave.", "<em>The X marks the way out.</em>")
     img = f"handouts/{HANDOUT_IMG[pname]}.webp" if pname in HANDOUT_IMG else None
     src = f"modules/{ID}/{img}" if img and os.path.exists(f"{ROOT}/{img}") else None
+    if src: html = f'<p class="handout-picture"><img src="{src}" alt="{pname[9:]}" style="max-width:100%;height:auto"></p>' + html   # MEJ shows src only on the Picture tab
     handout_ids[pname] = f"JournalEntry.{mej_entry(pname, 'journalentry', html, F['Handouts'], sort=nxt(), src=src)}"
 # Campaign Companion: portal, timeline, sessions
 PORTAL_ID, TIMELINE_ID = uid("journal", "campaign-portal"), uid("journal", "campaign-timeline")

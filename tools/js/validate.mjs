@@ -48,6 +48,17 @@ for (const p of manifest.packs.filter(p => p.type === "Adventure")) {
   if (new Set(allIds).size !== allIds.length) warn(`[${p.name}] ` + "Duplicate document ids found");
   console.log(`${p.name}: checked ${adv.scenes.length} scenes, ${adv.actors.length} actors, ${adv.journal.length} journals, ${tiles} active tiles (${actions} actions), ${files.size} asset paths.`);
 }
+<<<<<<< HEAD
+=======
+// Every module-relative asset path must exist, and be spelled once (a doubled "modules/modules/" never loads)
+for (const [m] of text.matchAll(/modules\/modules\/[^"]*/g)) warn(`Doubled module path ${m}`);
+for (const [, path] of text.matchAll(/modules\/the-back-room\/([^"'\s)\\]+)/g)) files.add(path);
+for (const f of files) if (!existsSync(f)) warn(`Missing asset ${f}`);
+// IDs must be 16-char alphanumeric and unique
+const allIds = [...text.matchAll(/"_id":"([^"]+)"/g)].map(m => m[1]);
+if (allIds.some(i => !/^[A-Za-z0-9]{16}$/.test(i))) warn("Invalid document id found");
+if (new Set(allIds).size !== allIds.length) warn("Duplicate document ids found");
+>>>>>>> origin/main
 rmSync(tmp, { recursive: true, force: true });
 
 if (errors.length) { console.error(errors.map(e => "  ✗ " + e).join("\n")); process.exit(1); }

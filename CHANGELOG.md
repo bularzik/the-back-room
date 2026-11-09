@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Handout pictures show.** The pictures for The Job, The Toothless Key and The X Map never loaded: the path to each image was written wrong. Each picture now sits at the top of its handout, above the text, and in the handout's Picture tab.
+
 ## [2.5.4] - 2026-11-09
 
 ### Fixed

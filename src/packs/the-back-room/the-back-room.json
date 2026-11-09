@@ -136522,7 +136522,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h2>The Job</h2><p><em>Wanted: four or five capable people to ride guard on a wagon of lamp oil from the Stickit Inn over the Kettle Pass to Thistlecross. Three days by the high road. Forty gold a head, twenty of it tonight, the rest from the chandler at Thistlecross on delivery. We leave at first light. Bring your own bedrolls; the wagon has room for packs. Ask for the one in the corner booth.</em></p><p><em>The pass is quiet this time of year. The road is good. Nothing about this is a trick.</em></p>"
+      "content": "<p class=\"handout-picture\"><img src=\"modules/the-back-room/handouts/handout-the-job.webp\" alt=\"The Job\" style=\"max-width:100%;height:auto\"></p><h2>The Job</h2><p><em>Wanted: four or five capable people to ride guard on a wagon of lamp oil from the Stickit Inn over the Kettle Pass to Thistlecross. Three days by the high road. Forty gold a head, twenty of it tonight, the rest from the chandler at Thistlecross on delivery. We leave at first light. Bring your own bedrolls; the wagon has room for packs. Ask for the one in the corner booth.</em></p><p><em>The pass is quiet this time of year. The road is good. Nothing about this is a trick.</em></p>"
      },
      "sort": 100000,
      "ownership": {
@@ -136535,7 +136535,7 @@
      },
      "image": {},
      "video": {},
-     "src": "modules/modules/the-back-room/handouts/handout-the-job.webp",
+     "src": "modules/the-back-room/handouts/handout-the-job.webp",
      "system": {}
     }
    ],
@@ -136547,7 +136547,7 @@
    "flags": {
     "monks-enhanced-journal": {
      "pagetype": "journalentry",
-     "img": "modules/modules/the-back-room/handouts/handout-the-job.webp"
+     "img": "modules/the-back-room/handouts/handout-the-job.webp"
     }
    },
    "categories": []
@@ -136566,7 +136566,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h2>The Toothless Key</h2><p>A long iron key, drawn from a stone in the corner of the storeroom. It has a bow, a shank, and no teeth at all. It opens nothing in the room you found it in.</p><p><em>Keep it.</em></p>"
+      "content": "<p class=\"handout-picture\"><img src=\"modules/the-back-room/handouts/handout-toothless-key.webp\" alt=\"The Toothless Key\" style=\"max-width:100%;height:auto\"></p><h2>The Toothless Key</h2><p>A long iron key, drawn from a stone in the corner of the storeroom. It has a bow, a shank, and no teeth at all. It opens nothing in the room you found it in.</p><p><em>Keep it.</em></p>"
      },
      "sort": 100000,
      "ownership": {
@@ -136579,7 +136579,7 @@
      },
      "image": {},
      "video": {},
-     "src": "modules/modules/the-back-room/handouts/handout-toothless-key.webp",
+     "src": "modules/the-back-room/handouts/handout-toothless-key.webp",
      "system": {}
     }
    ],
@@ -136591,7 +136591,7 @@
    "flags": {
     "monks-enhanced-journal": {
      "pagetype": "journalentry",
-     "img": "modules/modules/the-back-room/handouts/handout-toothless-key.webp"
+     "img": "modules/the-back-room/handouts/handout-toothless-key.webp"
     }
    },
    "categories": []
@@ -136654,7 +136654,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h2>The X Map</h2><p>A map, drawn in a hand none of you recognise, of a place none of you have been. There is an X on it. The X marks the way out.</p><p><em>Do not look at the X for a moment. Now look again.</em></p>"
+      "content": "<p class=\"handout-picture\"><img src=\"modules/the-back-room/handouts/handout-x-map.webp\" alt=\"The X Map\" style=\"max-width:100%;height:auto\"></p><h2>The X Map</h2><p>A map, drawn in a hand none of you recognise, of a place none of you have been. There is an X on it. The X marks the way out.</p><p><em>Do not look at the X for a moment. Now look again.</em></p>"
      },
      "sort": 100000,
      "ownership": {
@@ -136667,7 +136667,7 @@
      },
      "image": {},
      "video": {},
-     "src": "modules/modules/the-back-room/handouts/handout-x-map.webp",
+     "src": "modules/the-back-room/handouts/handout-x-map.webp",
      "system": {}
     }
    ],
@@ -136679,7 +136679,7 @@
    "flags": {
     "monks-enhanced-journal": {
      "pagetype": "journalentry",
-     "img": "modules/modules/the-back-room/handouts/handout-x-map.webp"
+     "img": "modules/the-back-room/handouts/handout-x-map.webp"
     }
    },
    "categories": []
