@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.4] - 2026-11-09
+
+### Fixed
+- **Doors on the top edge of a map now work.** The Campfire Clearing's north path and the Crossroads' north road (in every copy, including the slot where the X door appears at the Crossroads) never fired, because Monk's Active Tile Triggers ignores a token that stops on the map's very edge. Both now sit one square in from the edge, and the arrival spot below each moved down to make room.
+- **Arriving characters no longer land on a way out.** When the party came through a door, a character could be dropped onto another door's tile and leave again on their next step. Arrivals are now moved off any door tile.
+
 ## [2.5.3] - 2026-11-02
 
 ### Changed
@@ -138,7 +144,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.3...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.5.4...HEAD
+[2.5.4]: https://github.com/bularzik/the-back-room/compare/v2.5.3...v2.5.4
 [2.5.3]: https://github.com/bularzik/the-back-room/compare/v2.5.2...v2.5.3
 [2.5.2]: https://github.com/bularzik/the-back-room/compare/v2.5.1...v2.5.2
 [2.5.1]: https://github.com/bularzik/the-back-room/compare/v2.5.0...v2.5.1
