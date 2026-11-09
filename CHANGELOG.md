@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **A second adventure: The Back Room: The Unfinished Fight.** A new Adventure compendium in the same module, built from the same maps, people and art, for five 7th-level characters over three sessions. Import it from the compendium folder *The Back Room*; import one adventure or the other into a world, not both.
+- **A road instead of a maze.** Room 1, the Common Room That Isn't, a crossroads, a cellar, a stable, the Hoard and the Cover. Every door goes to one place and back; the whole party moves together and the new scene becomes active.
+- **A first character at every stop.** Fred hands over the X Map in the Common Room, Strider reads it at the crossroads, Thon's rod opens the cellar door while the provisions chests fight, and T. Morlock walks through the stable wall. In the Hoard, the first party asks for help to finish the fight on the cover of the 1977 Monster Manual.
+- **The Cover in three waves.** The troll, roper and piercers; the centaur captain, unicorn and outriders; the owlbear, cubs and a grown red dragon. Each wave is a hard fight, back to back, with the Remnants fighting alongside: their Signature once per wave, Help the rest of the time. Rorvik bursts in at the top of round 2.
+- **Room 2's way out is locked until Fred says his line.** Clicking his table shows everyone the X Map and unlocks the door; a GM control opens it anyway if the party forces its way out.
+- **Night falls.** A GM control in Room 1 shows Bartleby on the stairs, turns the hidden hayloft door into a real one and opens both ways down. The hayloft door can't be seen before night.
+- **Goodbyes and gifts.** After the last wave each Remnant gives their own player's character a magic item from the hoard, then Room 5: home, or the table.
+- **The Last Word, twice.** A new closing written for this storyline, and the original Back Room closing, on one page; read either or both.
+- **A step-by-step GM guide** for The Unfinished Fight, with the scene, journal and control each step uses.
+
 ## [2.5.5] - 2026-11-09
 
 ### Fixed

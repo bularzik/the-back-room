@@ -5,6 +5,8 @@ For **Foundry VTT v14** with **dnd5e 5.x+**.
 
 The party meets in a tavern, played completely straight. They take the hook, buy provisions, and bed down in the storeroom over the kitchen before the dawn road. They never leave that room. Stairwells, stables, corridors and campsites — all the back room, misremembered — and in there with them, their own first characters, who want the game to go on forever.
 
+**Two adventures in one module.** *The Back Room* is the original: random Corridor doors, Misremembering, the Echo. ***The Back Room: The Unfinished Fight*** is a second adventure built from the same maps, people and art, for five 7th-level characters over three sessions. It's a fixed road instead of a maze: the Common Room, a crossroads, a cellar and a stable, each with a puzzle and one of the players' first-ever characters in it. At the end of the road the first party asks for help to finish the fight on the cover of the 1977 Monster Manual, fought in three back-to-back waves with the first party at the players' side. Import one adventure or the other into a world, not both.
+
 **Requires** (Foundry offers to install them):
 - [Monk's Enhanced Journal](https://github.com/ironmonk108/monks-enhanced-journal) 14.01+ — every journal entry is a Place, Person, Encounter, Organization or Quest
 - [Campaign Companion](https://github.com/bularzik/mej-campaign-companion) 0.26+ — the adventure's journal folder is a campaign with three prepared Sessions, a portal and a timeline
@@ -20,10 +22,19 @@ https://github.com/bularzik/the-back-room/releases/latest/download/module.json
 
 Then, in your dnd5e world:
 1. **Game Settings → Manage Modules**: enable *The Back Room* and its three dependencies.
-2. **Compendium sidebar → The Back Room (Adventure)**: open it and click **Import Adventure**.
-3. Read the journal **00. The Back Room: Adventure Overview**, then **02. Automation**. Open the campaign's portal entry (*The Back Room*) to reach the Campaign Hub and the three Sessions.
+2. **Compendium sidebar → The Back Room** folder: open **The Back Room (Adventure)** or **The Back Room: The Unfinished Fight (Adventure)** and click **Import Adventure**.
+3. For The Back Room, read the journal **00. The Back Room: Adventure Overview**, then **02. Automation**. For The Unfinished Fight, read **00. The Unfinished Fight: Overview**, then **How to Run It: Step by Step**. Each adventure's campaign portal entry opens its Campaign Hub and three Sessions.
 
 ## Contents
+
+### The Unfinished Fight
+
+- 15 scenes: the route (Room 1, the Common Room, the Crossroads, the Cellar, the Stable, the Hoard, the Cover), a welcome scene and seven vistas
+- 37 Monk's Active Tile Triggers tiles: every door goes to one place and back, the whole party moves together and the new scene becomes active, loop roads at the Crossroads and Stable, and GM controls for Night falls, Rorvik and the Cover's waves 2 and 3
+- 25 actors: the Cover's monsters rebuilt as three waves (troll, roper and piercers; centaur captain, unicorn and outriders; owlbear, cubs and a red dragon), four provisions chests for the Cellar, and the people, with the five Remnants as allies
+- 33 journals: an overview, a step-by-step GM guide, every scene, the people with their lines, sessions 1–3, four handouts, and The Last Word (a new closing and the original)
+
+### The Back Room
 
 - 29 scenes from 13 Dungeondraft maps: the five fixed rooms, The Cover's cavern, and eight Corridor places as three hidden scene copies each
 - 360 Monk's Active Tile Triggers tiles: pool doors that never lead back, fog resets, the X door (one hidden twin per destination room), the Corridor Between's identical segments and Loop Break, the Hoard's way back, the Cover's six waking gaps, and GM control buttons
@@ -37,7 +48,8 @@ Maps are built in Dungeondraft; audio is synthesised; token portraits are painte
 
 ```
 npm install
-python3 tools/build.py   # tools/maps.json + journal.py + actors.py + matt.py → src/packs/*.json + module.json
+python3 tools/build.py   # tools/maps.json + journal.py + actors.py + matt.py → src/packs/the-back-room + module.json
+python3 tools/build_unfinished.py   # *_unfinished.py → src/packs/the-back-room-unfinished (npm run build:packs runs both)
 npm run build:packs      # compile src/packs/*.json into LevelDB packs/
 npm run validate         # check every link, tile reference and asset path
 npm run package          # build + validate + dist/module.zip

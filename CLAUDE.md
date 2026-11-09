@@ -257,6 +257,30 @@ Chrome tab at http://127.0.0.1:7860/ via the Chrome tools.
 - Handout pictures: `handouts/handout-<name>.webp` (the-job, toothless-key, x-map); build.py sets each as its handout page's image only when the file exists. Packaged by tools/js/package.mjs.
 
 
+## The Unfinished Fight (second Adventure, v2.6.0, 2026-11-08)
+
+- A second Adventure pack in the same module: `the-back-room-unfinished`, title "The Back Room: The Unfinished Fight". Built by
+  `tools/build_unfinished.py` from `journal_unfinished.py`, `actors_unfinished.py` (the Cover as three waves + the Cellar's
+  provisions chests; the Remnants turned into allies), `matt_unfinished.py`. It shares maps, art, audio and `sound.py`
+  (ambience, music, SoundBard banks, macros) with the original. `build.py` writes module.json listing BOTH packs and only
+  clears its own `src/packs/<pack>`; `npm run build:packs` runs both builders. Every id in the second pack is salted
+  (`uid("unfinished", ...)`, monkeypatched into actors/matt) so the two adventures never share an id.
+- The route is fixed: Room 1 → Common Room → Crossroads → Cellar → Stable → Hoard → Cover → Room 5. Doors that open
+  with the story are LOCKED walls with their tile on the far side; the GM opens them with the door icon. No random
+  doors, Misremembering, visit count, X door, Room 3 or Echo. The Last Word page has the new closing and the original.
+- Verified in Foundry 14.369 (world `backroom-fresh`, 2026-11-08), every door, loop, control and reveal. Lessons:
+  - **MATT never fires for a token whose final x or y is 0.** No trigger tile may touch the map's top or left edge
+    (fixed in the original adventure in 2.5.4).
+  - MATT Change Door: `state` is open/closed/**lock**/toggle, `type` door/secret/toggle, and every key (movement, light,
+    sight, sound) must be present as "nothing" or it is applied as undefined. It does nothing on a scene other than
+    the one being viewed, so put it on that scene's own arrival tile.
+  - MATT can itself drop an arriving token onto a door tile; the arrival spreader moves it off (`onDoorTile`).
+  - Same-scene loop teleports don't create tokens, so the spreader doesn't run: land them on a wide marker rect.
+  - Test by moving tokens with `tokenDoc.move({x,y})`, not `update()`. `adventure.import()` waits on an
+    "Overwrite Existing Content?" dialog: click its `[data-action=yes]` button.
+- MEJ's journalentry page shows `src` only on its Picture tab, so handouts also carry the picture at the top of their
+  text (2.5.5; the path had been doubled `modules/modules/` since 2.4, and validate now flags that).
+
 ## Changelog
 
 `CHANGELOG.md` follows [Keep a Changelog](https://keepachangelog.com/) (same shape as Omnipresence). Record every user-facing change under `[Unreleased]` as you make it, grouped Added / Changed / Fixed / Removed, written for a GM, not a developer, and each bullet on a single line: the shipped copy is what Big Bad Module Manager (BBMM) shows GMs on login, and its Markdown renderer is line-based. `npm run build:packs` ends with `tools/js/changelog.mjs check`, which warns when there are commits since the last tag and `[Unreleased]` is empty. At release, CI (`npm run package` → `changelog.mjs ship <version>`) turns `[Unreleased]` into `[x.y.z] - date` in the shipped copy, strips `[Unreleased]`, writes the GitHub release body, and fails the release if there are no notes. To date the section in the repo as well, run `npm run changelog:release -- x.y.z` and commit before tagging. After a release, run `npm run changelog:release -- x.y.z` for the version just released (if it wasn't done before tagging) and commit; the build check warns when this has been missed.
