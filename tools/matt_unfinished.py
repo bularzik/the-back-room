@@ -10,21 +10,25 @@ tokens {key: {tag: uuid}}. Returns {scene_key: [tiles]}.
 from matt import TB, scroll, chat, sound, party_teleport, teleport, activate, showhide, journal, deactivate_self, ARRIVE, PLAYERS, MOD, OPEN_EXITS
 
 def changedoor(wall_uuid, type="nothing", state="nothing"):
-    """MATT 'Change Door': type door/secret/toggle, state open/closed/locked/toggle ('nothing' leaves it as it is)."""
+    """MATT 'Change Door' (actions.js, MATT 14.01): type door/secret/toggle; state open/closed/lock/toggle; 'nothing' leaves a
+    property alone. Every key must be present: a missing one is applied as undefined."""
+    state = {"locked": "lock"}.get(state, state)
     return ("changedoor", {"entity": {"id": wall_uuid, "name": "Door"}, "type": type, "state": state,
-                           "movement": "nothing", "lighting": "nothing", "sight": "nothing", "sound": "nothing"})
+                           "movement": "nothing", "light": "nothing", "sight": "nothing", "sound": "nothing"})
 
 def loop(dest_uuid, text):
     """A same-scene 'road that comes back': the whole party walks out and comes in again elsewhere on this map."""
     return [scroll(text), teleport(dest_uuid, entity=PLAYERS, cross=False)]
 
 # Door tiles sit BEYOND the door they belong to (rects here override maps.json's, which were in front of the doors).
+# No tile may touch x=0 or y=0: MATT never fires for a token whose final x or y is 0 (tested in Foundry 14.369, MATT 14.01).
 RECTS = {
     "backroom": {"stairwell": [500, 900, 100, 100], "loft": [1100, 400, 100, 100]},
-    "common-room": {"xdoor": [0, 600, 100, 100]},
-    "c7-crossroads": {"land-north": [600, 150, 400, 150], "land-south": [600, 1300, 400, 150], "land-east": [1100, 650, 250, 300], "west": [0, 650, 100, 300]},
+    "common-room": {"xdoor": [100, 600, 100, 100]},   # in front of the locked door (the map has no room beyond it); off until Fred's table
+    "c7-crossroads": {"door1": [650, 100, 300, 100], "arrive1": [700, 250, 100, 100], "land-north": [600, 250, 400, 150], "land-south": [600, 1250, 400, 150],
+                      "land-east": [1100, 650, 250, 300], "west": [100, 650, 100, 300]},
     "c8-cellar": {"door1": [200, 900, 100, 100], "door2": [1100, 200, 100, 100]},
-    "c2-stable": {"door1": [800, 0, 100, 100], "door2": [750, 1100, 100, 100], "door3": [1500, 600, 100, 100]},
+    "c2-stable": {"land-loft": [700, 200, 300, 100], "door1": [800, 100, 100, 100], "door2": [750, 1100, 100, 100], "door3": [1500, 600, 100, 100]},
     "hoard": {"doors": [750, 1300, 100, 100], "side": [1400, 650, 100, 100]},
 }
 
@@ -46,7 +50,9 @@ def build_tiles(ctx):
             name="Night: the stairs → Room 2 (armed by Night falls)")
     tb.tile("loft", rect(k, "loft"), [scroll("Hay, and a ladder down."), *party_teleport(dest("common-room", "stairs"))], active=False,
             name="Night: the hayloft door → Room 2 (armed by Night falls)")
-    tb.tile("landing", rect(k, "landing"), [scroll("Dawn under the door.")], trigger=ARRIVE, name="Arrival (Room 5)")
+    # Room 5 arrival locks the stairs door for the toothless key. (A change-door action on another scene does nothing, so
+    # it lives here. If the GM drops tokens on the landing in session 1 it locks too, harmlessly: Night falls unlocks it.)
+    tb.tile("landing", rect(k, "landing"), [scroll("Dawn under the door."), changedoor(W[(k, "stairwell")], state="locked")], trigger=ARRIVE, name="Arrival (Room 5): locks the stairs door")
     if "Handout: The Toothless Key" in H and (r := rect(k, "stone")):
         tb.tile("stone", r, [journal(H["Handout: The Toothless Key"], to="trigger"), chat("Someone pulled the key.", to="gm"), deactivate_self()], trigger="click", name="The stone with the hilt (click)")
     tb.tile("gm-night", [0, 0, 100, 100], [
@@ -61,10 +67,13 @@ def build_tiles(ctx):
     k, tb = "common-room", B["common-room"]
     tb.tile("stairs", rect(k, "stairs"), [scroll("Nobody is looking at you.")], trigger=ARRIVE, name="Arrival")
     acts = [journal(H["Handout: The X Map"])] if "Handout: The X Map" in H else []
-    tb.tile("remnant", rect(k, "remnant"), acts + [changedoor(W[(k, "xdoor")], state="closed"),
+    tb.tile("remnant", rect(k, "remnant"), acts + [changedoor(W[(k, "xdoor")], state="closed"), activate([tb.tuuid("xdoor")], "activate"),
             chat("<strong>POW!</strong> Fred has handed over the X Map and the door is unlocked (if it isn't, right-click its door icon). The guards step aside.", to="gm"), deactivate_self()],
             trigger="click", name="Fred's table (click when he says his Signature)")
-    tb.tile("xdoor", rect(k, "xdoor"), [sound("sting-door"), *party_teleport(dest("c7-crossroads", "arrive2"))], name="The door → the Crossroads")
+    tb.tile("xdoor", rect(k, "xdoor"), [sound("sting-door"), *party_teleport(dest("c7-crossroads", "arrive2"))], active=False, name="The door → the Crossroads (armed by Fred's table)")
+    tb.tile("gm-door", [0, 0, 100, 100], [changedoor(W[(k, "xdoor")], state="open"), activate([tb.tuuid("xdoor")], "activate"),
+            chat("The door is open and leads to the Crossroads. (Fred catches up there with the map: read it out, or show them the X Map handout.)", to="gm")],
+            img=f"{MOD}/tiles/gm-door.webp", name="GM: The door opens anyway (they forced it)", **gm)
     out[k] = tb.tiles
 
     # ---------------- THE CROSSROADS ----------------
@@ -92,7 +101,8 @@ def build_tiles(ctx):
     tb.tile("arrive1", rect(k, "arrive1"), [scroll("Every horse faces the wall.")], trigger=ARRIVE, name="Arrival (the hayloft)")
     tb.tile("arrive3", rect(k, "arrive3"), [scroll("Hay, and horses.")], trigger=ARRIVE, name="Arrival from the Hoard")
     tb.tile("door1", rect(k, "door1"), [sound("sting-door"), *party_teleport(dest("c8-cellar", "arrive2"))], name="The hayloft ladder → back to the Cellar")
-    tb.tile("door2", rect(k, "door2"), loop(tb.tuuid("arrive1"), "Round the yard, up the ladder, in at the hayloft."), name="South doors → loops back to the hayloft")
+    tb.tile("land-loft", rect(k, "land-loft"), [], active=False, name="Landing: where the south doors come back in (the hayloft)")
+    tb.tile("door2", rect(k, "door2"), loop(tb.tuuid("land-loft"), "Round the yard, up the ladder, in at the hayloft."), name="South doors → loops back to the hayloft")
     tb.tile("door3", rect(k, "door3"), [sound("sting-door"), *party_teleport(dest("hoard", "arrive"))], name="Through the east wall (opened by T. Morlock) → the Hoard")
     out[k] = tb.tiles
 
@@ -119,7 +129,7 @@ def build_tiles(ctx):
             chat("<strong>Wave 3 wakes</strong> at the top of the next round: the owlbear, two cubs, and the red dragon. Its first breath goes where the most people are.", to="gm")],
             img=f"{MOD}/tiles/gm-wave3.webp", name="GM: Wave 3 wakes", **gm)
     br = B["backroom"]
-    tb.tile("exit", rect(k, "exit"), [activate([br.tuuid("stairwell"), br.tuuid("loft")], "deactivate"), changedoor(W[("backroom", "stairwell")], state="locked"),
+    tb.tile("exit", rect(k, "exit"), [activate([br.tuuid("stairwell"), br.tuuid("loft")], "deactivate"),
             sound("sting-door"), *party_teleport(br.tuuid("landing"))], name="The back passage → Room 5 (the back room at dawn; locks its door for the key)")
     out[k] = tb.tiles
 
@@ -133,6 +143,7 @@ GM_GUIDE = """<h2>Automation with Monk's Active Tile Triggers</h2>
 <h3>GM controls</h3>
 <p>Hidden buttons in the top-left corner of a scene. Switch to the Tiles layer to see them; double-click one to fire it.</p>
 <table><thead><tr><th>Scene</th><th>Control</th><th>What it does</th></tr></thead><tbody>
+<tr><td>Room 2</td><td>The door opens anyway</td><td>Only if the party forces its way out without Fred: opens the door and arms it.</td></tr>
 <tr><td>Room 1</td><td>Night falls</td><td>Shows Bartleby on the stairs, turns the secret door behind the shelves into a real door, and arms the stairs and the hayloft door: both lead to Room 2.</td></tr>
 <tr><td>The Cover</td><td>Rorvik bursts in</td><td>Shows Rorvik at the cave mouth. Top of round 2 of wave 1.</td></tr>
 <tr><td>The Cover</td><td>Wave 2 wakes</td><td>Shows the three outriders; reminder in chat. When wave 1's last monster drops.</td></tr>

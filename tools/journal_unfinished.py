@@ -170,7 +170,7 @@ def build(L):
                                       "The player whose character he is will recognise him first. Let them sweat before they say so.")
          + "<h3>Getting the Signature</h3>" + P("Anything that gets Fred to swing gets the POW: an arm-wrestle, a sparring bout, a dare, asking him to show how he fought the dragon, a fight with the guards. He never attacks the party. When the POW! hangs in the air in hand-lettered capitals, every role stops mid-line and turns to look at the party. Hold it for a beat.")
          + "<h3>The payoff</h3>" + P("Fred hands over a map with an X on it (handout: The X Map): “The X is the way out. Everyone knows that. Follow it.” <strong>Click Fred's table</strong> (the tile under him): it shows everyone the map and unlocks the door. The guards step aside together without a word. Fred stays: “See you at the table.”")
-         + aside("If they force it", P("If the party fights its way past the guards or breaks the door, let them. Fred catches up at the Crossroads, out of breath: “You forgot this!”, and hands over the map there.")), 2),
+         + aside("If they force it", P("If the party fights its way past the guards or breaks the door, let them: double-click the GM control <em>The door opens anyway</em> (top-left of the scene). Fred catches up at the Crossroads, out of breath: “You forgot this!”, and hands over the map there (show the X Map handout).")), 2),
     ]))
 
     # ------------------------------------------------------------------ CROSSROADS
