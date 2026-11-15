@@ -212,8 +212,12 @@ playlists = [
      "sounds": [snd("Door", "sting-door", False, .7), snd("The X", "sting-x-door", False, .7), snd("Dice, warm, just rolled", "sfx-dice-rolled", False, .7),
                 snd("Cider, poured", "sfx-cider-poured", False, .7), snd("Remnants laughing, through the door", "sfx-remnants-laughing", False, .4)],
      "folder": F["Playlist"], "sort": 200000, "ownership": {"default": 0}, "flags": {}, "playing": False}]
+# SoundBard banks for this adventure: its own names (so the original's banks are left alone), and only the sounds this route uses
+UF_DROP = {"The X", "Waterfall (stops when someone speaks)", "The ferry bell"}
+UF_BANKS = {"The Unfinished Fight: On the Road": [p for p in BANKS["The Back Room: Corridors"] if p[0] not in UF_DROP],
+            "The Unfinished Fight: People": BANKS["The Back Room: People"]}
 macros = [{"_id": uid("macro", "soundbard"), "name": "The Unfinished Fight: set up SoundBard", "type": "script", "scope": "global", "author": None,
-           "img": "icons/tools/instruments/drum-hand-tan.webp", "command": soundbard_macro(BANKS), "folder": None, "sort": 0, "ownership": {"default": 0}, "flags": {}},
+           "img": "icons/tools/instruments/drum-hand-tan.webp", "command": soundbard_macro(UF_BANKS), "folder": None, "sort": 0, "ownership": {"default": 0}, "flags": {}},
           {"_id": uid("macro", "remove"), "name": "The Unfinished Fight: remove the adventure from this world", "type": "script", "scope": "global", "author": None,
            "img": "icons/svg/trash.svg", "command": remove_macro(PACK, TITLE), "folder": None, "sort": 100, "ownership": {"default": 0}, "flags": {}}]
 

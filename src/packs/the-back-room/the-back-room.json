@@ -592,8 +592,8 @@
           "dex"
          ],
          "dc": {
-          "calculation": "con",
-          "formula": ""
+          "calculation": "",
+          "formula": "17"
          }
         }
        }
@@ -610,7 +610,7 @@
        ]
       },
       "description": {
-       "value": "<p><em>Dexterity Saving Throw:</em> each creature in a 30-foot Cone. <em>Failure:</em> [[/damage average]] damage. <em>Success:</em> Half damage.</p><p>The breath of a young dragon in a wyrmling's body. The first time it is used, every player at the table should recognise the number.</p>",
+       "value": "<p><em>Dexterity Saving Throw:</em> DC 17, each creature in a 30-foot Cone. <em>Failure:</em> [[/damage average]] damage. <em>Success:</em> Half damage.</p><p>The breath of a young dragon in a wyrmling's body. The first time it is used, every player at the table should recognise the number.</p>",
        "chat": ""
       },
       "identifier": "fire-breath-young",
@@ -752,11 +752,11 @@
     },
     "resources": {
      "legact": {
-      "max": 0,
+      "max": 3,
       "spent": 0
      },
      "legres": {
-      "max": 0,
+      "max": 3,
       "spent": 0
      },
      "lair": {
@@ -804,7 +804,7 @@
        "elvish",
        "sylvan"
       ],
-      "custom": "Celestial, Elvish, Sylvan; telepathy 60 ft."
+      "custom": "Celestial, Elvish, Sylvan; telepathy 120 ft."
      }
     }
    },
@@ -887,7 +887,7 @@
        "max": ""
       },
       "description": {
-       "value": "<p>The [[lookup @name lowercase]]{monster}'s Healing Touch and Shimmering Shield can target only the other five monsters of the Cover. It will not heal a character under any circumstances, and does not understand why anyone would ask.</p>",
+       "value": "<p>The [[lookup @name lowercase]]{monster}'s Unicorn's Blessing and Shimmering Shield can target only itself and the other five monsters of the Cover. It will not heal a character under any circumstances, and does not understand why anyone would ask.</p>",
        "chat": ""
       },
       "identifier": "wrong-side",
@@ -906,6 +906,86 @@
      "flags": {},
      "folder": null,
      "sort": 200000,
+     "ownership": {
+      "default": 0
+     }
+    },
+    {
+     "_id": "9oRw39Q1iaE7o0dT",
+     "name": "Legendary Resistance (3/Day)",
+     "type": "feat",
+     "img": "icons/magic/symbols/question-stone-yellow.webp",
+     "system": {
+      "type": {
+       "value": "monster",
+       "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "description": {
+       "value": "<p>If the [[lookup @name lowercase]]{monster} fails a saving throw, it can choose to succeed instead.</p>",
+       "chat": ""
+      },
+      "identifier": "legendary-resistance-3-day",
+      "source": {
+       "revision": 1,
+       "rules": "2024",
+       "book": "The Back Room",
+       "license": ""
+      },
+      "properties": [
+       "trait"
+      ],
+      "requirements": ""
+     },
+     "effects": [],
+     "flags": {},
+     "folder": null,
+     "sort": 300000,
+     "ownership": {
+      "default": 0
+     }
+    },
+    {
+     "_id": "W4V7ANhXe2u01yHw",
+     "name": "Magic Resistance",
+     "type": "feat",
+     "img": "icons/magic/symbols/question-stone-yellow.webp",
+     "system": {
+      "type": {
+       "value": "monster",
+       "subtype": ""
+      },
+      "activities": {},
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "description": {
+       "value": "<p>The [[lookup @name lowercase]]{monster} has Advantage on saving throws against spells and other magical effects.</p>",
+       "chat": ""
+      },
+      "identifier": "magic-resistance",
+      "source": {
+       "revision": 1,
+       "rules": "2024",
+       "book": "The Back Room",
+       "license": ""
+      },
+      "properties": [
+       "trait"
+      ],
+      "requirements": ""
+     },
+     "effects": [],
+     "flags": {},
+     "folder": null,
+     "sort": 400000,
      "ownership": {
       "default": 0
      }
@@ -1006,7 +1086,7 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 300000,
+     "sort": 500000,
      "ownership": {
       "default": 0
      }
@@ -1146,7 +1226,7 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 400000,
+     "sort": 600000,
      "ownership": {
       "default": 0
      }
@@ -1236,23 +1316,7 @@
           "bonus": ""
          },
          "includeBase": true,
-         "parts": [
-          {
-           "custom": {
-            "enabled": false,
-            "formula": ""
-           },
-           "number": 2,
-           "denomination": 8,
-           "bonus": "",
-           "types": [
-            "radiant"
-           ],
-           "scaling": {
-            "number": 1
-           }
-          }
-         ]
+         "parts": []
         }
        }
       },
@@ -1277,9 +1341,9 @@
       "damage": {
        "base": {
         "number": 1,
-        "denomination": 8,
+        "denomination": 10,
         "types": [
-         "piercing"
+         "radiant"
         ],
         "custom": {
          "enabled": false
@@ -1302,24 +1366,24 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 500000,
+     "sort": 700000,
      "ownership": {
       "default": 0
      }
     },
     {
-     "_id": "KfTF8ruDzil8BGtB",
-     "name": "Healing Touch",
+     "_id": "y5KOlUpQfYXtVD60",
+     "name": "Spellcasting",
      "type": "feat",
-     "img": "icons/magic/life/heart-cross-green.webp",
+     "img": "icons/magic/light/beam-rays-yellow.webp",
      "system": {
       "type": {
        "value": "monster",
        "subtype": ""
       },
       "activities": {
-       "SsnKPi00dzOWqUxJ": {
-        "_id": "SsnKPi00dzOWqUxJ",
+       "RuszTZROudHxOTEy": {
+        "_id": "RuszTZROudHxOTEy",
         "type": "utility",
         "name": "Use",
         "sort": 0,
@@ -1383,19 +1447,14 @@
       },
       "uses": {
        "spent": 0,
-       "max": "3",
-       "recovery": [
-        {
-         "period": "day",
-         "type": "recoverAll"
-        }
-       ]
+       "recovery": [],
+       "max": ""
       },
       "description": {
-       "value": "<p>The [[lookup @name lowercase]]{monster} touches one other monster of the Cover, which regains [[/heal 2d8+2]] Hit Points.</p>",
+       "value": "<p>The [[lookup @name lowercase]]{monster} casts one of the following spells, requiring no spell components and using Charisma as the spellcasting ability (spell save DC 14). <em>At will:</em> <em>detect evil and good</em>, <em>druidcraft</em>. <em>1/day each:</em> <em>calm emotions</em>, <em>dispel evil and good</em>, <em>entangle</em>, <em>pass without trace</em>, <em>word of recall</em>.</p>",
        "chat": ""
       },
-      "identifier": "healing-touch",
+      "identifier": "spellcasting",
       "source": {
        "revision": 1,
        "rules": "2024",
@@ -1408,24 +1467,24 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 600000,
+     "sort": 800000,
      "ownership": {
       "default": 0
      }
     },
     {
-     "_id": "9GjBfDB6ljfkqEFN",
-     "name": "Shimmering Shield",
+     "_id": "3MUYhCppWFYSyT8e",
+     "name": "Unicorn's Blessing (3/Day)",
      "type": "feat",
-     "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+     "img": "icons/magic/life/heart-cross-green.webp",
      "system": {
       "type": {
        "value": "monster",
        "subtype": ""
       },
       "activities": {
-       "wPC2tNdPv7ravh9b": {
-        "_id": "wPC2tNdPv7ravh9b",
+       "bHQLUJaLPCbSYQz9": {
+        "_id": "bHQLUJaLPCbSYQz9",
         "type": "utility",
         "name": "Use",
         "sort": 0,
@@ -1498,10 +1557,10 @@
        ]
       },
       "description": {
-       "value": "<p>The [[lookup @name lowercase]]{monster} grants one other monster of the Cover within 60 feet a +2 bonus to Armor Class until the start of the unicorn's next turn.</p>",
+       "value": "<p>The [[lookup @name lowercase]]{monster} touches another monster of the Cover with its horn and casts <em>cure wounds</em> (it regains [[/heal 2d8+3]] Hit Points) or <em>lesser restoration</em> on it, using Charisma as the spellcasting ability.</p>",
        "chat": ""
       },
-      "identifier": "shimmering-shield",
+      "identifier": "unicorn-s-blessing-3-day",
       "source": {
        "revision": 1,
        "rules": "2024",
@@ -1514,32 +1573,32 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 700000,
+     "sort": 900000,
      "ownership": {
       "default": 0
      }
     },
     {
-     "_id": "BhSSzJ6VAD18lTFL",
-     "name": "Charge",
+     "_id": "xaOrguCfb3Q810c4",
+     "name": "Legendary Actions",
      "type": "feat",
-     "img": "icons/skills/movement/arrow-upward-yellow.webp",
+     "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
      "system": {
       "type": {
        "value": "monster",
        "subtype": ""
       },
       "activities": {
-       "tP3sIpsOT6WsLomL": {
-        "_id": "tP3sIpsOT6WsLomL",
+       "ukbkvCjrWEYnxBOr": {
+        "_id": "ukbkvCjrWEYnxBOr",
         "type": "utility",
         "name": "Use",
         "sort": 0,
         "img": null,
         "flags": {},
         "activation": {
-         "type": "action",
-         "value": null,
+         "type": "legendary",
+         "value": 1,
          "override": false,
          "condition": ""
         },
@@ -1599,10 +1658,10 @@
        "max": ""
       },
       "description": {
-       "value": "<p>If the [[lookup @name lowercase]]{monster} moves at least 20 feet straight toward a target and then hits it with Radiant Horn, the target takes an extra [[/damage 2d8 piercing]] and must succeed on a DC 15 Strength saving throw or have the Prone condition.</p>",
+       "value": "<p><em>Legendary Action Uses:</em> 3. Immediately after another creature's turn, the [[lookup @name lowercase]]{monster} can expend a use to take one of the following actions. It regains all expended uses at the start of each of its turns.</p><p><strong>Charging Horn.</strong> The [[lookup @name lowercase]]{monster} moves up to half its Speed without provoking Opportunity Attacks, and it makes one Radiant Horn attack.</p><p><strong>Shimmering Shield.</strong> The [[lookup @name lowercase]]{monster} targets itself or one other monster of the Cover it can see within 60 feet. The target gains [[/damage 3d6 temphp]] Temporary Hit Points, and its AC increases by 2 until the end of the [[lookup @name lowercase]]{monster}'s next turn. The [[lookup @name lowercase]]{monster} can't take this action again until the start of its next turn.</p>",
        "chat": ""
       },
-      "identifier": "charge",
+      "identifier": "legendary-actions",
       "source": {
        "revision": 1,
        "rules": "2024",
@@ -1615,7 +1674,7 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 800000,
+     "sort": 1000000,
      "ownership": {
       "default": 0
      }
@@ -1690,9 +1749,6 @@
       "value": 1
      },
      "prc": {
-      "value": 1
-     },
-     "sur": {
       "value": 1
      }
     },
@@ -2292,15 +2348,15 @@
        "subtype": ""
       },
       "activities": {
-       "W6jALIux3MuDdu7o": {
-        "_id": "W6jALIux3MuDdu7o",
-        "type": "utility",
-        "name": "Use",
+       "RlPO4sDHUqbhBbxN": {
+        "_id": "RlPO4sDHUqbhBbxN",
+        "type": "save",
+        "name": "",
         "sort": 0,
         "img": null,
         "flags": {},
         "activation": {
-         "type": "action",
+         "type": "bonus",
          "value": null,
          "override": false,
          "condition": ""
@@ -2329,11 +2385,14 @@
          "template": {
           "contiguous": false,
           "units": "ft",
-          "type": ""
+          "type": "",
+          "size": ""
          },
          "affects": {
           "choice": false,
-          "type": ""
+          "type": "creature",
+          "count": "1",
+          "special": ""
          },
          "override": false,
          "prompt": true
@@ -2349,19 +2408,50 @@
          "requireIdentification": false,
          "requireMagic": false
         },
-        "roll": {
-         "prompt": false,
-         "visible": false
+        "damage": {
+         "parts": [
+          {
+           "custom": {
+            "enabled": false,
+            "formula": ""
+           },
+           "number": 1,
+           "denomination": 6,
+           "bonus": "4",
+           "types": [
+            "bludgeoning"
+           ],
+           "scaling": {
+            "number": 1
+           }
+          }
+         ],
+         "onSave": "none"
+        },
+        "save": {
+         "ability": [
+          "str"
+         ],
+         "dc": {
+          "calculation": "",
+          "formula": "14"
+         }
         }
        }
       },
       "uses": {
        "spent": 0,
-       "recovery": [],
-       "max": ""
+       "max": "1",
+       "recovery": [
+        {
+         "period": "recharge",
+         "formula": "5",
+         "type": "recoverAll"
+        }
+       ]
       },
       "description": {
-       "value": "<p>If the [[lookup @name lowercase]]{monster} moves at least 20 feet straight toward a target and then hits it with Pike, the target must succeed on a DC 14 Strength saving throw or have the Prone condition. The centaur can then make one Hooves attack ([[/damage 2d6+4 bludgeoning]]) against it as a Bonus Action.</p>",
+       "value": "<p>The [[lookup @name lowercase]]{monster} moves up to its Speed without provoking Opportunity Attacks and can move through the space of any Medium or smaller creature. Each creature whose space the centaur enters makes a DC 14 Strength saving throw. <em>Failure:</em> [[/damage 1d6+4 bludgeoning]] damage, and the target has the Prone condition.</p>",
        "chat": ""
       },
       "identifier": "trampling-charge",
@@ -2449,7 +2539,7 @@
     },
     "skills": {
      "prc": {
-      "value": 1
+      "value": 2
      }
     },
     "attributes": {
@@ -2458,11 +2548,11 @@
       "flat": 15
      },
      "hp": {
-      "value": 84,
-      "max": 84,
+      "value": 94,
+      "max": 94,
       "temp": null,
       "tempmax": null,
-      "formula": "8d10 + 40"
+      "formula": "9d10 + 45"
      },
      "init": {
       "ability": "",
@@ -2737,7 +2827,7 @@
        "max": ""
       },
       "description": {
-       "value": "<p>The [[lookup @name lowercase]]{monster} makes three attacks: one Bite and two Claw attacks.</p>",
+       "value": "<p>The [[lookup @name lowercase]]{monster} makes three Rend attacks.</p>",
        "chat": ""
       },
       "identifier": "multiattack",
@@ -2759,148 +2849,8 @@
      }
     },
     {
-     "_id": "HGBTo2W3wBWrKj3y",
-     "name": "Bite",
-     "type": "weapon",
-     "img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
-     "system": {
-      "type": {
-       "value": "natural",
-       "baseItem": ""
-      },
-      "activities": {
-       "aZuBghnQDv3P7Mtl": {
-        "_id": "aZuBghnQDv3P7Mtl",
-        "type": "attack",
-        "name": "",
-        "sort": 0,
-        "img": null,
-        "flags": {},
-        "activation": {
-         "type": "action",
-         "value": null,
-         "override": false,
-         "condition": ""
-        },
-        "consumption": {
-         "scaling": {
-          "allowed": false
-         },
-         "spellSlot": true,
-         "targets": []
-        },
-        "description": {
-         "chatFlavor": ""
-        },
-        "duration": {
-         "units": "inst",
-         "concentration": false,
-         "override": false
-        },
-        "effects": [],
-        "range": {
-         "override": false,
-         "units": "self"
-        },
-        "target": {
-         "template": {
-          "contiguous": false,
-          "units": "ft",
-          "type": ""
-         },
-         "affects": {
-          "choice": false,
-          "type": ""
-         },
-         "override": false,
-         "prompt": true
-        },
-        "uses": {
-         "spent": 0,
-         "recovery": [],
-         "max": ""
-        },
-        "visibility": {
-         "level": {},
-         "requireAttunement": false,
-         "requireIdentification": false,
-         "requireMagic": false
-        },
-        "attack": {
-         "critical": {
-          "threshold": null
-         },
-         "flat": false,
-         "type": {
-          "value": "melee",
-          "classification": ""
-         },
-         "ability": "str",
-         "bonus": ""
-        },
-        "damage": {
-         "critical": {
-          "bonus": ""
-         },
-         "includeBase": true,
-         "parts": []
-        }
-       }
-      },
-      "uses": {
-       "spent": 0,
-       "recovery": [],
-       "max": ""
-      },
-      "description": {
-       "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
-       "chat": ""
-      },
-      "identifier": "bite",
-      "source": {
-       "revision": 1,
-       "rules": "2024",
-       "book": "The Back Room",
-       "license": ""
-      },
-      "quantity": 1,
-      "equipped": true,
-      "damage": {
-       "base": {
-        "number": 1,
-        "denomination": 6,
-        "types": [
-         "piercing"
-        ],
-        "custom": {
-         "enabled": false
-        },
-        "scaling": {
-         "number": 1
-        },
-        "bonus": ""
-       }
-      },
-      "properties": [],
-      "proficient": null,
-      "range": {
-       "value": null,
-       "long": null,
-       "reach": 5,
-       "units": "ft"
-      }
-     },
-     "effects": [],
-     "flags": {},
-     "folder": null,
-     "sort": 400000,
-     "ownership": {
-      "default": 0
-     }
-    },
-    {
-     "_id": "Rsv5hUgxLHqV02KT",
-     "name": "Claw",
+     "_id": "Z0PtGBd1gsGN3cEp",
+     "name": "Rend",
      "type": "weapon",
      "img": "icons/creatures/claws/claw-curved-jagged-gray.webp",
      "system": {
@@ -2909,8 +2859,8 @@
        "baseItem": ""
       },
       "activities": {
-       "8JUuFPaBVDOruN9P": {
-        "_id": "8JUuFPaBVDOruN9P",
+       "EHhw3VkozYQ6jLhk": {
+        "_id": "EHhw3VkozYQ6jLhk",
         "type": "attack",
         "name": "",
         "sort": 0,
@@ -2996,7 +2946,7 @@
        "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]].</p>",
        "chat": ""
       },
-      "identifier": "claw",
+      "identifier": "rend",
       "source": {
        "revision": 1,
        "rules": "2024",
@@ -3026,9 +2976,110 @@
       "range": {
        "value": null,
        "long": null,
-       "reach": 5,
+       "reach": 10,
        "units": "ft"
       }
+     },
+     "effects": [],
+     "flags": {},
+     "folder": null,
+     "sort": 400000,
+     "ownership": {
+      "default": 0
+     }
+    },
+    {
+     "_id": "cqnMdWVvSEa44Cen",
+     "name": "Charge",
+     "type": "feat",
+     "img": "icons/skills/movement/arrow-upward-yellow.webp",
+     "system": {
+      "type": {
+       "value": "monster",
+       "subtype": ""
+      },
+      "activities": {
+       "cnQvfwaktOw95CBE": {
+        "_id": "cnQvfwaktOw95CBE",
+        "type": "utility",
+        "name": "Use",
+        "sort": 0,
+        "img": null,
+        "flags": {},
+        "activation": {
+         "type": "bonus",
+         "value": null,
+         "override": false,
+         "condition": ""
+        },
+        "consumption": {
+         "scaling": {
+          "allowed": false
+         },
+         "spellSlot": true,
+         "targets": []
+        },
+        "description": {
+         "chatFlavor": ""
+        },
+        "duration": {
+         "units": "inst",
+         "concentration": false,
+         "override": false
+        },
+        "effects": [],
+        "range": {
+         "override": false,
+         "units": "self"
+        },
+        "target": {
+         "template": {
+          "contiguous": false,
+          "units": "ft",
+          "type": ""
+         },
+         "affects": {
+          "choice": false,
+          "type": ""
+         },
+         "override": false,
+         "prompt": true
+        },
+        "uses": {
+         "spent": 0,
+         "recovery": [],
+         "max": ""
+        },
+        "visibility": {
+         "level": {},
+         "requireAttunement": false,
+         "requireIdentification": false,
+         "requireMagic": false
+        },
+        "roll": {
+         "prompt": false,
+         "visible": false
+        }
+       }
+      },
+      "uses": {
+       "spent": 0,
+       "recovery": [],
+       "max": ""
+      },
+      "description": {
+       "value": "<p>The [[lookup @name lowercase]]{monster} moves up to half its Speed straight toward an enemy it can see.</p>",
+       "chat": ""
+      },
+      "identifier": "charge",
+      "source": {
+       "revision": 1,
+       "rules": "2024",
+       "book": "The Back Room",
+       "license": ""
+      },
+      "properties": [],
+      "requirements": ""
      },
      "effects": [],
      "flags": {},
@@ -3105,7 +3156,7 @@
     },
     "skills": {
      "prc": {
-      "value": 3
+      "value": 1
      },
      "ste": {
       "value": 2
@@ -3208,10 +3259,8 @@
       "custom": ""
      },
      "languages": {
-      "value": [
-       "deep"
-      ],
-      "custom": "Deep Speech"
+      "value": [],
+      "custom": ""
      }
     }
    },
@@ -3278,46 +3327,6 @@
      }
     },
     {
-     "_id": "OSXPXc7hf3CtjpdZ",
-     "name": "False Appearance",
-     "type": "feat",
-     "img": "icons/magic/symbols/question-stone-yellow.webp",
-     "system": {
-      "type": {
-       "value": "monster",
-       "subtype": ""
-      },
-      "activities": {},
-      "uses": {
-       "spent": 0,
-       "recovery": [],
-       "max": ""
-      },
-      "description": {
-       "value": "<p>If the [[lookup @name lowercase]]{monster} is motionless at the start of combat, it has Advantage on its Initiative roll. Moreover, if a creature hasn't observed it move or act, that creature must succeed on a DC 20 Intelligence (Investigation) check to discern that it is animate.</p>",
-       "chat": ""
-      },
-      "identifier": "false-appearance",
-      "source": {
-       "revision": 1,
-       "rules": "2024",
-       "book": "The Back Room",
-       "license": ""
-      },
-      "properties": [
-       "trait"
-      ],
-      "requirements": ""
-     },
-     "effects": [],
-     "flags": {},
-     "folder": null,
-     "sort": 200000,
-     "ownership": {
-      "default": 0
-     }
-    },
-    {
      "_id": "91TcqkzenimhCV73",
      "name": "Spider Climb",
      "type": "feat",
@@ -3352,7 +3361,7 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 300000,
+     "sort": 200000,
      "ownership": {
       "default": 0
      }
@@ -3437,7 +3446,7 @@
        "max": ""
       },
       "description": {
-       "value": "<p>The [[lookup @name lowercase]]{monster} makes two Tendril attacks, uses Reel, and makes one Bite attack.</p>",
+       "value": "<p>The [[lookup @name lowercase]]{monster} makes two Tentacle attacks, uses Reel, and makes two Bite attacks.</p>",
        "chat": ""
       },
       "identifier": "multiattack",
@@ -3453,7 +3462,7 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 400000,
+     "sort": 300000,
      "ownership": {
       "default": 0
      }
@@ -3567,7 +3576,7 @@
       "equipped": true,
       "damage": {
        "base": {
-        "number": 4,
+        "number": 3,
         "denomination": 8,
         "types": [
          "piercing"
@@ -3593,14 +3602,14 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 500000,
+     "sort": 400000,
      "ownership": {
       "default": 0
      }
     },
     {
-     "_id": "shy8H5p7GCBllPQu",
-     "name": "Tendril",
+     "_id": "KajpfuyAojQZzIgM",
+     "name": "Tentacle",
      "type": "weapon",
      "img": "icons/creatures/tentacles/tentacle-earth-green.webp",
      "system": {
@@ -3609,8 +3618,8 @@
        "baseItem": ""
       },
       "activities": {
-       "V8WJHs668XtSbEnp": {
-        "_id": "V8WJHs668XtSbEnp",
+       "pmggEE34CUR0CmXE": {
+        "_id": "pmggEE34CUR0CmXE",
         "type": "attack",
         "name": "",
         "sort": 0,
@@ -3682,7 +3691,7 @@
          "critical": {
           "bonus": ""
          },
-         "includeBase": true,
+         "includeBase": false,
          "parts": []
         }
        }
@@ -3693,10 +3702,10 @@
        "max": ""
       },
       "description": {
-       "value": "<p class=\"feature\">[[/attack extended]]. [[/damage average extended]]. If the target is Large or smaller, it has the Grappled condition (escape DC 14) and the Poisoned condition until the grapple ends. The roper has six tendrils; each can grapple one creature.</p>",
+       "value": "<p class=\"feature\">[[/attack extended]]. <em>Hit:</em> no damage. The target has the Grappled condition (escape DC 14) from one of six tentacles, and the target has the Poisoned condition until the grapple ends. Each tentacle has AC 20, 10 Hit Points, and Immunity to Poison and Psychic damage; destroying one frees the creature it holds and doesn't hurt the roper. A destroyed tentacle regrows at the start of the roper's next turn.</p>",
        "chat": ""
       },
-      "identifier": "tendril",
+      "identifier": "tentacle",
       "source": {
        "revision": 1,
        "rules": "2024",
@@ -3733,7 +3742,7 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 600000,
+     "sort": 500000,
      "ownership": {
       "default": 0
      }
@@ -3757,7 +3766,7 @@
         "img": null,
         "flags": {},
         "activation": {
-         "type": "bonus",
+         "type": "action",
          "value": null,
          "override": false,
          "condition": ""
@@ -3834,7 +3843,7 @@
      "effects": [],
      "flags": {},
      "folder": null,
-     "sort": 700000,
+     "sort": 600000,
      "ownership": {
       "default": 0
      }
@@ -3906,7 +3915,7 @@
     },
     "skills": {
      "prc": {
-      "value": 1
+      "value": 2
      }
     },
     "attributes": {

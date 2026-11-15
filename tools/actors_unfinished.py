@@ -39,7 +39,7 @@ def build_waves():
 
     m = Monster("uf-roper", "Roper (The Cover)", 8, "lg", "aberration", "Neutral Evil", 20, 147, "14d10 + 70",
                 (18, 8, 20, 7, 16, 6), {"walk": 10, "climb": 20}, TK["roper"], senses={"darkvision": 60},
-                skills={"prc": 3, "ste": 2}, languages="Deep Speech", lang_values=("deep",), tsize=2,
+                skills={"prc": 1, "ste": 2}, languages="Deep Speech", lang_values=("deep",), tsize=2,
                 bio=P("The one nobody could draw properly. It looks like three different things from three angles: a stalagmite, a rotted stump, a face. Describe it differently each round and never correct yourself.",
                       "<strong>Wave 1.</strong> Its tendrils were reaching for the gap at the cave mouth, where the thief was sneaking in. The piercers on the ceiling above it were never on the cover, but everyone remembers them being there."))
     frozen(m, 1)
@@ -52,7 +52,7 @@ def build_waves():
     out["roper"] = m
 
     m = Monster("uf-piercer", "Piercer (The Cover)", 0.5, "sm", "monstrosity", "Unaligned", 15, 22, "4d6 + 8",
-                (10, 13, 14, 1, 7, 3), {"walk": 5, "climb": 5}, TK["roper"], senses={"blindsight": 30, "darkvision": 60}, skills={"ste": 3},
+                (10, 13, 14, 1, 7, 3), {"walk": 5, "climb": 5}, TK["roper"], senses={"blindsight": 30, "darkvision": 60}, skills={"ste": 2},
                 bio=P("A stalactite that is not a stalactite. Six of them hang over the roper. They were never on the cover; the table put them there."), tsize=1)
     m.trait("Spider Climb", P(f"The {M} can climb difficult surfaces, including along ceilings, without needing to make an ability check."))
     m.save("Drop", "dex", "con", [(4, 6, ["piercing"])], "half",
@@ -138,7 +138,7 @@ def build_waves():
 
     # ======================= THE CELLAR: the breathing provisions chests =======================
     m = Monster("uf-chest", "Provisions Chest", 4, "med", "monstrosity", "Neutral", 13, 75, "10d8 + 30",
-                (17, 12, 16, 5, 13, 8), {"walk": 15}, "icons/svg/chest.svg", senses={"darkvision": 60}, skills={"ste": 5},
+                (17, 12, 16, 5, 13, 8), {"walk": 15}, "icons/svg/chest.svg", senses={"darkvision": 60}, skills={"ste": 2},
                 ci=("prone",), subtype="shapechanger",
                 bio=P("The party's own provisions chest, from the storeroom upstairs, receipts still tucked under the lid. Four of them. They are breathing.",
                       "<strong>The Cellar.</strong> They wake when anyone touches one, or when Thon presses his first button (the click). They stop, and are only chests, the moment the cellar door opens."))

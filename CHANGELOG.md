@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.1] - 2026-11-15
+
+### Fixed
+- **The Back Room's Cover monsters now match the 2024 Monster Manual.** They had been written from memory. The design's own changes stay: the dragon is a wyrmling with a young dragon's breath (now at the young dragon's DC 17), and the troll stands back up instead of regenerating.
+- **Troll:** 94 Hit Points (was 84), three Rend attacks at 10-foot reach (was a bite and two claws), Perception +5, and a Charge bonus action.
+- **Roper:** two Tentacles that grapple without damage, Reel, and two 3d8 Bites (was two damaging tendrils and one 4d8 bite). It loses False Appearance and its language, which the 2024 roper doesn't have.
+- **Unicorn:** Radiant Horn deals 1d10 radiant (was piercing plus radiant). It gains Legendary Resistance, Magic Resistance, its spells and two legendary actions (Charging Horn, Shimmering Shield), and Unicorn's Blessing replaces Healing Touch. It still only helps the other monsters.
+- **Centaur:** Trampling Charge is the 2024 bonus action, a charge through creatures that knocks them prone. It no longer has Survival.
+- **Owlbear:** Perception +5 (was +3).
+- **Skill bonuses on four monsters were stored wrong** and could show odd totals in Foundry: The Back Room's roper, and The Unfinished Fight's roper, piercers and provisions chests.
+
+### Changed
+- **The Unfinished Fight's SoundBard macro makes its own banks**, "The Unfinished Fight: On the Road" and "The Unfinished Fight: People", without the Corridor-only sounds. It no longer overwrites The Back Room's banks.
+
 ## [2.6.0] - 2026-11-09
 
 ### Added
@@ -162,7 +176,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.6.0...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.6.1...HEAD
+[2.6.1]: https://github.com/bularzik/the-back-room/compare/v2.6.0...v2.6.1
 [2.6.0]: https://github.com/bularzik/the-back-room/compare/v2.5.5...v2.6.0
 [2.5.5]: https://github.com/bularzik/the-back-room/compare/v2.5.4...v2.5.5
 [2.5.4]: https://github.com/bularzik/the-back-room/compare/v2.5.3...v2.5.4

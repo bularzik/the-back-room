@@ -94,13 +94,14 @@ class Monster:
         self.items.append(_item(self.id, iid, name, "feat", img, sysd, self._next())); return self
 
     def attack(self, name, n, d, dtype, ability, kind="melee", reach=5, rng=None, extra_parts=(), note="",
-               img="icons/creatures/claws/claw-curved-jagged-gray.webp", act_type="action", act_value=None):
+               img="icons/creatures/claws/claw-curved-jagged-gray.webp", act_type="action", act_value=None, no_damage=False):
         iid = uid(self.id, name); aid = uid(iid, "atk")
         act = _act(aid, "attack", act_type, act_value, {
             "attack": {"critical": {"threshold": None}, "flat": False, "type": {"value": kind, "classification": ""},
                        "ability": ability, "bonus": ""},
-            "damage": {"critical": {"bonus": ""}, "includeBase": True, "parts": [dmg_part(*p) for p in extra_parts]}})
-        desc = '<p class="feature">[[/attack extended]]. [[/damage average extended]].' + (f" {note}" if note else "") + "</p>"
+            "damage": {"critical": {"bonus": ""}, "includeBase": not no_damage, "parts": [dmg_part(*p) for p in extra_parts]}})
+        hit = "<em>Hit:</em> no damage." if no_damage else "[[/damage average extended]]."
+        desc = f'<p class="feature">[[/attack extended]]. {hit}' + (f" {note}" if note else "") + "</p>"
         sysd = {"type": {"value": "natural", "baseItem": ""}, "activities": {aid: act},
                 "uses": {"spent": 0, "recovery": [], "max": ""}, "description": {"value": desc, "chat": ""},
                 "identifier": slug(name), "source": SRC, "quantity": 1, "equipped": True,
@@ -112,7 +113,7 @@ class Monster:
 
     def save(self, name, ability, dc_from, parts, on_save, html, rng_ft=None, template=None, count="1",
              affects="creature", recharge=None, act_type="action", act_value=None, per_day=None,
-             img="icons/magic/control/fear-fright-monster-grin-red-orange.webp"):
+             img="icons/magic/control/fear-fright-monster-grin-red-orange.webp", dc=None):
         iid = uid(self.id, name); aid = uid(iid, "save")
         rng = {"override": False, "units": "ft", "value": str(rng_ft)} if rng_ft else {"override": False, "units": "self"}
         tgt = {"template": {"contiguous": False, "units": "ft", "type": template[0] if template else "",
@@ -121,7 +122,7 @@ class Monster:
                "override": False, "prompt": True}
         act = _act(aid, "save", act_type, act_value, {
             "damage": {"parts": [dmg_part(*p) for p in parts], "onSave": on_save},
-            "save": {"ability": [ability], "dc": {"calculation": dc_from, "formula": ""}}}, rng, tgt)
+            "save": {"ability": [ability], "dc": {"calculation": "" if dc else dc_from, "formula": str(dc) if dc else ""}}}, rng, tgt)
         uses = {"spent": 0, "recovery": [], "max": ""}
         if recharge: uses = {"spent": 0, "max": "1", "recovery": [{"period": "recharge", "formula": str(recharge), "type": "recoverAll"}]}
         if per_day: uses = {"spent": 0, "max": str(per_day), "recovery": [{"period": "day", "type": "recoverAll"}]}
@@ -168,31 +169,35 @@ def build_monsters():
     m.utility("Multiattack", P(f"The {M} makes two Rend attacks."), img="icons/skills/melee/strike-weapons-orange.webp")
     m.attack("Rend", 1, 10, "slashing", "str", extra_parts=[(1, 6, ["fire"])], img="icons/creatures/claws/claw-curved-jagged-gray.webp")
     m.save("Fire Breath (Young)", "dex", "con", [(16, 6, ["fire"])], "half",
-           P(f"<em>Dexterity Saving Throw:</em> each creature in a 30-foot Cone. <em>Failure:</em> [[/damage average]] damage. <em>Success:</em> Half damage.",
+           P(f"<em>Dexterity Saving Throw:</em> DC 17, each creature in a 30-foot Cone. <em>Failure:</em> [[/damage average]] damage. <em>Success:</em> Half damage.",
              "The breath of a young dragon in a wyrmling's body. The first time it is used, every player at the table should recognise the number."),
-           template=("cone", 30), recharge=5, img="icons/magic/fire/beam-jet-stream-embers.webp")
+           template=("cone", 30), recharge=5, img="icons/magic/fire/beam-jet-stream-embers.webp", dc=17)
     out["dragon"] = m
 
     # ---------- Unicorn (hostile; its healing goes to the other monsters) ----------
     m = Monster("cover-unicorn", "Unicorn (The Cover)", 5, "lg", "celestial", "Lawful Good", 12, 97, "13d10 + 26",
                 (18, 14, 15, 11, 17, 16), {"walk": 50}, TK["unicorn"], senses={"darkvision": 60}, di=("poison",),
-                ci=("charmed", "paralyzed", "poisoned"), languages="Celestial, Elvish, Sylvan; telepathy 60 ft.",
+                ci=("charmed", "paralyzed", "poisoned"), languages="Celestial, Elvish, Sylvan; telepathy 120 ft.", legact=3, legres=3,
                 lang_values=("celestial", "elvish", "sylvan"), tsize=2,
                 bio=P("On the monsters' side. It was in the Monster Manual, so it is a monster. It is confused about this, and its confusion does not slow it down.",
                       "<strong>Tableau.</strong> Rearing beside the troll, horn lowered at the gap where the elf stood."))
     m.trait("Still Fighting 1977", P(f"The {M} is frozen mid-battle and has the Incapacitated condition until a creature enters the gap it is fighting."))
-    m.trait("Wrong Side", P(f"The {M}'s Healing Touch and Shimmering Shield can target only the other five monsters of the Cover. It will not heal a character under any circumstances, and does not understand why anyone would ask."))
+    m.trait("Wrong Side", P(f"The {M}'s Unicorn's Blessing and Shimmering Shield can target only itself and the other five monsters of the Cover. It will not heal a character under any circumstances, and does not understand why anyone would ask."))
+    m.trait("Legendary Resistance (3/Day)", P(f"If the {M} fails a saving throw, it can choose to succeed instead."))
+    m.trait("Magic Resistance", P(f"The {M} has Advantage on saving throws against spells and other magical effects."))
     m.utility("Multiattack", P(f"The {M} makes one Hooves attack and one Radiant Horn attack."), img="icons/skills/melee/strike-weapons-orange.webp")
     m.attack("Hooves", 2, 6, "bludgeoning", "str", img="icons/creatures/mammals/horse-hooves-blue.webp")
-    m.attack("Radiant Horn", 1, 8, "piercing", "str", extra_parts=[(2, 8, ["radiant"])], img="icons/magic/light/beam-rays-yellow.webp")
-    m.utility("Healing Touch", P(f"The {M} touches one other monster of the Cover, which regains [[/heal 2d8+2]] Hit Points."), per_day=3, img="icons/magic/life/heart-cross-green.webp")
-    m.utility("Shimmering Shield", P(f"The {M} grants one other monster of the Cover within 60 feet a +2 bonus to Armor Class until the start of the unicorn's next turn."), act_type="bonus", per_day=3, img="icons/magic/defensive/shield-barrier-glowing-blue.webp")
-    m.utility("Charge", P(f"If the {M} moves at least 20 feet straight toward a target and then hits it with Radiant Horn, the target takes an extra [[/damage 2d8 piercing]] and must succeed on a DC 15 Strength saving throw or have the Prone condition."), img="icons/skills/movement/arrow-upward-yellow.webp")
+    m.attack("Radiant Horn", 1, 10, "radiant", "str", img="icons/magic/light/beam-rays-yellow.webp")
+    m.utility("Spellcasting", P(f"The {M} casts one of the following spells, requiring no spell components and using Charisma as the spellcasting ability (spell save DC 14). <em>At will:</em> <em>detect evil and good</em>, <em>druidcraft</em>. <em>1/day each:</em> <em>calm emotions</em>, <em>dispel evil and good</em>, <em>entangle</em>, <em>pass without trace</em>, <em>word of recall</em>."), img="icons/magic/light/beam-rays-yellow.webp")
+    m.utility("Unicorn's Blessing (3/Day)", P(f"The {M} touches another monster of the Cover with its horn and casts <em>cure wounds</em> (it regains [[/heal 2d8+3]] Hit Points) or <em>lesser restoration</em> on it, using Charisma as the spellcasting ability."), act_type="bonus", per_day=3, img="icons/magic/life/heart-cross-green.webp")
+    m.utility("Legendary Actions", P(f"<em>Legendary Action Uses:</em> 3. Immediately after another creature's turn, the {M} can expend a use to take one of the following actions. It regains all expended uses at the start of each of its turns.",
+                                     f"<strong>Charging Horn.</strong> The {M} moves up to half its Speed without provoking Opportunity Attacks, and it makes one Radiant Horn attack.",
+                                     f"<strong>Shimmering Shield.</strong> The {M} targets itself or one other monster of the Cover it can see within 60 feet. The target gains [[/damage 3d6 temphp]] Temporary Hit Points, and its AC increases by 2 until the end of the {M}'s next turn. The {M} can't take this action again until the start of its next turn."), act_type="legendary", act_value=1, img="icons/magic/defensive/shield-barrier-glowing-blue.webp")
     out["unicorn"] = m
 
     # ---------- Centaur (a bow with no arrows; it hits anyway) ----------
     m = Monster("cover-centaur", "Centaur (The Cover)", 2, "lg", "fey", "Neutral Good", 16, 45, "6d10 + 12",
-                (18, 14, 14, 9, 13, 11), {"walk": 50}, TK["centaur"], skills={"ath": 1, "prc": 1, "sur": 1},
+                (18, 14, 14, 9, 13, 11), {"walk": 50}, TK["centaur"], skills={"ath": 1, "prc": 1},
                 languages="Elvish, Sylvan", lang_values=("elvish", "sylvan"), tsize=2,
                 bio=P("Has a bow but no arrows, and shoots anyway. They hit. Nobody at the table ever tracked ammunition and the centaur is the proof.",
                       "<strong>Tableau.</strong> Drawing an empty bow at the gap on the ledge where the archer stood."))
@@ -201,40 +206,41 @@ def build_monsters():
     m.utility("Multiattack", P(f"The {M} makes two attacks, using Pike or Longbow in any combination."), img="icons/skills/melee/strike-weapons-orange.webp")
     m.attack("Pike", 1, 10, "piercing", "str", reach=10, img="icons/weapons/polearms/spear-simple-engraved.webp")
     m.attack("Longbow", 1, 8, "piercing", "dex", kind="ranged", reach=None, rng=(150, 600), img="icons/weapons/bows/longbow-recurve-leather-brown.webp")
-    m.utility("Trampling Charge", P(f"If the {M} moves at least 20 feet straight toward a target and then hits it with Pike, the target must succeed on a DC 14 Strength saving throw or have the Prone condition. The centaur can then make one Hooves attack ([[/damage 2d6+4 bludgeoning]]) against it as a Bonus Action."), img="icons/skills/movement/arrow-upward-yellow.webp")
+    m.save("Trampling Charge", "str", "str", [(1, 6, ["bludgeoning"], "4")], "none",
+           P(f"The {M} moves up to its Speed without provoking Opportunity Attacks and can move through the space of any Medium or smaller creature. Each creature whose space the centaur enters makes a DC 14 Strength saving throw. <em>Failure:</em> [[/damage 1d6+4 bludgeoning]] damage, and the target has the Prone condition."),
+           act_type="bonus", recharge=5, img="icons/skills/movement/arrow-upward-yellow.webp", dc=14)
     out["centaur"] = m
 
     # ---------- Troll (regenerates the way the table remembers) ----------
-    m = Monster("cover-troll", "Troll (The Cover)", 5, "lg", "giant", "Chaotic Evil", 15, 84, "8d10 + 40",
-                (18, 13, 20, 7, 9, 7), {"walk": 30}, TK["troll"], senses={"darkvision": 60}, skills={"prc": 1},
+    m = Monster("cover-troll", "Troll (The Cover)", 5, "lg", "giant", "Chaotic Evil", 15, 94, "9d10 + 45",
+                (18, 13, 20, 7, 9, 7), {"walk": 30}, TK["troll"], senses={"darkvision": 60}, skills={"prc": 2},
                 languages="Giant", lang_values=("giant",), tsize=2,
                 bio=P("Regenerates the way the table remembers, not the way the rules say: it stands up at the start of its turn in the pose it fell in. This is the Remnant rule, previewed. Fire or acid still ends it, because everybody remembers that part.",
                       "<strong>Tableau.</strong> Mid-lunge at the gap by the treasure chest, where the dwarf stood."))
     m.trait("Still Fighting 1977", P(f"The {M} is frozen mid-battle and has the Incapacitated condition until a creature enters the gap it is fighting."))
     m.trait("Stands Back Up (Remnant Rule)", P(f"When the {M} drops to 0 Hit Points it does not die unless the damage that dropped it included Fire or Acid damage. At the start of its next turn it stands up in the pose it fell in with all its Hit Points. It has no other regeneration."))
-    m.utility("Multiattack", P(f"The {M} makes three attacks: one Bite and two Claw attacks."), img="icons/skills/melee/strike-weapons-orange.webp")
-    m.attack("Bite", 1, 6, "piercing", "str", img="icons/creatures/abilities/mouth-teeth-long-red.webp")
-    m.attack("Claw", 2, 6, "slashing", "str", img="icons/creatures/claws/claw-curved-jagged-gray.webp")
+    m.utility("Multiattack", P(f"The {M} makes three Rend attacks."), img="icons/skills/melee/strike-weapons-orange.webp")
+    m.attack("Rend", 2, 6, "slashing", "str", reach=10, img="icons/creatures/claws/claw-curved-jagged-gray.webp")
+    m.utility("Charge", P(f"The {M} moves up to half its Speed straight toward an enemy it can see."), act_type="bonus", img="icons/skills/movement/arrow-upward-yellow.webp")
     out["troll"] = m
 
     # ---------- Roper (looks like three different things from three angles) ----------
     m = Monster("cover-roper", "Roper (The Cover)", 5, "lg", "aberration", "Neutral Evil", 20, 93, "11d10 + 33",
                 (18, 8, 17, 7, 16, 6), {"walk": 10, "climb": 20}, TK["roper"], senses={"darkvision": 60},
-                skills={"prc": 3, "ste": 2}, languages="Deep Speech", lang_values=("deep",), tsize=2,
+                skills={"prc": 1, "ste": 2}, tsize=2,
                 bio=P("The one nobody could draw properly. It looks like three different things from three angles: a stalagmite, a rotted stump, a face. Describe it differently each round and never correct yourself.",
                       "<strong>Tableau.</strong> Tendrils out toward the gap at the cave mouth, where the thief was sneaking in."))
     m.trait("Still Fighting 1977", P(f"The {M} is frozen mid-battle and has the Incapacitated condition until a creature enters the gap it is fighting."))
-    m.trait("False Appearance", P(f"If the {M} is motionless at the start of combat, it has Advantage on its Initiative roll. Moreover, if a creature hasn't observed it move or act, that creature must succeed on a DC 20 Intelligence (Investigation) check to discern that it is animate."))
     m.trait("Spider Climb", P(f"The {M} can climb difficult surfaces, including along ceilings, without needing to make an ability check."))
-    m.utility("Multiattack", P(f"The {M} makes two Tendril attacks, uses Reel, and makes one Bite attack."), img="icons/skills/melee/strike-weapons-orange.webp")
-    m.attack("Bite", 4, 8, "piercing", "str", img="icons/creatures/abilities/mouth-teeth-long-red.webp")
-    m.attack("Tendril", 1, 4, "bludgeoning", "str", reach=60, note="If the target is Large or smaller, it has the Grappled condition (escape DC 14) and the Poisoned condition until the grapple ends. The roper has six tendrils; each can grapple one creature.", img="icons/creatures/tentacles/tentacle-earth-green.webp")
-    m.utility("Reel", P(f"The {M} pulls each creature Grappled by it up to 30 feet straight toward it."), act_type="bonus", img="icons/skills/movement/arrow-upward-yellow.webp")
+    m.utility("Multiattack", P(f"The {M} makes two Tentacle attacks, uses Reel, and makes two Bite attacks."), img="icons/skills/melee/strike-weapons-orange.webp")
+    m.attack("Bite", 3, 8, "piercing", "str", img="icons/creatures/abilities/mouth-teeth-long-red.webp")
+    m.attack("Tentacle", 1, 4, "bludgeoning", "str", reach=60, no_damage=True, note="The target has the Grappled condition (escape DC 14) from one of six tentacles, and the target has the Poisoned condition until the grapple ends. Each tentacle has AC 20, 10 Hit Points, and Immunity to Poison and Psychic damage; destroying one frees the creature it holds and doesn't hurt the roper. A destroyed tentacle regrows at the start of the roper's next turn.", img="icons/creatures/tentacles/tentacle-earth-green.webp")
+    m.utility("Reel", P(f"The {M} pulls each creature Grappled by it up to 30 feet straight toward it."), img="icons/skills/movement/arrow-upward-yellow.webp")
     out["roper"] = m
 
     # ---------- Owlbear (just an owlbear) ----------
     m = Monster("cover-owlbear", "Owlbear (The Cover)", 3, "lg", "monstrosity", "Unaligned", 13, 59, "7d10 + 21",
-                (20, 12, 17, 3, 12, 7), {"walk": 40, "climb": 40}, TK["owlbear"], senses={"darkvision": 60}, skills={"prc": 1}, tsize=2,
+                (20, 12, 17, 3, 12, 7), {"walk": 40, "climb": 40}, TK["owlbear"], senses={"darkvision": 60}, skills={"prc": 2}, tsize=2,
                 bio=P("Just an owlbear. Something in here has to be.",
                       "<strong>Tableau.</strong> Rearing at the back of the cavern over the gap where the cleric stood, mace raised."))
     m.trait("Still Fighting 1977", P(f"The {M} is frozen mid-battle and has the Incapacitated condition until a creature enters the gap it is fighting."))

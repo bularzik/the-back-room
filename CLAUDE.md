@@ -129,44 +129,26 @@ GM-only **Reveal** tile that restores fog and real scene names for Room 5.
 - Never stat the Remnants as monsters; they are NPCs (see design doc).
 - One misremembered trope per Corridor scene. Two is a joke.
 
-## Status
+## Status (updated 2026-11-15, v2.6.1)
 
-- [x] Design doc complete (`docs/the-back-room.md`); revised 2026-10-26 with the verified Pointy Hat method (Theme "Unfinished", four Mechanics, two-layer Goal + X-door rule, encounter mix, Corridor #7 → crossroads) and the Foundry concealment design
-- [x] Back room moved upstairs (hayloft door, not a hill); library layer added to tone curve, Corridor cue table, Room 3 segments, Room 4 and Room 5 (2026-10-26)
-- [x] Reading-room reference photo saved at `docs/reference/morse-reading-room.jpg` (1500×1200). Reference only: never copy it into `maps/`, `tiles/` or any pack.
-- [x] Corridor fight decided: The Cover (design doc, Encounters) — six 1977-MM-cover monsters, wake-one-per-gap rule; dryads kept as the campfire glimpse cue
-- [x] Corridor pool spec written (`docs/corridor-pool.md`): trope/wrongness/map/doors/library steps/cues per place; riddle door on the stable's loft door; cellar from visit 5
-- [ ] Write the three fallback Remnants' sheets (one more fallback may be needed for a 5-player table)
-- [ ] Actors for The Cover: wyrmling-with-young-breath red dragon, hostile unicorn, arrowless centaur, Remnant-rule troll, roper, owlbear (2024 stat blocks, edited as in the design doc table)
-- [x] `tools/import_dd2vtt.py` written and tested on a 31×34 export (450 walls, 19 doors)
-- [x] Rewrote `tools/build.py`, `journal.py`, `actors.py`, `matt.py` for v2 (2026-10-27); id is `the-back-room`,
-      pack `the-back-room` (the Bestiary pack was dropped in v2.1.1: actors ship inside the Adventure); `validate.mjs`, `publish.sh`, `package.json` renamed; `maps.json`
-      reset to `{}`. Builds with zero maps (14 journals, 36 pages, 12 actors). **Not yet done:** rename the GitHub
-      repo; delete v1 leftovers (`tools/maps.py`, `tile_art.py`, `tokens.py`, `audio.py`, v1 `maps/`, `tiles/`,
-      `tokens/`, `audio/`); draw v2 token art (actors use core icons for now); render v2 audio (playlists reference
-      `ambience-tavern/corridor/reading-room` and `sting-door/x-door/footsteps`, which don't exist yet); GM tile
-      images `tiles/gm-*.webp`, `x-door.webp`. `npm run validate` now passes.
-- [ ] Verify the six Cover stat blocks against the 2024 Monster Manual (numbers were written from memory)
-- [x] MATT behaviour verified in Foundry (see above); the visit counter is a GM whisper, not a variable
-- [x] Maps: all 13 built in Dungeondraft campaign `BackRoom` (2026-10-27), exported to `dd2vtt/`, imported to
-      `maps/` + `tools/maps.json` with rects/notes/start. Build = 29 scenes, 360 tiles; `validate` passes.
-      Validate must run from a copy OUTSIDE the mounted folder (`~/vrun`): node's cpSync fails with EACCES on
-      the mount. Dungeondraft needs a restart if screenshots/exports come back blank white.
-- [ ] Journals: overview, Corridor rules, Remnant rules + template, Rooms 1–5, Corridor pool, handouts (the X map, the toothless key)
-- [ ] Actors: 3 fallback Remnants, The Cover's six (Rogue With a Tragic Past, Barbarian Who Is Just Strong, Wizard Who Misread the Spell), the barkeep, the hooded stranger, the echo
-- [x] MATT tiles generated and TESTED in Foundry World B (2026-10-27): back-room night door → random pool copy,
-      arrival whisper + fog reset, pool door → another copy, GM X-door control, X door → Common Room, Room 3 segment
-      doors. Lessons baked into `matt.py`: multi-destination teleport = `location` as a LIST of {id,name}; a
-      cross-scene teleport CREATES the token, so arrival tiles need trigger `["create","enter"]`; same-scene
-      teleports don't fire tiles (segment arrivals are markers only).
+Both adventures are complete and released; the latest is 2.6.1. The sections below this one are history and lessons, kept
+for the reasons behind the code.
+
+- **The Back Room** (pack `the-back-room`): 43 scenes (Rooms 1–5, the Cover, eight Corridor places in A/B/C copies,
+  vistas, welcome), 360 MATT tiles, 22 actors, 54 journals, handouts with pictures, audio, SoundBard macro. Its six Cover
+  monsters were checked against the 2024 Monster Manual in 2.6.1; the deliberate differences are the dragon (a
+  wyrmling with a young dragon's breath, DC 17, so CR 6) and the troll (stands back up instead of Regeneration).
+- **The Back Room: The Unfinished Fight** (pack `the-back-room-unfinished`): see its section below.
+- Verified in Foundry 14.369 (world `backroom-fresh`). Not yet checked on 14.370 (the user's main install,
+  `~/FoundryVTT-14`: never touch it until the user says it's ready).
+- Open: the Cover's balance in The Unfinished Fight (three back-to-back waves, custom stat blocks) needs a session at
+  the table. Both adventures in one world works (no shared ids) but 20 actors / 24 journals / 5 scenes share names;
+  one adventure per world is the advice in the README.
 - Deploy to the test world: shut the world down (`game.shutDown()`), THEN copy `packs/` into
-  `~/FoundryVTT-14.369/Data/Data/modules/the-back-room/`, relaunch, delete the old import, re-import. Copying
-  packs while the world is running corrupts the copy. Monk's Active Tile Triggers 14.01 is installed there now.
-- Untested in Foundry: Loop Break, Room 4 exit, Cover gaps, the Cellar/Cover GM controls (same primitives).
-- [x] Audio: synthesised placeholders `ambience-tavern/corridor/reading-room.ogg`, `sting-door.ogg`,
-      `sting-x-door.ogg` (numpy + ffmpeg; replace with real loops when there are some)
-- [x] GM tile images `tiles/gm-*.webp` + `tiles/x-door.webp` (Pillow)
-- [ ] Smoke test rewritten; v2.0.0 released
+  `~/FoundryVTT-14.369/Data/Data/modules/the-back-room/`, relaunch, re-import. Copying packs while the world is
+  running corrupts the copy. Without delete permission on the Mac, move old pack files into
+  `~/FoundryVTT-14.369/_to_delete/` (new files only overwrite; stale .log/.ldb files must go).
+- dnd5e skill values are proficiency multipliers (0, 0.5, 1, 2), not bonuses: Perception +5 on a Wis −1, PB +3 troll is 2.
 
 ## Vistas (roleplay scene images), pipeline settled 2026-10-26
 
@@ -287,4 +269,4 @@ Chrome tab at http://127.0.0.1:7860/ via the Chrome tools.
 
 ## Releasing from a Claude session
 
-These sessions can push branches to `bularzik/the-back-room` (the Claude GitHub App is installed) but GitHub refuses tag pushes and the releases API. So a hands-off release is: add the notes under `[Unreleased]`, `npm run changelog:release -- x.y.z`, build, commit on the Mac, carry the commits to the cloud clone (`git bundle create bundles-tmp/push.bundle origin/main..main` on the Mac, stage it, `git fetch <bundle> main:refs/remotes/mac/main` and fast-forward in `/home/claude/the-back-room`), push `main`. The Release workflow sees the new dated version in CHANGELOG.md, tags it and publishes the release. Then `git fetch` on the Mac and remove `bundles-tmp/`. Confirm with the latest-release manifest URL.
+These sessions can push branches to `bularzik/the-back-room` (the Claude GitHub App is installed) but GitHub refuses tag pushes and the releases API. So a hands-off release is: add the notes under `[Unreleased]`, `npm run changelog:release -- x.y.z`, `npm run build:packs`, `npm run validate`, commit, and push `main` from the cloud clone (`/home/claude/the-back-room`; no need to go through the Mac). The Release workflow sees the new dated version in CHANGELOG.md, builds both packs, tags it and publishes the release. Confirm with the latest-release manifest URL (`https://github.com/bularzik/the-back-room/releases/latest/download/module.json`). Release only when the user asks or says yes.
