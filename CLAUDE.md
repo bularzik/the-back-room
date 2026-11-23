@@ -129,9 +129,9 @@ GM-only **Reveal** tile that restores fog and real scene names for Room 5.
 - Never stat the Remnants as monsters; they are NPCs (see design doc).
 - One misremembered trope per Corridor scene. Two is a joke.
 
-## Status (updated 2026-11-15, v2.6.1)
+## Status (updated 2026-11-23, v2.6.2)
 
-Both adventures are complete and released; the latest is 2.6.1. The sections below this one are history and lessons, kept
+Both adventures are complete and released; the latest is 2.6.2. The sections below this one are history and lessons, kept
 for the reasons behind the code.
 
 - **The Back Room** (pack `the-back-room`): 43 scenes (Rooms 1–5, the Cover, eight Corridor places in A/B/C copies,
@@ -148,6 +148,10 @@ for the reasons behind the code.
   `~/FoundryVTT-14.369/Data/Data/modules/the-back-room/`, relaunch, re-import. Copying packs while the world is
   running corrupts the copy. Without delete permission on the Mac, move old pack files into
   `~/FoundryVTT-14.369/_to_delete/` (new files only overwrite; stale .log/.ldb files must go).
+- Arrival spots must be 2+ squares from every door tile: MATT's `avoidtokens` spreads a big party onto neighbouring
+  squares, ignoring walls, and a PC set down on a door tile is sent straight on (the 2.6.2 bounce). `tools/fix_arrivals.py`
+  moves rects in maps.json; `tools/check_arrivals.py` (in build:packs) fails the build on a violation. Tested 2026-11-23
+  with 5 PCs: every Unfinished Fight door and 13 random Corridor hops in the original.
 - dnd5e skill values are proficiency multipliers (0, 0.5, 1, 2), not bonuses: Perception +5 on a Wis −1, PB +3 troll is 2.
 
 ## Vistas (roleplay scene images), pipeline settled 2026-10-26

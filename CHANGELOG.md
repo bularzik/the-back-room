@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.2] - 2026-11-23
+
 ### Fixed
 - **Parties no longer bounce between scenes.** When five or more characters came through a door, the extras were set down on the squares around the arrival spot, and one of those squares could be a door tile that sent them straight on (seen at the table between the Cellar and the Stable). Every arrival spot in both adventures is now at least two squares from any door tile, and the build checks it.
 - **The Unfinished Fight's Stable:** the party now arrives at the foot of the hayloft ladder, on the stable floor, rather than up in the loft next to the door back to the Cellar.
@@ -180,7 +182,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First release: Foundry module with Monk's Active Tile Triggers automation, CI validation and a release workflow.
 
-[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.6.1...HEAD
+[Unreleased]: https://github.com/bularzik/the-back-room/compare/v2.6.2...HEAD
+[2.6.2]: https://github.com/bularzik/the-back-room/compare/v2.6.1...v2.6.2
 [2.6.1]: https://github.com/bularzik/the-back-room/compare/v2.6.0...v2.6.1
 [2.6.0]: https://github.com/bularzik/the-back-room/compare/v2.5.5...v2.6.0
 [2.5.5]: https://github.com/bularzik/the-back-room/compare/v2.5.4...v2.5.5
