@@ -13815,7 +13815,7 @@
     {
      "_id": "s2IjCLFWWOq3JdFM",
      "x": 500,
-     "y": 700,
+     "y": 500,
      "width": 100,
      "height": 100,
      "texture": {
@@ -15854,7 +15854,7 @@
     {
      "_id": "iPQUD5kyAadSb3Rh",
      "x": 700,
-     "y": 250,
+     "y": 450,
      "width": 100,
      "height": 100,
      "texture": {
@@ -15920,7 +15920,7 @@
     {
      "_id": "H9WvMS1IeCd0PcXF",
      "x": 700,
-     "y": 1400,
+     "y": 1200,
      "width": 100,
      "height": 100,
      "texture": {
@@ -15985,7 +15985,7 @@
     },
     {
      "_id": "FsQEjFgjsbMckOI6",
-     "x": 1400,
+     "x": 1200,
      "y": 700,
      "width": 100,
      "height": 100,
@@ -16052,7 +16052,7 @@
     {
      "_id": "zi9TPUl4MX5RyQB4",
      "x": 600,
-     "y": 250,
+     "y": 400,
      "width": 400,
      "height": 150,
      "texture": {
@@ -16099,7 +16099,7 @@
     {
      "_id": "9P2MJA8DqdwmpLXJ",
      "x": 600,
-     "y": 1250,
+     "y": 1100,
      "width": 400,
      "height": 150,
      "texture": {
@@ -16145,7 +16145,7 @@
     },
     {
      "_id": "aRViCTaWbun1olcl",
-     "x": 1100,
+     "x": 1000,
      "y": 650,
      "width": 250,
      "height": 300,
@@ -16833,7 +16833,7 @@
     {
      "_id": "dg9Tl9A0IaHCc81P",
      "x": 200,
-     "y": 700,
+     "y": 500,
      "width": 100,
      "height": 100,
      "texture": {
@@ -16898,7 +16898,7 @@
     },
     {
      "_id": "hdQFSti74IkGqEPO",
-     "x": 900,
+     "x": 700,
      "y": 200,
      "width": 100,
      "height": 100,
@@ -17512,7 +17512,7 @@
     {
      "_id": "M4y4y9qwfAdOr4iw",
      "x": 800,
-     "y": 200,
+     "y": 400,
      "width": 100,
      "height": 100,
      "texture": {
@@ -17577,7 +17577,7 @@
     },
     {
      "_id": "rxulEV9VcP2PkUzk",
-     "x": 1300,
+     "x": 1100,
      "y": 600,
      "width": 100,
      "height": 100,
@@ -17741,7 +17741,7 @@
     {
      "_id": "sDzhZy7yjWpqLgQv",
      "x": 700,
-     "y": 200,
+     "y": 400,
      "width": 300,
      "height": 100,
      "texture": {
@@ -17770,7 +17770,7 @@
      },
      "flags": {
       "monks-active-tiles": {
-       "name": "Landing: where the south doors come back in (the hayloft)",
+       "name": "Landing: where the south doors come back in (below the hayloft)",
        "active": false,
        "trigger": "enter",
        "restriction": "player",
@@ -18886,7 +18886,7 @@
     {
      "_id": "vz2BonhBKA02SYFx",
      "x": 750,
-     "y": 1100,
+     "y": 900,
      "width": 100,
      "height": 100,
      "texture": {
@@ -28443,7 +28443,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.uS6nP4dRprQx5qYa]{the vista} (a painted view of the place, no grid), then pull them to the map.</p></aside><h1>The Stable</h1><blockquote class=\"read-aloud\"><p><em>You come up the ladder into a hayloft, and look down into a stable. Horses in every stall, all of them facing the wall. They are your own mounts: the ones you never bought. High above, on a rafter, a halfling is sitting with his legs crossed, reading a sheet of paper.</em></p></blockquote><p>@UUID[JournalEntry.5LVHv08PzaWG2vI8]{T. Morlock} is twenty feet up (his token is at elevation 20). Below, the stable has three doors: the hayloft ladder they came up, the big doors at the south end, and a small door in the east wall.</p><table><thead><tr><th>Door</th><th>Where it goes</th></tr></thead><tbody><tr><td>The hayloft (north)</td><td>Back down to the Cellar.</td></tr><tr><td>The south doors</td><td>Out into the yard, round the side, up the outside ladder, and in through the hayloft. Every time.</td></tr><tr><td>The east door</td><td>Locked, with no keyhole. It doesn't open. The way on is through the wall.</td></tr></tbody></table><h3>Getting T. Morlock down</h3><p>He will not come down (\u201cWhy would I come down? Come up.\u201d). Someone has to climb to him: the posts are smooth, Strength (Athletics) DC 15, or a rope, a spell, a familiar. Or ask to see his sheet: he lowers it on a string, then the string, then himself, because nobody ever asks to see it.</p><p>When someone is up with him, or has read his sheet out loud (seventh level, every box filled in, climb walls ninety-nine percent), he drops twenty feet, lands on his feet, walks to the east wall, says \u201cElishaf\u201d, and walks into it. There is a halfling-shaped hole. \u201cWell? Come on.\u201d</p><p><strong>When he goes through the wall,</strong> click the east door's icon to open it: that is the hole. The tile behind it goes to the Hoard. Leave the door open; nobody comes back this way unless they come back from the Hoard. He does not come through after them. He is already there when they arrive.</p><aside class=\"notable\"><h4>Automation</h4><p>Open the east door yourself when T. Morlock walks through the wall; the tile beyond it goes to the Hoard. The south doors loop back to the hayloft.</p></aside>"
+      "content": "<aside class=\"notable\"><h4>Vista</h4><p>On arrival, show the players @UUID[Scene.uS6nP4dRprQx5qYa]{the vista} (a painted view of the place, no grid), then pull them to the map.</p></aside><h1>The Stable</h1><blockquote class=\"read-aloud\"><p><em>You come up the ladder into a hayloft, and down the next ladder into a stable. Horses in every stall, all of them facing the wall. They are your own mounts: the ones you never bought. High above, on a rafter, a halfling is sitting with his legs crossed, reading a sheet of paper.</em></p></blockquote><p>@UUID[JournalEntry.5LVHv08PzaWG2vI8]{T. Morlock} is twenty feet up (his token is at elevation 20). Below, the stable has three doors: the hayloft ladder they came up, the big doors at the south end, and a small door in the east wall.</p><table><thead><tr><th>Door</th><th>Where it goes</th></tr></thead><tbody><tr><td>The hayloft (north)</td><td>Back down to the Cellar.</td></tr><tr><td>The south doors</td><td>Out into the yard, round the side, up the outside ladder, in through the hayloft and down into the stable again. Every time.</td></tr><tr><td>The east door</td><td>Locked, with no keyhole. It doesn't open. The way on is through the wall.</td></tr></tbody></table><h3>Getting T. Morlock down</h3><p>He will not come down (\u201cWhy would I come down? Come up.\u201d). Someone has to climb to him: the posts are smooth, Strength (Athletics) DC 15, or a rope, a spell, a familiar. Or ask to see his sheet: he lowers it on a string, then the string, then himself, because nobody ever asks to see it.</p><p>When someone is up with him, or has read his sheet out loud (seventh level, every box filled in, climb walls ninety-nine percent), he drops twenty feet, lands on his feet, walks to the east wall, says \u201cElishaf\u201d, and walks into it. There is a halfling-shaped hole. \u201cWell? Come on.\u201d</p><p><strong>When he goes through the wall,</strong> click the east door's icon to open it: that is the hole. The tile behind it goes to the Hoard. Leave the door open; nobody comes back this way unless they come back from the Hoard. He does not come through after them. He is already there when they arrive.</p><aside class=\"notable\"><h4>Automation</h4><p>Open the east door yourself when T. Morlock walks through the wall; the tile beyond it goes to the Hoard. The south doors loop back to the hayloft.</p></aside>"
      },
      "sort": 100000,
      "ownership": {

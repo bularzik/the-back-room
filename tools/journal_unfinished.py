@@ -217,11 +217,11 @@ def build(L):
     # ------------------------------------------------------------------ STABLE
     entries.append(("The Stable", [
         ("The Stable", "<h1>The Stable</h1>" + box(
-            "You come up the ladder into a hayloft, and look down into a stable. Horses in every stall, all of them facing the wall. They are your own mounts: the ones you never bought. High above, on a rafter, a halfling is sitting with his legs crossed, reading a sheet of paper.")
+            "You come up the ladder into a hayloft, and down the next ladder into a stable. Horses in every stall, all of them facing the wall. They are your own mounts: the ones you never bought. High above, on a rafter, a halfling is sitting with his legs crossed, reading a sheet of paper.")
          + P(f"{A('remnant-morlock')} is twenty feet up (his token is at elevation 20). Below, the stable has three doors: the hayloft ladder they came up, the big doors at the south end, and a small door in the east wall.")
          + table(["Door", "Where it goes"], [
               ["The hayloft (north)", "Back down to the Cellar."],
-              ["The south doors", "Out into the yard, round the side, up the outside ladder, and in through the hayloft. Every time."],
+              ["The south doors", "Out into the yard, round the side, up the outside ladder, in through the hayloft and down into the stable again. Every time."],
               ["The east door", "Locked, with no keyhole. It doesn't open. The way on is through the wall."]])
          + "<h3>Getting T. Morlock down</h3>" + P("He will not come down (“Why would I come down? Come up.”). Someone has to climb to him: the posts are smooth, Strength (Athletics) DC 15, or a rope, a spell, a familiar. Or ask to see his sheet: he lowers it on a string, then the string, then himself, because nobody ever asks to see it.",
             "When someone is up with him, or has read his sheet out loud (seventh level, every box filled in, climb walls ninety-nine percent), he drops twenty feet, lands on his feet, walks to the east wall, says “Elishaf”, and walks into it. There is a halfling-shaped hole. “Well? Come on.”")

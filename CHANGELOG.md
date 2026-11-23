@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Parties no longer bounce between scenes.** When five or more characters came through a door, the extras were set down on the squares around the arrival spot, and one of those squares could be a door tile that sent them straight on (seen at the table between the Cellar and the Stable). Every arrival spot in both adventures is now at least two squares from any door tile, and the build checks it.
+- **The Unfinished Fight's Stable:** the party now arrives at the foot of the hayloft ladder, on the stable floor, rather than up in the loft next to the door back to the Cellar.
+
 ## [2.6.1] - 2026-11-15
 
 ### Fixed

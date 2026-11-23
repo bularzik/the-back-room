@@ -21,14 +21,16 @@ def loop(dest_uuid, text):
     return [scroll(text), teleport(dest_uuid, entity=PLAYERS, cross=False)]
 
 # Door tiles sit BEYOND the door they belong to (rects here override maps.json's, which were in front of the doors).
+# Arrival spots (maps.json, kept clear by tools/fix_arrivals.py) and landing rects stay 2+ squares from every door tile:
+# MATT spreads an arriving party over the neighbouring squares, walls or not, and a door tile there sends them on.
 # No tile may touch x=0 or y=0: MATT never fires for a token whose final x or y is 0 (tested in Foundry 14.369, MATT 14.01).
 RECTS = {
     "backroom": {"stairwell": [500, 900, 100, 100], "loft": [1100, 400, 100, 100]},
     "common-room": {"xdoor": [100, 600, 100, 100]},   # in front of the locked door (the map has no room beyond it); off until Fred's table
-    "c7-crossroads": {"door1": [650, 100, 300, 100], "arrive1": [700, 250, 100, 100], "land-north": [600, 250, 400, 150], "land-south": [600, 1250, 400, 150],
-                      "land-east": [1100, 650, 250, 300], "west": [100, 650, 100, 300]},
+    "c7-crossroads": {"door1": [650, 100, 300, 100], "land-north": [600, 400, 400, 150], "land-south": [600, 1100, 400, 150],
+                      "land-east": [1000, 650, 250, 300], "west": [100, 650, 100, 300]},
     "c8-cellar": {"door1": [200, 900, 100, 100], "door2": [1100, 200, 100, 100]},
-    "c2-stable": {"land-loft": [700, 200, 300, 100], "door1": [800, 100, 100, 100], "door2": [750, 1100, 100, 100], "door3": [1500, 600, 100, 100]},
+    "c2-stable": {"land-loft": [700, 400, 300, 100], "door1": [800, 100, 100, 100], "door2": [750, 1100, 100, 100], "door3": [1500, 600, 100, 100]},
     "hoard": {"doors": [750, 1300, 100, 100], "side": [1400, 650, 100, 100]},
 }
 
@@ -101,7 +103,7 @@ def build_tiles(ctx):
     tb.tile("arrive1", rect(k, "arrive1"), [scroll("Every horse faces the wall.")], trigger=ARRIVE, name="Arrival (the hayloft)")
     tb.tile("arrive3", rect(k, "arrive3"), [scroll("Hay, and horses.")], trigger=ARRIVE, name="Arrival from the Hoard")
     tb.tile("door1", rect(k, "door1"), [sound("sting-door"), *party_teleport(dest("c8-cellar", "arrive2"))], name="The hayloft ladder → back to the Cellar")
-    tb.tile("land-loft", rect(k, "land-loft"), [], active=False, name="Landing: where the south doors come back in (the hayloft)")
+    tb.tile("land-loft", rect(k, "land-loft"), [], active=False, name="Landing: where the south doors come back in (below the hayloft)")
     tb.tile("door2", rect(k, "door2"), loop(tb.tuuid("land-loft"), "Round the yard, up the ladder, in at the hayloft."), name="South doors → loops back to the hayloft")
     tb.tile("door3", rect(k, "door3"), [sound("sting-door"), *party_teleport(dest("hoard", "arrive"))], name="Through the east wall (opened by T. Morlock) → the Hoard")
     out[k] = tb.tiles
